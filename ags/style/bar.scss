@@ -1,0 +1,205 @@
+.bar {
+  // border-radius: 15px;
+  // left: 12px;
+  // right: 12px;
+  // top: 12px;
+  min-height: 60px;
+  padding: 0 12px;
+  background: $surface_transparent;
+}
+
+.bar__item {
+  padding: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 16px;
+  padding-right: 16px;
+  min-height: 42px;
+  border-radius: 20px;
+  background: $inverse_surface_transparent;
+  color: $on_surface;
+  border: none;
+  outline: none;
+  &.bar__button {
+    &:hover {
+      background: $inverse_surface_transparent,
+        $inverse_surface_transparent_overlay;
+    }
+    &:active {
+      background: $inverse_surface_transparent_variant,
+        $inverse_surface_transparent_overlay;
+    }
+    &.active {
+      background: $primary;
+      color: $on_primary;
+    }
+    &.bar__recording-indicator {
+      padding: 0;
+      min-height: 42px;
+      min-width: 42px;
+      background: $error_container;
+      color: $on_error_container;
+
+      &:hover {
+        color: $error_container;
+        background: $on_error_container;
+      }
+      &.spacing {
+        label {
+          min-width: 54px;
+          margin-right: 8px;
+        }
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+.bar__item.transparent {
+  background: transparent;
+  color: $on_surface;
+}
+
+.bar__item.primary_container {
+  background: $primary_container;
+  color: $on_primary_container;
+}
+.arch-icon {
+  font-size: 30px;
+  color: $on_primary;
+}
+.bar__app-launcher.bar__button {
+  padding: 0px;
+  transition: all 0.3s;
+  background-color: $primary;
+  min-height: 42px;
+  min-width: 42px;
+
+  .bar__app-launcher_icon {
+    background-color: $on_primary;
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 100%;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-color: $on_primary;
+    .bar__app-launcher_icon {
+      background-color: $primary;
+    }
+    .arch-icon {
+      color: $primary;
+    }
+  }
+
+  &.active,
+  &:active {
+    background-color: $primary_container;
+    .bar__app-launcher_icon {
+      background-color: $on_primary_container;
+    }
+    .arch-icon {
+      color: $on_primary_container;
+    }
+  }
+}
+
+.bar__workspaces-indicator {
+  padding: 0;
+  min-width: 8px;
+  min-height: 8px;
+  transition: all 0.3s;
+  background-color: $inverse_surface_transparent_variant;
+  border-radius: 100px;
+
+  &:hover {
+    background-color: transparentize($primary, 0.4);
+  }
+
+  &.active,
+  &:active {
+    min-height: 12px;
+    min-width: 40px;
+    border-radius: 100px;
+    background-color: $primary;
+  }
+}
+
+.bar__active-app {
+  padding-left: 12px;
+  padding-right: 16px;
+  icon {
+    min-width: 20px;
+    min-height: 20px;
+    font-size: 20px;
+  }
+  .desktop {
+    icon {
+      font-size: 14px;
+    }
+  }
+}
+
+.bar__keyboard-layout {
+  padding: 0;
+  min-height: 42px;
+  min-width: 42px;
+}
+
+.bar__battery {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bar__notifications {
+  padding-left: 12px;
+  padding-right: 10px;
+}
+
+.bar__notifications_label {
+  font-size: 12px;
+  border-radius: 9px;
+  min-width: 18px;
+  min-height: 18px;
+  background: $inverse_surface;
+  color: $surface;
+}
+
+.bar__tray {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.bar__tray-item {
+  padding: 0;
+  min-width: 22px;
+  min-height: 22px;
+  background: none;
+  &:hover {
+    background-color: transparentize($primary, 0.4);
+  }
+  icon {
+    font-size: 18px;
+  }
+}
+
+.bar__rounded-box {
+  .bar__item {
+    border-radius: 10px;
+  }
+}
+
+.bar__rounded-box > * {
+  &:last-child {
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+
+  &:first-child,
+  &:first-child > * {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+  }
+}

@@ -1,0 +1,39 @@
+.notifications-window {
+  border-radius: 20px;
+  min-width: 400px;
+  min-height: 550px;
+  padding: 10px 10px 0;
+  background: $surface_transparent;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease-in-out;
+
+  .notification {
+    border-radius: 4px;
+    transition: 0.2s border-radius ease-in-out;
+    background-color: $inverse_surface_transparent;
+  }
+}
+
+.notifications-window__clear {
+  background: none;
+  padding: 6px 0;
+  margin-right: 18px;
+}
+
+.notifications-window__list {
+  revealer:first-child {
+    .notification {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+
+  revealer:last-child {
+    .notification {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      margin-bottom: 10px;
+    }
+  }
+}

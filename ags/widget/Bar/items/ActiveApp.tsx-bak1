@@ -1,0 +1,51 @@
+import Hyprland from "gi://AstalHyprland";
+import { Gtk } from "astal/gtk3";
+import { bind } from "astal";
+import BarButton from "../BarButton";
+import icons, { substitutions } from "../../../lib/icons";
+import { lookUpIcon } from "../../../lib/utils";
+
+export default () => {
+    const hypr = Hyprland.get_default();
+    
+    // 使用响应式方法获取窗口图标
+    const getWindowIcon = (className?: string) => {
+        if (!className) return icons.fallback.executable;
+
+        // 优先级处理图标
+        return (
+            substitutions.icons[className] || 
+            lookUpIcon(className.toLowerCase()) && className.toLowerCase() ||
+            lookUpIcon(className) && className ||
+            icons.fallback.executable
+        );
+    };
+
+    return (
+        <revealer
+            transitionType={Gtk.RevealerTransitionType.CROSSFADE}
+            transitionDuration={300}
+            revealChild={bind(hypr, "focusedClient").as(Boolean)}
+        >
+            <BarButton className="bar__active-app">
+                <box spacing={8}>
+                    {/* 直接绑定并实时更新图标 */}
+                    <icon 
+                        icon={bind(hypr, "focusedClient").as((client) => 
+                            client ? getWindowIcon(client.class) : icons.fallback.executable
+                        )}
+                    />
+                    
+                    {/* 直接绑定并实时更新标题 */}
+                    <label 
+                        label={bind(hypr, "focusedClient").as((client) => 
+                            client ? client.title.toString() : ""
+                        )} 
+                        truncate={true} 
+                        maxWidthChars={24} 
+                    />
+                </box>
+            </BarButton>
+        </revealer>
+    );
+};

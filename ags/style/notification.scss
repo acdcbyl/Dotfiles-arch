@@ -1,0 +1,80 @@
+.notification {
+  padding: 14px 16px 14px 20px;
+  color: $on_surface;
+  background-color: $surface_transparent;
+  border-radius: 20px;
+}
+
+.notification__icon {
+  min-height: 30px;
+  min-width: 30px;
+  margin-right: 14px;
+  border-radius: 100px;
+  background: $inverse_surface_transparent;
+}
+
+.notification__icon.telegram {
+  margin-top: 8px;
+}
+
+.notification__title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.notification__header {
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.notification__app-name,
+.notification__dot,
+.notification__time {
+  color: $on_surface_variant;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.notification__description {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.notification__actions {
+  margin-top: 8px;
+}
+
+.notification__action {
+  background: none;
+  transition: color 0.1s ease-in-out;
+  color: $primary;
+  border-radius: 100px;
+  &:hover {
+    color: $on_primary_container;
+    transition: color 0.1s ease-in-out;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.notification__close-button {
+  padding: 0;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 100px;
+  background-color: $surface_container_highest;
+  color: $on_surface;
+  font-size: 16px;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  &:hover {
+    background: $primary_fixed;
+    color: $on_primary_fixed;
+  }
+}

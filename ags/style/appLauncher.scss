@@ -1,0 +1,82 @@
+.app-launcher {
+  min-width: 450px;
+  border-radius: 30px;
+  padding: 0px;
+  background: $surface_transparent;
+  min-height: 700px;
+}
+
+.app-launcher__input {
+  background: none;
+  border: none;
+  outline: none;
+  color: $on_surface;
+  margin-top: 5px;
+  padding: 12px 22px;
+  border-radius: 0px;
+  border-bottom: 2px solid $inverse_surface_transparent;
+  box-shadow: none;
+
+  icon {
+    margin-right: 20px;
+  }
+}
+
+.app-launcher__list {
+  margin: 0 10px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.app-launcher__item {
+  all: unset;
+  transition: all 0.2s ease;
+  padding: 12px 18px;
+  border-radius: 20px;
+
+  label {
+    transition: all 0.2s ease;
+
+    &.title {
+      font-weight: 500;
+      color: $on_surface;
+    }
+
+    &.description {
+      color: transparentize($on_surface, 0.3);
+    }
+  }
+
+  icon {
+    font-size: 32px;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background: $inverse_surface_transparent;
+    .title {
+      color: $on_surface;
+    }
+  }
+
+  &:focus {
+    background: $primary;
+    .title {
+      color: $on_primary;
+    }
+    .description {
+      color: $on_primary;
+    }
+  }
+
+  &:active {
+    background: yellow;
+    background-color: transparentize($primary, 0.2);
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 1px $primary;
+
+    .title {
+      color: $on_primary;
+    }
+  }
+}

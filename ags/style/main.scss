@@ -1,0 +1,19 @@
+@import "./colors.scss";
+@import "./common.scss";
+@import "./components.scss";
+@import "./bar.scss";
+@import "./scrim.scss";
+@import "./appLauncher.scss";
+@import "./controlCenter.scss";
+@import "./player.scss";
+@import "./notification.scss";
+@import "./notificationsPopup.scss";
+@import "./notificationsWindow.scss";
+@import "./osd.scss";
+@import "./popupMenu.scss";
+@import "./powermenu.scss";
+@import "./dashboard.scss";
+
+* {
+  font-family: Maple Mono SC NF;
+}

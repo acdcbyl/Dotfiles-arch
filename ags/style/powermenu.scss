@@ -1,0 +1,53 @@
+.powermenu {
+  padding: 24px;
+  border-radius: 20px;
+  background: $surface_transparent;
+}
+
+.powermenu__button {
+  padding: 0;
+  background: $inverse_surface_transparent;
+  color: $on_surface;
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 100px;
+  &:hover,
+  &:focus {
+    color: $on_primary;
+    background: $primary, $inverse_surface_transparent_variant_overlay;
+  }
+  &:focus {
+    box-shadow: 0 0 0 1px $inverse_surface;
+  }
+  &:active {
+    background: $on_primary_container, $inverse_surface_transparent_overlay;
+  }
+}
+
+.verification {
+  min-width: 300px;
+  padding: 24px;
+  border-radius: 30px;
+  background: $surface_transparent;
+}
+
+.verification__title {
+  font-size: 20px;
+  color: $on_surface;
+  font-weight: 500;
+}
+.verification__description {
+  font-size: 16px;
+  color: $on_surface;
+  font-weight: 400;
+}
+/* .verification__button {
+	background: $inverse_surface_transparent;
+	border-radius: 100px;
+	padding: 8px 22px;
+	&:hover,
+	&:focus {
+		background: $secondary;
+		color: $on_secondary;
+	}
+} */

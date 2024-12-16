@@ -1,0 +1,103 @@
+* {
+  font-size: 14px;
+  outline: none;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  -gtk-icon-shadow: none;
+}
+
+icon {
+  box-shadow: none;
+  text-shadow: none;
+}
+
+slider {
+  border: none;
+  outline: none;
+  background: $inverse_surface_transparent_variant;
+}
+
+separator {
+  background: none;
+}
+
+window {
+  background: none;
+}
+
+button {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+label {
+  box-shadow: none;
+}
+
+window.popup {
+  > * {
+    border: none;
+    box-shadow: none;
+  }
+
+  menu {
+    margin-top: 12px;
+    border-radius: 20px;
+    background-color: $surface_transparent;
+    padding: 10px;
+
+    // separator {
+    //     background-color: $border_color;
+    // }
+
+    menuitem {
+      min-width: 140px;
+      padding: 12px 6px;
+      color: $on_surface;
+      border-radius: 100px;
+      transition: background 0.1s ease;
+      &:hover {
+        background: $inverse_surface_transparent;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+switch {
+  border: 2px solid $outline;
+  border-radius: 100px;
+  background-color: $surface_container_highest;
+}
+
+switch slider {
+  box-shadow: none;
+  border-radius: 100px;
+  background-color: $outline;
+}
+
+switch:hover slider,
+switch:active slider {
+  background-color: $on_surface_variant;
+}
+
+switch:active {
+  background-color: mix($surface_container_highest, $on_surface, 0.08 * 1%);
+}
+
+switch:checked {
+  background-color: $primary;
+  border: 2px solid $primary;
+}
+
+switch:checked slider {
+  background-color: $on_primary;
+}

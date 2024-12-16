@@ -1,0 +1,121 @@
+.player {
+  min-height: 155px;
+  background: $surface_transparent;
+  padding: 20px;
+  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s background ease-in-out;
+}
+
+.player__icon {
+  font-size: 20px;
+}
+
+.player__title {
+  font-weight: 600;
+  font-size: 19px;
+  padding-right: 18px;
+}
+
+.player__artist {
+  padding-right: 18px;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.player__playpause {
+  min-width: 60px;
+  min-height: 60px;
+  padding: 0;
+  background: $primary;
+  color: $on_primary;
+  border-radius: 0px;
+  transition:
+    background 0.3s ease-in-out,
+    border-radius 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+  border-radius: 30px;
+
+  &.active {
+    border-radius: 20px;
+  }
+}
+
+.player__next,
+.player__previous {
+  background: none;
+}
+
+.player__title-box {
+  animation: slide-back 0.3s cubic-bezier(0.05, 0.7, 0.1, 1);
+
+  &.dissappear {
+    animation: slide 0.3s cubic-bezier(0.3, 0, 0.8, 0.15);
+  }
+}
+
+.player__position-slider {
+  trough {
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+    border-radius: 100px;
+
+    highlight {
+      border-radius: 100px;
+      background-color: $on_surface;
+      border-radius: 100px;
+      transition:
+        background-color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+    }
+
+    slider {
+      margin: -10px;
+      padding: 2px 0;
+      border-radius: 7px;
+      border-radius: 10px;
+      box-shadow: none;
+      background-color: $on_surface;
+
+      transition:
+        background-color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+    }
+  }
+}
+
+.player__indicator {
+  min-width: 8px;
+  min-height: 8px;
+  background: $inverse_surface_transparent_variant;
+  border-radius: 100px;
+  margin-bottom: 8px;
+  transition: 0.3s all ease-in-out;
+  &.selected {
+    background: $inverse_surface;
+  }
+}
+
+@keyframes slide {
+  from {
+    margin-left: 0;
+    opacity: 1;
+  }
+  to {
+    margin-left: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    margin-left: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
