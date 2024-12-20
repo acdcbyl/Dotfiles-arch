@@ -1,6 +1,6 @@
 [config]
 # ...
-reload_apps = true
+# reload_apps = true
 #set_wallpaper = true
 #wallpaper_tool = 'Swww'
 #prefix = '@'
@@ -18,9 +18,9 @@ reload_apps = true
 #command = "swww"
 #arguments = ["img", "--transition-type", "center"]
 #set = true
-[config.reload_apps_list]
-gtk_theme = true
-kitty = true
+# [config.reload_apps_list]
+# gtk_theme = true
+# kitty = true
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
@@ -28,7 +28,8 @@ output_path = '~/.config/hypr/colors.conf'
 post_hook = 'sh ~/.config/matugen/scripts/reload'
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors.conf'
+output_path = '~/.config/kitty/themes/matugen.conf'
+post_hook = 'kitten themes --reload-in=all matugen'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
@@ -37,6 +38,7 @@ output_path = '~/.config/gtk-3.0/colors.css'
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
+# post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3"'
 
 [templates.qt5ct]
 input_path = '~/.config/matugen/templates/qtct-colors.conf'
@@ -51,8 +53,8 @@ input_path = '~/.config/matugen/templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
 
 [templates.discord]
-input_path = '~/.config/matugen/templates/midnight-discord.css'
-output_path = '~/.config/BetterDiscord/themes/midnight.theme.css'
+input_path = '~/.config/matugen/templates/Material-Discord.theme.css'
+output_path = '~/.config/BetterDiscord/themes/Material-Discord.theme.css'
 
 [templates.rmpc]
 input_path = '~/.config/matugen/templates/rmpc.ron'
