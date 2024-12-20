@@ -31,22 +31,22 @@
         inactive_style: (),
     ),
     borders_style: (fg: "#6e738d"),
-    highlighted_item_style: (fg: "{{colors.tertiary_fixed.default.hex}}", modifiers: "Bold"),
-    current_item_style: (fg: "{{colors.primary_fixed.default.hex}}", bg: "{{colors.on_primary.default.hex}}", modifiers: "Bold"),
+    highlighted_item_style: (fg: "{{colors.tertiary.default.hex}}", modifiers: "Bold"),
+    current_item_style: (fg: "{{colors.primary.default.hex}}", bg: "{{colors.on_primary.default.hex}}", modifiers: "Bold"),
     highlight_border_style: (fg: "{{colors.on_primary.default.hex}}"),
     song_table_format: [
         (
-            prop: (kind: Property(Artist), style: (fg: "{{colors.primary_fixed_dim.default.hex}}"), default: (kind: Text("Unknown"))),
+            prop: (kind: Property(Artist), style: (fg: "{{colors.inverse_primary.default.hex}}"), default: (kind: Text("Unknown"))),
             width_percent: 49,
             alignment: Right,
         ),
         (
-            prop: (kind: Text("-"), style: (fg: "{{colors.primary_fixed_dim.default.hex}}"), default: (kind: Text("Unknown"))),
+            prop: (kind: Text("-"), style: (fg: "{{colors.inverse_primary.default.hex}}"), default: (kind: Text("Unknown"))),
             width_percent: 2,
             alignment: Center,
         ),
         (
-            prop: (kind: Property(Title), style: (fg: "{{colors.primary_fixed_dim.default.hex}}"), default: (kind: Text("Unknown"))),
+            prop: (kind: Property(Title), style: (fg: "{{colors.inverse_primary.default.hex}}"), default: (kind: Text("Unknown"))),
             width_percent: 49,
         ),
     ],
