@@ -36,7 +36,7 @@
     highlight_border_style: (fg: "{{colors.on_primary.default.hex}}"),
     song_table_format: [
         (
-            prop: (kind: Property(Artist), style: (fg: "{{colors.inverse_primary.default.hex}}"), default: (kind: Text("Unknown"))),
+            prop: (kind: Property(Artist), style: (fg: "{{colors.primary.default.hex}}"), default: (kind: Text("Unknown"))),
             width_percent: 49,
             alignment: Right,
         ),
@@ -46,7 +46,7 @@
             alignment: Center,
         ),
         (
-            prop: (kind: Property(Title), style: (fg: "{{colors.inverse_primary.default.hex}}"), default: (kind: Text("Unknown"))),
+            prop: (kind: Property(Title), style: (fg: "{{colors.primary.default.hex}}"), default: (kind: Text("Unknown"))),
             width_percent: 49,
         ),
     ],
