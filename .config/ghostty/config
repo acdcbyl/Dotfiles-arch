@@ -1,6 +1,18 @@
+font-size = 14
+font-family = "Maple Mono NF CN"
+#font-family = "HackGen35 Console Bold"
+#font-family = "Symbols Nerd Font"
+#font-feature = "cv25"
+#font-feature = "cv26"
+#font-feature = "cv27"
+#font-feature = "cv32"
+#font-feature = "ss02"
+#font-feature = "ss03"
+#font-feature = "ss08"
+#font-feature = "ss09"
+
 cursor-style=block
 term = xterm-256color
-font-size = 14
 mouse-hide-while-typing = true
 window-decoration = false
 theme = Matugen
