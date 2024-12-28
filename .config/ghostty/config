@@ -1,0 +1,17 @@
+cursor-style=block
+term = xterm-256color
+font-size = 14
+mouse-hide-while-typing = true
+window-decoration = false
+theme = Matugen
+shell-integration-features = no-cursor
+window-padding-y = 25
+window-padding-x = 25
+window-width = 115
+window-height = 24
+gtk-single-instance = true
+#gtk-tabs-location = hidden
+
+# keybinds
+#keybind = global:alt+tab=toggle_tab_overview
+#keybind = global:cmd+tab =toggle_tab_overview
