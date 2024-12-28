@@ -26,10 +26,14 @@ input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
 #pre_hook = 'ags -q '
 post_hook = 'sh ~/.config/matugen/scripts/reload'
-[templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/themes/matugen.conf'
-post_hook = 'kitten themes --reload-in=all matugen'
+# [templates.kitty]
+# input_path = '~/.config/matugen/templates/kitty-colors.conf'
+# output_path = '~/.config/kitty/themes/matugen.conf'
+# post_hook = 'kitten themes --reload-in=all matugen'
+
+[templates.ghostty]
+input_path = '~/.config/matugen/templates/Matugen'
+output_path = '~/.config/ghostty/themes/Matugen'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
@@ -97,8 +101,8 @@ output_path = '~/.zen/brxr4q1v.Default (alpha)-1/chrome/userChrome.css'
 input_path = '~/.config/matugen/templates/userContent.css'
 output_path = '~/.zen/brxr4q1v.Default (alpha)-1/chrome/userContent.css'
 [templates.zen3]
-input_path = '~/.config/matugen/templates/zen-logo-mocha.svg'
-output_path = '~/.zen/brxr4q1v.Default (alpha)-1/chrome/zen-logo-mocha.svg'
+input_path = '~/.config/matugen/templates/zen-logo.svg'
+output_path = '~/.zen/brxr4q1v.Default (alpha)-1/chrome/zen-logo.svg'
 
 [templates.clipse]
 input_path = '~/.config/matugen/templates/custom_theme.json'

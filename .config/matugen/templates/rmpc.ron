@@ -9,7 +9,7 @@
     show_song_table_header: false,
     symbols: (song: "🎵", dir: "📁", marker: "\u{e0b0}"),
     progress_bar: (
-        symbols: ["━", "", " "],
+        symbols: ["━", "", " "],
         track_style: (bg: None),
         elapsed_style: (fg: "{{colors.on_surface.default.hex}}", bg: None),
         thumb_style: (fg: "{{colors.on_surface.default.hex}}", bg: None),
@@ -24,7 +24,7 @@
     text_color: "{{colors.primary.default.hex}}",
     background_color: None,
     header_background_color: None,
-    modal_background_color: None,
+    modal_background_color: "{{colors.on_primary.default.hex}}",
     tab_bar: (
         enabled: false,
         active_style: (fg: "black", bg: "{{colors.on_surface.default.hex}}", modifiers: "Bold"),
