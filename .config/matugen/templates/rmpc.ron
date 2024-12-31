@@ -9,10 +9,10 @@
     show_song_table_header: false,
     symbols: (song: "🎵", dir: "📁", marker: "\u{e0b0}"),
     progress_bar: (
-        symbols: ["━", "", " "],
+        symbols: ["▃", "▃", "."],
         track_style: (bg: None),
-        elapsed_style: (fg: "{{colors.on_surface.default.hex}}", bg: None),
-        thumb_style: (fg: "{{colors.on_surface.default.hex}}", bg: None),
+        elapsed_style: (fg: "{{colors.primary.default.hex}}", bg: None),
+        thumb_style: (fg: "{{colors.primary.default.hex}}", bg: None),
     ),
     scrollbar: (
         symbols: ["│", "█", "▲", "▼"],
