@@ -1,5 +1,6 @@
 font-size = 14
 font-family = "Maple Mono NF CN"
+font-style = Bold
 #font-family = "HackGen35 Console Bold"
 #font-family = "Symbols Nerd Font"
 #font-feature = "cv25"
@@ -23,7 +24,7 @@ window-width = 115
 window-height = 24
 gtk-single-instance = true
 #gtk-tabs-location = hidden
-
+custom-shader = ~/.config/ghostty/shaders/glow.glsl
 # keybinds
 #keybind = global:alt+tab=toggle_tab_overview
 #keybind = global:cmd+tab =toggle_tab_overview
