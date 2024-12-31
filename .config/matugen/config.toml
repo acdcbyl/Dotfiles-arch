@@ -96,13 +96,13 @@ output_path = '~/.config/ags/style/colors.scss'
 
 [templates.zen1]
 input_path = '~/.config/matugen/templates/userChrome.css'
-output_path = '~/.zen/brxr4q1v.Default (alpha)-1/chrome/userChrome.css'
+output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/userChrome.css'
 [templates.zen2]
 input_path = '~/.config/matugen/templates/userContent.css'
-output_path = '~/.zen/brxr4q1v.Default (alpha)-1/chrome/userContent.css'
+output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/userContent.css'
 [templates.zen3]
 input_path = '~/.config/matugen/templates/zen-logo.svg'
-output_path = '~/.zen/brxr4q1v.Default (alpha)-1/chrome/zen-logo.svg'
+output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/zen-logo.svg'
 
 [templates.clipse]
 input_path = '~/.config/matugen/templates/custom_theme.json'
@@ -111,6 +111,11 @@ output_path = '~/.config/clipse/custom_theme.json'
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.musicfox]
+input_path = '~/.config/matugen/templates/musicfox'
+output_path = '~/.config/matugen/scripts/musicfox'
+post_hook = 'sh ~/.config/matugen/scripts/musicfox'
 
 [config.custom_colors]
 red = "#f38ba8"
