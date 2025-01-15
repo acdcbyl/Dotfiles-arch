@@ -26,6 +26,9 @@ input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
 #pre_hook = 'ags -q '
 post_hook = 'sh ~/.config/matugen/scripts/reload'
+[templates.gitui]
+input_path = '~/.config/matugen/templates/gitui.ron'
+output_path = '~/.config/gitui/theme.ron'
 # [templates.kitty]
 # input_path = '~/.config/matugen/templates/kitty-colors.conf'
 # output_path = '~/.config/kitty/themes/matugen.conf'

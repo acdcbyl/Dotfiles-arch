@@ -55,6 +55,9 @@
     color: {{colors.primary.default.hex}} !important;
   }
 
+  .urlbarView-title {
+    color: {{colors.primary.default.hex}} !important;
+  }
   #zenEditBookmarkPanelFaviconContainer {
     background: {{colors.surface.default.hex}} !important;
   }
@@ -162,6 +165,9 @@
     color: {{colors.primary.default.hex}} !important;
   }
 
+  .urlbarView-title {
+    color: {{colors.primary.default.hex}} !important;
+  }
   #zenEditBookmarkPanelFaviconContainer {
     background: {{colors.surface.default.hex}} !important;
   }
