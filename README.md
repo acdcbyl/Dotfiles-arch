@@ -53,7 +53,7 @@ The most important module, which is responsible for implementing the generation 
 1. Make sure you have installed `ags`, which is responsible for `bar`, `app-launcher` and so on.
 2. Getting PoSayDone's `ags` Configuration
 
-```shell
+```bash
 git clone https://github.com/PoSayDone/.dotfiles_nix.git
 cd .dotfiles_nix/home-manager/modules/
 cp -r ags ~/.config/
