@@ -10,7 +10,7 @@ color = #ffffff
 subfolders = False
 show_hidden = False
 show_gifs_only = False
-post_command = yad --title="主题选择" --text="🌈 选择主题模式" --button="Light 主题:0" --button="Dark 主题:1" && (matugen image $wallpaper -m "light" && gsettings set org.gnome.desktop.interface color-scheme prefer-light) || (matugen image $wallpaper && gsettings set org.gnome.desktop.interface color-scheme prefer-dark)
+post_command = zenity --question --title="主题选择"  --text="🌈 选择主题模式" --ok-label="Light 主题" --cancel-label="Dark 主题" && (matugen image $wallpaper -m "light" && gsettings set org.gnome.desktop.interface color-scheme prefer-light) || (matugen image $wallpaper && gsettings set org.gnome.desktop.interface color-scheme prefer-dark)
 number_of_columns = 3
 swww_transition_type = center
 swww_transition_step = 90
