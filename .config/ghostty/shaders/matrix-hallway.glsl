@@ -1,5 +1,3 @@
-// #iChannel0 "file:///Users/asherwin/.config/ghostty/myshaders/screen2.png"
-
 // based on the following Shader Toy entry
 //
 // [SH17A] Matrix rain. Created by Reinder Nijhoff 2017

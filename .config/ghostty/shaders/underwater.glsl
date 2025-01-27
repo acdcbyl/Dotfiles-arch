@@ -1,5 +1,3 @@
-// #iChannel0 "file:///Users/asherwin/.config/ghostty/myshaders/screen2.png"
-
 // adapted by Alex Sherwin for Ghostty from https://www.shadertoy.com/view/lljGDt
 
 #define BLACK_BLEND_THRESHOLD .4

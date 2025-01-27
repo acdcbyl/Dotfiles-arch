@@ -1,4 +1,4 @@
-// #iChannel0 "file:///Users/asherwin/.config/ghostty/myshaders/screen2.png"
+// adapted by Alex Sherwin for Ghstty from https://www.shadertoy.com/view/wl2Gzc
 
 //Shader License: CC BY 3.0
 //Author: Jan Mróz (jaszunio15)

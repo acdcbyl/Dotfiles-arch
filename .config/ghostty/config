@@ -26,7 +26,7 @@ window-width = 115
 window-height = 24
 gtk-single-instance = true
 #gtk-tabs-location = hidden
-custom-shader = ~/.config/ghostty/shaders/glow.glsl
+custom-shader = shaders/glow.glsl
 # keybinds
 #keybind = global:alt+tab=toggle_tab_overview
 #keybind = global:cmd+tab =toggle_tab_overview

@@ -397,7 +397,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     rd = normalize(rd);
 
     // vec3 col = rain(ro, rd, time);
-    vec3 col = rain(ro, rd, time) * 0.4;
+    vec3 col = rain(ro, rd, time) * 0.25;
 
   	// Sample the terminal screen texture including alpha channel
   	vec4 terminalColor = texture(iChannel0, uv);
