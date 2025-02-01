@@ -120,6 +120,10 @@ input_path = '~/.config/matugen/templates/musicfox'
 output_path = '~/.config/matugen/scripts/musicfox'
 post_hook = 'sh ~/.config/matugen/scripts/musicfox'
 
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux.conf'
+output_path = '~/.tmux.conf'
+post_hook = 'tmux source-file ~/.tmux.conf'
 [config.custom_colors]
 red = "#f38ba8"
 green = "#a6e3a1"
