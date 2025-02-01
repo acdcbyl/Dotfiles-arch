@@ -97,9 +97,9 @@
   --card-color-active: {{colors.inverse_primary.default.hex}};
   --card-header-text-color: {{colors.on_surface.default.hex}};
   --input-text-color: {{colors.on_surface.default.hex}};
-  --message-color: {{colors.primary_container.default.hex}};
+  --message-color: {{colors.surface.default.hex}};
   --message-color-hover: {{colors.inverse_primary.default.hex}};
-  --message-color-alt: {{colors.primary_container.default.hex}};
+  --message-color-alt: {{colors.surface.default.hex}};
   --attachment-color: {{colors.on_primary.default.hex}};
   --main-textarea-color: {{colors.primary_container.default.hex}};
   --card-border-color: {{colors.primary_container.default.hex}};
