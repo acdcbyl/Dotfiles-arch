@@ -1,23 +1,23 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-    	"source": "~/.config/fastfetch/lolix.png",
-    	"type": "kitty-direct",
-    "width": 40,
-    "height": 18,
-    	"padding": {
-    		"top": 3,
-                "left": 2
-    	}
+        "source": "~/.config/fastfetch/lolix.png",
+        "type": "kitty-icat",
+        "width": 40,
+        "height": 18,
+        "padding": {
+            "top": 3,
+            "left": 2
+        }
     },
     "display": {
         "separator": " "
     },
     "modules": [
-	"break",
         "break",
         "break",
-	{
+        "break",
+        {
             "type": "title",
             "keyWidth": 10
         },
@@ -25,7 +25,7 @@
         {
             "type": "os",
             "key": " ",
-            "keyColor": "34",  // = color4
+            "keyColor": "34", // = color4
         },
         {
             "type": "kernel",
@@ -36,12 +36,13 @@
             "type": "packages",
             // "format": "{} (pacman)",
             "key": " ",
-            "keyColor": "34",  
+            "keyColor": "34",
         },
         {
             "type": "shell",
             "key": " ",
-            "keyColor": "34", },
+            "keyColor": "34",
+        },
         "break",
         // {
         //     "type": "terminal",
@@ -51,7 +52,7 @@
         {
             "type": "wm",
             "key": " ",
-            "keyColor": "34", 
+            "keyColor": "34",
         },
         // {
         //     "type": "cursor",
@@ -66,7 +67,7 @@
         {
             "type": "uptime",
             "key": " ",
-            "keyColor": "34", 
+            "keyColor": "34",
         },
         {
             "type": "command",

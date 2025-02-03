@@ -1,13 +1,11 @@
 #font_family      JetBrainsMono Nerd Font
 # include colors.conf
-confirm_os_window_close 0
 cursor_trail 3
-font_family      Maple Mono NF CN
-font_style       Medium
+font_family      JetBrainsMono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
-shell tmux new-session -A -s ${USER}
+shell /bin/fish --login
 font_size 14.0
 cursor_shape block
 shell_integration no-cursor
@@ -28,9 +26,3 @@ tab_powerline_style         slanted
 remember_window_size  no
 initial_window_width  115c
 initial_window_height 24c
-
-
-# BEGIN_KITTY_THEME
-# Matugen
-include current-theme.conf
-# END_KITTY_THEME
