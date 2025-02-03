@@ -29,10 +29,10 @@ post_hook = 'sh ~/.config/matugen/scripts/reload'
 [templates.gitui]
 input_path = '~/.config/matugen/templates/gitui.ron'
 output_path = '~/.config/gitui/theme.ron'
-# [templates.kitty]
-# input_path = '~/.config/matugen/templates/kitty-colors.conf'
-# output_path = '~/.config/kitty/themes/matugen.conf'
-# post_hook = 'kitten themes --reload-in=all matugen'
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/matugen.conf'
+post_hook = 'kitten themes --reload-in=all matugen'
 
 [templates.ghostty]
 input_path = '~/.config/matugen/templates/Matugen'
