@@ -1,10 +1,11 @@
+tab_title_template        "{fmt.fg._d1c2cb}{fmt.bg.default}{fmt.fg._abb2bf}{fmt.bg._d1c2cb} {title.split()[0]} {fmt.fg._d1c2cb}{fmt.bg.default} "
+active_tab_title_template "{fmt.fg._f1b3e6}{fmt.bg.default}{fmt.fg._241e22}{fmt.bg._f1b3e6} {title.split()[0]} {fmt.fg._f1b3e6}{fmt.bg.default} "
 #font_family      JetBrainsMono Nerd Font
 confirm_os_window_close 0
 cursor_trail 3
 font_family      Maple Mono NF CN
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+
+# font_style       Medium
 symbol_map U+4E00-U+9FFF,U+3400-U+4DBF Maple Mono NF CN
 symbol_map U+23FB-U+23FE,U+2665,U+26A1,U+2B58,U+E000-U+E00A,U+E0A0-U+E0A3,U+E0B0-U+E0D4,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E6AA,U+E700-U+E7C5,U+EA60-U+EBEB,U+F000-U+F2E0,U+F300-U+F32F,U+F400-U+F4A9,U+F500-U+F8FF,U+F0001-U+F1AF0 Symbols Nerd Font Mono
 bold_font        auto
@@ -15,18 +16,16 @@ shell /usr/bin/fish
 font_size 14.0
 cursor_shape block
 shell_integration no-cursor
-window_padding_width 17 
-# line_height 120%
+window_padding_width 20
+line_height 120%
 tab_bar_edge top
 # tab_bar_min_tabs 2
 # tab_bar_margin_width      9
 tab_bar_margin_width      9
 tab_bar_margin_height     9 0
 tab_bar_style             separator
-tab_bar_min_tabs          2
+tab_bar_min_tabs          1
 tab_separator             ""
-tab_title_template        "{fmt.fg.color0}{fmt.bg.default}{fmt.fg.color15}{fmt.bg.color0} 󰄛 {title[:15] + (title[15:] and '…')} {fmt.fg.color0}{fmt.bg.default} "
-active_tab_title_template "{fmt.fg.color4}{fmt.bg.default}{fmt.fg.color8}{fmt.bg.color4} 󰄛 {title[:40] + (title[40:] and '…')} {fmt.fg.color4}{fmt.bg.default} "
 
 
 # BEGIN_KITTY_THEME
