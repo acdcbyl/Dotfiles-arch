@@ -11,29 +11,29 @@
     progress_bar: (
         symbols: ["█", "█", "█"],
         track_style: (bg: None),
-        elapsed_style: (fg: "{{colors.primary.default.hex}}", bg: None),
-        thumb_style: (fg: "{{colors.primary.default.hex}}", bg: None),
+        elapsed_style: (fg: "#80d4d7", bg: None),
+        thumb_style: (fg: "#80d4d7", bg: None),
     ),
     scrollbar: (
         symbols: ["│", "█", " ", " "],
-        track_style: (fg: "{{colors.primary.default.hex}}"),
+        track_style: (fg: "#80d4d7"),
         ends_style: (),
-        thumb_style: (fg: "{{colors.primary.default.hex}}"),
+        thumb_style: (fg: "#80d4d7"),
     ),
     browser_column_widths: [20, 38, 42],
-    text_color: "{{colors.primary.default.hex}}",
+    text_color: "#80d4d7",
     background_color: None,
     header_background_color: None,
-    modal_background_color: "{{colors.on_primary.default.hex}}",
+    modal_background_color: "#003738",
     tab_bar: (
         enabled: true,
-        active_style: (fg: "{{colors.surface.default.hex}}", bg: "{{colors.primary.default.hex}}", modifiers: "Bold"),
+        active_style: (fg: "#0e1415", bg: "#80d4d7", modifiers: "Bold"),
         inactive_style: (),
     ),
-    borders_style: (fg: "{{colors.primary.default.hex}}"),
-    highlighted_item_style: (fg: "{{colors.tertiary.default.hex}}", modifiers: "Bold"),
-    current_item_style: (fg: "{{colors.primary.default.hex}}", bg: "{{colors.on_primary.default.hex}}", modifiers: "Bold"),
-    highlight_border_style: (fg: "{{colors.primary.default.hex}}"),
+    borders_style: (fg: "#80d4d7"),
+    highlighted_item_style: (fg: "#b4c7e9", modifiers: "Bold"),
+    current_item_style: (fg: "#80d4d7", bg: "#003738", modifiers: "Bold"),
+    highlight_border_style: (fg: "#80d4d7"),
     song_table_format: [
 
         (
@@ -122,19 +122,19 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold")),
-                    (kind: Property(Status(State)), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "#80d4d7", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "#80d4d7", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#80d4d7", modifiers: "Bold"))
                 ],
                 center: [
-                    (kind: Property(Song(Title)), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"),
-                        default: (kind: Text("No Song"), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"))
+                    (kind: Property(Song(Title)), style: (fg: "#80d4d7", modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (fg: "#80d4d7", modifiers: "Bold"))
                     ),
                 ],
                 right: [
-                    (kind: Text("Vol: "), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "{{colors.primary_fixed_dim.default.hex}}")),
-                    (kind: Text("% "), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"))
+                    (kind: Text("Vol: "), style: (fg: "#80d4d7", modifiers: "Bold")),
+                    (kind: Property(Status(Volume)), style: (fg: "#80d4d7")),
+                    (kind: Text("% "), style: (fg: "#80d4d7", modifiers: "Bold"))
                 ]
             ),
             (
@@ -156,9 +156,9 @@
 
                 center: [
 
-                    (kind: Property(Song(Artist)), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold"),
+                    (kind: Property(Song(Artist)), style: (fg: "#80d4d7", modifiers: "Bold"),
 
-                        default: (kind: Text("No song"), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold"))
+                        default: (kind: Text("No song"), style: (fg: "#80d4d7", modifiers: "Bold"))
 
                     ),
 
@@ -178,14 +178,14 @@
 
                         kind: Property(Widget(States(
 
-                            active_style: (fg: "{{colors.on_surface.default.hex}}", modifiers: "Bold"),
+                            active_style: (fg: "#dde4e3", modifiers: "Bold"),
 
 
-                            separator_style: (fg: "{{colors.on_surface.default.hex}}")))
+                            separator_style: (fg: "#dde4e3")))
 
                         ),
 
-                        style: (fg: "{{colors.secondary.default.hex}}")
+                        style: (fg: "#b0cccc")
 
                     ),
 

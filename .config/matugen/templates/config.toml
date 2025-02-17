@@ -1,0 +1,83 @@
+[cache]
+dir = "~/.cache/tlrc"
+mirror = "https://github.com/tldr-pages/tldr/releases/latest/download"
+auto_update = true
+max_age = 336
+languages = ["zh", "en"]
+
+[output]
+show_title = true
+platform_title = false
+show_hyphens = false
+example_prefix = "- "
+compact = false
+raw_markdown = false
+
+[indent]
+title = 2
+description = 2
+bullet = 2
+example = 4
+
+[style.title]
+color = { hex = "{{colors.primary.default.hex}}" }
+background = "default"
+bold = true
+underline = false
+italic = false
+dim = false
+strikethrough = false
+
+[style.description]
+color = { hex = "{{colors.on_surface.default.hex}}" }
+background = "default"
+bold = false
+underline = false
+italic = false
+dim = false
+strikethrough = false
+
+[style.bullet]
+color = { hex = "{{colors.green.default.hex}}" }
+background = "default"
+bold = false
+underline = false
+italic = false
+dim = false
+strikethrough = false
+
+[style.example]
+color = { hex = "{{colors.blue.default.hex}}" }
+background = "default"
+bold = false
+underline = false
+italic = false
+dim = false
+strikethrough = false
+
+[style.url]
+color = { hex = "{{colors.red.default.hex}}" }
+background = "default"
+bold = false
+underline = false
+italic = true
+dim = false
+strikethrough = false
+
+[style.inline_code]
+color = { hex = "{{colors.yellow.default.hex}}" }
+background = "default"
+bold = false
+underline = false
+italic = true
+dim = false
+strikethrough = false
+
+[style.placeholder]
+color = { hex = "{{colors.red.default.hex}}" }
+background = "default"
+bold = false
+underline = false
+italic = true
+dim = false
+strikethrough = false

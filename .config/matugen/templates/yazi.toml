@@ -1,46 +1,79 @@
 [manager]
-cwd = { fg = "{{colors.secondary.default.hex}}", bold=true}
+cwd = { fg = "{{colors.secondary.default.hex}}", bold = true }
 
-hovered         = { fg = "{{colors.on_primary_container.default.hex}}", bg = "{{colors.primary_container.default.hex}}" }
-preview_hovered = { underline = true, bold=true }
+hovered = { fg = "{{colors.on_primary_container.default.hex}}", bg = "{{colors.primary_container.default.hex}}" }
+preview_hovered = { underline = true, bold = true }
 
+find_keyword = { fg = "{{colors.secondary.default.hex}}", italic = true }
+find_position = { fg = "{{colors.tertiary.default.hex}}", bg = "reset", italic = true }
+
+
+border_symbol = "│"
+border_style = { fg = "{{colors.primary.default.hex}}" }
+
+syntect_theme = "~/.config/yazi/Catppuccin-latte.tmTheme"
+
+[mode]
+normal_main = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.primary_fixed_dim.default.hex}}", bold = true }
+normal_alt = { fg = "{{colors.primary_container.default.hex}}", bg = "{{colors.on_surface.default.hex}}" }
+
+select_main = { fg = "{{colors.on_secondary.default.hex}}", bg = "{{colors.secondary_fixed_dim.default.hex}}", bold = true }
+select_alt = { fg = "{{colors.secondary_container.default.hex}}", bg = "{{colors.on_surface.default.hex}}" }
+
+unset_main = { fg = "{{colors.on_tertiary.default.hex}}", bg = "{{colors.tertiary_fixed_dim.default.hex}}", bold = true }
+unset_alt = { fg = "{{colors.tertiary_container.default.hex}}", bg = "{{colors.on_surface.default.hex}}" }
 
 [status]
-separator_open  = ""
-separator_close = ""
-separator_style = { fg = "{{colors.on_primary_container.default.hex}}", bg = "{{colors.primary_container.default.hex}}" }
+separator_open = ""
+separator_close = ""
 
-# Mode
-mode_normal = { fg = "{{colors.on_primary.default.hex}}",   bg = "{{colors.primary.default.hex}}", bold = true }
-mode_select = { fg = "{{colors.on_secondary.default.hex}}", bg = "{{colors.secondary.default.hex}}", bold = true }
-mode_unset  = { fg = "{{colors.on_tertiary.default.hex}}",  bg = "{{colors.tertiary.default.hex}}", bold = true }
+perm_type = { fg = "{{colors.primary.default.hex}}" }
+perm_read = { fg = "{{colors.yellow.default.hex}}" }
+perm_write = { fg = "{{colors.blue.default.hex}}" }
+perm_exec = { fg = "{{colors.red.default.hex}}" }
+perm_sep = { fg = "{{colors.on_surface.default.hex}}" }
 
 [which]
-mask            = { bg = "{{colors.surface_container.default.hex}}" }
-cand            = { fg = "{{colors.primary.default.hex}}" }
-desc            = { fg = "{{colors.secondary.default.hex}}" }
-separator       = "  "
+mask = { bg = "{{colors.surface_container.default.hex}}" }
+cand = { fg = "{{colors.primary.default.hex}}" }
+rest = { bg = "{{colors.surface_container.default.hex}}" }
+desc = { fg = "{{colors.secondary.default.hex}}" }
+separator = "  "
 separator_style = { fg = "{{colors.tertiary.default.hex}}" }
+
+[notify]
+title_info = { fg = "{{colors.green.default.hex}}" }
+title_warn = { fg = "{{colors.yellow.default.hex}}" }
+title_error = { fg = "{{colors.error.default.hex}}" }
 
 [filetype]
 rules = [
-	# Images
-	{ mime = "image/*", fg = "{{colors.secondary.default.hex}}" },
+  # Images
+  { mime = "image/*", fg = "{{colors.secondary.default.hex}}" },
 
-	# Videos
-	{ mime = "video/*", fg = "{{colors.tertiary.default.hex}}" },
-	{ mime = "audio/*", fg = "{{colors.tertiary.default.hex}}" },
+  # Videos
+  { mime = "video/*", fg = "{{colors.tertiary.default.hex}}" },
+  { mime = "audio/*", fg = "{{colors.tertiary.default.hex}}" },
 
-	# Archives
-	{ mime = "application/zip",             fg = "{{colors.error.default.hex}}" },
-	{ mime = "application/gzip",            fg = "{{colors.error.default.hex}}" },
-	{ mime = "application/x-tar",           fg = "{{colors.error.default.hex}}" },
-	{ mime = "application/x-bzip",          fg = "{{colors.error.default.hex}}" },
-	{ mime = "application/x-bzip2",         fg = "{{colors.error.default.hex}}" },
-	{ mime = "application/x-7z-compressed", fg = "{{colors.error.default.hex}}" },
-	{ mime = "application/x-rar",           fg = "{{colors.error.default.hex}}" },
+  # Archives
+  { mime = "application/zip", fg = "{{colors.error.default.hex}}" },
+  { mime = "application/gzip", fg = "{{colors.error.default.hex}}" },
+  { mime = "application/x-tar", fg = "{{colors.error.default.hex}}" },
+  { mime = "application/x-bzip", fg = "{{colors.error.default.hex}}" },
+  { mime = "application/x-bzip2", fg = "{{colors.error.default.hex}}" },
+  { mime = "application/x-7z-compressed", fg = "{{colors.error.default.hex}}" },
+  { mime = "application/x-rar", fg = "{{colors.error.default.hex}}" },
 
-	# Fallback
-	{ name = "*", fg = "{{colors.primary.default.hex}}", bold=true },
-	{ name = "*/", fg = "{{colors.secondary.default.hex}}", bold=true }
+  # Fallback
+  { name = "*", fg = "{{colors.primary.default.hex}}", bold = true },
+  { name = "*/", fg = "{{colors.secondary.default.hex}}", bold = true },
 ]
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"

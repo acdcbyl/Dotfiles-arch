@@ -1,0 +1,46 @@
+[manager]
+cwd = { fg = "{{colors.secondary.default.hex}}", bold = true }
+
+hovered = { fg = "{{colors.on_primary_container.default.hex}}", bg = "{{colors.primary_container.default.hex}}" }
+preview_hovered = { underline = true, bold = true }
+
+
+[status]
+separator_open = ""
+separator_close = ""
+overall = { fg = "{{colors.surface.default.hex}}", bg = "{{colors.primary_container.default.hex}}" }
+
+# Mode
+normal_main = { fg = "{{colors.on_surface.default.hex}}", bg = "{{colors.primary_container.default.hex}}", bold = true }
+select_main = { fg = "{{colors.on_secondary_container.default.hex}}", bg = "{{colors.secondary_container.default.hex}}", bold = true }
+unset_main = { fg = "{{colors.on_tertiary_container.default.hex}}", bg = "{{colors.tertiary_container.default.hex}}", bold = true }
+
+[which]
+mask = { bg = "{{colors.surface_container.default.hex}}" }
+cand = { fg = "{{colors.primary.default.hex}}" }
+desc = { fg = "{{colors.secondary.default.hex}}" }
+separator = "  "
+separator_style = { fg = "{{colors.tertiary.default.hex}}" }
+
+[filetype]
+rules = [
+	# Images
+	{ mime = "image/*", fg = "{{colors.secondary.default.hex}}" },
+
+	# Videos
+	{ mime = "video/*", fg = "{{colors.tertiary.default.hex}}" },
+	{ mime = "audio/*", fg = "{{colors.tertiary.default.hex}}" },
+
+	# Archives
+	{ mime = "application/zip", fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/gzip", fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-tar", fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-bzip", fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-bzip2", fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-7z-compressed", fg = "{{colors.error.default.hex}}" },
+	{ mime = "application/x-rar", fg = "{{colors.error.default.hex}}" },
+
+	# Fallback
+	{ name = "*", fg = "{{colors.primary.default.hex}}", bold = true },
+	{ name = "*/", fg = "{{colors.secondary.default.hex}}", bold = true },
+]

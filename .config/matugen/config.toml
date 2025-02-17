@@ -29,6 +29,7 @@ post_hook = 'sh ~/.config/matugen/scripts/reload'
 [templates.gitui]
 input_path = '~/.config/matugen/templates/gitui.ron'
 output_path = '~/.config/gitui/theme.ron'
+
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/themes/matugen.conf'
@@ -76,18 +77,18 @@ post_hook = 'yes|fish_config theme save Matugen'
 input_path = '~/.config/matugen/templates/config'
 output_path = '~/.config/cava/config'
 
-[templates.waybar]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
+# [templates.waybar]
+# input_path = '~/.config/matugen/templates/colors.css'
+# output_path = '~/.config/waybar/colors.css'
 #post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.mpv]
 input_path = '~/.config/matugen/templates/mpv.conf'
 output_path = '~/.config/mpv/mpv.conf'
 
-[templates.zed]
-input_path = '~/.config/matugen/templates/zed.json'
-output_path = '~/.config/zed/themes/material-you.json'
+# [templates.zed]
+# input_path = '~/.config/matugen/templates/zed.json'
+# output_path = '~/.config/zed/themes/material-you.json'
 
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi.toml'
@@ -124,6 +125,15 @@ post_hook = 'sh ~/.config/matugen/scripts/musicfox'
 input_path = '~/.config/matugen/templates/tmux.conf'
 output_path = '~/.tmux.conf'
 post_hook = 'tmux source-file ~/.tmux.conf'
+
+[templates.neovim]
+input_path = '~/.config/matugen/templates/catppuccin.lua'
+output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
+
+[templates.tldr]
+input_path = '~/.config/matugen/templates/config.toml'
+output_path = '~/.config/tlrc/config.toml'
+
 [config.custom_colors]
 red = "#f38ba8"
 green = "#a6e3a1"

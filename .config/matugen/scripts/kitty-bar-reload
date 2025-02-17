@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# 在这里设置你的颜色值
+inactive_bg="{{colors.on_surface.default.hex_stripped}}"        # 未选中标签页的背景色
+inactive_fg="{{colors.surface_container.default.hex_stripped}}" # 未选中标签页的前景色
+active_bg="{{colors.primary_fixed_dim.default.hex_stripped}}"   # 选中标签页的背景色
+active_fg="{{colors.surface_container.default.hex_stripped}}"   # 选中标签页的前景色
+
+# 设置配置文件路径（默认值）
+config_path="${1:-$HOME/.config/kitty/kitty.conf}"
+
+# 验证颜色格式
+validate_color() {
+    if ! [[ $1 =~ ^[0-9A-Fa-f]{6}$ ]]; then
+        echo "Error: '$1' is not a valid 6-digit hex color code"
+        exit 1
+    fi
+}
+
+# 验证所有颜色输入
+validate_color $inactive_bg
+validate_color "$inactive_fg"
+validate_color $active_bg
+validate_color $active_fg
+
+if [ -f "$config_path" ]; then
+    # 创建临时文件
+    tmp_file=$(mktemp)
+
+    # 处理文件，一次读取一行
+    while IFS= read -r line; do
+        if [[ $line =~ ^tab_title_template ]]; then
+            # 获取当前的inactive颜色
+            current_inactive_fg=$(echo "$line" | grep -o '_[0-9a-fA-F]\{6\}' | head -n 1 | cut -c2-)
+            current_inactive_bg=$(echo "$line" | grep -o '_[0-9a-fA-F]\{6\}' | tail -n 1 | cut -c2-)
+
+            # 替换inactive颜色
+            new_line=$(echo "$line" | sed "s/_${current_inactive_fg}/_${inactive_fg}/g" |
+                sed "s/_${current_inactive_bg}/_${inactive_bg}/g")
+            echo "$new_line" >>"$tmp_file"
+        elif [[ $line =~ ^active_tab_title_template ]]; then
+            # 获取当前的active颜色
+            current_active_bg=$(echo "$line" | grep -o '_[0-9a-fA-F]\{6\}' | head -n 1 | cut -c2-)
+            current_active_fg=$(echo "$line" | grep -o '_[0-9a-fA-F]\{6\}' | head -n 2 | tail -n 1 | cut -c2-)
+
+            # 替换active颜色
+            new_line=$(echo "$line" | sed "s/_${current_active_bg}/_${active_bg}/g" |
+                sed "s/_${current_active_fg}/_${active_fg}/g")
+            echo "$new_line" >>"$tmp_file"
+        else
+            # 保持其他行不变
+            echo "$line" >>"$tmp_file"
+        fi
+    done <"$config_path"
+
+    # 备份原文件并更新
+    cp "$config_path" "${config_path}.bak"
+    mv "$tmp_file" "$config_path"
+
+    echo "颜色更新成功，其他配置保持不变。"
+    echo "配置文件位置：$config_path"
+    echo "备份已保存为：${config_path}.bak"
+else
+    echo "错误：未找到配置文件：$config_path"
+    exit 1
+fi
