@@ -9,13 +9,13 @@
     show_song_table_header: true,
     symbols: (song: "🎵", dir: "📁", marker: "\u{e0b0}"),
     progress_bar: (
-        symbols: ["█", "█", "█"],
+        symbols: ["█", "\u{e0b0}", "█"],
         track_style: (bg: None),
         elapsed_style: (fg: "{{colors.primary.default.hex}}", bg: None),
         thumb_style: (fg: "{{colors.primary.default.hex}}", bg: None),
     ),
     scrollbar: (
-        symbols: ["│", "█", " ", " "],
+        symbols: ["", "│", " ", " "],
         track_style: (fg: "{{colors.primary.default.hex}}"),
         ends_style: (),
         thumb_style: (fg: "{{colors.primary.default.hex}}"),
