@@ -25,7 +25,7 @@
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
 #pre_hook = 'ags -q '
-post_hook = 'sh ~/.config/matugen/scripts/reload'
+post_hook = 'fish ~/.config/matugen/scripts/reload'
 [templates.gitui]
 input_path = '~/.config/matugen/templates/gitui.ron'
 output_path = '~/.config/gitui/theme.ron'
@@ -68,10 +68,6 @@ output_path = '~/.config/BetterDiscord/themes/Material-Discord.theme.css'
 input_path = '~/.config/matugen/templates/rmpc.ron'
 output_path = '~/.config/rmpc/themes/custom.ron'
 
-[templates.fish]
-input_path = '~/.config/matugen/templates/matugen.theme'
-output_path = '~/.config/fish/themes/Matugen.theme'
-post_hook = 'yes|fish_config theme save Matugen'
 
 [templates.cava]
 input_path = '~/.config/matugen/templates/config'
@@ -125,6 +121,12 @@ post_hook = 'sh ~/.config/matugen/scripts/musicfox'
 input_path = '~/.config/matugen/templates/tmux.conf'
 output_path = '~/.tmux.conf'
 post_hook = 'tmux source-file ~/.tmux.conf'
+
+
+[templates.fish]
+input_path = '~/.config/matugen/templates/matugen.theme'
+output_path = '~/.config/fish/themes/Matugen.theme'
+post_hook = 'yes | fish_config theme save Matugen'
 
 [templates.neovim]
 input_path = '~/.config/matugen/templates/catppuccin.lua'
