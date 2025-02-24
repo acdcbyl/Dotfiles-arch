@@ -4,7 +4,20 @@ return {
   opts = {
     -- flavour = "auto",
     -- configuration options...
-    transparent_background = true,
+    integrations = {
+      blink_cmp = true,
+      indent_blankline = {
+        enabled = true,
+        scope_color = "lavender", -- catppuccin color (eg. `lavender`) Default: text
+        colored_indent_levels = false,
+      },
+      noice = true,
+      snacks = {
+        enabled = true,
+        indent_scope_color = "lavender", -- catppuccin color (eg. `lavender`) Default: text
+      },
+    },
+    transparent_background = false,
     background = {
       dark = "mocha",
       light = "latte",
@@ -25,17 +38,17 @@ return {
         sapphire = "{{colors.primary.default.hex}}",
         blue = "{{colors.primary.default.hex}}",
         lavender = "{{colors.primary.default.hex}}",
-        text = "{{colors.on_surface.default.hex}}",
+        text = "{{colors.primary.default.hex}}",
         subtext1 = "#bbbbbb",
         subtext0 = "#aaaaaa",
-        overlay2 = "#999999",
+        overlay2 = "{{colors.secondary.default.hex}}",
         overlay1 = "#888888",
         overlay0 = "#777777",
         surface2 = "#666666",
         surface1 = "#555555",
         surface0 = "#444444",
         base = "{{colors.surface.default.hex}}",
-        mantle = "{{colors.surface_container_lowest.default.hex}}",
+        mantle = "{{colors.surface.default.hex}}",
         crust = "{{colors.surface.default.hex}}",
       },
       latte = {
@@ -53,19 +66,26 @@ return {
         sapphire = "{{colors.primary.default.hex}}",
         blue = "{{colors.primary.default.hex}}",
         lavender = "{{colors.primary.default.hex}}",
-        text = "{{colors.on_surface.default.hex}}",
+        text = "{{colors.primary.default.hex}}",
         subtext1 = "#555555",
         subtext0 = "#666666",
-        overlay2 = "#777777",
+        overlay2 = "{{colors.secondary.default.hex}}",
         overlay1 = "#888888",
         overlay0 = "#999999",
         surface2 = "#aaaaaa",
         surface1 = "#bbbbbb",
         surface0 = "#cccccc",
         base = "{{colors.surface.default.hex}}",
-        mantle = "{{colors.surface_container_lowest.default.hex}}",
+        mantle = "{{colors.surface.default.hex}}",
         crust = "{{colors.surface.default.hex}}",
       },
+    },
+    highlight_overrides = {
+      mocha = function(mocha)
+        return {
+          NormalFloat = { fg = mocha.sky },
+        }
+      end,
     },
   },
 }

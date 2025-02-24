@@ -22,7 +22,7 @@
     ),
     browser_column_widths: [20, 38, 42],
     text_color: "{{colors.primary.default.hex}}",
-    background_color: None,
+    background_color: "{{colors.surface.default.hex}}",
     header_background_color: None,
     modal_background_color: "{{colors.on_primary.default.hex}}",
     tab_bar: (
