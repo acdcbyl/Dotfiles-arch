@@ -23,4 +23,4 @@ else
 end
 
 # 发送桌面通知
-notify-send 主题已切换 "当前主题模式: $theme" --icon=preferences-desktop-theme
+notify-send 主题已切换 "当前主题模式: $theme" --icon="$HOME/.config/waypaper/scripts/icon.svg"
