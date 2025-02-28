@@ -100,9 +100,9 @@ output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/userChrome.css'
 [templates.zen2]
 input_path = '~/.config/matugen/templates/userContent.css'
 output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/userContent.css'
-[templates.zen3]
-input_path = '~/.config/matugen/templates/zen-logo.svg'
-output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/zen-logo.svg'
+# [templates.zen3]
+# input_path = '~/.config/matugen/templates/zen-logo.svg'
+# output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/zen-logo.svg'
 
 [templates.clipse]
 input_path = '~/.config/matugen/templates/custom_theme.json'
@@ -135,6 +135,15 @@ output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
 [templates.tldr]
 input_path = '~/.config/matugen/templates/config.toml'
 output_path = '~/.config/tlrc/config.toml'
+
+[templates.fzf]
+input_path = '~/.config/matugen/templates/fzf.fish'
+output_path = '~/.config/matugen/scripts/fzf.fish'
+post_hook = 'fish ~/.config/matugen/scripts/fzf.fish'
+
+[templates.waypaper_icon]
+input_path = '~/.config/matugen/templates/waypapericon.svg'
+output_path = '~/.config/waypaper/scripts/icon.svg'
 
 [config.custom_colors]
 red = "#f38ba8"
