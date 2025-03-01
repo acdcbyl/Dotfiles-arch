@@ -1,15 +1,22 @@
 return {
   "goolord/alpha-nvim",
   event = "VimEnter",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "echasnovski/mini.icons" },
   config = function()
     local alpha = require "alpha"
     local dashboard = require "alpha.themes.dashboard"
-
-    local function pick_color()
-      local colors = { "String", "Identifier", "Keyword", "Number" }
-      return colors[math.random(#colors)]
-    end
+    dashboard.config.layout = {
+      { type = "padding", val = 5 },
+      dashboard.section.header,
+      { type = "padding", val = 4 },
+      dashboard.section.buttons,
+      { type = "padding", val = 3 },
+      dashboard.section.footer,
+    }
+    -- local function pick_color()
+    --   local colors = { "String", "Identifier", "Keyword", "Number" }
+    --   return colors[math.random(#colors)]
+    -- end
 
     math.randomseed(os.time())
 
