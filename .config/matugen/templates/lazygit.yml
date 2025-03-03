@@ -1,0 +1,24 @@
+gui:
+  # Use the mocha catppuccin theme
+  theme:
+    activeBorderColor:
+      - "{{colors.primary.default.hex}}"
+      - bold
+    inactiveBorderColor:
+      - "{{colors.on_surface_variant.default.hex}}"
+    optionsTextColor:
+      - "{{colors.primary.default.hex}}"
+    selectedLineBgColor:
+      - "{{colors.surface_bright.default.hex}}"
+    selectedRangeBgColor:
+      - "{{colors.on_surface_variant.default.hex}}"
+    cherryPickedCommitBgColor:
+      - "{{colors.on_surface_variant.default.hex}}"
+    cherryPickedCommitFgColor:
+      - "{{colors.primary.default.hex}}"
+    unstagedChangesColor:
+      - "{{colors.red.default.hex}}"
+    defaultFgColor:
+      - "{{colors.on_surface.default.hex}}"
+    searchingActiveBorderColor:
+      - "{{colors.yellow.default.hex}}"

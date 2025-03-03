@@ -145,6 +145,10 @@ post_hook = 'fish ~/.config/matugen/scripts/fzf.fish'
 input_path = '~/.config/matugen/templates/waypapericon.svg'
 output_path = '~/.config/waypaper/scripts/icon.svg'
 
+[templates.lazygit]
+input_path = "~/.config/matugen/templates/lazygit.yml"
+output_path = "~/.config/lazygit/config.yml"
+
 [config.custom_colors]
 red = "#f38ba8"
 green = "#a6e3a1"
