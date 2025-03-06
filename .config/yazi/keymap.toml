@@ -1,0 +1,25 @@
+[[manager.prepend_keymap]]
+on = "M"
+run = "plugin mount"
+[[manager.prepend_keymap]]
+on = ["c", "m"]
+run = "plugin chmod"
+desc = "Chmod on selected files"
+[[manager.prepend_keymap]]
+on = "l"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+[[manager.prepend_keymap]]
+on = "y"
+run = [
+  'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list',
+  "yank",
+]
+[[manager.prepend_keymap]]
+on = ["c", "a"]
+run = "plugin compress"
+desc = "Archive selected files"
+[[manager.prepend_keymap]]
+on = "<A-y>"
+run = ["plugin copy-file-contents"]
+desc = "Copy contents of file"

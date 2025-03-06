@@ -1,0 +1,79 @@
+[manager]
+cwd = { fg = "#b1ccc7", bold = true }
+
+hovered = { fg = "#9df2e6", bg = "#00504a" }
+preview_hovered = { underline = true, bold = true }
+
+find_keyword = { fg = "#b1ccc7", italic = true }
+find_position = { fg = "#aec9e6", bg = "reset", italic = true }
+
+
+border_symbol = "│"
+border_style = { fg = "#81d5ca" }
+
+syntect_theme = "~/.config/yazi/Catppuccin-latte.tmTheme"
+
+[mode]
+normal_main = { fg = "#003732", bg = "#81d5ca", bold = true }
+normal_alt = { fg = "#00504a", bg = "#dde4e2" }
+
+select_main = { fg = "#1c3531", bg = "#b1ccc7", bold = true }
+select_alt = { fg = "#324b48", bg = "#dde4e2" }
+
+unset_main = { fg = "#163349", bg = "#aec9e6", bold = true }
+unset_alt = { fg = "#2e4961", bg = "#dde4e2" }
+
+[status]
+separator_open = ""
+separator_close = ""
+
+perm_type = { fg = "#81d5ca" }
+perm_read = { fg = "#d5c871" }
+perm_write = { fg = "#99ccfa" }
+perm_exec = { fg = "#fbb0d8" }
+perm_sep = { fg = "#dde4e2" }
+
+[which]
+mask = { bg = "#1a2120" }
+cand = { fg = "#81d5ca" }
+rest = { bg = "#1a2120" }
+desc = { fg = "#b1ccc7" }
+separator = "  "
+separator_style = { fg = "#aec9e6" }
+
+[notify]
+title_info = { fg = "#91d5ad" }
+title_warn = { fg = "#d5c871" }
+title_error = { fg = "#ffb4ab" }
+
+[filetype]
+rules = [
+  # Images
+  { mime = "image/*", fg = "#b1ccc7" },
+
+  # Videos
+  { mime = "video/*", fg = "#aec9e6" },
+  { mime = "audio/*", fg = "#aec9e6" },
+
+  # Archives
+  { mime = "application/zip", fg = "#ffb4ab" },
+  { mime = "application/gzip", fg = "#ffb4ab" },
+  { mime = "application/x-tar", fg = "#ffb4ab" },
+  { mime = "application/x-bzip", fg = "#ffb4ab" },
+  { mime = "application/x-bzip2", fg = "#ffb4ab" },
+  { mime = "application/x-7z-compressed", fg = "#ffb4ab" },
+  { mime = "application/x-rar", fg = "#ffb4ab" },
+
+  # Fallback
+  { name = "*", fg = "#81d5ca", bold = true },
+  { name = "*/", fg = "#b1ccc7", bold = true },
+]
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+name = "*/"
+run = "git"
