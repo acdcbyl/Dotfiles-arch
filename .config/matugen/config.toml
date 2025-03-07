@@ -1,6 +1,6 @@
 [config]
 # ...
-# reload_apps = true
+reload_apps = true
 #set_wallpaper = true
 #wallpaper_tool = 'Swww'
 #prefix = '@'
@@ -60,9 +60,13 @@ output_path = '~/.config/qt6ct/colors/matugen.conf'
 input_path = '~/.config/matugen/templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
 
-[templates.discord]
-input_path = '~/.config/matugen/templates/Material-Discord.theme.css'
-output_path = '~/.config/BetterDiscord/themes/Material-Discord.theme.css'
+# [templates.discord]
+# input_path = '~/.config/matugen/templates/Material-Discord.theme.css'
+# output_path = '~/.config/BetterDiscord/themes/Material-Discord.theme.css'
+
+[templates.vesktop]
+input_path = "~/.config/matugen/templates/discord.css"
+output_path = "~/.config/vesktop/themes/HyprNoon.css"
 
 [templates.rmpc]
 input_path = '~/.config/matugen/templates/rmpc.ron'
@@ -148,6 +152,10 @@ output_path = '~/.config/waypaper/scripts/icon.svg'
 [templates.lazygit]
 input_path = "~/.config/matugen/templates/lazygit.yml"
 output_path = "~/.config/lazygit/config.yml"
+
+[templates.Telegram]
+input_path = "~/.config/matugen/templates/telegram-colors.tdesktop-theme"
+output_path = "~/.config/telegram-desktop/themes/material-you.tdesktop-theme"
 
 [config.custom_colors]
 red = "#f38ba8"
