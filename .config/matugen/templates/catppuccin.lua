@@ -71,7 +71,7 @@ return {
           text = "{{colors.on_surface.default.hex}}",
           -- 明亮配色
           subtext1 = "#444444",
-          subtext0 = "#555555",
+          subtext0 = "#444444",
           overlay2 = "#666666",
           overlay1 = "#777777",
           overlay0 = "#888888",
