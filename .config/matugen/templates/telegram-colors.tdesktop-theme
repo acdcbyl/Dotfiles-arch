@@ -33,6 +33,8 @@ activeButtonFg: #{{colors.on_primary.default.hex_stripped}}; // Active button te
 activeButtonFgOver: #{{colors.on_primary_container.default.hex_stripped}}; // Active button hover text
 activeButtonSecondaryFg: #{{colors.on_primary.default.hex_stripped}}; // Active button secondary text
 activeButtonSecondaryFgOver: #{{colors.on_primary_container.default.hex_stripped}}; // Active button secondary hover text
+activeLineFg: #{{colors.on_primary.default.hex_stripped}};
+dialogsBgActive: #{{colors.primary.default.hex_stripped}};
 
 lightButtonBg: #{{colors.surface.default.hex_stripped}}; // Light button background
 lightButtonBgOver: #{{colors.surface_variant.default.hex_stripped}}; // Light button hover background
@@ -116,3 +118,6 @@ contactsStatusFgOnline: #{{colors.primary.default.hex_stripped}}; // Online cont
 
 photoCropFadeBg: #{{colors.surface.default.hex_stripped}}cc; // Photo crop fade background
 photoCropPointFg: #{{colors.primary.default.hex_stripped}}; // Photo crop points
+
+chat_inBubbleSelected: #313244; // inbox selected chat background
+chat_outBubbleSelected: #313244; // outbox selected chat background

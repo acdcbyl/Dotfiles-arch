@@ -98,15 +98,16 @@ output_path = '~/.config/yazi/theme.toml'
 input_path = '~/.config/matugen/templates/ags.scss'
 output_path = '~/.config/ags/style/colors.scss'
 
+
 [templates.zen1]
 input_path = '~/.config/matugen/templates/userChrome.css'
 output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/userChrome.css'
 [templates.zen2]
 input_path = '~/.config/matugen/templates/userContent.css'
 output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/userContent.css'
-# [templates.zen3]
-# input_path = '~/.config/matugen/templates/zen-logo.svg'
-# output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/zen-logo.svg'
+[templates.zen3]
+input_path = '~/.config/matugen/templates/zen-logo.svg'
+output_path = '~/.zen/qtmiz5dl.Default (beta)/chrome/zen-logo.svg'
 
 [templates.clipse]
 input_path = '~/.config/matugen/templates/custom_theme.json'
