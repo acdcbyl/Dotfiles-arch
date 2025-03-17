@@ -1,103 +1,146 @@
-sw_volume: 58
+sw_volume: 55
 audio_device_state:1:PipeWire Sound Server
 audio_device_state:1:Visualizer feed
 state: pause
-current: 9
-time: 65.869000
+current: 42
+time: 295.549
 random: 0
 repeat: 1
 single: 0
 consume: 0
 crossfade: 0
-mixrampdb: 0.000000
-mixrampdelay: -1.000000
+mixrampdb: 0
+mixrampdelay: -1
+lastloadedplaylist: 
 playlist_begin
 0:恋爱语音导航【Muse dash收录曲】-泠鸢yousa,小野道ono.mp3
 1:3-Britney Spears.mp3
-2:BADモード-宇多田ヒカル.mp3
-3:Friday I'm In Love-The Cure.mp3
-4:Tangled Up in Blue-Bob Dylan.mp3
-5:Deep Purple - Burn.flac
-6:Bright-東京酒吐座.mp3
-7:カタオモイ-Aimer.mp3
-8:18 BB's Theme.mp3
-9:Lovesong-The Cure.mp3
-10:Live To Rise-Soundgarden.mp3
-11:future base-Kizuna AI.mp3
-12:单向地铁 Feat.Karin-小野道ono,karin.mp3
-13:Muse - Time Is Running Out.flac
-14:Stairway To Heaven-Led Zeppelin.mp3
-15:Wait-M83.mp3
-16:Sexual Healing-Elize.mp3
-17:am3:45-凛として時雨.mp3
-18:倒带-蔡依林.mp3
-19:ねぇ-藤田麻衣子.mp3
-20:soon-My Bloody Valentine.mp3
-21:when you sleep-My Bloody Valentine.mp3
-22:A Phantom Pain-Ludvig Forssell.mp3
-23:world.execute (me) ;-Mili.mp3
-24:Living On A Prayer-Bon Jovi.mp3
-25:第一天-孙燕姿.mp3
-26:01-One Last Kiss.flac
-27:Ordinary Love-U2.mp3
-28:Muse - Unintended.flac
-29:Yellow-Coldplay.mp3
-30:Alone-The Cure.mp3
-31:A Fragile Thing-The Cure.mp3
-32:Stones-Sonic Youth.mp3
-33:Light up my LOVE!! (feat. moco)-onoken,moco.mp3
-34:Beyond The Darkness-福圓美里.mp3
-35:黄昏-周传雄.mp3
-36:Blackmore's Night - Under A Violet Moon.flac
-37:All You Are-Memtrix.mp3
-38:You're The Best Thing About Me-U2.mp3
-39:いつもこの場所で-彩音.mp3
-40:色は匂へど散りぬるを(with senya) <幻想万華鏡 春雪異変の章 OP主題歌>-森永真由美.mp3
-41:シカ色デイズ-潘めぐみ,藤田咲,田辺留依,和泉風花.mp3
-42:だんご大家族-茶太,真理絵,くない瓜,Rio,Morrigan,藤枝あかね,加藤恒太.mp3
-43:七月七日晴-许慧欣.mp3
-44:万能青年旅店 - 狗尿馆.flac
-45:万能青年旅店 - 不万能的喜剧.flac
-46:万能青年旅店 - 揪心的玩笑与漫长的白日梦.flac
-47:万能青年旅店 - 大石碎胸口.flac
-48:万能青年旅店 - 洋鸟消夏录.flac
-49:万能青年旅店 - 秦皇岛.flac
-50:万能青年旅店 - 十万嬉皮.flac
-51:万能青年旅店 - 杀死那个石家庄人.flac
-52:三色·绘恋-雲翼星辰.mp3
-53:不能说的秘密-周杰伦.mp3
-54:夜空中最亮的星-逃跑计划.mp3
-55:僕らの手には何もないけど、-RAM WIRE.mp3
-56:万能青年旅店 - 早.flac
-57:万能青年旅店 - 泥河.flac
-58:万能青年旅店 - 平等云雾.flac
-59:万能青年旅店 - 采石.flac
-60:万能青年旅店 - 山雀.flac
-61:万能青年旅店 - 绕越.flac
-62:万能青年旅店 - 河北墨麒麟.flac
-63:万能青年旅店 - 郊眠寺.flac
-64:理想-赵雷.mp3
-65:柿チョコ - 威风堂堂.flac
-66:静止-花儿乐队.mp3
-67:冬天的秘密-周传雄.mp3
-68:最长的电影-周杰伦.mp3
-69:开始懂了-孙燕姿.mp3
-70:戒网-村西,王馨悦(白彩虹).mp3
-71:The Dreamer-東京酒吐座.mp3
-72:接下来如何-Hello Nico.mp3
-73:独角戏-许茹芸.mp3
-74:说散就散-袁娅维TIA RAY.mp3
-75:还是劈开-张叶蕾,全体诺克萨斯国战士.mp3
-76:我怀念的-孙燕姿.mp3
-77:记事本-陈慧琳.mp3
-78:Radiohead - Airbag.flac
-79:Radiohead - Paranoid Android.flac
-80:Radiohead - Exit Music (For a Film).flac
-81:Radiohead - Let Down.flac
-82:Radiohead - Karma Police.flac
-83:Radiohead - Fitter Happier.flac
-84:Radiohead - Electioneering.flac
-85:Radiohead - Climbing Up the Walls.flac
-86:Radiohead - No Surprises.flac
-87:Radiohead - Lucky.flac
+2:色は匂へど散りぬるを(with senya) <幻想万華鏡 春雪異変の章 OP主題歌>-森永真由美.mp3
+3:Slipknot - Dead Memories.flac
+4:Slipknot - Snuff.flac
+5:BADモード-宇多田ヒカル.mp3
+6:Friday I'm In Love-The Cure.mp3
+7:Tangled Up in Blue-Bob Dylan.mp3
+8:Deep Purple - Burn.flac
+9:Sweetbox - Don't Push Me.flac
+10:HyuN Syepias - Cross†Soul (feat. Syepias).flac
+11:カタオモイ-Aimer.mp3
+12:18 BB's Theme.mp3
+13:Lovesong-The Cure.mp3
+14:Live To Rise-Soundgarden.mp3
+15:Yosh - Hollow.flac
+16:future base-Kizuna AI.mp3
+17:单向地铁 Feat.Karin-小野道ono,karin.mp3
+18:Muse - Time Is Running Out.flac
+19:Stairway To Heaven-Led Zeppelin.mp3
+20:Wait-M83.mp3
+21:Sexual Healing-Elize.mp3
+22:am3:45-凛として時雨.mp3
+23:M83 MAI LAN - Go!.flac
+24:Sound Horizon - 恋人を射ち堕とした日.flac
+25:ねぇ-藤田麻衣子.mp3
+26:My Bloody Valentine - only shallow.flac
+27:My Bloody Valentine - loomer.flac
+28:My Bloody Valentine - touched.flac
+29:My Bloody Valentine - to here knows when.flac
+30:My Bloody Valentine - when you sleep.flac
+31:My Bloody Valentine - i only said.flac
+32:My Bloody Valentine - come in alone.flac
+33:My Bloody Valentine - sometimes.flac
+34:My Bloody Valentine - blown a wish.flac
+35:My Bloody Valentine - what you want.flac
+36:My Bloody Valentine - soon.flac
+37:A Phantom Pain-Ludvig Forssell.mp3
+38:world.execute (me) ;-Mili.mp3
+39:Sound Horizon - 星女神の巫女 -Αρτεμισια-.flac
+40:Living On A Prayer-Bon Jovi.mp3
+41:第一天-孙燕姿.mp3
+42:河野マリナ - Weight of the World 壊レタ世界ノ歌.flac
+43:Loren Allred - No Promises to Keep (FINAL FANTASY VII REBIRTH THEME SONG).flac
+44:Radiohead - Airbag.flac
+45:Radiohead - Paranoid Android.flac
+46:Radiohead - Exit Music (For a Film).flac
+47:Radiohead - Let Down.flac
+48:Radiohead - Karma Police.flac
+49:Radiohead - Fitter Happier.flac
+50:Radiohead - Electioneering.flac
+51:Radiohead - Climbing Up the Walls.flac
+52:Radiohead - No Surprises.flac
+53:Radiohead - Lucky.flac
+54:01-One Last Kiss.flac
+55:Ordinary Love-U2.mp3
+56:Sound Horizon - 美しきもの.flac
+57:Muse - Unintended.flac
+58:Yellow-Coldplay.mp3
+59:Alone-The Cure.mp3
+60:A Fragile Thing-The Cure.mp3
+61:Stones-Sonic Youth.mp3
+62:Light up my LOVE!! (feat. moco)-onoken,moco.mp3
+63:Beyond The Darkness-福圓美里.mp3
+64:Placebo - Too Many Friends.flac
+65:黄昏-周传雄.mp3
+66:Placebo - Twenty Years.flac
+67:Blackmore's Night - Under A Violet Moon.flac
+68:All You Are-Memtrix.mp3
+69:You're The Best Thing About Me-U2.mp3
+70:いつもこの場所で-彩音.mp3
+71:シカ色デイズ-潘めぐみ,藤田咲,田辺留依,和泉風花.mp3
+72:だんご大家族-茶太,真理絵,くない瓜,Rio,Morrigan,藤枝あかね,加藤恒太.mp3
+73:七月七日晴-许慧欣.mp3
+74:万能青年旅店 - 狗尿馆.flac
+75:万能青年旅店 - 不万能的喜剧.flac
+76:万能青年旅店 - 揪心的玩笑与漫长的白日梦.flac
+77:万能青年旅店 - 大石碎胸口.flac
+78:万能青年旅店 - 洋鸟消夏录.flac
+79:万能青年旅店 - 秦皇岛.flac
+80:万能青年旅店 - 十万嬉皮.flac
+81:万能青年旅店 - 杀死那个石家庄人.flac
+82:三色·绘恋-雲翼星辰.mp3
+83:不能说的秘密-周杰伦.mp3
+84:夜空中最亮的星-逃跑计划.mp3
+85:僕らの手には何もないけど、-RAM WIRE.mp3
+86:万能青年旅店 - 早.flac
+87:万能青年旅店 - 泥河.flac
+88:万能青年旅店 - 平等云雾.flac
+89:万能青年旅店 - 采石.flac
+90:万能青年旅店 - 山雀.flac
+91:万能青年旅店 - 绕越.flac
+92:万能青年旅店 - 河北墨麒麟.flac
+93:万能青年旅店 - 郊眠寺.flac
+94:汪峰 - 北京北京.flac
+95:周杰伦 - 晴天.flac
+96:理想-赵雷.mp3
+97:蔡依林 - 倒带.flac
+98:柿チョコ - 威风堂堂.flac
+99:静止-花儿乐队.mp3
+100:冬天的秘密-周传雄.mp3
+101:最长的电影-周杰伦.mp3
+102:开始懂了-孙燕姿.mp3
+103:戒网-村西,王馨悦(白彩虹).mp3
+104:张韶涵 - 梦里花.flac
+105:接下来如何-Hello Nico.mp3
+106:蔡依林 周杰伦 - 布拉格广场.flac
+107:鈴木愛奈 - 神保町哀歌.flac
+108:单依纯 - 纯妹妹.flac
+109:独角戏-许茹芸.mp3
+110:说散就散-袁娅维TIA RAY.mp3
+111:还是劈开-张叶蕾,全体诺克萨斯国战士.mp3
+112:我怀念的-孙燕姿.mp3
+113:记事本-陈慧琳.mp3
+114:shoegazes/CQ - Disco Crimson.flac
+115:shoegazes/CQ - Primal.flac
+116:shoegazes/CQ - Strummer.flac
+117:shoegazes/CQ - Romance.flac
+118:shoegazes/CQ - Alien vs.flac
+119:shoegazes/CQ - Bradley Goes To Summer's End.flac
+120:shoegazes/CQ - Last Song.flac
+121:shoegazes/CQ - Discord.flac
+122:shoegazes/東京酒吐座 - 299 Addiction.flac
+123:shoegazes/東京酒吐座 - Just Alright.flac
+124:shoegazes/東京酒吐座 - Bright.flac
+125:shoegazes/東京酒吐座 - Silent Lies.flac
+126:shoegazes/東京酒吐座 - Waltz Matilda.flac
+127:shoegazes/東京酒吐座 - Free.flac
+128:shoegazes/東京酒吐座 - Back To My Place.flac
+129:shoegazes/東京酒吐座 - The Dreamer.flac
 playlist_end
