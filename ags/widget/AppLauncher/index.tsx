@@ -2,6 +2,7 @@ import { App, Astal, Widget } from "astal/gtk3";
 import { bind, Variable } from "astal";
 import AstalApps from "gi://AstalApps?version=0.1";
 import Gio from "gi://Gio?version=2.0";
+import GLib from "gi://GLib?version=2.0";
 import AppItem from "./AppItem";
 import PopupWindow from "../../common/PopupWindow";
 
@@ -11,12 +12,26 @@ const query = Variable<string>("");
 export default () => {
   // 创建文件监控器
   const directory = Gio.File.new_for_path("/usr/share/applications/");
-  let monitor: Gio.FileMonitor;
+  let monitor: Gio.FileMonitor | null = null;
+  let refreshTimeout: number | null = null;
 
+  // 使用防抖动机制刷新应用列表
   const refreshAppList = () => {
-    // 重新初始化 apps 并触发查询更新
-    apps.reload();
-    query.set(query.value); // 触发查询更新
+    // 如果已有一个定时器在等待，先清除它
+    if (refreshTimeout !== null) {
+      GLib.source_remove(refreshTimeout);
+      refreshTimeout = null;
+    }
+
+    // 延迟300毫秒再刷新，避免短时间内多次刷新
+    refreshTimeout = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, () => {
+      // 重新初始化 apps 对象
+      apps.reload();
+      // 重新触发查询 - 使用正确的API
+      query.set(query.get());
+      refreshTimeout = null;
+      return GLib.SOURCE_REMOVE;
+    });
   };
 
   const startMonitoring = () => {
@@ -26,11 +41,10 @@ export default () => {
         null
       );
 
-      // 监听目录变化事件
+      // 监听目录变化事件 - 修正非法常量
       monitor.connect("changed", (_, file, __, event_type) => {
-        // 当文件被创建、删除、修改或移动时刷新应用列表
-        if (event_type !== Gio.FileMonitorEvent.CHANGED &&
-          event_type !== Gio.FileMonitorEvent.UNCHANGED) {
+        // 只有在文件内容变化时不触发刷新
+        if (event_type !== Gio.FileMonitorEvent.CHANGED) {
           refreshAppList();
         }
       });
@@ -39,12 +53,23 @@ export default () => {
     }
   };
 
-  // 启动目录监控
-  startMonitoring();
+  // 懒加载：仅在窗口首次可见时启动监控
+  const initOnce = () => {
+    let initialized = false;
+    return () => {
+      if (!initialized) {
+        startMonitoring();
+        initialized = true;
+      }
+    };
+  };
 
-  const items = query((query) =>
+  const lazyInitMonitoring = initOnce();
+
+  // 保持原始的查询和项目创建逻辑
+  const items = query((q) =>
     apps
-      .fuzzy_query(query)
+      .fuzzy_query(q)
       .map((app: AstalApps.Application) => AppItem(app)),
   );
 
@@ -53,8 +78,11 @@ export default () => {
     canFocus: true,
     className: "app-launcher__input",
     onActivate: () => {
-      items.get()[0]?.app.launch();
-      App.toggle_window("app-launcher");
+      const firstItem = items.get()[0];
+      if (firstItem?.app) {
+        firstItem.app.launch();
+        App.toggle_window("app-launcher");
+      }
     },
     setup: (self) => {
       self.hook(self, "notify::text", () => {
@@ -88,6 +116,8 @@ export default () => {
           if (!self.get_visible()) {
             query.set("");
           } else {
+            // 窗口变为可见时，懒加载初始化监控器
+            lazyInitMonitoring();
             Entry.grab_focus();
           }
         });

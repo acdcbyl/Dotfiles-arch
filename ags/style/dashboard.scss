@@ -1,3 +1,7 @@
+@use "sass:string";
+@use "sass:color";
+@use "colors.scss" as *;
+
 .dashboard {
   border-radius: 38px;
   min-width: 420px;
@@ -6,7 +10,16 @@
     color 1s ease-in-out;
 }
 
-.block {
+// 日历菜单内容，对应calendar-menu-content
+.calendar-menu-content * {
+  font-size: 1rem; // 使用你原始的字体大小比例
+}
+
+// 日历内容容器，对应calendar-content-container
+.calendar-content-container {
+  margin-top: 0;
+  min-width: 27em;
+  min-height: 6em;
   background: $surface_transparent;
   border-radius: 30px;
   transition:
@@ -14,138 +27,116 @@
     color 1s ease;
 }
 
-.placeholder {
-  color: $outline;
-  label {
-    font-size: 18px;
-  }
-}
-
-.calendar__header {
-  margin-top: 12px;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 3px;
-}
-
-.calendar__monthyear {
-  * {
-    font-size: 13px;
-    font-weight: 500;
-  }
-}
-
-.calendar__button {
-  padding: 10px 12px;
-}
-
-.calendar__button__today {
-  border-radius: 100px;
-  background: $primary;
-  color: $on_primary;
-}
-
-.calendar__button__other-month {
-  color: $outline;
-}
-
-.calendar__weekday {
-  min-height: 40px;
-  min-width: 36px;
-  font-weight: 600;
-}
-
-.calendar__day {
-  border-radius: 10px;
-  &.active {
-    background: $primary;
-    color: $on_primary;
-  }
-  &.inactive {
-    color: $inverse_surface_transparent_variant;
-  }
-}
-.stats-cpu {
-  font-size: 18px;
-  margin-right: 20px;
-  color: $on_surface;
-  // color: $primary;
-}
-.stats-ram {
-  // color: $tertiary_fixed;
-  font-size: 18px;
-  color: $on_surface;
-
-  // color: $primary;
-}
-.stats {
-  // min-width: 420px;
-  background: $surface_transparent;
-  margin: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
+// 日历菜单项容器，对应calendar-menu-item-container
+.calendar-menu-item-container {
   border-radius: 30px;
-}
-.todos {
-  min-height: 0px;
-  padding: 12px 12px 0;
+  margin-bottom: 0.65em;
+  background: $surface_transparent;
 
-  revealer:last-child {
-    .todo {
-      margin-bottom: 12px;
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.calendar {
+    background: $surface_transparent;
+    border-radius: 30px;
   }
 }
 
-.todos__combobox {
-  * {
-    font-size: 18px;
+// 日历内容项，对应calendar-content-items
+.calendar-content-items {
+  margin: 1.35em;
+}
+
+// 日历容器盒子，对应calendar-container-box
+.calendar-container-box {
+  margin: 0.75em;
+  margin-bottom: 0;
+}
+
+// 日历菜单组件，对应calendar-menu-widget
+.calendar-menu-widget {
+  // border-radius: 0.4em;
+  color: $on_surface;
+  font-size: 1.1em;
+  padding: 0.5em;
+
+  &:selected {
+    box-shadow:
+      inset 0 -0.2em 0 0 $primary,
+      inset -0.4em -0.3em 0 0 transparent,
+      inset 0.4em 0 0 0.01em transparent;
+    color: $primary;
+    background-color: transparent;
+    // border-radius: 200%;
+    border-radius: 0rem;
   }
-  button {
-    margin: 0 10px;
-    padding: 12px 0 18px 0;
+
+  &.header {
+    background-color: transparent;
+    color: $on_surface;
   }
-}
 
-.todos__heading {
-  margin-bottom: 8px;
-}
-
-.todos__scrollable {
-  min-height: 280px;
-}
-
-.todo {
-  min-height: 48px;
-  padding: 0 10px;
-  font-weight: 400;
-  label {
-    font-size: 16px;
-  }
-}
-
-.todo__check,
-.todo__delete {
-  font-size: 20px;
-  color: $on_surface_variant;
-}
-
-.todos__input_box {
-  padding: 0 10px;
-  icon {
-    font-size: 20px;
+  &.botton {
     color: $primary;
   }
-  min-height: 42px;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &.highlight {
+    color: $primary;
+  }
+
+  &:indeterminate {
+    // color: transparentize($on_surface, 0.65);
+    color: color.scale($on_surface, $alpha: -35%);
+  }
 }
 
-.todos__input {
-  padding: 0;
-  font-size: 16px;
-  background: none;
-  font-weight: 500;
-  color: $primary;
-  caret-color: $primary;
+// GTK日历特定样式
+calendar {
+  // color: $on_surface;
+  // font-size: 1.1em;
+  // padding: 0.5em;
+  // 日历网格样式
+  &.view {
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 0.5rem;
+  }
+
+  // 当前日期样式
+  &:selected {
+    // box-shadow:
+    //   inset 0 -0.2em 0 0 $primary,
+    //   inset -0.4em -0.3em 0 0 transparent,
+    //   inset 0.4em 0 0 0.01em transparent;
+    background-color: transparent;
+    color: $primary;
+    // padding: 0.5rem; // 调整 padding 以使按钮居中
+    // border-radius: 100%;
+  }
+
+  // 日期悬停样式
+  &:hover {
+    color: $primary;
+    // border-radius: 7.143rem;
+  }
+
+  // &:botton {
+  //   color: $primary;
+  // }
+
+  // 周和星期样式
+  &.highlight {
+    color: $primary;
+    // font-weight: bold;
+  }
+
+  // 非当前月份的日期样式
+  &:indeterminate {
+    color: color.scale($on_surface, $alpha: -35%);
+  }
 }

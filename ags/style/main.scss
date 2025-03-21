@@ -1,19 +1,19 @@
-@import "./colors.scss";
-@import "./common.scss";
-@import "./components.scss";
-@import "./bar.scss";
-@import "./scrim.scss";
-@import "./appLauncher.scss";
-@import "./controlCenter.scss";
-@import "./player.scss";
-@import "./notification.scss";
-@import "./notificationsPopup.scss";
-@import "./notificationsWindow.scss";
-@import "./osd.scss";
-@import "./popupMenu.scss";
-@import "./powermenu.scss";
-@import "./dashboard.scss";
-
+// @use "./colors.scss";
+@use "./common.scss";
+@use "./components.scss";
+@use "./bar.scss";
+@use "./scrim.scss";
+@use "./appLauncher.scss";
+@use "./controlCenter.scss";
+@use "./player.scss";
+@use "./notification.scss";
+@use "./notificationsPopup.scss";
+@use "./notificationsWindow.scss";
+@use "./osd.scss";
+@use "./popupMenu.scss";
+@use "./powermenu.scss";
+@use "./dashboard.scss";
+@use "roundedcorners.scss";
 * {
-  font-family: Maple Mono SC NF;
+  font-family: Maple Mono NF CN;
 }

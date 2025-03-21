@@ -1,3 +1,5 @@
+@use "sass:string";
+@use "colors.scss" as *;
 .player {
   min-height: 155px;
   background: $surface_transparent;

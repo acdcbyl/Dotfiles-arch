@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "sass:color";
+@use "colors.scss" as *;
 .bar {
   // border-radius: 15px;
   // left: 12px;
@@ -66,7 +69,8 @@
   color: $on_primary_container;
 }
 .arch-icon {
-  font-size: 30px;
+  font-size: 20px;
+  padding-right: 3px;
   color: $on_primary;
 }
 .bar__app-launcher.bar__button {
@@ -115,7 +119,7 @@
   border-radius: 100px;
 
   &:hover {
-    background-color: transparentize($primary, 0.4);
+    background-color: color.scale($primary, $alpha: -40%);
   }
 
   &.active,
@@ -177,8 +181,9 @@
   min-width: 22px;
   min-height: 22px;
   background: none;
+  // color: $secondary;
   &:hover {
-    background-color: transparentize($primary, 0.4);
+    background-color: color.scale($primary, $alpha: -40%);
   }
   icon {
     font-size: 18px;

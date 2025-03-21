@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "sass:color";
+@use "colors.scss" as *;
 .app-launcher {
   min-width: 450px;
   border-radius: 30px;
@@ -10,6 +13,7 @@
   background: none;
   border: none;
   outline: none;
+  caret-color: $on_surface;
   color: $on_surface;
   margin-top: 5px;
   padding: 12px 22px;
@@ -43,7 +47,7 @@
     }
 
     &.description {
-      color: transparentize($on_surface, 0.3);
+      color: color.scale($on_surface, $alpha: -30%);
     }
   }
 
@@ -71,7 +75,7 @@
 
   &:active {
     background: yellow;
-    background-color: transparentize($primary, 0.2);
+    background-color: color.scale($primary, $alpha: -20%);
     border-radius: 20px;
     box-shadow: inset 0 0 0 1px $primary;
 

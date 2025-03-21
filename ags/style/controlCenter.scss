@@ -1,3 +1,5 @@
+@use "sass:string";
+@use "colors.scss" as *;
 .control-center__container {
   border-radius: 25px;
   min-width: 450px;
@@ -78,47 +80,53 @@
 }
 
 .control-center__button {
-  background-color: $inverse_surface_transparent;
-  color: $on_surface;
-  padding: 0 24px 0 30px;
-  border-radius: 30px;
-  > * {
-    border-radius: 30px;
-  }
+  font-size: 14px;
+  font-weight: 600;
   min-height: 64px;
+  padding: 0 24px 0 30px;
+  color: $on_surface;
+  background-color: $inverse_surface_transparent;
+  border-radius: 30px;
   transition:
     background 0.2s ease-in-out,
     color 0.2s ease-in-out;
 
-  &.active {
-    background: $primary;
-    color: $on_primary;
-    &:hover {
-      background: $primary, $inverse_surface_transparent_variant_overlay;
-    }
-    &:active {
-      background: $on_primary_container, $inverse_surface_transparent_overlay;
-    }
+  > * {
+    border-radius: 30px;
   }
 
   &:hover {
     background-color: $inverse_surface_transparent_variant;
   }
-  font-size: 14px;
-  font-weight: 600;
+
   &.no-label {
     padding: 0;
   }
+
+  &.active {
+    color: $on_primary;
+    background: $primary;
+
+    &:hover {
+      background: $primary, $inverse_surface_transparent_variant_overlay;
+    }
+
+    &:active {
+      background: $on_primary_container, $inverse_surface_transparent_overlay;
+    }
+  }
+
   &.recorder-indicator {
     &.active {
-      background: $error_container;
       color: $on_error_container;
+      background: $error_container;
+
       &:hover {
-        background: $error_container,
-          $inverse_surface_transparent_variant_overlay;
+        background: $inverse_surface_transparent_variant_overlay;
       }
+
       &:active {
-        background: $error_container, $inverse_surface_transparent_overlay;
+        background: $inverse_surface_transparent_overlay;
       }
     }
   }

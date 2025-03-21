@@ -1,3 +1,5 @@
+@use "sass:string";
+@use "colors.scss" as *;
 .powermenu {
   padding: 24px;
   border-radius: 20px;

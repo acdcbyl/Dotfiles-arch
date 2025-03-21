@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "colors.scss" as *;
+@use "sass:color";
 .OSD,
 .osd {
   background: transparent;
@@ -12,7 +15,7 @@
 
   border-radius: 20px;
   margin-bottom: 20px;
-  background-color: transparentize($surface, 0.2);
+  background-color: color.scale($surface, $alpha: -20%);
 
   .fill {
     transition: background-color 3s ease-in-out;

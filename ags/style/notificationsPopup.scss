@@ -1,7 +1,11 @@
+@use "sass:string";
+@use "colors.scss" as *;
 .NotificationsPopup {
-	background: none;
+  background: transparent;
 }
 
 .notifications-popup {
-	min-width: 450px;
+  min-width: 450px;
+  background: transparent;
+  // background: $surface_transparent;
 }

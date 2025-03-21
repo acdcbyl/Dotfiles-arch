@@ -1,3 +1,5 @@
+@use "sass:string";
+@use "colors.scss" as *;
 .notifications-window {
   border-radius: 20px;
   min-width: 400px;
@@ -17,6 +19,7 @@
 
 .notifications-window__clear {
   background: none;
+  color: $on_surface;
   padding: 6px 0;
   margin-right: 18px;
 }

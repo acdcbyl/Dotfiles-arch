@@ -1,0 +1,225 @@
+@use "sass:string";
+@use "sass:color";
+@use "colors.scss" as *;
+.dashboard {
+  border-radius: 38px;
+  min-width: 420px;
+  transition:
+    background-color 1s ease-in-out,
+    color 1s ease-in-out;
+}
+
+.calendar__header {
+  padding: 1rem 1rem;
+}
+
+.calendar-weekdays {
+  padding: 0rem 0.4rem;
+}
+
+.calendar-days {
+  padding: 0rem 0.4rem 0.4rem 0.4rem;
+}
+.block {
+  background: $surface_transparent;
+  border-radius: 30px;
+  transition:
+    background-color 1s ease,
+    color 1s ease;
+}
+
+.placeholder {
+  color: $outline;
+  label {
+    font-size: 18px;
+  }
+}
+.calendar__header {
+  .sidebar-calendar-monthshift-btn {
+    margin-left: 1rem;
+    padding: 0 0.8rem;
+  }
+
+  .calendar__monthyear {
+    padding: 0.5rem 1rem;
+  }
+
+  button {
+    padding: 0.4rem;
+    border-radius: 1.2rem;
+    background-color: $inverse_surface_transparent;
+    color: $on_surface;
+    transition:
+      background-color 0.2s ease-in-out,
+      color 0.2s ease-in-out;
+    &:hover {
+      background: color.scale($inverse_surface_transparent, $alpha: -10%);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    &:focus {
+      background: color.scale($inverse_surface_transparent, $alpha: 10%);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.calendar__monthyear {
+  * {
+    font-size: 1.286rem;
+    font-weight: 500;
+  }
+}
+
+.calendar__button {
+  border-radius: 7.143rem;
+  &:hover {
+    background: $inverse_surface_transparent,
+      $inverse_surface_transparent_overlay;
+    // color: $on_primary_fixed;
+  }
+  &:focus {
+    background: $inverse_surface_transparent_variant,
+      $inverse_surface_transparent_overlay;
+  }
+
+  padding: 0.5rem 0.75rem;
+  margin: 0.2rem;
+}
+
+.calendar__button__today {
+  border-radius: 7.143rem;
+  background: $primary_container;
+  color: $on_primary_container;
+}
+
+.calendar__button__other-month {
+  color: $outline;
+}
+// .calendar__header {
+//   margin-top: 12px;
+//   padding-right: 10px;
+//   padding-left: 10px;
+//   padding-top: 3px;
+// }
+//
+// .calendar__monthyear {
+//   * {
+//     font-size: 13px;
+//     font-weight: 500;
+//   }
+// }
+//
+// .calendar__button {
+//   padding: 10px 12px;
+// }
+//
+// .calendar__button__today {
+//   border-radius: 100px;
+//   background: $primary;
+//   color: $on_primary;
+// }
+//
+// .calendar__button__other-month {
+//   color: $outline;
+// }
+//
+// .calendar__weekday {
+//   min-height: 40px;
+//   min-width: 36px;
+//   font-weight: 600;
+// }
+//
+// .calendar__day {
+//   border-radius: 10px;
+//   &.active {
+//     background: $primary;
+//     color: $on_primary;
+//   }
+//   &.inactive {
+//     color: $inverse_surface_transparent_variant;
+//   }
+// }
+// .stats-cpu {
+//   font-size: 18px;
+//   margin-right: 20px;
+//   color: $on_surface;
+//   // color: $primary;
+// }
+.stats-ram {
+  // color: $tertiary_fixed;
+  font-size: 18px;
+  color: $on_surface;
+
+  // color: $primary;
+}
+.stats {
+  // min-width: 420px;
+  background: $surface_transparent;
+  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 30px;
+}
+.todos {
+  min-height: 0px;
+  padding: 12px 12px 0;
+
+  revealer:last-child {
+    .todo {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.todos__combobox {
+  * {
+    font-size: 18px;
+  }
+  button {
+    margin: 0 10px;
+    padding: 12px 0 18px 0;
+  }
+}
+
+.todos__heading {
+  margin-bottom: 8px;
+}
+
+.todos__scrollable {
+  min-height: 280px;
+}
+
+.todo {
+  min-height: 48px;
+  padding: 0 10px;
+  font-weight: 400;
+  label {
+    font-size: 16px;
+  }
+}
+
+.todo__check,
+.todo__delete {
+  font-size: 20px;
+  color: $on_surface_variant;
+}
+
+.todos__input_box {
+  padding: 0 10px;
+  icon {
+    font-size: 20px;
+    color: $primary;
+  }
+  min-height: 42px;
+}
+
+.todos__input {
+  padding: 0;
+  font-size: 16px;
+  background: none;
+  font-weight: 500;
+  color: $primary;
+  caret-color: $primary;
+}

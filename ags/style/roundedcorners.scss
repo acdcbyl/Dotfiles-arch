@@ -1,0 +1,6 @@
+@use "sass:string";
+@use "colors.scss" as *;
+.corner {
+  background-color: $surface_transparent;
+  font-size: 5rem;
+}

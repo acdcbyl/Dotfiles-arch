@@ -17,22 +17,31 @@ export default () => {
 		>
 			<BarButton className="bar__active-app">
 				<box spacing={8}>
-					{focused.as(client => client && (
-						<>
-							<icon
-								icon={bind(client, "class").as(cls =>
-									substitutions.icons[cls]
-									|| (lookUpIcon(cls) ? cls : icons.fallback.executable)
-								)}
-							/>
-							<label
-								label={bind(client, "title").as(String)}
-								truncate={true}
-								maxWidthChars={24}
-							/>
-						</>
-					))}
+					{focused.as(client => {
+						if (!client) return null;
+
+						// 提取 client 的绑定
+						const clientClassBinding = bind(client, "class");
+						const clientTitleBinding = bind(client, "title");
+
+						return (
+							<>
+								<icon
+									icon={clientClassBinding.as(cls =>
+										substitutions.icons[cls]
+										|| (lookUpIcon(cls) ? cls : icons.fallback.executable)
+									)}
+								/>
+								<label
+									label={clientTitleBinding.as(String)}
+									truncate={true}
+									maxWidthChars={24}
+								/>
+							</>
+						);
+					})}
 				</box>
-			</BarButton>		</revealer>
+			</BarButton>
+		</revealer>
 	);
 };

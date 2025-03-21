@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "sass:color";
+@use "colors.scss" as *;
 * {
   font-size: 14px;
   outline: none;
@@ -90,7 +93,11 @@ switch:active slider {
 }
 
 switch:active {
-  background-color: mix($surface_container_highest, $on_surface, 0.08 * 1%);
+  background-color: color.mix(
+    $surface_container_highest,
+    $on_surface,
+    0.08 * 1%
+  );
 }
 
 switch:checked {
