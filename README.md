@@ -11,6 +11,14 @@
   <img src = "assets/apps.png" />
   <img src = "assets/nvim.png" />
 </details>
+<details>
+  <summary>Dark Mode</summary>
+  <img src = "assets/Dark-首页.png" />
+</details>
+<details>
+  <summary>Dark Mode General Software</summary>
+  <img src = "assets/rmpc.png" />
+</details>
 
 ## Dependencies
 
