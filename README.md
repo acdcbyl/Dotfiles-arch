@@ -67,7 +67,7 @@ cd .dotfiles_nix/home-manager/modules/
 cp -r ags ~/.config/
 ```
 
-3. There are some bugs in this configuration, e.g. `active-app` and `app-launcher` don't update in real time, I've fixed some issues as well as added some features (and removed some features.) based on PoSayDone's configuration., if you don't mind you can just use my modified config file.Please click star for PoSayDone!
+3. There are some bugs in this configuration, e.g. `active-app` and `app-launcher` don't update in real time, I've fixed some issues as well as added some features (and removed some features.) based on PoSayDone's configuration,if you don't mind you can just use my modified config file.Please click star for PoSayDone!
 
 ### Waypaper
 
