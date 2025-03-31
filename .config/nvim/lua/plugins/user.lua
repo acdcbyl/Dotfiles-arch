@@ -1,6 +1,7 @@
---if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
+-- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
 ---@type LazySpec
@@ -17,21 +18,90 @@ return {
 
   -- == Examples of Overriding Plugins ==
 
-  -- customize alpha options
+  -- customize dashboard options
   {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        "   _____  .__                     _______       .__         ",
-        "  /  _  \\ |__| ______ ___________ \\      \\___  _|__| _____  ",
-        " /  /_\\  \\|  |/  ___// __ \\_  __ \\/   |   \\  \\/ /  |/     \\ ",
-        "/    |    \\  |\\___ \\\\  ___/|  | \\/    |    \\   /|  |  Y Y  \\",
-        "\\____|__  /__/____  >\\___  >__|  \\____|__  /\\_/ |__|__|_|  /",
-        "        \\/        \\/     \\/              \\/              \\/",
-      }
-      return opts
-    end,
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        width = 60,
+        pane_gap = 16,
+        preset = {
+          header = table.concat({
+            "░   ░░░  ░░        ░░░      ░░░  ░░░░  ░░        ░░  ░░░░  ░",
+            "▒    ▒▒  ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒   ▒▒   ▒",
+            "▓  ▓  ▓  ▓▓      ▓▓▓▓  ▓▓▓▓  ▓▓▓  ▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓        ▓",
+            "█  ██    ██  ████████  ████  ████    ███████  █████  █  █  █",
+            "█  ███   ██        ███      ██████  █████        ██  ████  █",
+          }, "\n"),
+        },
+        sections = {
+          {
+            section = "header",
+            align = "center",
+            enabled = function() return not (vim.o.columns > 135) end,
+          },
+          {
+            pane = 1,
+            {
+              enabled = function() return vim.o.columns > 135 end,
+              section = "terminal",
+              cmd = "chafa ~/.config/nvim/lua/plugins/dashboard-img/hajibai.png --passthrough=tmux --format=symbols --size=56x32 --stretch --align center; sleep .1",
+              height = 32,
+              width = 56,
+              -- indent = 6,
+              padding = 1,
+            },
+            {
+              section = "startup",
+              padding = 1,
+              enabled = function() return vim.o.columns > 135 end,
+            },
+          },
+          {
+            pane = 2,
+            {
+              section = "terminal",
+              cmd = "colorscript -e crunchbang-mini",
+              height = 5,
+              padding = 1,
+              indent = 5,
+            },
+            {
+              section = "keys",
+              gap = 1,
+              padding = 2,
+            },
+            {
+              icon = " ",
+              title = "Recent Files",
+              padding = 1,
+            },
+            {
+              section = "recent_files",
+              limit = 6,
+              indent = 2,
+              padding = 1,
+            },
+            {
+              icon = " ",
+              title = "Projects",
+              padding = 1,
+            },
+            {
+              section = "projects",
+              limit = 4,
+              indent = 2,
+              padding = 1,
+            },
+            {
+              section = "startup",
+              padding = 1,
+              enabled = function() return not (vim.o.columns > 135) end,
+            },
+          },
+        },
+      },
+    },
   },
 
   -- You can disable default plugins as follows:
