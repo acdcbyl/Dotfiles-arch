@@ -1,6 +1,8 @@
 import { App, Astal } from "astal/gtk3";
 import PopupWindow from "../../common/PopupWindow";
 import { CalendarWidget } from "./items/CalendarWidget";
+import { TimeWidget } from "./items/Time"
+import { WeatherWidget } from "./items/Weather/"
 export default () => {
 	return (
 		<PopupWindow
@@ -22,7 +24,9 @@ export default () => {
 			<box className={"dashboard"} vertical spacing={10}>
 				{/* {systemStats()} */}
 				{/* <Calendar /> */}
-				<CalendarWidget /> {/* 使用JSX语法 */}
+				{/* <TimeWidget /> */}
+				<CalendarWidget />
+				<WeatherWidget />
 			</box>
 		</PopupWindow>
 	);

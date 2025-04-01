@@ -1,4 +1,4 @@
-import { App, Astal } from "astal";
+import { App, Astal } from "astal/gtk3";
 import style from "../style/main.scss";
 import Auth from "./items/Auth";
 import GLib from "gi://GLib?version=2.0";

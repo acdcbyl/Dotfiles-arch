@@ -1,7 +1,7 @@
 @use "sass:string";
 @use "colors.scss" as *;
 .control-center__container {
-  border-radius: 25px;
+  border-radius: 20px;
   min-width: 450px;
   min-height: 650px;
   background: $surface_transparent;
@@ -83,7 +83,7 @@
   font-size: 14px;
   font-weight: 600;
   min-height: 64px;
-  padding: 0 24px 0 30px;
+  padding: 0 24px;
   color: $on_surface;
   background-color: $inverse_surface_transparent;
   border-radius: 30px;
@@ -100,7 +100,7 @@
   }
 
   &.no-label {
-    padding: 0;
+    padding-left: 20px;
   }
 
   &.active {
@@ -244,4 +244,9 @@
 
 .control-center__footer {
   margin: 10px 8px;
+}
+.control-center__username {
+  color: $on_surface;
+  font-size: 1em;
+  margin-top: 10px;
 }

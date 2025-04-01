@@ -6,7 +6,7 @@
   // left: 12px;
   // right: 12px;
   // top: 12px;
-  min-height: 60px;
+  min-height: 54px;
   padding: 0 12px;
   background: $surface_transparent;
 }
@@ -17,7 +17,7 @@
   font-weight: 500;
   padding-left: 16px;
   padding-right: 16px;
-  min-height: 42px;
+  min-height: 40px;
   border-radius: 20px;
   background: $inverse_surface_transparent;
   color: $on_surface;
@@ -77,13 +77,13 @@
   padding: 0px;
   transition: all 0.3s;
   background-color: $primary;
-  min-height: 42px;
-  min-width: 42px;
+  min-height: 40px;
+  min-width: 40px;
 
   .bar__app-launcher_icon {
     background-color: $on_primary;
-    min-width: 14px;
-    min-height: 14px;
+    min-width: 10px;
+    min-height: 10px;
     border-radius: 100%;
     transition: all 0.3s;
   }

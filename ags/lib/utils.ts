@@ -79,18 +79,56 @@ export function monitorColorsChange() {
 		App.apply_css(target, true);
 	});
 }
-// export function monitorDashboard() {
-// 	monitorFile(
-// 		`${GLib.getenv("HOME")}/.config/ags/style/dashboard.scss`,
-// 		() => {
-// 			const target = "/tmp/astal/style.css";
-// 			exec(
-// 				`sass ${GLib.getenv("HOME")}/.config/ags/style/main.scss ${target}`,
-// 			);
-// 			App.apply_css(target);
-// 		},
-// 	);
-// }
+type NotifUrgency = "low" | "normal" | "critical";
+export function notifySend({
+	appName,
+	appIcon,
+	urgency = "normal",
+	image,
+	icon,
+	summary,
+	body,
+	actions,
+}: {
+	appName?: string;
+	appIcon?: string;
+	urgency?: NotifUrgency;
+	image?: string;
+	icon?: string;
+	summary: string;
+	body: string;
+	actions?: {
+		[label: string]: () => void;
+	};
+}) {
+	const actionsArray = Object.entries(actions || {}).map(
+		([label, callback], i) => ({
+			id: `${i}`,
+			label,
+			callback,
+		}),
+	);
+	execAsync(
+		[
+			"notify-send",
+			`-u ${urgency}`,
+			appIcon && `-i ${appIcon}`,
+			`-h "string:image-path:${!!icon ? icon : image}"`,
+			`"${summary ?? ""}"`,
+			`"${body ?? ""}"`,
+			`-a "${appName ?? ""}"`,
+			...actionsArray.map((v) => `--action=\"${v.id}=${v.label}\"`),
+		].join(" "),
+	)
+		.then((out) => {
+			if (!isNaN(Number(out.trim())) && out.trim() !== "") {
+				actionsArray[parseInt(out)].callback();
+			}
+		})
+		.catch(console.error);
+}
+export const now = () =>
+	GLib.DateTime.new_now_local().format("%Y-%m-%d_%H-%M-%S");
 
 export function dependencies(packages: string[]) {
 	for (const pkg of packages) {

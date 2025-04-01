@@ -7,7 +7,6 @@ import Media from "./items/Media";
 import { spacing } from "../../lib/variables";
 import PopupWindow from "../../common/PopupWindow";
 import { toggleWindow } from "../../lib/utils";
-// import FanProfiles from "./pages/FanProfiles";
 
 export const controlCenterPage = Variable("main");
 
@@ -72,7 +71,7 @@ export default () => {
 					>
 						<Main />
 						{Network()}
-						{/* {FanProfiles()} */}
+						{/* {PowerProfiles()} */}
 						{Bluetooth()}
 					</stack>
 				</box>

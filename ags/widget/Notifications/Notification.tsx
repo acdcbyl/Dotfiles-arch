@@ -2,6 +2,7 @@ import { Gtk, Widget } from "astal/gtk3";
 import { type EventBox } from "astal/gtk3/widget";
 import { timeout, GLib, idle } from "astal";
 import Notifd from "gi://AstalNotifd";
+import { Astal } from "astal/gtk3"; // 添加 Astal 导入
 import icons from "../../lib/icons";
 
 const transitionDuration = 300;
@@ -9,14 +10,20 @@ const transitionDuration = 300;
 const time = (time: number, format = "%H:%M") =>
 	GLib.DateTime.new_from_unix_local(time).format(format);
 
+// 添加检查图标和文件是否存在的辅助函数
+const isIcon = (icon: string) => !!Astal.Icon.lookup_icon(icon);
+const fileExists = (path: string) => GLib.file_test(path, GLib.FileTest.EXISTS);
+
 type NotificationIconProps = {
 	notification: Notifd.Notification;
 };
 
 const NotificationIcon = ({ notification }: NotificationIconProps) => {
-	var { appName, appIcon, image } = notification;
-	if (image) {
-		if (image.includes("file://")) image = image.replace("file://", "");
+	var { appName, appIcon, image, desktopEntry } = notification;
+
+	// 检查图像并确保文件存在
+	if (image && fileExists(image)) {
+		// if (image.includes("file://")) image = image.replace("file://", "");
 
 		return (
 			<box
@@ -35,6 +42,45 @@ const NotificationIcon = ({ notification }: NotificationIconProps) => {
 		);
 	}
 
+	// 检查图像是否为图标
+	if (image && isIcon(image)) {
+		return (
+			<box
+				valign={Gtk.Align.START}
+				hexpand={false}
+				className="notification__icon"
+				css={`
+                background-image: url("file://${image}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                min-width: 60px;
+                min-height: 60px;
+            `}
+			/>
+		);
+	}
+
+	// 检查应用图标或桌面入口
+	if (appIcon || desktopEntry) {
+		return (
+			<box
+				valign={Gtk.Align.START}
+				hexpand={false}
+				className="notification__icon"
+				css={`
+                background-image: url("file://${appIcon || desktopEntry}");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                min-width: 60px;
+                min-height: 60px;
+            `}
+			/>
+		);
+	}
+
+	// 使用默认图标
 	let icon = icons.fallback.notification;
 
 	return new Widget.Box({
@@ -43,7 +89,8 @@ const NotificationIcon = ({ notification }: NotificationIconProps) => {
 		className: "notification__icon",
 		child: new Widget.Icon({
 			icon,
-			iconSize: 60,
+			iconSize: 40,
+			// iconSize: 60,
 			halign: Gtk.Align.CENTER,
 			valign: Gtk.Align.CENTER,
 			hexpand: true,
@@ -88,7 +135,7 @@ export default function Notification(props: NotificationsProps) {
 								wrap={true}
 								maxWidthChars={8}
 								useMarkup={true}
-								label={notification.app_name.trim()}
+								label={notification.appName.trim()} // 修复这里使用 appName 而不是 app_name
 							/>
 						)}
 						{notification.appName != "" && (

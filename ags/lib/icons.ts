@@ -49,16 +49,29 @@ export default {
 		dark: "night-light-symbolic",
 		light: "night-light-symbolic",
 	},
+	wallpaper: "preferences-desktop-wallpaper-symbolic",
 	cpu: "cpu-symbolic",
 	ram: "ram-symbolic",
 	user: {
 		default: "user-available-symbolic", // 默认用户图标
 	},
+	// powerprofile: {
+	// 	default: "power-profile-balanced-symbolic",
+	// 	"power-saver": "power-profile-power-saver-symbolic",
+	// 	"balanced": "power-profile-balanced-symbolic",
+	// 	"performance": "power-profile-performance-symbolic",
+	// },
 	record: "media-record-symbolic",
+	record_alt: "screencast-recorded-symbolic",
 	powerprofile: {
 		0: "power-profile-balanced-symbolic",
 		1: "power-profile-power-saver-symbolic",
 		2: "power-profile-performance-symbolic",
+	},
+	colorselect: "color-picker-symbolic",
+	screenshot: {
+		full: "screenshot-fullscreen-symbolic",
+		area: "screenshot-ui-area-symbolic",
 	},
 	bluetooth: {
 		enabled: "bluetooth-active-symbolic",

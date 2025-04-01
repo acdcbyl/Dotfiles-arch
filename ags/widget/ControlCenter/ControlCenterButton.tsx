@@ -28,9 +28,7 @@ export default ({
 			setup={(self) => {
 				if (connection) {
 					let [service, condition] = connection;
-
 					self.toggleClassName("active", condition());
-
 					self.hook(service, () => {
 						self.toggleClassName("active", condition());
 					});
@@ -42,7 +40,6 @@ export default ({
 				}
 				if (event.button == 3 && menuName) {
 					if (menuName == "network") {
-						// const network = Network.get_default();
 						const { wifi } = Network.get_default();
 						if (wifi == null) return;
 					}
@@ -54,12 +51,14 @@ export default ({
 			<box
 				hexpand
 				spacing={12}
-				halign={!label ? Gtk.Align.CENTER : Gtk.Align.FILL}
+				halign={label ? Gtk.Align.FILL : Gtk.Align.CENTER}
 			>
-				<icon icon={icon} />
-				{label !== null && (
+				<icon
+					icon={icon}
+					halign={!label ? Gtk.Align.CENTER : Gtk.Align.START}
+				/>
+				{label && (
 					<label
-						// label={label instanceof Binding ? bind(label) : String(label || "")}
 						label={label}
 						halign={Gtk.Align.START}
 						hexpand

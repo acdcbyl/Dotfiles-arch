@@ -3,7 +3,7 @@
 @use "colors.scss" as *;
 
 .dashboard {
-  border-radius: 38px;
+  border-radius: 20px;
   min-width: 420px;
   transition:
     background-color 1s ease-in-out,
@@ -21,7 +21,7 @@
   min-width: 27em;
   min-height: 6em;
   background: $surface_transparent;
-  border-radius: 30px;
+  border-radius: 20px;
   transition:
     background-color 1s ease,
     color 1s ease;
@@ -29,7 +29,7 @@
 
 // 日历菜单项容器，对应calendar-menu-item-container
 .calendar-menu-item-container {
-  border-radius: 30px;
+  border-radius: 20px;
   margin-bottom: 0.65em;
   background: $surface_transparent;
 
@@ -39,7 +39,7 @@
 
   &.calendar {
     background: $surface_transparent;
-    border-radius: 30px;
+    border-radius: 20px;
   }
 }
 
@@ -139,4 +139,111 @@ calendar {
   &:indeterminate {
     color: color.scale($on_surface, $alpha: -35%);
   }
+}
+.clock-content-items {
+  min-height: 8em;
+
+  .clock-content-time {
+    font-size: 4em;
+    color: $primary;
+  }
+
+  .clock-content-period {
+    font-size: 1.75em;
+    margin-bottom: 1.35em;
+    margin-right: -0.875em;
+    color: $tertiary;
+  }
+}
+.weather-container-box {
+  margin: 1.5em;
+  margin-top: 2.5em;
+  min-width: 3em;
+
+  .calendar-menu-weather.today.icon {
+    label {
+      color: $primary;
+      font-size: 5em;
+    }
+  }
+
+  .calendar-menu-weather.today.temp.label {
+    color: $on_surface;
+    margin-left: 0.2em;
+    font-size: 2.5em;
+
+    font-weight: bold;
+    &.icon {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+  }
+
+  .calendar-menu-weather.today.condition.label {
+    color: $secondary;
+    font-size: 1em;
+    margin-bottom: 0.4em;
+    margin-left: 0.5em;
+  }
+
+  .calendar-menu-weather.today.temp.label.icon.weather-color.red {
+    color: $red;
+  }
+
+  .calendar-menu-weather.today.temp.label.icon.weather-color.orange {
+    color: $orange;
+  }
+
+  .calendar-menu-weather.today.temp.label.icon.weather-color.lavender {
+    color: $purple;
+  }
+
+  .calendar-menu-weather.today.temp.label.icon.weather-color.blue {
+    color: $blue;
+  }
+
+  .calendar-menu-weather.today.temp.label.icon.weather-color.sky {
+    color: $blue;
+  }
+}
+
+.calendar-menu-weather.today.stats.container {
+  margin-bottom: 0.75em;
+  color: $primary;
+  margin-top: 2.5em;
+
+  .weather.label {
+    margin-left: 0.35em;
+  }
+}
+
+.menu-separator.weather {
+  margin: 1.5em 0em;
+  background-color: $on_surface_variant;
+  color: $on_surface_variant;
+}
+
+.hourly-weather-time {
+  color: $primary;
+  margin-bottom: 0.5em;
+}
+
+.hourly-weather-icon {
+  color: $primary;
+  margin-bottom: 0.25em;
+  font-size: 1.8em;
+}
+
+.hourly-weather-temp {
+  color: $primary;
+}
+
+.weather.precip.icon {
+  min-width: 1em;
+  font-size: 1em;
+}
+
+.weather.wind.icon {
+  min-width: 1em;
+  font-size: 1em;
 }

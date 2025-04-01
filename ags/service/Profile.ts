@@ -7,5 +7,5 @@ const usernameCommand = ["whoami"];
 export const username = Variable<string | null>(null).poll(
   60_000, // 每60秒轮询一次（可以根据需要调整）
   usernameCommand,
-  (out) => out.trim() // 移除可能的换行符
+  (out) => `Welcome, ${out.trim()}` // 移除可能的换行符
 );

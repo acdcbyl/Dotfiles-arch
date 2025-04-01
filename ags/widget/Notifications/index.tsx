@@ -92,17 +92,26 @@ export default () => {
 					halign={Gtk.Align.END}
 					hexpand={false}
 					className="notifications-window__clear"
+					// tooltipText="Clear all notifications"
 					onClicked={() => {
 						notifications.get_notifications().forEach((n) => {
 							timeout(150, () => n.dismiss());
 						});
 					}}
 				>
-					<label
-						className="notifications-window__clear-label"
-						label={"Clear all"}
-					></label>
+					<box spacing={6}>
+						<icon
+							className="notifications-window__clear-icon"
+							icon="edit-clear-all-symbolic"
+							iconSize={16}
+						/>
+						<label
+							className="notifications-window__clear-label"
+							label="Clear"
+						/>
+					</box>
 				</button>
+
 				<scrollable vexpand>
 					<box
 						className="notifications-window__list"

@@ -18,10 +18,33 @@
 }
 
 .notifications-window__clear {
-  background: none;
+  background: $surface_bright;
   color: $on_surface;
-  padding: 6px 0;
+  // 移除固定宽高限制
+  // min-width: 32px;
+  // min-height: 32px;
+
+  // 使用足够的内边距来创建胶囊形状
+  padding: 6px 12px;
   margin-right: 18px;
+
+  // 使用较大的 border-radius 来确保两端是圆形
+  border-radius: 9999px; // 或者使用 24px
+
+  transition: all 0.1s ease-in-out; // 修改为 all 使背景色也有过渡效果
+
+  &:hover {
+    background: $on_primary_container;
+    color: $surface;
+  }
+
+  &-icon {
+    margin: 2px;
+  }
+
+  &-label {
+    font-size: 0.9em;
+  }
 }
 
 .notifications-window__list {

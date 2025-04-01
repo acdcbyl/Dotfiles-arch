@@ -1,10 +1,18 @@
 @use "sass:string";
 @use "colors.scss" as *;
+$icon-size: 60px;
+$border-radius: 6px;
 .notification {
   padding: 14px 16px 14px 20px;
   color: $on_surface;
   background-color: $surface_transparent;
   border-radius: 20px;
+  .app-icon {
+    // -gtk-icon-size: $icon-size;
+    min-width: $icon-size;
+    min-height: $icon-size;
+    padding: 8px; // 可选：添加内边距使图标不那么贴边
+  }
 }
 
 .notification__icon {
@@ -85,4 +93,18 @@
     background: $primary_fixed;
     color: $on_primary_fixed;
   }
+}
+.image {
+  border: 1px solid;
+  margin-right: 0.5rem;
+  border-radius: 9px;
+  min-width: 100px;
+  min-height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+.app-icon {
+  min-height: 60px;
+  min-height: 60px;
+  background-size: cover;
 }
