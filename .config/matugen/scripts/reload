@@ -10,4 +10,4 @@ hyprctl reload
 #ags &
 
 # 启动hyprshde
-hyprshade on vibrance
+hyprshade auto

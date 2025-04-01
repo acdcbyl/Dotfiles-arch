@@ -32,7 +32,7 @@
     ),
     borders_style: (fg: "{{colors.primary.default.hex}}"),
     highlighted_item_style: (fg: "{{colors.tertiary.default.hex}}", modifiers: "Bold"),
-    current_item_style: (fg: "{{colors.primary.default.hex}}", bg: "{{colors.on_primary.default.hex}}", modifiers: "Bold"),
+    current_item_style: (fg: "{{colors.primary.default.hex}}", bg: "{{colors.primary_container.default.hex}}", modifiers: "Bold"),
     highlight_border_style: (fg: "{{colors.primary.default.hex}}"),
     song_table_format: [
 
@@ -122,19 +122,19 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold")),
-                    (kind: Property(Status(State)), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold"))
                 ],
                 center: [
-                    (kind: Property(Song(Title)), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"),
-                        default: (kind: Text("No Song"), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"))
+                    (kind: Property(Song(Title)), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold"))
                     ),
                 ],
                 right: [
-                    (kind: Text("Vol: "), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "{{colors.primary_fixed_dim.default.hex}}")),
-                    (kind: Text("% "), style: (fg: "{{colors.primary_fixed_dim.default.hex}}", modifiers: "Bold"))
+                    (kind: Text("Vol: "), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold")),
+                    (kind: Property(Status(Volume)), style: (fg: "{{colors.primary.default.hex}}")),
+                    (kind: Text("% "), style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold"))
                 ]
             ),
             (
