@@ -10,6 +10,7 @@
   <summary>General Software</summary>
   <img src = "assets/apps.png" />
   <img src = "assets/nvim.png" />
+  <img src = "assets/rmpc.png" />
 </details>
 <details>
   <summary>Dark Mode</summary>
@@ -17,7 +18,9 @@
 </details>
 <details>
   <summary>Dark Mode General Software</summary>
-  <img src = "assets/rmpc.png" />
+  <img src = "assets/Dark-rmpc.png" />
+  <img src = "assets/Dark-nvim.png" />
+  <img src = "assets/Dark-apps.png" />
 </details>
 
 ## Dependencies
