@@ -22,6 +22,10 @@
   <img src = "assets/Dark-nvim.png" />
   <img src = "assets/Dark-apps.png" />
 </details>
+<details>
+  <summary>Video</summary>
+  <img src="assets/dotfiles.mp4"/>
+</details>
 
 ## Dependencies
 
