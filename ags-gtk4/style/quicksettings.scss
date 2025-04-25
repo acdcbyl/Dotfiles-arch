@@ -1,0 +1,218 @@
+@use "sass:color";
+@use "colors.scss" as *;
+
+.qs-container {
+  min-width: 450px;
+  // min-height: 650px;
+  background: $surface_transparent;
+  border-radius: 20px;
+  button {
+    outline-color: $on_surface;
+    // color: $on_surface;
+  }
+
+  .arrow-button {
+    border-radius: 30px;
+    min-height: 70px;
+    // min-width: 38px;
+    // min-height: 38px;
+    background-color: $inverse_surface_transparent;
+    color: $on_surface;
+
+    > * {
+      padding: 0 4px;
+      .title {
+        margin-top: 0.3rem;
+        margin-left: 0.5rem;
+      }
+      .subtitle {
+        margin-left: 0.5rem;
+      }
+
+      &:first-child {
+        padding: 10px;
+      }
+    }
+    &.active {
+      background-color: $primary;
+      color: $on_primary;
+      .next-page {
+        background: $primary_fixed;
+      }
+    }
+    .next-page {
+      border-radius: 0 30px 30px 0;
+      background: transparent;
+      &.active {
+        background: $secondary;
+      }
+    }
+  }
+
+  flowbox flowboxchild {
+    padding: 0;
+    outline-color: $on_surface;
+    &:selected {
+      background-color: transparent;
+    }
+  }
+
+  separator {
+    margin: 0;
+    background-color: $inverse_surface_transparent;
+    color: $inverse_surface_transparent;
+    // margin: 0.7rem 0;
+    // margin-top: 0.2rem;
+  }
+
+  .header {
+    label {
+      font-size: 1.2rem;
+      color: $on_surface;
+    }
+    button {
+      padding: 0.3rem 0.5rem;
+      border-radius: 30px;
+      color: $on_surface;
+      background-color: $inverse_surface_transparent;
+      label {
+        font-size: 0.95rem;
+      }
+      &:hover {
+        background-color: $inverse_surface_transparent_variant;
+      }
+    }
+    .powermenu {
+      color: $on_surface;
+      &:hover {
+        color: $red;
+        background-color: $inverse_surface_transparent;
+      }
+    }
+  }
+
+  .qs-box {
+    image {
+      padding: 0.5rem;
+      border-radius: 10px;
+      background-color: $inverse_surface_transparent;
+    }
+    // margin-bottom: 0.7rem;
+  }
+  .qs-button {
+    border-radius: 30px;
+    min-height: 70px;
+    background-color: $inverse_surface_transparent;
+    color: $on_surface;
+    outline-color: $on_surface;
+
+    button {
+      // padding: 1rem 0;
+      background-color: transparent;
+      color: $on_surface;
+      // outline-color: $on_surface;
+      &:checked {
+        color: $on_primary_container;
+        border-radius: 30px;
+        background-color: $primary_container;
+      }
+    }
+    // popover arrow {
+    //   background: transparent;
+    // }
+    // popover contents {
+    //   border-radius: 7px;
+    //   background: $surface;
+    //   // padding: 2px;
+    //   // font-size: 100px;
+    //   // min-width: 100px;
+    //   modelbutton {
+    //     background-color: $surface;
+    //     &:first-child {
+    //       margin-bottom: 0.3rem;
+    //     }
+    //     &:hover {
+    //       background-color: $primary;
+    //       color: $on_primary;
+    //     }
+    //   }
+    // }
+
+    &:hover {
+      background-color: $inverse_surface_transparent_variant;
+    }
+    > * {
+      padding: 0.5rem;
+    }
+
+    .status {
+      font-weight: 400;
+    }
+
+    &.active {
+      background-color: $primary;
+      color: $on_primary;
+    }
+  }
+
+  .qs-page {
+    margin: 10px;
+    color: $on_surface;
+    .button {
+      padding: 0.4rem 0.8rem;
+      background-color: $inverse_surface_transparent;
+      border-radius: 10px;
+      border-radius: 30px;
+      min-height: 40px;
+      color: $on_surface;
+      .bluetooth__percentage {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        background-color: $inverse_surface_transparent_variant;
+      }
+
+      &:active {
+        > * {
+          transform: none;
+        }
+
+        image {
+          transform: scale(0.85);
+        }
+      }
+
+      &.active {
+        background-color: $primary;
+        color: $on_primary;
+      }
+
+      image {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .wifi-page {
+    margin: 0;
+    .header {
+      margin: 10px;
+      margin-bottom: 0;
+      color: $on_surface;
+    }
+
+    separator {
+      margin: 10px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    scrolledwindow viewport {
+      padding: 10px;
+      padding-top: 0;
+    }
+  }
+  .bluetooth-page {
+  }
+}

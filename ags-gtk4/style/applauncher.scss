@@ -1,0 +1,118 @@
+@use "colors.scss" as *;
+
+.applauncher-container {
+  font-size: 4rem;
+  min-height: 600px;
+  min-width: 450px;
+  background: $surface_transparent;
+  border-radius: 20px;
+
+  .background-entry {
+    border-radius: 20px;
+    // background: $primary;
+    // box-shadow: inset 0 0 0 1px $primary;
+  }
+
+  separator {
+    margin: 0;
+    margin-top: 10px;
+    // margin-bottom: 10px;
+    background-color: $surface_bright;
+    color: $surface_bright;
+    margin-left: 20px;
+    margin-right: 20px;
+    // margin-top: 0.2rem;
+  }
+  > overlay {
+    // margin: 10px;
+    margin-bottom: 6px;
+    entry {
+      outline: none;
+      background: transparent;
+      // padding: 20px;
+      background: none;
+      border: none;
+      outline: none;
+      caret-color: $on_surface;
+      color: $on_surface;
+      margin-top: 5px;
+      padding: 12px 22px;
+      border-radius: 0px;
+      border-bottom: 2px solid $inverse_surface_transparent;
+      box-shadow: none;
+
+      image {
+        -gtk-icon-size: 1.5rem;
+        border-radius: 20px;
+      }
+
+      text {
+        font-size: 1.2rem;
+        color: $on_surface;
+        placeholder {
+          font-size: 1.2rem;
+          color: $on_surface;
+        }
+      }
+    }
+  }
+
+  .entry-overlay {
+    // box-shadow: 0 0 0 0px $on_surface;
+    // border-radius: 20px;
+    color: $on_surface;
+    margin-top: 2px;
+    scrolledwindow viewport picture {
+      border-radius: 2px;
+    }
+  }
+
+  > scrolledwindow viewport {
+    padding: 20px;
+    padding-top: 2px;
+    box {
+      outline-width: 2px;
+
+      .not-found label {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .app-button {
+    -gtk-icon-size: 2rem;
+    min-height: 50px;
+    padding: 0.4rem 0.8rem;
+    color: $on_surface;
+    border-radius: 20px;
+    // background-color: $inverse_surface_transparent;
+    image {
+      margin-right: 6px;
+    }
+
+    &:active {
+      > * {
+        transform: none;
+      }
+
+      image {
+        transform: scale(0.85);
+      }
+    }
+
+    &:focus {
+      outline-color: $primary;
+      background: $primary;
+      color: $on_primary;
+    }
+    &:hover {
+      background-color: $inverse_surface_transparent;
+      color: $on_surface;
+    }
+    .description {
+      // color: $on_surface;
+      font-size: 0.85rem;
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,172 @@
+@use "sass:string";
+@use "colors.scss" as *;
+.powermenu {
+  padding: 24px;
+  border-radius: 20px;
+  background: $surface_transparent;
+}
+
+.powermenu__button {
+  padding: 0;
+  background: $inverse_surface_transparent;
+  color: $on_surface;
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 100px;
+  &:hover,
+  &:focus {
+    color: $on_primary;
+    background: $primary, $inverse_surface_transparent_variant_overlay;
+  }
+  &:focus {
+    box-shadow: 0 0 0 1px $inverse_surface;
+    color: $on_surface;
+  }
+  &:active {
+    background: $primary, $inverse_surface_transparent_overlay;
+    color: $on_primary;
+  }
+}
+
+.verification {
+  min-width: 300px;
+  padding: 24px;
+  border-radius: 30px;
+  background: $surface_transparent;
+}
+
+.verification__title {
+  font-size: 20px;
+  color: $on_surface;
+  font-weight: 500;
+}
+.verification__description {
+  font-size: 16px;
+  color: $on_surface;
+  font-weight: 400;
+}
+/* .verification__button {
+	background: $inverse_surface_transparent;
+	border-radius: 100px;
+	padding: 8px 22px;
+	&:hover,
+	&:focus {
+		background: $secondary;
+		color: $on_secondary;
+	}
+} */
+
+.verification-container {
+  min-width: 300px;
+  padding: 24px;
+  border-radius: 30px;
+  background: $surface_transparent;
+  color: $on_surface;
+
+  .title {
+    font-size: 20px;
+    color: $on_surface;
+    font-weight: 500;
+  }
+  .body {
+    font-size: 16px;
+    font-weight: 400;
+    color: $on_surface;
+  }
+
+  .buttons {
+    button {
+      background-color: $inverse_surface_transparent;
+      color: $on_surface;
+      min-width: 70px;
+      min-height: 35px;
+      border-radius: 30px;
+      padding: 0.2rem;
+      &:focus {
+        outline-color: $on_surface;
+      }
+      &:focus {
+        background: $secondary;
+        color: $on_secondary;
+      }
+    }
+
+    button:last-child {
+      color: $red;
+      &:focus {
+        color: $on_red;
+      }
+    }
+  }
+}
+
+.powermenu-container {
+  padding: 24px;
+  border-radius: 20px;
+  background: $surface_transparent;
+  color: $on_surface;
+
+  flowboxchild {
+    outline: unset;
+    padding: 0;
+    min-height: 100px;
+    border-radius: 100px;
+    min-width: 100px;
+
+    image {
+      // margin-top: 20px;
+
+      color: $on_surface;
+    }
+    &:selected {
+      // outline: unset;
+      // box-shadow: 0 0 0 2px $on_surface;
+      color: $primary;
+      border-radius: 100px;
+      background-color: $primary;
+      button,
+      image {
+        // margin-top: 10px;
+        color: $on_primary;
+      }
+      label {
+        color: $on_primary;
+      }
+    }
+  }
+
+  .system-button {
+    background-color: $inverse_surface_transparent;
+    // color: $on_surface;
+    // padding: 0.7rem;
+    border-radius: 100px;
+
+    // &:focus {
+    //   background: $primary, $inverse_surface_transparent_variant_overlay;
+    // }
+    // &:focus {
+    //   box-shadow: 0 0 0 1px $inverse_surface;
+    // }
+    // &:active {
+    //   background: $primary, $inverse_surface_transparent_overlay;
+    // }
+    // .system-font {
+    //   &:focus {
+    //     color: $on_primary;
+    //   }
+    //   &:active {
+    //     color: $on_primary;
+    //   }
+    // }
+    // &:selected {
+    //   background-color: red;
+    // }
+    //
+    // &:focus {
+    //   outline-color: $fg;
+    // }
+    // &:hover {
+    //   background-color: color.adjust($fg, $alpha: -0.65);
+    // }
+  }
+}

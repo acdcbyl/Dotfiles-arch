@@ -1,0 +1,73 @@
+@use "sass:string";
+@use "sass:color";
+@use "colors.scss" as *;
+
+.datemenu-container {
+  border-radius: 20px;
+
+  .time {
+    font-size: 1.5rem;
+  }
+
+  .date {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  calendar {
+    // margin: 10px;
+    background-color: $surface_transparent;
+    // color: $on_surface;
+    min-width: 300px;
+    min-height: 300px;
+    // min-height: 380px;
+    padding: 20px;
+    // padding-top: 20px;
+    border-radius: 20px;
+    border: unset;
+
+    header {
+      padding-bottom: 10px;
+      color: $on_surface;
+      border: unset;
+    }
+
+    grid > * {
+      min-width: 30px;
+      min-height: 30px;
+      border-radius: 100px;
+      margin: 0.5rem;
+      margin-top: 0.1rem;
+      margin-bottom: 0.1rem;
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+      color: $on_surface;
+      outline-color: $outline;
+      // outline: unset;
+    }
+
+    .day-number {
+      // min-width: 16px;
+      min-height: 26px;
+      color: $on_surface;
+      &:selected {
+        color: $on_primary;
+        background-color: $primary;
+      }
+    }
+    .today {
+      border-radius: 100px;
+      // margin: 0.8rem;
+      min-width: 30px;
+      min-height: 30px;
+      margin-top: 0.1rem;
+      margin-bottom: 0.1rem;
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+      box-shadow: 0 0 0 0.1rem $outline;
+    }
+    .other-month {
+      color: $outline;
+    }
+  }
+}

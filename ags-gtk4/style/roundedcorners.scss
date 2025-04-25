@@ -1,0 +1,6 @@
+@use "sass:string";
+@use "colors.scss" as *;
+// @use "variables" as *;
+.corner-widget {
+  color: $surface_transparent;
+}

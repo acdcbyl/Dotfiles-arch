@@ -1,0 +1,98 @@
+@use "colors.scss" as *;
+
+.mediaPlayersContainer {
+  // margin: 6px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  background-color: $inverse_surface_transparent;
+  border-radius: 35px;
+  // min-height: 100px;
+  .media-player {
+    // min-width: 180px;
+    color: $on_surface;
+    padding: 1rem;
+    margin-left: 0rem;
+    .media-font {
+      color: $on_surface;
+      font-size: 7rem;
+      font-weight: 900;
+      margin-top: 15px;
+      margin-left: 1rem;
+    }
+    .play-icon {
+      color: $on_primary;
+      margin-right: 1rem;
+      &:hover {
+        color: $on_primary_container;
+      }
+      .control-bg {
+        padding: 1rem;
+        border-radius: 100px;
+        background: $primary;
+        &:hover {
+          background: $primary_container;
+        }
+      }
+    }
+    .next-icon {
+      color: $on_surface;
+      margin-right: 1rem;
+    }
+
+    .cover {
+      border-radius: 100px;
+      min-height: 70px;
+      min-width: 70px;
+      margin-right: 0.3rem;
+      margin-right: 0.3rem;
+    }
+  }
+}
+
+.mediaPlayer {
+  margin-top: 10px;
+  background-color: transparent;
+  border: $surface_transparent;
+  border-radius: 10px;
+  padding: 4px 12px 4px 12px;
+
+  .controlButton {
+    all: unset;
+    background-color: $primary;
+    color: $on_primary;
+    padding: 4px 4px 4px 4px;
+    border: none;
+    min-height: 25px;
+    min-width: 30px;
+    border-radius: 100px;
+  }
+
+  .controlButton:hover {
+    background-color: $on_primary;
+    color: $primary;
+  }
+
+  .seekContainer {
+    margin: 10px 0 10px 0;
+  }
+
+  .seek {
+    margin: 0 8px 0 8px;
+
+    trough {
+      background: $inverse_surface_transparent;
+      min-height: 8px;
+      border-radius: 20px;
+
+      // slider {
+      //   color: $primary;
+      //   background: $primary;
+      // }
+
+      highlight {
+        background: $primary;
+        border-radius: 20px;
+      }
+    }
+  }
+}

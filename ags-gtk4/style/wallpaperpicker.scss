@@ -1,0 +1,59 @@
+@use "sass:color";
+@use "colors.scss" as *;
+
+.wallpaperpicker-container {
+  min-height: 150px;
+  border-radius: 10px;
+  background-color: $surface_transparent;
+  color: $on_surface;
+
+  > box {
+    margin: 10px;
+    // margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    label {
+      font-size: 1.2rem;
+      color: $on_surface;
+
+      &.directory {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: $on_surface;
+        font-style: italic;
+      }
+    }
+
+    button {
+      background-color: $inverse_surface_transparent;
+      color: $on_surface;
+      padding: 0 0.6rem;
+
+      &:hover {
+        color: $on_secondary;
+        background-color: $secondary;
+      }
+    }
+  }
+
+  separator {
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: $inverse_surface_transparent;
+    color: $inverse_surface_transparent;
+  }
+
+  scrolledwindow viewport {
+    > box {
+      margin: 10px;
+      margin-top: 6px;
+    }
+  }
+
+  .image {
+    border-radius: 10px;
+    border: 10px;
+    border-color: $primary;
+    background-size: contain;
+  }
+}

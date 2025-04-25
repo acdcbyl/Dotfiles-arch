@@ -1,0 +1,33 @@
+@use "sass:string";
+@use "colors.scss" as *;
+// .material-button {
+//   border-radius: 20px;
+//   padding: 8px 22px;
+//   &:focus {
+//     box-shadow: 0 0 0 1px $inverse_surface;
+//   }
+//   &.filled {
+//     background: $primary;
+//     color: $on_primary;
+//     &:hover,
+//     &:focus {
+//       background: $primary, $inverse_surface_transparent_variant_overlay;
+//     }
+//     &:active {
+//       background: $on_primary_container, $inverse_surface_transparent_overlay;
+//     }
+//   }
+//
+//   &.outlined {
+//     background: none;
+//     color: $on_surface;
+//     border: 1px solid $outline;
+//     &:hover,
+//     &:focus {
+//       background: $inverse_surface_transparent;
+//     }
+//     &:active {
+//       background: $inverse_surface_transparent_variant;
+//     }
+//   }
+// }
