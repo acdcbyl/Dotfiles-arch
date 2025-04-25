@@ -27,6 +27,13 @@
   <img src="assets/dotfiles.mp4"/>
 </details>
 
+### Gtk4
+
+<details>
+  <summary>All In One</summary>
+  <img src = "assets/allinone.png" />
+</details>
+
 ## Dependencies
 
 - sassc
@@ -84,11 +91,24 @@ cp -r ags ~/.config/
 - More widgets in Control Center
 - ...
 
+> [!IMPORTANT]
+> I upgraded ags to astal-gtk4 based code. It seems to work fine so far. Just need `ags run -d {path-to-ags-gtk4} --gtk4`.
+
 ### Waypaper
 
 1. waypaper makes grips used to change the wallpaper and as a tool for `matugen` front end. You can choose your own.
 2. I use `zenity` to generate the selection UI for `matugen`, if you need to change it go to `.config/waypaper/` and change `post_command` in `config.ini`.
 
+> [!IMPORTANT]
+> If you are using ags-gtk4, you will no longer need this section.
+
 ### Other modules
 
 For the other modules, just make sure of the paths and it's very simple to get them working.
+
+### Thanks to
+
+- [Aylur](https://github.com/Aylur) for the awesome project [Astal](https://github.com/Aylur/astal) is.
+- [ezerinz@epik-shell](https://github.com/ezerinz/epik-shell) for the wonderful ags-gtk4 code.
+- [PoSayDone@.dotfiles_nix](https://github.com/PoSayDone/.dotfiles_nix) for the beautiful component styles.
+- [InioX@matugen](https://github.com/InioX/matugen) for the elegant color generator.
