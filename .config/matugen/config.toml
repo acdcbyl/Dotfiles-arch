@@ -21,11 +21,25 @@ reload_apps = true
 # [config.reload_apps_list]
 # gtk_theme = true
 # kitty = true
+[config.wallpaper]
+command = "swww"
+arguments = [
+  "img",
+  "--transition-type",
+  "center",
+  "--transition-step",
+  "90",
+  "--transition-duration",
+  "2",
+  "--transition-fps",
+  "90",
+]
+set = true
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
 output_path = '~/.config/hypr/colors.conf'
 #pre_hook = 'ags -q '
-# post_hook = 'fish ~/.config/matugen/scripts/reload'
+post_hook = 'fish ~/.config/matugen/scripts/reload'
 [templates.gitui]
 input_path = '~/.config/matugen/templates/gitui.ron'
 output_path = '~/.config/gitui/theme.ron'
@@ -49,11 +63,12 @@ output_path = '~/.config/gtk-4.0/colors.css'
 # post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3"'
 
 [templates.qt5ct]
-input_path = '~/.config/matugen/templates/qtct-colors.conf'
+input_path = '~/.config/matugen/templates/qtct-colors-new.conf'
 output_path = '~/.config/qt5ct/colors/matugen.conf'
 
+
 [templates.qt6ct]
-input_path = '~/.config/matugen/templates/qtct-colors.conf'
+input_path = '~/.config/matugen/templates/qtct-colors-new.conf'
 output_path = '~/.config/qt6ct/colors/matugen.conf'
 
 [templates.starship]
@@ -87,9 +102,9 @@ post_hook = 'pkill -USR2 cava'
 input_path = '~/.config/matugen/templates/mpv.conf'
 output_path = '~/.config/mpv/mpv.conf'
 
-# [templates.zed]
-# input_path = '~/.config/matugen/templates/zed.json'
-# output_path = '~/.config/zed/themes/material-you.json'
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed.json'
+output_path = '~/.config/zed/themes/material-you.json'
 
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi.toml'
@@ -98,7 +113,6 @@ output_path = '~/.config/yazi/theme.toml'
 [templates.ags]
 input_path = '~/.config/matugen/templates/ags.scss'
 output_path = '~/.config/ags/style/colors.scss'
-
 
 [templates.zen1]
 input_path = '~/.config/matugen/templates/userChrome.css'
@@ -123,6 +137,11 @@ input_path = '~/.config/matugen/templates/musicfox'
 output_path = '~/.config/matugen/scripts/musicfox'
 post_hook = 'sh ~/.config/matugen/scripts/musicfox'
 
+# Spicetify
+[templates.spicetify]
+input_path = '~/.config/matugen/templates/spotify.ini'
+output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
+
 [templates.tmux]
 input_path = '~/.config/matugen/templates/tmux.conf'
 output_path = '~/.tmux.conf'
@@ -135,10 +154,10 @@ output_path = '~/.config/fish/themes/Matugen.theme'
 post_hook = 'yes | fish_config theme save Matugen'
 
 [templates.neovim]
-# input_path = '~/.config/matugen/templates/nvim.vim'
-# output_path = '~/.cache/wal/colors-wal.vim'
-input_path = '~/.config/matugen/templates/catppuccin.lua'
-output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
+input_path = '~/.config/matugen/templates/nvim.vim'
+output_path = '~/.cache/wal/colors-wal.vim'
+# input_path = '~/.config/matugen/templates/catppuccin.lua'
+# output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
 
 [templates.tldr]
 input_path = '~/.config/matugen/templates/config.toml'

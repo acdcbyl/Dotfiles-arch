@@ -21,7 +21,7 @@
         thumb_style: (fg: "{{colors.primary.default.hex}}"),
     ),
     browser_column_widths: [20, 38, 42],
-    text_color: "{{colors.primary.default.hex}}",
+    text_color: "{{colors.secondary.default.hex}}",
     background_color: "{{colors.surface.default.hex}}",
     header_background_color: None,
     modal_background_color: "{{colors.on_primary.default.hex}}",
@@ -31,7 +31,7 @@
         inactive_style: (),
     ),
     borders_style: (fg: "{{colors.primary.default.hex}}"),
-    highlighted_item_style: (fg: "{{colors.tertiary.default.hex}}", modifiers: "Bold"),
+    highlighted_item_style: (fg: "{{colors.primary.default.hex}}", modifiers: "Bold"),
     current_item_style: (fg: "{{colors.primary.default.hex}}", bg: "{{colors.primary_container.default.hex}}", modifiers: "Bold"),
     highlight_border_style: (fg: "{{colors.primary.default.hex}}"),
     song_table_format: [
