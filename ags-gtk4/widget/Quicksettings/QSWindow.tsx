@@ -21,6 +21,7 @@ import BatteryPage from "./pages/BatteryPage";
 import SpeakerPage from "./pages/SpeakerPage";
 import WifiPage from "./pages/WifiPage";
 import BluetoothPage from "./pages/BluetoothPage";
+import Cava from "./Cava";
 
 export const WINDOW_NAME = "quicksettings";
 export const qsPage = Variable("main");
@@ -91,17 +92,17 @@ function Header() {
 
   return (
     <box hexpand={false} cssClasses={["header"]} spacing={6}>
-      {/* <label */}
-      {/*   useMarkup={true} */}
-      {/*   label={"<b>  </b>"} */}
-      {/*   hexpand */}
-      {/*   xalign={0} */}
-      {/* /> */}
-      <image
-        iconName={"org.gnome.Settings-symbolic"}
+      <label
+        useMarkup={true}
+        label={"<b> ControlCenter</b>"}
         hexpand
-        halign={Gtk.Align.START}
+        xalign={0}
       />
+      {/* <image */}
+      {/*   iconName={"org.gnome.Settings-symbolic"} */}
+      {/*   hexpand */}
+      {/*   halign={Gtk.Align.START} */}
+      {/* /> */}
       <button
         onClicked={() => {
           App.toggle_window(WINDOW_NAME);
@@ -168,8 +169,8 @@ function ArrowButton<T extends GObject.Object>({
         return classes;
       })}
     >
-      <button onClicked={onClicked} cssClasses={["first-button"]}>
-        <box halign={Gtk.Align.START} spacing={6}>
+      <button onClicked={onClicked}>
+        <box halign={Gtk.Align.START} cssClasses={["first-button"]} spacing={6}>
           <image iconName={icon} iconSize={Gtk.IconSize.LARGE} />
           <box vertical hexpand>
             <label xalign={0} label={title} cssClasses={["title"]} />
@@ -260,6 +261,7 @@ function MainPage() {
       <VolumeBox />
       {/* <Gtk.Separator /> */}
       <MediaPlayers />
+      {/* <Cava /> */}
     </box>
   );
 }

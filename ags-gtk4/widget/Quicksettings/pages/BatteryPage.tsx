@@ -19,17 +19,16 @@ export default function BatteryPage() {
           }}
           iconName={"go-previous-symbolic"}
         />
-        {/* <label label={"Battery"} hexpand xalign={0} /> */}
-        {/* <label */}
-        {/*   useMarkup={true} */}
-        {/*   label={"<b>Battery</b>"} */}
-        {/*   hexpand */}
-        {/*   xalign={0} */}
-        {/* /> */}
-        <image
-          iconName={"preferences-system-power-symbolic"}
+        <label
+          useMarkup={true}
+          label={"<b> Battery</b>"}
           hexpand
-          halign={Gtk.Align.END} />
+          xalign={0}
+        />
+        {/* <image */}
+        {/*   iconName={"preferences-system-power-symbolic"} */}
+        {/*   hexpand */}
+        {/*   halign={Gtk.Align.END} /> */}
       </box>
       <Gtk.Separator />
       {powerprofiles.get_profiles().map((p) => {

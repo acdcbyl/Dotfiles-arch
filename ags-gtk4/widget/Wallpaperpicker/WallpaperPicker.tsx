@@ -133,18 +133,17 @@ function wallpaperPicker() {
             });
           }}
         >
-          {/* <label hexpand xalign={0} label={"Wallpaper"} /> */}
-          {/* <label */}
-          {/*   useMarkup={true} */}
-          {/*   label={"<b>Wallpaper</b>"} */}
-          {/*   hexpand */}
-          {/*   xalign={0} */}
-          {/* /> */}
-          <image
-            iconName={"preferences-desktop-wallpaper-symbolic"}
+          <label
+            useMarkup={true}
+            label={"<b> Wallpaper</b>"}
             hexpand
-            halign={Gtk.Align.START}
+            xalign={0}
           />
+          {/* <image */}
+          {/*   iconName={"preferences-desktop-wallpaper-symbolic"} */}
+          {/*   hexpand */}
+          {/*   halign={Gtk.Align.START} */}
+          {/* /> */}
           <label cssClasses={["directory"]} label={wallpaper.folder()} />
           <button
             tooltipText={"Clear cache"}

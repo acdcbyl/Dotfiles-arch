@@ -50,6 +50,10 @@ export default function Notification({
           {/*     iconName={n.appIcon || n.desktopEntry} */}
           {/*   /> */}
           {/* )} */}
+          <image
+            cssClasses={["app-icon"]}
+            iconName="notifications-applet-symbolic"
+          />
           <label
             cssClasses={["app-name"]}
             halign={Gtk.Align.START}

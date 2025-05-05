@@ -109,17 +109,17 @@ function NotificationWindow(_gdkmonitor: Gdk.Monitor) {
       >
         <box cssClasses={["window-header"]}>
           {/* <label label={"Notifications"} hexpand xalign={0} /> */}
-          {/* <label */}
-          {/*   useMarkup={true} */}
-          {/*   label={"<b> 󱧍 </b>"} */}
-          {/*   hexpand */}
-          {/*   xalign={0} */}
-          {/* /> */}
-          <image
-            iconName={"preferences-system-notifications-symbolic"}
+          <label
+            useMarkup={true}
+            label={"<b> Notifications</b>"}
             hexpand
-            halign={Gtk.Align.START}
+            xalign={0}
           />
+          {/* <image */}
+          {/*   iconName={"preferences-system-notifications-symbolic"} */}
+          {/*   hexpand */}
+          {/*   halign={Gtk.Align.START} */}
+          {/* /> */}
           <DNDButton />
           <ClearButton />
         </box>

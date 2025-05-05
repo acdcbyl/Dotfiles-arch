@@ -1,6 +1,7 @@
 import { Gtk } from "astal/gtk4"
 import Pango from "gi://Pango?version=1.0";
 import { LoopStatus, Mpris, PlaybackStatus, Player, ShuffleStatus } from "../../lib/mpris"
+import { bind } from "astal";
 
 const mpris = new Mpris()
 
@@ -22,14 +23,19 @@ function MediaPlayer({ player }: { player: Player }) {
 
   const playIcon = player.playbackStatus(s =>
     s === PlaybackStatus.Playing
-      ? ""
-      : ""
+      ? ""
+      : ""
   )
 
+  // 使用条件渲染，只在有有效的字符串类型封面时才渲染image组件
   return <box
     cssClasses={["mediaPlayer"]}
     vertical={true}>
-    {/* <box vertical={false}> */}
+    {player.coverArt(coverArt => {
+      return typeof coverArt === 'string'
+        ? <image file={coverArt} />
+        : null
+    })}
     <label
       cssClasses={["labelSmallBold"]}
       ellipsize={Pango.EllipsizeMode.END}
@@ -41,7 +47,6 @@ function MediaPlayer({ player }: { player: Player }) {
       ellipsize={Pango.EllipsizeMode.END}
       halign={CENTER}
       label={artist} />
-    {/* </box> */}
     <box
       cssClasses={["seekContainer"]}
       vertical={false}>
@@ -86,7 +91,7 @@ function MediaPlayer({ player }: { player: Player }) {
         visible={player.shuffleStatus((shuffle) => shuffle !== ShuffleStatus.Unsupported)}
         label={player.shuffleStatus((shuffle) => {
           if (shuffle === ShuffleStatus.Enabled) {
-            return ""
+            return ""
           } else {
             return "󰒞"
           }
@@ -97,7 +102,7 @@ function MediaPlayer({ player }: { player: Player }) {
           player.previousTrack()
         }}
         visible={player.canGoPrevious()}
-        label="" />
+        label="" />
       <button
         cssClasses={["controlButton"]}
         onClicked={() => {
@@ -111,7 +116,7 @@ function MediaPlayer({ player }: { player: Player }) {
           player.nextTrack()
         }}
         visible={player.canGoNext()}
-        label="" />
+        label="" />
       <button
         cssClasses={["controlButton"]}
         onClicked={() => {

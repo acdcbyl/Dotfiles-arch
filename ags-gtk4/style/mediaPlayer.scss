@@ -5,46 +5,90 @@
   margin-top: 10px;
   margin-bottom: 6px;
   background-color: $inverse_surface_transparent;
-  border-radius: 35px;
+  border-radius: 30px;
+
   // min-height: 100px;
   .media-player {
     // min-width: 180px;
     color: $on_surface;
     padding: 1rem;
     margin-left: 0rem;
+
     .media-font {
       color: $on_surface;
       font-size: 7rem;
       font-weight: 900;
-      margin-top: 15px;
-      margin-left: 1rem;
-    }
-    .play-icon {
-      color: $on_primary;
+      // margin-top: 15px;
       margin-right: 1rem;
-      &:hover {
-        color: $on_primary_container;
+      margin-left: 2rem;
+
+      .artist {
+        font-weight: 500;
       }
+    }
+
+    .progress_container {
+      min-height: 10px;
+      margin-left: 2rem;
+
+      .progress {
+        border-radius: 10px;
+        margin-top: 0.3rem;
+
+        trough {
+          border-radius: 10px;
+          min-height: 10px;
+
+          block {
+            // min-width: 10px; // Ensure minimum width matches the border-radius
+
+            &.empty {
+              border-radius: 10px;
+              background-color: $inverse_surface_transparent_variant;
+            }
+
+            &.filled {
+              background-color: $primary;
+              border-radius: 10px;
+              min-height: 10px;
+              // margin: 0.1rem;
+              // padding: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .play-icon {
+      color: $on_surface;
+
+      // margin-right: 1rem;
+      // &:hover {
+      //   color: $on_primary_container;
+      // }
       .control-bg {
-        padding: 1rem;
+        padding: 0.8rem;
         border-radius: 100px;
         background: $primary;
+
         &:hover {
           background: $primary_container;
         }
       }
     }
+
     .next-icon {
       color: $on_surface;
-      margin-right: 1rem;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
     }
 
     .cover {
       border-radius: 100px;
-      min-height: 70px;
-      min-width: 70px;
-      margin-right: 0.3rem;
-      margin-right: 0.3rem;
+      min-height: 80px;
+      min-width: 80px;
+      // margin-right: 0.3rem;
+      // margin-right: 0.3rem;
     }
   }
 }

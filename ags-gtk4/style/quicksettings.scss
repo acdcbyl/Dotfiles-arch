@@ -6,6 +6,7 @@
   // min-height: 650px;
   background: $surface_transparent;
   border-radius: 20px;
+
   button {
     outline-color: $on_surface;
     // color: $on_surface;
@@ -19,12 +20,14 @@
     background-color: $inverse_surface_transparent;
     color: $on_surface;
 
-    > * {
+    >* {
       padding: 0 4px;
+
       .title {
         margin-top: 0.3rem;
         margin-left: 0.5rem;
       }
+
       .subtitle {
         margin-left: 0.5rem;
       }
@@ -33,25 +36,27 @@
         padding: 10px;
       }
     }
+
     &.active {
       background-color: $primary;
       color: $on_primary;
-      .next-page {
-        background: $primary_fixed;
-      }
+
     }
-    .next-page {
-      border-radius: 0 30px 30px 0;
-      background: transparent;
-      &.active {
-        background: $secondary;
-      }
-    }
+
+    // .next-page {
+    //   border-radius: 0 30px 30px 0;
+    //   background: transparent;
+    //
+    //   &.active {
+    //     background: $secondary;
+    //   }
+    // }
   }
 
   flowbox flowboxchild {
     padding: 0;
     outline-color: $on_surface;
+
     &:selected {
       background-color: transparent;
     }
@@ -70,20 +75,25 @@
       font-size: 1.2rem;
       color: $on_surface;
     }
+
     button {
       padding: 0.3rem 0.5rem;
       border-radius: 30px;
       color: $on_surface;
       background-color: $inverse_surface_transparent;
+
       label {
         font-size: 0.95rem;
       }
+
       &:hover {
         background-color: $inverse_surface_transparent_variant;
       }
     }
+
     .powermenu {
       color: $on_surface;
+
       &:hover {
         color: $red;
         background-color: $inverse_surface_transparent;
@@ -97,8 +107,10 @@
       border-radius: 10px;
       background-color: $inverse_surface_transparent;
     }
+
     // margin-bottom: 0.7rem;
   }
+
   .qs-button {
     border-radius: 30px;
     min-height: 70px;
@@ -110,6 +122,7 @@
       // padding: 1rem 0;
       background-color: transparent;
       color: $on_surface;
+
       // outline-color: $on_surface;
       &:checked {
         color: $on_primary_container;
@@ -117,6 +130,7 @@
         background-color: $primary_container;
       }
     }
+
     // popover arrow {
     //   background: transparent;
     // }
@@ -141,7 +155,8 @@
     &:hover {
       background-color: $inverse_surface_transparent_variant;
     }
-    > * {
+
+    >* {
       padding: 0.5rem;
     }
 
@@ -158,6 +173,7 @@
   .qs-page {
     margin: 10px;
     color: $on_surface;
+
     .button {
       padding: 0.4rem 0.8rem;
       background-color: $inverse_surface_transparent;
@@ -165,6 +181,7 @@
       border-radius: 30px;
       min-height: 40px;
       color: $on_surface;
+
       .bluetooth__percentage {
         margin-left: 1rem;
       }
@@ -174,7 +191,7 @@
       }
 
       &:active {
-        > * {
+        >* {
           transform: none;
         }
 
@@ -196,6 +213,7 @@
 
   .wifi-page {
     margin: 0;
+
     .header {
       margin: 10px;
       margin-bottom: 0;
@@ -213,6 +231,5 @@
       padding-top: 0;
     }
   }
-  .bluetooth-page {
-  }
+
 }

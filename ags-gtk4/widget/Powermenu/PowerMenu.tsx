@@ -11,6 +11,7 @@ const icons = {
   reboot: "system-reboot-symbolic",
   logout: "system-log-out-symbolic",
   shutdown: "system-shutdown-symbolic",
+  lockscreen: "system-lock-screen-symbolic",
 };
 
 function SysButton({ action, label }: { action: string; label: string }) {

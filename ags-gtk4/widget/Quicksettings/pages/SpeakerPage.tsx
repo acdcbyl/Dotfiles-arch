@@ -20,17 +20,17 @@ export default function SpeakerPage() {
           iconName={"go-previous-symbolic"}
         />
         {/* <label label={"Speaker"} hexpand xalign={0} /> */}
-        {/* <label */}
-        {/*   useMarkup={true} */}
-        {/*   label={"<b>󰓃 </b>"} */}
-        {/*   hexpand */}
-        {/*   xalign={1} */}
-        {/* /> */}
-        <image
-          iconName={"audio-speakers-symbolic"}
+        <label
+          useMarkup={true}
+          label={"<b> Speaker</b>"}
           hexpand
-          halign={Gtk.Align.END}
+          xalign={0}
         />
+        {/* <image */}
+        {/*   iconName={"audio-speakers-symbolic"} */}
+        {/*   hexpand */}
+        {/*   halign={Gtk.Align.END} */}
+        {/* /> */}
       </box>
       <Gtk.Separator />
       {bind(audio, "speakers").as((d) =>

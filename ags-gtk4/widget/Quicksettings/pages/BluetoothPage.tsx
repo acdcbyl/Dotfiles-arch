@@ -23,17 +23,17 @@ export default function BluetoothPage() {
           }}
           iconName={"go-previous-symbolic"}
         />
-        {/* <label */}
-        {/*   useMarkup={true} */}
-        {/*   label={"<b> 󰂯 </b>"} */}
-        {/*   hexpand */}
-        {/*   xalign={1} */}
-        {/* /> */}
-        <image
-          iconName={"bluetooth-symbolic"}
+        <label
+          useMarkup={true}
+          label={"<b> Bluetooth</b>"}
           hexpand
-          halign={Gtk.Align.END}
+          xalign={0}
         />
+        {/* <image */}
+        {/*   iconName={"bluetooth-symbolic"} */}
+        {/*   hexpand */}
+        {/*   halign={Gtk.Align.END} */}
+        {/* /> */}
         {/* <switch */}
         {/*   active={bind(bluetooth, "isPowered")} */}
         {/*   onActivate={({ active }) => (bluetooth.isPowered = active)} */}

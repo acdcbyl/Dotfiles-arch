@@ -6,6 +6,7 @@ const options = {
   reboot: "systemctl reboot",
   logout: "pkill Hyprland",
   shutdown: "shutdown now",
+  lockscreen: "hyprlock -q"
 };
 
 @register({ GTypeName: "Powermenu" })
@@ -36,6 +37,7 @@ export default class Powermenu extends GObject.Object {
       reboot: [options.reboot, "Reboot"],
       logout: [options.logout, "Log Out"],
       shutdown: [options.shutdown, "Shutdown"],
+      lockscreen: [options.lockscreen, "Lockscreen"]
     }[action]!;
 
     this.notify("cmd");

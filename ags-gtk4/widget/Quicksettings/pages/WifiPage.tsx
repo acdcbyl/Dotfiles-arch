@@ -22,17 +22,17 @@ export default function WifiPage() {
           iconName={"go-previous-symbolic"}
         />
         {/* <label label={"Wi-Fi"} hexpand xalign={0} /> */}
-        {/* <label */}
-        {/*   useMarkup={true} */}
-        {/*   label={"<b> </b>"} */}
-        {/*   hexpand */}
-        {/*   xalign={1} */}
-        {/* /> */}
-        <image
-          iconName={"network-workgroup-symbolic"}
+        <label
+          useMarkup={true}
+          label={"<b> Wi-Fi</b>"}
           hexpand
-          halign={Gtk.Align.END}
+          xalign={0}
         />
+        {/* <image */}
+        {/*   iconName={"network-workgroup-symbolic"} */}
+        {/*   hexpand */}
+        {/*   halign={Gtk.Align.END} */}
+        {/* /> */}
       </box>
       <Gtk.Separator />
       <Gtk.ScrolledWindow vexpand>

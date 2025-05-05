@@ -33,6 +33,7 @@ export class Player {
   trackLength: Variable<number> = Variable(0);
   title: Variable<string | null> = Variable(null);
   artist: Variable<string | null> = Variable(null);
+  coverArt: Variable<string | null> = Variable(null);
   shuffleStatus: Variable<ShuffleStatus | null> = Variable(null);
   canGoPrevious: Variable<boolean> = Variable(false);
   canGoNext: Variable<boolean> = Variable(false);
@@ -110,7 +111,7 @@ export class Player {
   }
 
   private _updateAllProperties(): void {
-    // Update title and artist from the "Metadata" property.
+    // Update title, artist, and coverArt from the "Metadata" property.
     const metaVariant = this.proxy!.get_cached_property("Metadata");
     if (metaVariant) {
       try {
@@ -137,16 +138,21 @@ export class Player {
         } else {
           this.trackLength.set(0);
         }
+
+        // Extract cover art from metadata
+        this._extractCoverArt(meta);
       } catch (e) {
         log("Could not unpack metadata: " + e);
         this.title.set(null);
         this.artist.set(null);
         this.trackLength.set(0);
+        this.coverArt.set(null);
       }
     } else {
       this.title.set(null);
       this.artist.set(null);
       this.trackLength.set(0);
+      this.coverArt.set(null);
     }
 
     // Update playbackStatus.
@@ -243,6 +249,50 @@ export class Player {
     this._notifyPropertiesUpdated();
   }
 
+  private _extractCoverArt(meta: any): void {
+    // Try to find cover art in the metadata
+    // Several possible locations in order of preference
+    if (meta["mpris:artUrl"]) {
+      try {
+        let artUrl = meta["mpris:artUrl"].deep_unpack();
+        // Convert URI to local file path if needed
+        if (artUrl.startsWith("file://")) {
+          this.coverArt.set(artUrl);
+        } else {
+          // Keep the original URL for remote images
+          this.coverArt.set(artUrl);
+        }
+        return;
+      } catch (e) {
+        log("Could not unpack art URL: " + e);
+      }
+    }
+
+    // Try alternative fields that some players might use
+    const alternativeFields = [
+      "xesam:artUrl",
+      "xesam:image",
+      "xesam:album-art"
+    ];
+
+    for (const field of alternativeFields) {
+      if (meta[field]) {
+        try {
+          let artData = meta[field].deep_unpack();
+          if (typeof artData === "string") {
+            this.coverArt.set(artData);
+            return;
+          }
+        } catch (e) {
+          log(`Could not unpack art from ${field}: ${e}`);
+        }
+      }
+    }
+
+    // If we get here, no cover art was found
+    this.coverArt.set(null);
+  }
+
   private _onPropertiesChanged(changed: GLib.Variant, invalidated: GLib.Variant): void {
     let dict: any = changed.deep_unpack();
 
@@ -271,11 +321,15 @@ export class Player {
         } else {
           this.trackLength.set(0);
         }
+
+        // Extract cover art from metadata when it changes
+        this._extractCoverArt(meta);
       } catch (e) {
         log("Could not unpack metadata in onPropertiesChanged: " + e);
         this.title.set(null);
         this.artist.set(null);
         this.trackLength.set(0);
+        this.coverArt.set(null);
       }
     }
     if ("PlaybackStatus" in dict) {
@@ -348,6 +402,7 @@ export class Player {
     // log(`  Track Length: ${this.trackLength.get()}`);
     // log(`  Title: ${this.title.get()}`);
     // log(`  Artist: ${this.artist.get()}`);
+    // log(`  Cover Art: ${this.coverArt.get()}`);
     // log(`  Shuffle: ${this.shuffleStatus.get()}`);
     // log(`  CanGoPrevious: ${this.canGoPrevious.get()}`);
     // log(`  CanGoNext: ${this.canGoNext.get()}`);

@@ -43,6 +43,7 @@ export default function NotifButton() {
     Hyprpicker: string;
     rmpc: string;
     foamshot: string;
+    "change-color": string;
     [key: string]: string | undefined;
   } = {
     "Screen Recorder": "screencast-recorded-symbolic",
@@ -50,6 +51,7 @@ export default function NotifButton() {
     Hyprpicker: "color-select-symbolic",
     foamshot: "screenshot-recorded-symbolic",
     rmpc: "folder-music-symbolic",
+    "change-color": "preferences-desktop-theme-global-symbolic",
   };
   return (
     <BarButton
