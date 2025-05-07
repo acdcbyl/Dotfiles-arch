@@ -80,7 +80,7 @@ output_path = '~/.config/starship.toml'
 # output_path = '~/.config/BetterDiscord/themes/Material-Discord.theme.css'
 
 [templates.vesktop]
-input_path = "~/.config/matugen/templates/discord.css"
+input_path = "~/.config/matugen/templates/midnight-discord.css"
 output_path = "~/.config/vesktop/themes/HyprNoon.css"
 
 [templates.rmpc]
@@ -154,10 +154,10 @@ output_path = '~/.config/fish/themes/Matugen.theme'
 post_hook = 'yes | fish_config theme save Matugen'
 
 [templates.neovim]
-input_path = '~/.config/matugen/templates/nvim.vim'
-output_path = '~/.cache/wal/colors-wal.vim'
-# input_path = '~/.config/matugen/templates/catppuccin.lua'
-# output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
+# input_path = '~/.config/matugen/templates/nvim.vim'
+# output_path = '~/.cache/wal/colors-wal.vim'
+input_path = '~/.config/matugen/templates/catppuccin.lua'
+output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
 
 [templates.tldr]
 input_path = '~/.config/matugen/templates/config.toml'
