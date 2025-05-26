@@ -1,8 +1,15 @@
 import { Gtk, App } from "astal/gtk4";
-import { GLib, monitorFile, writeFile, exec, Gio, execAsync } from "astal";
+import { GLib, monitorFile, writeFile, Variable, exec, Gio, execAsync } from "astal";
 import { transparentScrimWindowNames, scrimWindowNames } from "./variables";
 import AstalNotifd from "gi://AstalNotifd?version=0.1";
 // import { controlCenterPage } from "../widget/ControlCenter";
+
+
+export const time = Variable(GLib.DateTime.new_now_local()).poll(1000, () =>
+  GLib.DateTime.new_now_local(),
+);
+export const uptime = Variable(Math.floor(GLib.get_monotonic_time() / 1000000)).poll(1000, () =>
+  Math.floor(GLib.get_monotonic_time() / 1000000));
 
 export function range(max: number) {
   return Array.from({ length: max + 1 }, (_, i) => i);
@@ -74,11 +81,26 @@ export const cacheDir = `${GLib.get_user_cache_dir()}/aiser-astal`;
 //   );
 // }
 
+export function separatorBetween(
+  elements: Gtk.Widget[],
+  orientation: Gtk.Orientation,
+) {
+  const spacedElements: Gtk.Widget[] = [];
+
+  elements.forEach((element, index) => {
+    if (index > 0) {
+      spacedElements.push(new Gtk.Separator({ orientation: orientation }));
+    }
+    spacedElements.push(element);
+  });
+
+  return spacedElements;
+}
 export function monitorColorsChange() {
   const monitorList = [
     `${GLib.getenv("HOME")}/.config/ags/style/colors.scss`,
     `${GLib.getenv("HOME")}/.config/ags/style/applauncher.scss`,
-    `${GLib.getenv("HOME")}/.config/ags/style/bar.scss`,
+    `${GLib.getenv("HOME")}/.config/ags/style/Bar.scss`,
     `${GLib.getenv("HOME")}/.config/ags/style/common.scss`,
     `${GLib.getenv("HOME")}/.config/ags/style/components.scss`,
     `${GLib.getenv("HOME")}/.config/ags/style/quicksettings.scss`,

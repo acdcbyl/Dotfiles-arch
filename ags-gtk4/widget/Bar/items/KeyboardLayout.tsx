@@ -1,6 +1,6 @@
 import { Gtk } from "astal/gtk4";
 // import { connect } from "astal/gtk4";
-import BarButton from "../BarButton";
+import PanelButton from "../PanelButton";
 import AstalHyprland from "gi://AstalHyprland?version=0.1";
 import BarItem from "../BarItem";
 

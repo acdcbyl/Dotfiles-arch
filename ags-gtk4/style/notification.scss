@@ -6,18 +6,18 @@
 $window-border-radius: 6px 6px 6px 6px;
 
 .notifications-container {
-  border-radius: 20px;
-  min-width: 450px;
-  min-height: 650px;
-  padding: 10px 10px 0;
+  border-radius: 30px 0 0 30px;
+  min-width: 400px;
+  min-height: 400px;
+  // padding: 10px 10px 0;
   color: $on_surface;
-  padding: 14px 16px 14px 20px;
+  padding: 12px;
   background-color: $surface_transparent;
 
   separator {
     margin: 2px;
-    background-color: $inverse_surface_transparent;
-    color: $inverse_surface_transparent;
+    // background-color: $inverse_surface_transparent;
+    // color: $inverse_surface_transparent;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
   }
@@ -29,7 +29,7 @@ $window-border-radius: 6px 6px 6px 6px;
     padding-bottom: 0;
 
     .dnd {
-      margin-right: 0.5rem;
+      margin-left: 0.7rem;
       background-color: $inverse_surface_transparent;
       color: $on_surface;
       padding: 0 0.6rem;
@@ -78,7 +78,7 @@ $window-border-radius: 6px 6px 6px 6px;
     }
   }
 
-  scrolledwindow viewport>box {
+  scrolledwindow viewport > box {
     .not-found label {
       font-size: 1rem;
       color: $on_surface;
@@ -91,15 +91,15 @@ $window-border-radius: 6px 6px 6px 6px;
   .notification-container {
     min-width: 1px;
     border-radius: 20px;
-    margin: 2px;
+    margin: 0px;
     background: $inverse_surface_transparent;
     box-shadow: none;
   }
 }
 
 .notification-container {
-  padding: 14px 16px 14px 20px;
-  min-width: 400px;
+  padding: 8px 16px 14px 20px;
+  min-width: 380px;
   // min-height: -1;
   // min-height: 100px;
   // min-height: 1em;
@@ -144,13 +144,13 @@ $window-border-radius: 6px 6px 6px 6px;
   }
 
   separator {
-    margin: 0.4rem 0;
+    margin: 0.2rem 0;
     background-color: $inverse_surface_transparent;
     color: $inverse_surface_transparent;
   }
 
   .content {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
 
     .summary {
       margin-left: 0.5rem;
@@ -172,9 +172,9 @@ $window-border-radius: 6px 6px 6px 6px;
 
     .image image {
       // border-radius: 100px;
-      border-radius: 100px;
-      min-width: 60px;
-      min-height: 60px;
+      border-radius: 10px;
+      min-width: 70px;
+      min-height: 70px;
       margin-right: 14px;
       margin-top: 8px;
       background-size: cover;
@@ -184,7 +184,6 @@ $window-border-radius: 6px 6px 6px 6px;
   }
 
   .actions {
-
     // margin-top: 0.5rem;
     button {
       background: none;

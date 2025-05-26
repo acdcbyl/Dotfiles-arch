@@ -1,9 +1,9 @@
 import AstalNotifd from "gi://AstalNotifd";
-import BarButton from "../BarButton";
+import PanelButton from "../PanelButton";
 import { App } from "astal/gtk4";
 import { bind, Variable } from "astal";
 import AstalApps from "gi://AstalApps";
-// import { WINDOW_NAME } from "../notification/NotificationWindow";
+import { WINDOW_NAME } from "../../Notifactions/NotificationWindow";
 
 const notifd = AstalNotifd.get_default();
 
@@ -29,14 +29,8 @@ function NotifIcon() {
   );
 }
 
-export default function NotifButton() {
+export default function NotifPanelButton() {
   const apps = new AstalApps.Apps();
-  // const substitute = {
-  //   "Screen Recorder": "screencast-recorded-symbolic",
-  //   Screenshot: "screenshot-recorded-symbolic",
-  //   Hyprpicker: "color-select-symbolic",
-  //   rmpc: "folder-music-symbolic",
-  // };
   const substitute: {
     "Screen Recorder": string;
     Screenshot: string;
@@ -53,11 +47,12 @@ export default function NotifButton() {
     rmpc: "folder-music-symbolic",
     "change-color": "preferences-desktop-theme-global-symbolic",
   };
+
   return (
-    <BarButton
-      cssName={"bar__notifications"}
+    <PanelButton
+      window={WINDOW_NAME}
       onClicked={() => {
-        App.toggle_window("notifications");
+        App.toggle_window(WINDOW_NAME);
       }}
     >
       {bind(notifd, "dontDisturb").as((dnd) =>
@@ -83,7 +78,7 @@ export default function NotifButton() {
                   }),
                   <label
                     visible={n.length > 3}
-                    cssName="bar__notifications_label"
+                    cssClasses={["circle"]}
                     label={""}
                   />,
                 ];
@@ -95,6 +90,6 @@ export default function NotifButton() {
           <NotifIcon />
         ),
       )}
-    </BarButton>
+    </PanelButton>
   );
 }

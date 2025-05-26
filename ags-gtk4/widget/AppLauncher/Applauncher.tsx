@@ -6,7 +6,18 @@ import PopupWindow from "../../common/PopupWindow";
 import { Gio } from "astal";
 import options from "../../option";
 import Picture from "../../common/Picture";
-const { wallpaper } = options;
+const { bar } = options;
+
+const layout = Variable.derive(
+  [bar.position, bar.start, bar.center, bar.end],
+  (pos, start, center, end) => {
+    if (start.includes("launcher")) return `${pos}_left`;
+    if (center.includes("launcher")) return `${pos}_center`;
+    if (end.includes("launcher")) return `${pos}_right`;
+
+    return `${pos}_center`;
+  },
+);
 
 // Create apps instance
 const apps = new AstalApps.Apps();
@@ -162,7 +173,7 @@ function SearchEntry() {
   };
 
   return (
-    <overlay cssClasses={["entry-overlay"]} heightRequest={70}>
+    <overlay cssClasses={["entry-overlay"]} heightRequest={60}>
       <entry
         type="overlay"
         vexpand
@@ -217,7 +228,7 @@ export default function Applauncher(_gdkmonitor: Gdk.Monitor) {
   setupAppsFolderMonitor();
 
   return (
-    <PopupWindow name={WINDOW_NAME} anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT}>
+    <PopupWindow name={WINDOW_NAME} layout={layout.get()} margin={15} layer={Astal.Layer.TOP}>
       <box
         cssClasses={["applauncher-container"]}
         vertical

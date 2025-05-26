@@ -1,6 +1,7 @@
 import { App, Astal, Gtk, Gdk, } from "astal/gtk4"
 import GObject from "gi://GObject";
 import Gsk from "gi://Gsk";
+import options from "../../option";
 
 const Corner = GObject.registerClass(
   class Corner extends Gtk.Widget {
@@ -12,7 +13,8 @@ const Corner = GObject.registerClass(
       this.add_css_class("corner-widget");
     }
     vfunc_snapshot(snapshot: Gtk.Snapshot) {
-      const radius = 30;
+      const screencorner = options;
+      const radius = screencorner.screencorners.radius;
       const width = this.gdkmonitor.get_geometry().width;
       // const backgroundColor = new Gdk.RGBA();
       // backgroundColor.parse("#1e2030");

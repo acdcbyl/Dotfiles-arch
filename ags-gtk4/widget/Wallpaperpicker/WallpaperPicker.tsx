@@ -19,6 +19,7 @@ export const sendBatch = (batch: string[]) => {
   hyprland.message(`[[BATCH]]/${cmd}`);
 };
 const { wallpaper } = options;
+const { mode } = options.theme;
 const cachePath = `${GLib.get_user_cache_dir()}/aiser-astal/wallpapers`;
 const imageFormats = [".jpeg", ".jpg", ".webp", ".png"];
 
@@ -191,7 +192,7 @@ function wallpaperPicker() {
               function populateBox(box: Astal.Box, path: string) {
                 timeout(100, () => {
                   const wallpaperList = getWallpaperList(path);
-
+                  const mode_now = mode.get();
                   const wallpapersToCache = wallpaperList.filter(
                     (image) =>
                       !GLib.file_test(
@@ -213,6 +214,7 @@ function wallpaperPicker() {
                             "sh",
                             `${GLib.get_user_config_dir()}/ags/scripts/changecolor.sh`,
                             `${path}/${w}`,
+                            `${mode_now}`
                           ]).then(() => {
                             const current = cacheImage(
                               `${path}/${w}`,

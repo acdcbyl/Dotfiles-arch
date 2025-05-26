@@ -15,11 +15,7 @@ type Props = BoxProps & {
 export default ({ child, itemStyle, cssName, ...props }: Props) => {
 	return (
 		<box
-			cssClasses={[
-				'bar__item',
-				itemStyle || '',
-				cssName || ''
-			].filter(Boolean)}
+			cssClasses={["baritem"]}
 			// cssName={`bar__item ${itemStyle || ""} ${cssName}`}
 			valign={Gtk.Align.CENTER}
 			{...props}

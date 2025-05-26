@@ -10,9 +10,10 @@ import MediaPlayers from "./MediaPlayer";
 import VolumeBox from "./VolumeBox";
 import { FlowBox } from "../../common/FlowBox";
 import { Astal, Gtk, App, Gdk } from "astal/gtk4";
+import { bash } from "../../lib/utils";
 import { WINDOW_NAME as POWERMENU_WINDOW } from "../Powermenu/PowerMenu";
 import { bind, Binding, GObject, Variable } from "astal";
-// import options from "../../options";
+import options from "../../option";
 import AstalBattery from "gi://AstalBattery";
 import { toggleWallpaperPicker } from "../Wallpaperpicker/WallpaperPicker";
 import AstalNetwork from "gi://AstalNetwork";
@@ -25,25 +26,14 @@ import Cava from "./Cava";
 
 export const WINDOW_NAME = "quicksettings";
 export const qsPage = Variable("main");
-const defaultPosition = {
-  position: "top",
-  start: ["clock", "systray"],
-  center: ["notification"],
-  end: ["battery", "power"]
-};
+const { bar } = options;
 
-// 保留 layout 常量的计算逻辑
 const layout = Variable.derive(
-  [
-    Variable(defaultPosition.position),
-    Variable(defaultPosition.start),
-    Variable(defaultPosition.center),
-    Variable(defaultPosition.end)
-  ],
+  [bar.position, bar.start, bar.center, bar.end],
   (pos, start, center, end) => {
-    if (start.includes("notification")) return `${pos}_left`;
-    if (center.includes("notification")) return `${pos}_center`;
-    if (end.includes("notification")) return `${pos}_right`;
+    if (start.includes("quicksetting")) return `${pos}_left`;
+    if (center.includes("quicksetting")) return `${pos}_center`;
+    if (end.includes("quicksetting")) return `${pos}_right`;
 
     return `${pos}_center`;
   },
@@ -92,26 +82,20 @@ function Header() {
 
   return (
     <box hexpand={false} cssClasses={["header"]} spacing={6}>
-      <label
-        useMarkup={true}
-        label={"<b> ControlCenter</b>"}
-        hexpand
-        xalign={0}
-      />
+      {/* <label */}
+      {/*   useMarkup={true} */}
+      {/*   label={"<b> ControlCenter</b>"} */}
+      {/*   hexpand */}
+      {/*   xalign={0} */}
+      {/* /> */}
       {/* <image */}
       {/*   iconName={"org.gnome.Settings-symbolic"} */}
       {/*   hexpand */}
       {/*   halign={Gtk.Align.START} */}
       {/* /> */}
       <button
-        onClicked={() => {
-          App.toggle_window(WINDOW_NAME);
-          toggleWallpaperPicker();
-        }}
-        iconName={"preferences-desktop-wallpaper-symbolic"}
-      />
-      <button
         cssClasses={["battery"]}
+        heightRequest={30}
         onClicked={() => {
           qsPage.set("battery");
         }}
@@ -129,15 +113,23 @@ function Header() {
           />
         </box>
       </button>
+      <box hexpand />
       <button
-        cssClasses={["powermenu"]}
         onClicked={() => {
           App.toggle_window(WINDOW_NAME);
-          App.toggle_window(POWERMENU_WINDOW);
+          toggleWallpaperPicker();
+        }}
+        iconName={"preferences-desktop-wallpaper-symbolic"}
+      />
+      <button
+        cssClasses={["settings"]}
+        onClicked={() => {
+          bash(`better-control`)
+          App.toggle_window(WINDOW_NAME)
         }}
       >
         <image
-          iconName={"system-shutdown-symbolic"}
+          iconName={"system-settings-symbolic"}
           iconSize={Gtk.IconSize.NORMAL}
         />
       </button>
@@ -170,7 +162,7 @@ function ArrowButton<T extends GObject.Object>({
       })}
     >
       <button onClicked={onClicked}>
-        <box halign={Gtk.Align.START} cssClasses={["first-button"]} spacing={6}>
+        <box halign={Gtk.Align.START} cssClasses={["first-button"]}>
           <image iconName={icon} iconSize={Gtk.IconSize.LARGE} />
           <box vertical hexpand>
             <label xalign={0} label={title} cssClasses={["title"]} />
@@ -271,10 +263,10 @@ function QSWindow(_gdkmonitor: Gdk.Monitor) {
     <PopupWindow
       name={WINDOW_NAME}
       // layer={Astal.Layer.BOTTOM}
-      // layout={layout.get()}
-      // animation="slide top"
-      anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
-      // marginTop={25}
+      layout={layout.get()}
+      //animation="slide right"
+      //anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
+      margin={15}
       onDestroy={() => layout.drop()}
     >
       <box

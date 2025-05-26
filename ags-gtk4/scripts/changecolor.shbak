@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# 获取壁纸路径
+wallpaper="$1"
+mode="$2"
+
+# 使用 imagemagick 检测图片的平均亮度
+brightness=$(magick "$wallpaper" -colorspace Gray -format "%[fx:mean]" info:)
+
+# 设置亮度阈值，根据实际情况调整
+threshold=0.7
+
+# 根据亮度选择主题
+if [ $(echo "$brightness > $threshold" | bc -l) -eq 1 ]; then
+  # 图片较亮，应用亮色主题
+  matugen image "$wallpaper" -m light
+  gsettings set org.gnome.desktop.interface color-scheme prefer-light
+  theme="Light Theme"
+  hyprctl reload
+  hyprshade on vibrance
+else
+  # 图片较暗，应用暗色主题
+  matugen image "$wallpaper"
+  gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  theme="Dark Theme"
+  hyprctl reload
+  hyprshade on vibrance
+fi
+
+# 发送桌面通知
+notify-send "主题已切换" "当前主题模式: $theme" -a change-color -h "string:image-path:$HOME/.config/waypaper/scripts/icon.svg"

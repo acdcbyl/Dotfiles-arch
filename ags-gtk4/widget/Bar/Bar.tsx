@@ -1,70 +1,126 @@
-import { App, Astal, Gtk, Gdk } from "astal/gtk4"
-import { Variable } from "astal"
-import ActiveApp from "./items/ActiveApp"
-import AppLauncher from "./items/AppLauncher"
-import Workspaces from "./items/Workspaces"
-import Clock from "./items/Clock"
-import Tray from "./items/Tray"
-import Battery from "./items/Battery"
-import SystemIndicators from "./items/SystemIndicators"
-import Notifications from "./items/Notifications"
-import NetworkSpeed from "./items/NetWorkSpeed"
-import KeyboardLayout from "./items/KeyboardLayout"
-import RecordingIndicator from "./items/RecordIndicator"
-import { spacing } from "../../lib/variables"
+import { App, Astal, Gtk, Gdk } from "astal/gtk4";
+import TimePanelButton from "./items/Clock";
+import WorkspacesPanelButton from "./items/Workspaces";
+import NetworkSpeedPanelButton from "./items/NetWorkSpeed";
+import RecordIndicatorPanelButton from "./items/RecordIndicator";
+import LauncherPanelButton from "./items/AppLauncher";
+import NotifPanelButton from "./items/Notifications";
+import QSPanelButton from "./items/SystemIndicators";
+import KeyboardLayout from "./items/KeyboardLayout";
+import ActiveApp from "./items/ActiveApp";
+import Battery from "./items/Battery";
+import { separatorBetween } from "../../lib/utils";
+import options from "../../option";
+import { idle } from "astal";
+import { windowAnimation } from "../../lib/hyprland";
+import { WindowProps } from "astal/gtk4/widget";
+import TrayPanelButton from "./items/Tray";
+import PowermenuButton from "./items/Powermenu";
+import NotifiCount from "./items/NotifiCount";
 
-const time = Variable("").poll(1000, "date")
+const { bar } = options;
+const { start, center, end } = bar;
 
-const Start = () => {
+const panelButton = {
+  launcher: () => <LauncherPanelButton />,
+  workspace: () => <WorkspacesPanelButton />,
+  activeapp: () => <ActiveApp />,
+  time: () => <TimePanelButton />,
+  // notification: () => <NotifPanelButton />,
+  network_speed: () => <NetworkSpeedPanelButton />,
+  // keylayout: () => <KeyboardLayout />,
+  tray: () => <TrayPanelButton />,
+  quicksetting: () => <QSPanelButton />,
+  battery: () => <Battery />,
+  powermenu: () => <PowermenuButton />,
+  recordbutton: () => <RecordIndicatorPanelButton />,
+  // notifycount: () => <NotifiCount />,
+};
+
+function Start() {
   return (
-    <box halign={Gtk.Align.START} spacing={spacing}>
-      <AppLauncher />
-      <Workspaces />
-      <ActiveApp />
+    <box halign={Gtk.Align.START}>
+      {start((s) => [
+        ...separatorBetween(
+          s.map((s) => panelButton[s]()),
+          Gtk.Orientation.VERTICAL,
+        ),
+      ])}
     </box>
   );
-};
-const Center = () => {
-  return (
-    <box spacing={spacing}>
-      <Clock />
-    </box>
-  );
-};
-const End = () => {
-  return (
-    <box halign={Gtk.Align.END} spacing={spacing}>
-      <RecordingIndicator />
-      <NetworkSpeed />
-      <KeyboardLayout />
-      <box cssClasses={["bar__rounded-box"]} spacing={spacing / 2}>
-        <Notifications />
-        <Tray />
-        <SystemIndicators />
-      </box>
-      <Battery />
-    </box>
-  );
-};
-export default function Bar(gdkmonitor: Gdk.Monitor) {
-  const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
+}
 
-  return <window
-    visible
-    cssClasses={["bar"]}
-    namespace="bar"
-    layer={Astal.Layer.BOTTOM}
-    gdkmonitor={gdkmonitor}
-    exclusivity={Astal.Exclusivity.EXCLUSIVE}
-    anchor={TOP | LEFT | RIGHT}
-    application={App}>
-    <centerbox cssName="centerbox">
-      {/* < AppLauncher /> */}
-      {/* <ActiveApp /> */}
-      <Start />
-      <Center />
-      <End />
-      <box />
-    </centerbox>
-  </window>
+function Center() {
+  return (
+    <box>
+      {center((c) =>
+        separatorBetween(
+          c.map((w) => panelButton[w]()),
+          Gtk.Orientation.VERTICAL,
+        ),
+      )}
+    </box>
+  );
+}
+
+function End() {
+  return (
+    <box halign={Gtk.Align.END}>
+      {end((e) =>
+        separatorBetween(
+          e.map((w) => panelButton[w]()),
+          Gtk.Orientation.VERTICAL,
+        ),
+      )}
+    </box>
+  );
+}
+
+type BarProps = WindowProps & {
+  gdkmonitor: Gdk.Monitor;
+  animation: string;
+};
+function Bar({ gdkmonitor, ...props }: BarProps) {
+  const { TOP, LEFT, RIGHT, BOTTOM } = Astal.WindowAnchor;
+  const anc = bar.position.get() == "top" ? TOP : BOTTOM;
+
+  return (
+    <window
+      visible
+      layer={Astal.Layer.BOTTOM}
+      setup={(self) => {
+        // problem when change bar size via margin/padding live
+        // https://github.com/wmww/gtk4-layer-shell/issues/60
+        self.set_default_size(1, 1);
+      }}
+      name={"bar"}
+      namespace={"bar"}
+      gdkmonitor={gdkmonitor}
+      anchor={anc | LEFT | RIGHT}
+      exclusivity={Astal.Exclusivity.EXCLUSIVE}
+      application={App}
+      {...props}
+    >
+      <centerbox cssClasses={["bar-container"]}>
+        <Start />
+        <Center />
+        <End />
+      </centerbox>
+    </window>
+  );
+}
+
+export default function (gdkmonitor: Gdk.Monitor) {
+  <Bar gdkmonitor={gdkmonitor} animation="slide top" />;
+
+  bar.position.subscribe(() => {
+    App.toggle_window("bar");
+    const barWindow = App.get_window("bar")!;
+    barWindow.set_child(null);
+    App.remove_window(App.get_window("bar")!);
+    idle(() => {
+      <Bar gdkmonitor={gdkmonitor} animation="slide top" />;
+      windowAnimation();
+    });
+  });
 }

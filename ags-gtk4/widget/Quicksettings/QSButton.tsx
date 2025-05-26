@@ -5,19 +5,30 @@ import GObject from "gi://GObject?version=2.0";
 import { Opt } from "../../lib/option";
 
 type QSMenuButtonProps = MenuButtonProps & {
-  child?: unknown;
+  popoverToSet?: Gtk.Popover; // 新增一个专门用于传递 Popover 实例的属性
+  child?: any;
   iconName: string;
   label: string;
 };
 
 export function QSMenuButton({
+  popoverToSet,
   child,
   iconName,
   label,
   setup,
 }: QSMenuButtonProps) {
   return (
-    <menubutton setup={setup} cssClasses={["qs-button"]}>
+    <menubutton setup={(self: Gtk.MenuButton) => { // self 的类型是 Gtk.MenuButton
+      if (popoverToSet) {
+        self.set_popover(popoverToSet); //设置 popover
+      }
+      // 执行用户传入的 setup
+      if (setup) {
+        setup(self);
+      }
+    }}
+      cssClasses={["qs-button"]}>
       <image halign={Gtk.Align.CENTER} iconSize={Gtk.IconSize.NORMAL} iconName={iconName} />
       {child}
     </menubutton>

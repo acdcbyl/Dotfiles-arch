@@ -1,22 +1,99 @@
-import { GLib, Variable, execAsync } from "astal";
-import { App } from "astal/gtk4"
-import BarButton from "../BarButton";
+import { App } from "astal/gtk4";
+import AstalNotifd from "gi://AstalNotifd";
+import { bind } from "astal";
+import { time } from "../../../lib/utils";
+import PanelButton from "../PanelButton";
+import AstalApps from "gi://AstalApps";
+import { Variable } from "astal";
+import { WINDOW_NAME } from "../../Dashbord/Dashboard";
 
-export default () => {
-	const format = "%a %d %b, %H:%M";
-	const time = Variable<string>("").poll(
-		1000,
-		() => GLib.DateTime.new_now_local().format(format)!,
-	);
+const notifd = AstalNotifd.get_default();
+function NotifIcon() {
+	const getVisible = () =>
+		notifd.dont_disturb ? true : notifd.notifications.length <= 0;
+
+	const visibility = Variable(getVisible())
+		.observe(notifd, "notify::dont-disturb", () => {
+			return getVisible();
+		})
+		.observe(notifd, "notify::notifications", () => getVisible());
+
 	return (
-		<BarButton
-			onClicked={() => App.toggle_window("dashboard")}
-		>
-			<label
-				cssClasses={["Time"]}
-				onDestroy={() => time.drop()}
-				label={time()}
-			/>
-		</BarButton>
+		<image
+			onDestroy={() => visibility.drop()}
+			visible={visibility()}
+			cssClasses={["icon"]}
+			iconName={bind(notifd, "dont_disturb").as(
+				(dnd) => `notifications-${dnd ? "disabled-" : ""}symbolic`,
+			)}
+		/>
 	);
-};
+}
+export default function TimePanelButton({ format = "%a %d %b, %H:%M" }) {
+
+	const apps = new AstalApps.Apps();
+	const substitute: {
+		"Screen Recorder": string;
+		Screenshot: string;
+		Hyprpicker: string;
+		rmpc: string;
+		foamshot: string;
+		"change-color": string;
+		[key: string]: string | undefined;
+	} = {
+		"Screen Recorder": "screencast-recorded-symbolic",
+		Screenshot: "screenshot-recorded-symbolic",
+		Hyprpicker: "color-select-symbolic",
+		foamshot: "screenshot-recorded-symbolic",
+		rmpc: "folder-music-symbolic",
+		"change-color": "preferences-desktop-theme-global-symbolic",
+	};
+	return (
+		<PanelButton
+			window={WINDOW_NAME}
+			onClicked={() => App.toggle_window(WINDOW_NAME)}
+		>
+			<box spacing={8}>
+				<label label={time((t) => t.format(format)!)} />
+				{/* <label */}
+				{/* 	cssClasses={["clock-notificount"]} */}
+				{/* 	label={bind(notifd, "notifications").as((n) => n.length.toString())} /> */}
+				{bind(notifd, "dontDisturb").as((dnd) =>
+					!dnd ? (
+						<box spacing={6}>
+							{bind(notifd, "notifications").as((n) => {
+								if (n.length > 0) {
+									return [
+										...n.slice(0, 3).map((e) => {
+											const getFallback = (appName: string) => {
+												const getApp = apps.fuzzy_query(appName);
+												if (getApp.length != 0) {
+													return getApp[0].get_icon_name();
+												}
+												return "unknown";
+											};
+											const fallback =
+												e.app_icon.trim() === ""
+													? getFallback(e.app_name)
+													: e.app_icon;
+											const icon = substitute[e.app_name] ?? fallback;
+											return <image iconName={icon} />;
+										}),
+										<label
+											visible={n.length > 3}
+											cssClasses={["circle"]}
+											label={""}
+										/>,
+									];
+								}
+								return <NotifIcon />;
+							})}
+						</box>
+					) : (
+						<NotifIcon />
+					),
+				)}
+			</box>
+		</PanelButton>
+	);
+}

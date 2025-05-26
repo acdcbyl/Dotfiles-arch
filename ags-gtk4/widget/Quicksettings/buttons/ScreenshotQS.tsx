@@ -1,6 +1,6 @@
 import { App, Gtk } from "astal/gtk4";
 import ScreenRecord from "../../../lib/screenrecord";
-import { QSMenuButton } from "../QSButton";
+import QSButton from "../QSButton";
 import { WINDOW_NAME } from "../QSWindow";
 import { Gio, timeout } from "astal";
 
@@ -36,22 +36,28 @@ export default function ScreenshotQS() {
 
 
   return (
-    <QSMenuButton
-      setup={(self) => {
-        const actionGroup = new Gio.SimpleActionGroup();
-
-        actions.forEach((actionInfo) => {
-          const action = new Gio.SimpleAction({ name: actionInfo.name });
-          action.connect("activate", actionInfo.callback);
-          actionGroup.add_action(action);
-        });
-
-        self.insert_action_group("ss", actionGroup);
-      }}
+    <QSButton
+      //     setup={(self) => { // self 是 Gtk.MenuButton
+      //     const actionGroup = new Gio.SimpleActionGroup();
+      //   actions.forEach((actionInfo) => {
+      //   const action = new Gio.SimpleAction({ name: actionInfo.name });
+      //  action.connect("activate", actionInfo.callback);
+      // actionGroup.add_action(action);
+      //});
+      //self.insert_action_group("ss", actionGroup);
+      //}}
       label={"Screenshot"}
+      // popoverToSet={Popover}
       iconName={"gnome-screenshot-symbolic"}
+      onClicked={() => {
+        App.toggle_window(WINDOW_NAME);
+        timeout(200, () => {
+          screenRecord.screenshot();
+        });
+      }
+      }
     >
-      {Popover}
-    </QSMenuButton>
+      {/* {Popover} */}
+    </QSButton>
   );
 }

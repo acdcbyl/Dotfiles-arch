@@ -69,6 +69,14 @@
         padding-right: 16px;
       }
     }
+
+    &.bar__system-indicators {
+      &.active {
+        background: $primary;
+        color: $on_primary;
+      }
+
+    }
   }
 }
 
@@ -125,6 +133,15 @@
 
     .arch-icon {
       color: $on_primary_container;
+    }
+  }
+
+  &.occupied {
+    box-shadow: unset;
+    background-color: $primary_container;
+
+    &.active {
+      background-color: $on_primary_container;
     }
   }
 }

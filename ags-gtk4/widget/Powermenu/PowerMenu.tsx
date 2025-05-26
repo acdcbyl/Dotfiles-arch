@@ -35,24 +35,26 @@ export default function PowerMenu(_gdkmonitor: Gdk.Monitor) {
       exclusivity={Astal.Exclusivity.IGNORE}
       animation="popin 80%"
     >
-      <FlowBox
-        cssClasses={["powermenu-container"]}
-        hexpand
-        rowSpacing={6}
-        columnSpacing={6}
-        maxChildrenPerLine={4}
-        setup={(self) => {
-          self.connect("child-activated", (_, child) => {
-            child.get_child()?.activate();
-          });
-        }}
-        homogeneous
-      >
-        <SysButton action={"sleep"} label={"Sleep"} />
-        <SysButton action={"logout"} label={"Log Out"} />
-        <SysButton action={"reboot"} label={"Reboot"} />
-        <SysButton action={"shutdown"} label={"Shutdown"} />
-      </FlowBox>
+      <box>
+        <FlowBox
+          cssClasses={["powermenu-container"]}
+          hexpand
+          rowSpacing={6}
+          columnSpacing={6}
+          maxChildrenPerLine={4}
+          setup={(self) => {
+            self.connect("child-activated", (_, child) => {
+              child.get_child()?.activate();
+            });
+          }}
+          homogeneous
+        >
+          <SysButton action={"sleep"} label={"Sleep"} />
+          <SysButton action={"logout"} label={"Log Out"} />
+          <SysButton action={"reboot"} label={"Reboot"} />
+          <SysButton action={"shutdown"} label={"Shutdown"} />
+        </FlowBox>
+      </box>
     </PopupWindow>
   );
 }

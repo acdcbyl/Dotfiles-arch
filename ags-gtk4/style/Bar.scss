@@ -1,0 +1,243 @@
+@use "sass:string";
+@use "sass:color";
+@use "colors.scss" as *;
+
+.bar-container {
+  background: $surface_transparent;
+  color: $on_surface;
+  min-height: 35px;
+  // margin: $bar-margin;
+  // border-radius: $bar-border-radius;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  separator {
+    // min-width: if($bar-separator, 2px, 0);
+    min-width: 5px;
+    // margin: 2px;
+    // color: $on_surface;
+    // background: $on_surface;
+  }
+
+  .workspace-container {
+    padding: 0;
+
+    .workspace-button {
+      min-width: 8px;
+      min-height: 8px;
+      transition: all 0.3s;
+      background-color: $inverse_surface_transparent_variant;
+      border-radius: 30px;
+
+      &.active {
+        min-width: 2.2rem;
+        min-height: 1rem;
+        background-color: $primary;
+      }
+
+      &.occupied {
+        box-shadow: unset;
+        background-color: color.scale($primary, $alpha: -20%);
+
+        &.active {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.bar__battery {
+  min-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  // background: $primary_container;
+  // color: $on_primary_container;
+}
+
+// .bar_item {
+//
+//   background: $inverse_surface_transparent;
+//
+//   .bar__keyboard-layout {
+//     background: $inverse_surface_transparent;
+//     padding: 0;
+//     min-height: 42px;
+//     min-width: 42px;
+//   }
+// }
+
+.workspace-button-bg {
+  // background-color: $inverse_surface_transparent;
+  color: $on_surface;
+  min-height: 20px;
+  border-radius: 30px;
+  padding: 0 5px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.applauncher-bg {
+  color: $on_surface;
+  min-height: 20px;
+  // min-width: 20px;
+  border-radius: 20px;
+  padding: 0 7px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &.notifications {
+    color: $on_surface;
+
+    .circle {
+      border-radius: 99px;
+    }
+  }
+
+  &:hover {
+    background:
+      $inverse_surface_transparent, $inverse_surface_transparent_overlay;
+    // background-color: if($bar-opacity < 1,
+    //     $bar-button-bg-color,
+    //     color.adjust($bar-button-fg-color, $alpha: -0.9));
+  }
+
+  &.active {
+    background-color: $primary;
+    color: $on_primary;
+  }
+}
+.powermenus-bg {
+  color: $on_surface;
+  min-height: 20px; /* 更改为与其他按钮相同的高度 */
+  /* min-width: 20px; */
+  border-radius: 20px;
+  padding: 0 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &.notifications {
+    color: $on_surface;
+
+    .circle {
+      border-radius: 99px;
+    }
+  }
+
+  &:hover {
+    color: $red;
+  }
+
+  &.active {
+    color: $red;
+  }
+}
+.netspeed-bg {
+  // background-color: $primary;
+  color: $on_surface;
+  min-height: 20px;
+  // min-width: 20px;
+  border-radius: 10px;
+  padding: 0 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.panel-button {
+  // background-color: $inverse_surface_transparent;
+  color: $on_surface;
+  min-height: 20px;
+  // min-width: 20px;
+  border-radius: 20px;
+  padding: 0 7px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  .clock-notificount {
+    color: $primary;
+    font-size: 11px;
+    margin-bottom: 10px;
+    margin-left: 0.5rem;
+  }
+  &.notifications {
+    color: $on_surface;
+
+    .circle {
+      border-radius: 99px;
+    }
+  }
+
+  &:hover {
+    background:
+      $inverse_surface_transparent, $inverse_surface_transparent_overlay;
+    // background-color: if($bar-opacity < 1,
+    //     $bar-button-bg-color,
+    //     color.adjust($bar-button-fg-color, $alpha: -0.9));
+  }
+
+  &.active {
+    background-color: $primary;
+    color: $on_primary;
+    .clock-notificount {
+      color: $on_primary;
+      font-size: 11px;
+      margin-bottom: 10px;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.tray_style {
+  // background-color: $inverse_surface_transparent;
+  color: $on_surface;
+  min-height: 20px;
+  border-radius: 20px;
+  padding: 0 7px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.notificount-bg {
+  // border: 1px solid $on_surface;
+  min-height: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+menubutton {
+  padding: 0 5px;
+  min-height: 20px;
+  min-width: 25px;
+  // margin: 1px;
+  border-radius: 100px;
+  // background: $inverse_surface_transparent;
+
+  button {
+    padding: unset;
+    margin: unset;
+    // border-radius: calc(nth($window-border-radius, 1) / 2);
+
+    &:hover {
+      // color: red;
+      border-radius: 100px;
+      // background:
+      //   $inverse_surface_transparent, $inverse_surface_transparent_overlay;
+    }
+  }
+}

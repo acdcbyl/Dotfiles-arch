@@ -1,31 +1,55 @@
 @use "sass:string";
 @use "colors.scss" as *;
 @use "sass:color";
-.OSD,
-.osd {
-  background: transparent;
-  icon {
-    font-size: 16px;
-    margin-left: 16px;
-  }
-}
-
-.indicator .progress {
-  padding: 0px;
-
-  border-radius: 20px;
+.osd-window {
+    background-color: transparent;
+  // min-width: 400px;
+  // min-height: 40px;
+  border-radius:10px;
   margin-bottom: 20px;
-  background-color: color.scale($surface, $alpha: -20%);
-
-  .fill {
-    transition: background-color 3s ease-in-out;
-    border-radius: 20px;
-    background-color: $primary;
-    color: $on_primary;
-    transition: min-width 0.1s;
-    &.muted {
-      background-color: $inverse_surface_transparent_variant;
-      color: $on_surface;
-    }
-  }
 }
+
+.osd-box {
+    padding: 10px;
+    border-radius: 10px;
+  color: $on_surface;
+    background-color:transparent;
+}
+
+.osd-icon {
+  background-color:$inverse_surface_transparent_variant;
+  color: $on_surface;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+    // margin: 1em 2em;
+}
+
+.osd-bar {
+    min-height: 35px;
+  min-width: 300px;
+  // color: $inverse_surface_transparent;
+  
+        trough {
+          border-radius: 10px;
+          min-height: 10px;
+
+          block {
+            // min-width: 10px; // Ensure minimum width matches the border-radius
+
+            &.empty {
+              border-radius: 10px;
+              background-color: $surface_transparent;
+            }
+
+            &.filled {
+              background-color: $primary;
+              border-radius: 10px;
+              min-height: 20px;
+              // margin: 0.1rem;
+              // padding: 0.5rem;
+            }
+          }
+        }
+}
+

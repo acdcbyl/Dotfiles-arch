@@ -13,13 +13,14 @@ export const sendBatch = (batch: string[]) => {
   hyprland.message(`[[BATCH]]/${cmd}`);
 };
 export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
-  const { TOP } = Astal.WindowAnchor;
+  const { TOP, RIGHT } = Astal.WindowAnchor;
   const notifd = AstalNotifd.get_default();
 
   return (
     <window
       namespace={"notifications-popup"}
-      margin={25}
+      margin={15}
+      width_request={300}
       // layer={Astal.Layer.BOTTOM}
       setup={(self) => {
         sendBatch([`layerrule animation slide top, ${self.namespace}`]);
@@ -74,7 +75,7 @@ export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
       }}
       gdkmonitor={gdkmonitor}
       application={App}
-      anchor={TOP}
+      anchor={TOP | RIGHT}
     ></window>
   );
 }

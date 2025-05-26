@@ -1,7 +1,7 @@
 @use "colors.scss" as *;
 @use "./common.scss";
 // @use "./components.scss";
-@use "./bar.scss";
+@use "./Bar.scss";
 // @use "./scrim.scss";
 // @use "./appLauncher.scss";
 // @use "./controlCenter.scss";
@@ -16,57 +16,70 @@
 @use "./applauncher.scss";
 @use "./mediaPlayer.scss";
 @use "roundedcorners.scss";
+
 * {
   font-family: Noto Sans;
 }
+
 scale {
   margin: 0;
   padding: 0;
+
   trough {
-    border-radius: 20px;
+    border-radius: 30px;
+
     highlight {
       background-color: $primary;
-      min-height: 32px;
+      // min-height: 32px;
       // 调整highlight的border-radius，让右边与slider圆形匹配
-      border-radius: 20px; // 设置为min-height的一半
+      border-radius: 30px; // 设置为min-height的一半
     }
+
     slider {
       box-shadow: none;
       outline: unset;
-      min-height: 32px;
-      min-width: 32px;
+      // min-height: 32px;
+      // min-width: 32px;
       background-color: transparent;
-      border-radius: 20px; // 确保slider是完美的圆形
+      border-radius: 30px; // 确保slider是完美的圆形
       // 可选：添加一个小偏移使slider稍微重叠在highlight上
       // margin-left: -10px; // 这可以减少两者之间的缝隙
     }
   }
 }
+
 menubutton {
   padding: 0;
+
   button {
     padding: unset;
     margin: unset;
     border-radius: 2px;
 
-    &:hover {
-      background-color: $inverse_surface_transparent;
-    }
+    // &:hover {
+    //   background-color: $inverse_surface_transparent;
+    // }
   }
 }
+
 popover arrow {
   background: transparent;
 }
+
 popover.background.menu {
   /* 整体弹出窗口样式 */
-  min-width: 120px; /* 设置最小宽度 */
+  min-width: 120px;
+  /* 设置最小宽度 */
   margin-top: 10px;
 }
+
 popover.background.menu contents {
-  background-color: $surface_transparent; /* 使用主题背景色 */
+  background-color: $surface_transparent;
+  /* 使用主题背景色 */
   color: $on_surface;
   padding: 6px;
-  min-width: 120px; /* 设置最小宽度 */
+  min-width: 120px;
+  /* 设置最小宽度 */
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -81,29 +94,3 @@ popover.background.menu contents {
   color: $on_surface;
   font-size: 14px;
 }
-// .window-content {
-//   background-color: $surface_transparent;
-//   color: $on_surface;
-//   margin: 10px;
-//   // box-shadow:
-//   //   0 0 0 $window-border-width $window-border-color,
-//   //   $window-shadow-offset $window-shadow-blur $window-shadow-spread
-//   //     color.adjust(
-//   //       $window-shadow-color,
-//   //       $alpha: calc($window-shadow-opacity - 1)
-//   // );
-//   border-radius: 10px;
-// }
-// .window-content {
-//   background-color: $surface_transparent;
-//   color: $on_surface;
-//   margin: 10px;
-//   // box-shadow:
-//   //   0 0 0 $window-border-width $window-border-color,
-//   //   $window-shadow-offset $window-shadow-blur $window-shadow-spread
-//   //     color.adjust(
-//   //       $window-shadow-color,
-//   //       $alpha: calc($window-shadow-opacity - 1)
-//   //     );
-//   border-radius: 10px;
-// }

@@ -1,16 +1,11 @@
 import { timeout, Variable } from "astal";
+import Adw from "gi://Adw?version=1";
 import { bind } from "astal";
 import { App, Gtk } from "astal/gtk4";
 import AstalApps from "gi://AstalApps";
 import AstalMpris from "gi://AstalMpris";
 import Pango from "gi://Pango";
 
-function lengthStr(length: number) {
-  const min = Math.floor(length / 60)
-  const sec = Math.floor(length % 60)
-  const sec0 = sec < 10 ? "0" : ""
-  return `${min}:${sec0}${sec}`
-}
 function MediaPlayer({ player }) {
   if (!player) {
     return <box />;
@@ -23,6 +18,20 @@ function MediaPlayer({ player }) {
       ? "media-playback-pause-symbolic"
       : "media-playback-start-symbolic",
   );
+  function format_timecode(timecode: number) {
+    timecode = Math.round(timecode);
+    const seconds = timecode % 60;
+    timecode = (timecode - seconds) / 60;
+    const minutes = timecode % 60;
+    timecode = (timecode - minutes) / 60;
+    const hours = timecode;
+
+    if (hours > 0) {
+      return `${hours}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+    } else {
+      return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    }
+  }
   return (
     <box cssClasses={["media-player"]} hexpand>
       {/* 整体容器 */}
@@ -70,6 +79,15 @@ function MediaPlayer({ player }) {
 
           {/* 控制按钮部分 */}
           <box spacing={8} halign={Gtk.Align.CENTER} margin_top={4}>
+            {bind(player, 'position').as(position => (
+              <label
+                cssClasses={["labelSmall"]}
+                valign={Gtk.Align.CENTER}
+                halign={Gtk.Align.START}
+                label={format_timecode(position)}
+                margin_end={30}
+              />
+            ))}
             <button
               valign={Gtk.Align.CENTER}
               onClicked={() => player.previous()}
@@ -94,6 +112,15 @@ function MediaPlayer({ player }) {
             >
               <image iconName="media-seek-forward-symbolic" pixelSize={25} />
             </button>
+            {bind(player, 'length').as(length => (
+              <label
+                valign={Gtk.Align.CENTER}
+                halign={Gtk.Align.END}
+                cssClasses={["labelSmall"]}
+                label={format_timecode(length)}
+                margin_start={30}
+              />
+            ))}
           </box>
         </box>
       </box>
@@ -112,11 +139,50 @@ function MediaPlayer({ player }) {
 
 export default function MediaPlayers() {
   const mpris = AstalMpris.get_default();
+  const carousel = new Adw.Carousel({ spacing: 8 });
+  const playerWidgets = new Map();
+
+  const players = mpris.get_players();
+  for (const player of players) {
+    const widget = MediaPlayer({ player });
+    carousel.append(widget);
+    playerWidgets.set(player, widget);
+  }
+
+  mpris.connect("player-added", (_, player) => {
+    console.log("player-added", player.busName);
+    players.push(player);
+    const widget = MediaPlayer({ player });
+    carousel.append(widget);
+    playerWidgets.set(player, widget);
+  });
+
+  mpris.connect("player-closed", (_, player) => {
+    console.log("player-removed", player.busName);
+    const widget = playerWidgets.get(player);
+    if (!widget) {
+      console.error("couldn't find widget for player", player.busName);
+      return;
+    }
+
+    // 移除组件从carousel
+    carousel.remove(widget);
+
+    const idx = players.indexOf(player);
+    if (idx >= 0) {
+      players.splice(idx, 1);
+    } else {
+      console.error("couldn't find player in players array", player.busName);
+    }
+
+    playerWidgets.delete(player);
+  });
+  carousel.add_css_class("mediaPlayersContainer");
+
   return (
-    <box cssClasses={["mediaPlayersContainer"]} hexpand={false}>
-      {bind(mpris, "players").as((players) => (
-        <MediaPlayer player={players[0]} />
-      ))}
+    <box hexpand={false} vertical>
+      {carousel}
+      {new Adw.CarouselIndicatorLines({ carousel })}
     </box>
   );
 }

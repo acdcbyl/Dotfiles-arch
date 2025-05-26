@@ -1,9 +1,24 @@
 @use "sass:string";
 @use "sass:color";
 @use "colors.scss" as *;
-
+.dash-main {
+  background-color: $surface_transparent;
+  padding: 20px;
+  border-radius: 0 30px 30px 0;
+  border-left: 1px solid $inverse_surface_transparent;
+}
+.time-label {
+  color: $on_surface;
+  font-size: 6rem;
+  font-weight: 600;
+}
+.uptime-label {
+  color: $on_surface;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
 .datemenu-container {
-  border-radius: 20px;
+  min-width: 300px;
 
   .time {
     font-size: 1.5rem;
@@ -11,61 +26,66 @@
 
   .date {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
   }
 
   calendar {
     // margin: 10px;
-    background-color: $surface_transparent;
+    background-color: $inverse_surface_transparent;
     // color: $on_surface;
-    min-width: 300px;
-    min-height: 300px;
+    min-width: 280px;
+    min-height: 280px;
     // min-height: 380px;
     padding: 20px;
-    // padding-top: 20px;
     border-radius: 20px;
+    // padding-top: 20px;
     border: unset;
 
     header {
-      padding-bottom: 10px;
+      // padding-bottom: 10px;
       color: $on_surface;
       border: unset;
     }
 
     grid > * {
-      min-width: 30px;
-      min-height: 30px;
-      border-radius: 100px;
-      margin: 0.5rem;
-      margin-top: 0.1rem;
-      margin-bottom: 0.1rem;
-      margin-left: 0.2rem;
-      margin-right: 0.2rem;
+      min-width: 20px;
+      min-height: 20px;
+      border-radius: 10px;
+      // // margin: 0.5rem;
+      // margin-top: 0.2rem;
+      // margin-bottom: 0.2rem;
+      // margin-left: 0.2rem;
+      // margin-right: 0.2rem;
+      margin: 0.1rem;
       color: $on_surface;
       outline-color: $outline;
       // outline: unset;
     }
 
     .day-number {
-      // min-width: 16px;
-      min-height: 26px;
+      // min-width: 30px;
+      // min-height: 30px;
       color: $on_surface;
+
       &:selected {
         color: $on_primary;
         background-color: $primary;
       }
     }
+
     .today {
-      border-radius: 100px;
-      // margin: 0.8rem;
+      border-radius: 10px;
+      margin: 0.1rem;
       min-width: 30px;
       min-height: 30px;
-      margin-top: 0.1rem;
-      margin-bottom: 0.1rem;
-      margin-left: 0.2rem;
-      margin-right: 0.2rem;
-      box-shadow: 0 0 0 0.1rem $outline;
+      color: $primary;
+      // margin-top: 0.2rem;
+      // margin-bottom: 0.2rem;
+      // margin-left: 0.2rem;
+      // margin-right: 0.2rem;
+      // box-shadow: 0 0 0 0.05rem $outline;
     }
+
     .other-month {
       color: $outline;
     }

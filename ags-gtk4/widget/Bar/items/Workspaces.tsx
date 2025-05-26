@@ -1,12 +1,11 @@
-import { bind } from "astal";
-import { App, Gtk, Gdk } from "astal/gtk4";
-import Hyprland from "gi://AstalHyprland";
+import { Gtk } from "astal/gtk4";
 import AstalHyprland from "gi://AstalHyprland";
-import BarButton from "../BarButton";
 import { range } from "../../../lib/utils";
+import { bind } from "astal";
 import { Variable } from "astal";
-import BarItem from "../BarItem";
 import { ButtonProps } from "astal/gtk4/widget";
+import PanelButton from "../PanelButton";
+
 type WsButtonProps = ButtonProps & {
 	ws: AstalHyprland.Workspace;
 };
@@ -16,13 +15,13 @@ function WorkspaceButton({ ws, ...props }: WsButtonProps) {
 	const classNames = Variable.derive(
 		[bind(hyprland, "focusedWorkspace"), bind(hyprland, "clients")],
 		(fws, _) => {
-			const classes = ["bar__workspaces-indicator"];
+			const classes = ["workspace-button"];
 
 			const active = fws.id == ws.id;
 			active && classes.push("active");
 
 			const occupied = hyprland.get_workspace(ws.id)?.get_clients().length > 0;
-			occupied;
+			occupied && classes.push("occupied");
 			return classes;
 		},
 	);
@@ -38,15 +37,15 @@ function WorkspaceButton({ ws, ...props }: WsButtonProps) {
 		/>
 	);
 }
+
 export default function WorkspacesPanelButton() {
 	return (
-
-		<BarItem>
-			<box spacing={8}>
-				{range(10).map((i) => (
+		<PanelButton cssClasses={["workspace-button-bg"]}>
+			<box cssClasses={["workspace-container"]} spacing={4}>
+				{range(6).map((i) => (
 					<WorkspaceButton ws={AstalHyprland.Workspace.dummy(i + 1, null)} />
 				))}
 			</box>
-		</BarItem>
+		</PanelButton>
 	);
 }

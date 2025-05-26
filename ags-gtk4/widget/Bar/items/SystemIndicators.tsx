@@ -1,5 +1,8 @@
 import { App } from "astal/gtk4";
-import BarButton from "../BarButton";
+import AstalNotifd from "gi://AstalNotifd";
+import PanelButton from "../PanelButton";
+import { WINDOW_NAME } from "../../Quicksettings/QSWindow";
+import AstalBattery from "gi://AstalBattery";
 import AstalWp from "gi://AstalWp";
 import { bind, Variable } from "astal";
 import AstalPowerProfiles from "gi://AstalPowerProfiles";
@@ -36,19 +39,19 @@ function NetworkIcon() {
   return <image iconName={bind(network.wifi, "iconName")} />;
 }
 
-
-export default function SystemButton() {
-  // const battery = AstalBattery.get_default();
+export default function QSPanelButton() {
+  const battery = AstalBattery.get_default();
   const bluetooth = AstalBluetooth.get_default();
   const wp = AstalWp.get_default();
   const speaker = wp?.audio.defaultSpeaker!;
   const powerprofile = AstalPowerProfiles.get_default();
+  const notifd = AstalNotifd.get_default();
 
   return (
-    <BarButton
-      cssName="bar__system-indicators"
+    <PanelButton
+      window={WINDOW_NAME}
       onClicked={() => {
-        App.toggle_window("quicksettings");
+        App.toggle_window(WINDOW_NAME);
       }}
     >
       <box spacing={6}>
@@ -57,6 +60,21 @@ export default function SystemButton() {
           visible={bind(bluetooth, "isPowered")}
           iconName={"bluetooth-symbolic"}
         />
+        {/* <image */}
+        {/*   visible={bind(notifd, "dont_disturb")} */}
+        {/*   iconName={"notification-disabled-symbolic"} */}
+        {/* /> */}
+        {/* <box> */}
+        <image
+          visible={bind(battery, "isPresent")}
+          iconName={bind(battery, "batteryIconName")}
+        />
+        {/* <label */}
+        {/*   label={bind(battery, "percentage").as( */}
+        {/*     (p) => `${Math.floor(p * 100)} %`, */}
+        {/*   )} */}
+        {/* /> */}
+        {/* </box> */}
         <image iconName={bind(speaker, "volumeIcon")} />
         <image
           visible={bind(powerprofile, "activeProfile").as(
@@ -69,6 +87,6 @@ export default function SystemButton() {
           iconName="microphone-disabled-symbolic"
         />
       </box>
-    </BarButton>
+    </PanelButton>
   );
 }

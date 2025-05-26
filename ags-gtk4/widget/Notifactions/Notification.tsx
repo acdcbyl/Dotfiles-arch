@@ -38,6 +38,7 @@ export default function Notification({
     <box
       name={n.id.toString()}
       cssClasses={["notification-container", urgency(n)]}
+      widthRequest={350}
       hexpand={false}
       vexpand={false}
     >
@@ -52,7 +53,7 @@ export default function Notification({
           {/* )} */}
           <image
             cssClasses={["app-icon"]}
-            iconName="notifications-applet-symbolic"
+            iconName={"fa-bell-symbolic"}
           />
           <label
             cssClasses={["app-name"]}
@@ -131,10 +132,13 @@ export default function Notification({
             {n.body && (
               <label
                 cssClasses={["body"]}
-                // ellipsize={Pango.EllipsizeMode.END}
-                maxWidthChars={40}
+                ellipsize={Pango.EllipsizeMode.MIDDLE}
+                maxWidthChars={30}
+                lines={5}
+                useMarkup
                 wrap
-                valign={Gtk.Align.START}
+                halign={Gtk.Align.FILL}
+                valign={Gtk.Align.CENTER}
                 xalign={0}
                 label={n.body}
               />

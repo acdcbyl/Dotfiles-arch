@@ -3,10 +3,9 @@
 .mediaPlayersContainer {
   // margin: 6px;
   margin-top: 10px;
-  margin-bottom: 6px;
+  // margin-bottom: 6px;
   background-color: $inverse_surface_transparent;
-  border-radius: 30px;
-
+  border-radius: 20px;
   // min-height: 100px;
   .media-player {
     // min-width: 180px;
@@ -20,7 +19,7 @@
       font-weight: 900;
       // margin-top: 15px;
       margin-right: 1rem;
-      margin-left: 2rem;
+      margin-left: 1rem;
 
       .artist {
         font-weight: 500;
@@ -29,7 +28,7 @@
 
     .progress_container {
       min-height: 10px;
-      margin-left: 2rem;
+      margin-left: 1rem;
 
       .progress {
         border-radius: 10px;
@@ -84,7 +83,7 @@
     }
 
     .cover {
-      border-radius: 100px;
+      border-radius: 10px;
       min-height: 80px;
       min-width: 80px;
       // margin-right: 0.3rem;

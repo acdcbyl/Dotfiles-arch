@@ -1,10 +1,10 @@
 import networkSpeed from "../../../lib/networkspeed";
-import BarButton from "../BarButton";
+import PanelButton from "../PanelButton";
 
-export default function NetworkSpeedButton() {
+export default function NetworkSpeedPanelButton() {
   return (
-    <BarButton >
-      <box cssName="networkspeed">
+    <PanelButton window="" cssClasses={["netspeed-bg"]}>
+      <box cssClasses={["network-speed"]}>
         <label
           cssClasses={["label"]}
           label={networkSpeed((value) => {
@@ -21,6 +21,6 @@ export default function NetworkSpeedButton() {
           })}
         />
       </box>
-    </BarButton>
+    </PanelButton>
   );
 }

@@ -1,14 +1,14 @@
 import { bind } from "astal";
 import ScreenRecord from "../../../lib/screenrecord";
-import BarButton from "../../Bar/BarButton";
+import PanelButton from "../PanelButton";
 import { Gtk } from "astal/gtk4";
 
-export default function RecordButton() {
+export default function RecordIndicatorPanelButton() {
   const screenRecord = ScreenRecord.get_default();
   return (
     <box visible={bind(screenRecord, "recording")}>
       <Gtk.Separator orientation={Gtk.Orientation.VERTICAL} />
-      <BarButton onClicked={() => screenRecord.stop().catch(() => "")}>
+      <PanelButton onClicked={() => screenRecord.stop().catch(() => "")}>
         <box>
           <image iconName={"media-record-symbolic"} />
           <label
@@ -20,7 +20,7 @@ export default function RecordButton() {
             })}
           />
         </box>
-      </BarButton>
+      </PanelButton>
     </box>
   );
 }
