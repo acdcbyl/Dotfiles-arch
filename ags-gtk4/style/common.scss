@@ -121,8 +121,10 @@ window.popup {
 }
 
 switch {
-  border: 2px solid $outline;
-  border-radius: 100px;
+  // border: 2px solid $outline;
+  min-width: 45px;
+  padding: 4px;
+  border-radius: 15px;
   background-color: $surface_container_highest;
 }
 
@@ -132,22 +134,17 @@ switch slider {
   background-color: $outline;
 }
 
-switch:hover slider,
-switch:active slider {
+switch:active slider,
+switch:hover slider {
   background-color: $on_surface_variant;
 }
 
 switch:active {
-  background-color: color.mix(
-    $surface_container_highest,
-    $on_surface,
-    0.08 * 1%
-  );
+  background-color: $primary;
 }
 
 switch:checked {
   background-color: $primary;
-  border: 2px solid $primary;
 }
 
 switch:checked slider {

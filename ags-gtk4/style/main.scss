@@ -16,35 +16,38 @@
 @use "./applauncher.scss";
 @use "./mediaPlayer.scss";
 @use "roundedcorners.scss";
-
+@mixin rounded-full {
+  border-radius: 9999px;
+}
 * {
   font-family: Noto Sans;
 }
 
 scale {
-  margin: 0;
-  padding: 0;
+  * {
+    @include rounded-full;
+  }
+
+  $width: 0.25em;
 
   trough {
-    border-radius: 30px;
+    min-height: $width;
+    min-width: $width;
+    background-color: $surface;
 
-    highlight {
+    highlight,
+    progress {
       background-color: $primary;
-      // min-height: 32px;
-      // 调整highlight的border-radius，让右边与slider圆形匹配
-      border-radius: 30px; // 设置为min-height的一半
+      min-height: $width;
+      min-width: $width;
     }
+  }
 
-    slider {
-      box-shadow: none;
-      outline: unset;
-      // min-height: 32px;
-      // min-width: 32px;
-      background-color: transparent;
-      border-radius: 30px; // 确保slider是完美的圆形
-      // 可选：添加一个小偏移使slider稍微重叠在highlight上
-      // margin-left: -10px; // 这可以减少两者之间的缝隙
-    }
+  slider {
+    background-color: $on_surface;
+    min-height: $width;
+    min-width: $width;
+    margin: -0.5em;
   }
 }
 
@@ -83,10 +86,40 @@ popover.background.menu contents {
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
+// switch {
+//   /* 开关背景的尺寸 */
+//   min-width: 30px;
+//   // min-height: 30px;
+//   background-color: $surface;
+//   border-radius: 15px;
+//   padding: 2px;
+//   transition: all 0.3s ease;
+//   &.active {
+//     background: $primary;
+//     color: $primary;
+//   }
+// }
+// switch slider {
+//   /* 滑块的样式 */
+//   background: $on_surface;
+//   color: $on_surface;
+//   border-radius: 50%;
+//   // min-width: 26px;
+//   // min-height: 26px;
+//   // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+// }
+//
+// switch:hover slider {
+//   background-color: $primary;
+// }
 .labelSmallBold {
   color: $on_surface;
   font-size: 14px;
+  font-weight: bold;
+}
+.labelSmallerBold {
+  color: $on_surface;
+  font-size: 10px;
   font-weight: bold;
 }
 

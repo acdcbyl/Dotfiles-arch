@@ -28,52 +28,69 @@ $window-border-radius: 6px 6px 6px 6px;
     // color: $on_surface;
     padding-bottom: 0;
 
-    .dnd {
-      margin-left: 0.7rem;
-      background-color: $inverse_surface_transparent;
+    // .dnd {
+    //   margin-left: 0.7rem;
+    //   background-color: $inverse_surface_transparent;
+    //   color: $on_surface;
+    //   padding: 0 0.6rem;
+    //
+    //   &.active {
+    //     color: $on_primary_fixed;
+    //     background-color: $primary_fixed;
+    //
+    //     label {
+    //       color: $on_primary_fixed;
+    //     }
+    //
+    //     &:hover {
+    //       color: $on_primary_fixed;
+    //       background-color: $primary_fixed;
+    //
+    //       label {
+    //         color: $on_primary_fixed;
+    //       }
+    //     }
+    //   }
+    //
+    //   &:hover {
+    //     color: $on_primary_fixed;
+    //     background-color: $primary_fixed;
+    //
+    //     label {
+    //       color: $on_primary_fixed;
+    //     }
+    //   }
+    //
+    //   label {
+    //     font-size: 0.95rem;
+    //     color: $on_surface;
+    //   }
+    // }
+
+    .clear {
+      // padding: 0.1rem;
+      // padding-top: 0.2rem;
+      // padding-bottom: 0.3rem;
+      // padding: 1px;
+      padding-right: 0.8rem;
+      border-radius: 12px;
+      min-width: 10px;
+      min-height: 30px;
       color: $on_surface;
-      padding: 0 0.6rem;
-
-      &.active {
-        color: $on_primary_fixed;
-        background-color: $primary_fixed;
-
-        label {
-          color: $on_primary_fixed;
-        }
-
-        &:hover {
-          color: $on_primary_fixed;
-          background-color: $primary_fixed;
-
-          label {
-            color: $on_primary_fixed;
-          }
-        }
-      }
-
+      background: $inverse_surface_transparent;
       &:hover {
-        color: $on_primary_fixed;
-        background-color: $primary_fixed;
-
-        label {
-          color: $on_primary_fixed;
-        }
+        background: $surface_bright;
       }
-
       label {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
         color: $on_surface;
       }
     }
 
-    .clear {
-      padding: 0.2rem 0.5rem;
-      color: $on_surface;
-    }
-
     label {
-      font-size: 1.2rem;
+      margin-left: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
       color: $on_surface;
     }
   }

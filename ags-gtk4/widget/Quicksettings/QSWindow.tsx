@@ -1,5 +1,9 @@
 import PopupWindow from "../../common/PopupWindow";
+import { execAsync } from "astal";
+import { notifySend } from "../../lib/utils";
 import DarkModeQS from "./buttons/DarkModeQS";
+import ScreenRecord from "../../lib/screenrecord";
+import { timeout } from "astal";
 import ColorPickerQS from "./buttons/ColorPickerQS";
 import ScreenshotQS from "./buttons/ScreenshotQS";
 import DontDisturbQS from "./buttons/DontDisturbQS";
@@ -61,15 +65,15 @@ function QSButtons() {
 function QSButtons_child() {
   return (
     <FlowBox
-      maxChildrenPerLine={4}
+      maxChildrenPerLine={2}
       activateOnSingleClick={false}
       homogeneous
       rowSpacing={6}
       columnSpacing={6}
     >
       <DarkModeQS />
-      <ColorPickerQS />
-      <ScreenshotQS />
+      {/* <ColorPickerQS /> */}
+      {/* <ScreenshotQS /> */}
       {/* <MicQS /> */}
       {/* <DontDisturbQS /> */}
       <RecordQS />
@@ -80,22 +84,13 @@ function QSButtons_child() {
 function Header() {
   const battery = AstalBattery.get_default();
 
+  const screenRecord = ScreenRecord.get_default();
   return (
+
     <box hexpand={false} cssClasses={["header"]} spacing={6}>
-      {/* <label */}
-      {/*   useMarkup={true} */}
-      {/*   label={"<b> ControlCenter</b>"} */}
-      {/*   hexpand */}
-      {/*   xalign={0} */}
-      {/* /> */}
-      {/* <image */}
-      {/*   iconName={"org.gnome.Settings-symbolic"} */}
-      {/*   hexpand */}
-      {/*   halign={Gtk.Align.START} */}
-      {/* /> */}
       <button
         cssClasses={["battery"]}
-        heightRequest={30}
+        // heightRequest={30}
         onClicked={() => {
           qsPage.set("battery");
         }}
@@ -104,7 +99,7 @@ function Header() {
           <image
             iconName={bind(battery, "batteryIconName")}
             iconSize={Gtk.IconSize.NORMAL}
-            cssClasses={["icon"]}
+          // cssClasses={["icon"]}
           />
           <label
             label={bind(battery, "percentage").as(
@@ -113,16 +108,57 @@ function Header() {
           />
         </box>
       </button>
+      <button
+        onClicked={() => {
+          App.toggle_window(WINDOW_NAME);
+          timeout(200, () => {
+            screenRecord.screenshot();
+          });
+        }
+        }
+      >
+        <image
+          iconName={"gnome-screenshot-symbolic"}
+        />
+      </button>
       <box hexpand />
+      <button
+
+        onClicked={() => {
+          const wlCopy = (color: string) =>
+            execAsync(["wl-copy", color]).catch(console.error);
+
+          App.toggle_window(WINDOW_NAME);
+          timeout(200, () => {
+            execAsync("hyprpicker")
+              .then((color) => {
+                if (!color) return;
+
+                wlCopy(color);
+                notifySend({
+                  appName: "Hyprpicker",
+                  summary: "Color Picker",
+                  body: `${color} copied to clipboard`,
+                });
+              })
+              .catch(console.error);
+          });
+        }}
+      >
+        <image
+          iconName={"color-select-symbolic"}
+        />
+      </button>
       <button
         onClicked={() => {
           App.toggle_window(WINDOW_NAME);
           toggleWallpaperPicker();
-        }}
-        iconName={"preferences-desktop-wallpaper-symbolic"}
-      />
+        }}>
+        <image
+          iconName={"preferences-desktop-wallpaper-symbolic"}
+        />
+      </button>
       <button
-        cssClasses={["settings"]}
         onClicked={() => {
           bash(`better-control`)
           App.toggle_window(WINDOW_NAME)
@@ -246,12 +282,12 @@ function MainPage() {
     <box cssClasses={["qs-page"]} name={"main"} vertical spacing={6}>
       <Header />
       <Gtk.Separator />
+      <VolumeBox />
+      <BrightnessBox />
+      {/* <Gtk.Separator /> */}
       <WifiBluetooth />
       <QSButtons />
       <QSButtons_child />
-      <BrightnessBox />
-      <VolumeBox />
-      {/* <Gtk.Separator /> */}
       <MediaPlayers />
       {/* <Cava /> */}
     </box>
@@ -266,7 +302,7 @@ function QSWindow(_gdkmonitor: Gdk.Monitor) {
       layout={layout.get()}
       //animation="slide right"
       //anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
-      margin={15}
+      margin={10}
       onDestroy={() => layout.drop()}
     >
       <box

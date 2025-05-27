@@ -228,7 +228,7 @@ export default function Applauncher(_gdkmonitor: Gdk.Monitor) {
   setupAppsFolderMonitor();
 
   return (
-    <PopupWindow name={WINDOW_NAME} layout={layout.get()} margin={15} layer={Astal.Layer.TOP}>
+    <PopupWindow name={WINDOW_NAME} layout={layout.get()} margin={10} layer={Astal.Layer.TOP}>
       <box
         cssClasses={["applauncher-container"]}
         vertical

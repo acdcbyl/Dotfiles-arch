@@ -75,7 +75,10 @@ export default function QSButton<T extends GObject.Object>({
       cssClasses={getCssClasses()}
       onClicked={onClicked}
     >
-      <image iconName={iconName} iconSize={Gtk.IconSize.NORMAL} halign={Gtk.Align.CENTER} />
+      <box>
+        <image iconName={iconName} iconSize={Gtk.IconSize.LARGE} halign={Gtk.Align.CENTER} />
+        <label label={label} />
+      </box>
     </button>
   );
 }

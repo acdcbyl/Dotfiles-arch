@@ -29,7 +29,7 @@ function NotifIcon() {
 		/>
 	);
 }
-export default function TimePanelButton({ format = "%a %d %b, %H:%M" }) {
+export default function TimePanelButton({ format = "%a,%H:%M" }) {
 
 	const apps = new AstalApps.Apps();
 	const substitute: {
@@ -45,7 +45,8 @@ export default function TimePanelButton({ format = "%a %d %b, %H:%M" }) {
 		Screenshot: "screenshot-recorded-symbolic",
 		Hyprpicker: "color-select-symbolic",
 		foamshot: "screenshot-recorded-symbolic",
-		rmpc: "folder-music-symbolic",
+		rmpc: "com.github.neithern.g4music-symbolic",
+		musicfox: "com.github.neithern.g4music-symbolic",
 		"change-color": "preferences-desktop-theme-global-symbolic",
 	};
 	return (
@@ -53,7 +54,7 @@ export default function TimePanelButton({ format = "%a %d %b, %H:%M" }) {
 			window={WINDOW_NAME}
 			onClicked={() => App.toggle_window(WINDOW_NAME)}
 		>
-			<box spacing={8}>
+			<box spacing={12}>
 				<label label={time((t) => t.format(format)!)} />
 				{/* <label */}
 				{/* 	cssClasses={["clock-notificount"]} */}

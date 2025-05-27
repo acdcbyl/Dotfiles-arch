@@ -50,9 +50,7 @@ export default function QSPanelButton() {
   return (
     <PanelButton
       window={WINDOW_NAME}
-      onClicked={() => {
-        App.toggle_window(WINDOW_NAME);
-      }}
+      onClicked={() => App.toggle_window(WINDOW_NAME)}
     >
       <box spacing={6}>
         <NetworkIcon />

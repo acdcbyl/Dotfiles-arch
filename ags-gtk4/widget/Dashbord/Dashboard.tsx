@@ -6,6 +6,7 @@ import PopupWindow from "../../common/PopupWindow";
 import Notification from "../Notifactions/Notification";
 import { bind, Variable } from "astal";
 import options from "../../option";
+import { Switch } from "astal/gtk4/widget";
 
 export const WINDOW_NAME = "dashboard";
 const notifd = AstalNotifd.get_default();
@@ -68,19 +69,26 @@ function NotifsScrolledWindow() {
 
 function DNDButton() {
   return (
-    <button
-      tooltipText={"Do Not Disturb"}
-      onClicked={() => {
-        notifd.set_dont_disturb(!notifd.get_dont_disturb());
-      }}
-      cssClasses={bind(notifd, "dont_disturb").as((dnd) => {
-        const classes = ["dnd"];
-        dnd && classes.push("active");
-        return classes;
-      })}
-      label={"DND"}
-      halign={Gtk.Align.START}
-    />
+    <box spacing={6}>
+      <label label={"Do Not Disturb"} />
+      <Switch
+        heightRequest={10}
+        // tooltipText={"Do Not Disturb"}
+        // onClicked={() => {
+        //   notifd.set_dont_disturb(!notifd.get_dont_disturb());
+        // }}
+        active={bind(notifd, "dont_disturb")}
+        onStateSet={(self, state) => {
+          // 用开关想要变成的新状态 (state) 来更新我们的数据源 (notifd)。
+          notifd.set_dont_disturb(state);
+
+          // 返回 true 表示我们已经处理了这个事件，阻止 GTK 的默认处理程序再次改变状态。
+          return true;
+        }}
+        // label={"DND"}
+        halign={Gtk.Align.CENTER}
+      />
+    </box>
   );
 }
 
@@ -88,14 +96,17 @@ function ClearButton() {
   return (
     <button
       cssClasses={["clear"]}
-      halign={Gtk.Align.END}
+      halign={Gtk.Align.CENTER}
       onClicked={() => {
         notifd.notifications.forEach((n) => n.dismiss());
         App.toggle_window(WINDOW_NAME);
       }}
       sensitive={bind(notifd, "notifications").as((n) => n.length > 0)}
     >
-      <image iconName={"user-trash-full-symbolic"} />
+      <box spacing={6}>
+        <label label={"Clear"} />
+        <image iconName={"user-trash-full-symbolic"} />
+      </box>
     </button>
   );
 }
@@ -110,7 +121,7 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
       //     animation="slide top"
       layout={layout.get()}
       // anchor={Astal.WindowAnchor.TOP}
-      margin={15}
+      margin={10}
       onDestroy={() => layout.drop()}
     >
       <box>
@@ -122,7 +133,7 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
           <Gtk.Separator />
           <NotifsScrolledWindow />
 
-          <box cssClasses={["window-header"]} hexpand>
+          <box cssClasses={["window-header"]}>
             {/* <label label={"Notifications"} hexpand xalign={0} /> */}
             {/* <label */}
             {/*   useMarkup={true} */}

@@ -36,7 +36,7 @@ function MediaPlayer({ player }) {
     <box cssClasses={["media-player"]} hexpand>
       {/* 整体容器 */}
       {/* 主要内容 */}
-      <box hexpand>
+      <box hexpand spacing={12}>
         {/* 左侧：封面图片 */}
         <image
           overflow={Gtk.Overflow.HIDDEN}
@@ -49,13 +49,24 @@ function MediaPlayer({ player }) {
         <box vertical hexpand>
           {/* 信息部分 */}
           <box vertical cssClasses={["media-font"]}>
-            <label
-              ellipsize={Pango.EllipsizeMode.END}
-              halign={Gtk.Align.START}
-              cssClasses={["tilte"]}
-              label={title}
-              maxWidthChars={20}
-            />
+            <box>
+              <label
+                ellipsize={Pango.EllipsizeMode.END}
+                halign={Gtk.Align.START}
+                cssClasses={["tilte"]}
+                label={title}
+                maxWidthChars={20}
+              />
+              <box hexpand />
+              <image
+                halign={Gtk.Align.END}
+                valign={Gtk.Align.START}
+                iconName="emblem-music-symbolic"
+                pixelSize={15}
+                // margin_end={10}
+                margin_top={4}
+              />
+            </box>
             <label
               halign={Gtk.Align.START}
               ellipsize={Pango.EllipsizeMode.END}
@@ -69,7 +80,7 @@ function MediaPlayer({ player }) {
             {bind(player, 'length').as(length => (
               <levelbar
                 cssClasses={['progress']}
-                heightRequest={10}
+                // heightRequest={10}
                 maxValue={length}
                 value={bind(player, 'position')}
                 hexpand={true}
@@ -78,18 +89,19 @@ function MediaPlayer({ player }) {
           </box>
 
           {/* 控制按钮部分 */}
-          <box spacing={8} halign={Gtk.Align.CENTER} margin_top={4}>
+          <box spacing={8} halign={Gtk.Align.START} margin_start={40} margin_top={4}>
             {bind(player, 'position').as(position => (
               <label
                 cssClasses={["labelSmall"]}
                 valign={Gtk.Align.CENTER}
-                halign={Gtk.Align.START}
+                halign={Gtk.Align.CENTER}
                 label={format_timecode(position)}
-                margin_end={30}
+              // margin_end={30}
               />
             ))}
             <button
               valign={Gtk.Align.CENTER}
+              halign={Gtk.Align.CENTER}
               onClicked={() => player.previous()}
               visible={bind(player, "canGoPrevious")}
               cssClasses={["next-icon"]}
@@ -98,6 +110,7 @@ function MediaPlayer({ player }) {
             </button>
             <button
               valign={Gtk.Align.CENTER}
+              halign={Gtk.Align.CENTER}
               cssClasses={["play-icon"]}
               onClicked={() => player.play_pause()}
               visible={bind(player, "canControl")}
@@ -106,6 +119,7 @@ function MediaPlayer({ player }) {
             </button>
             <button
               valign={Gtk.Align.CENTER}
+              halign={Gtk.Align.CENTER}
               onClicked={() => player.next()}
               visible={bind(player, "canGoNext")}
               cssClasses={["next-icon"]}
@@ -115,24 +129,17 @@ function MediaPlayer({ player }) {
             {bind(player, 'length').as(length => (
               <label
                 valign={Gtk.Align.CENTER}
-                halign={Gtk.Align.END}
+                // halign={Gtk.Align.END}
+                halign={Gtk.Align.CENTER}
                 cssClasses={["labelSmall"]}
                 label={format_timecode(length)}
-                margin_start={30}
+              // margin_start={30}
               />
             ))}
           </box>
         </box>
       </box>
 
-      <image
-        halign={Gtk.Align.END}
-        valign={Gtk.Align.START}
-        iconName="emblem-music-symbolic"
-        pixelSize={15}
-        margin_end={10}
-        margin_top={4}
-      />
     </box>
   );
 }

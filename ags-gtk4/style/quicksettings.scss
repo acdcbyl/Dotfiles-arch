@@ -2,7 +2,7 @@
 @use "colors.scss" as *;
 
 .qs-container {
-  min-width: 300px;
+  min-width: 200px;
   // min-height: 650px;
   background: $surface_transparent;
   border-radius: 30px;
@@ -14,23 +14,29 @@
   }
 
   .arrow-button {
-    border-radius: 30px;
-    min-height: 70px;
+    // border-radius: 30px;
+    min-height: 3em;
     // min-width: 38px;
     // min-height: 38px;
     background-color: $inverse_surface_transparent;
     color: $on_surface;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
 
     > * {
       padding: 0 4px;
 
       .title {
-        margin-top: 0.3rem;
+        font-size: 0.865em;
+        // margin-top: 0.3rem;
         margin-left: 0.5rem;
       }
-
       .subtitle {
         margin-left: 0.5rem;
+        font-weight: normal;
+        font-size: 0.775em;
       }
 
       &:first-child {
@@ -41,16 +47,17 @@
     &.active {
       background-color: $primary;
       color: $on_primary;
+      .next-page {
+        border-radius: 0;
+        // background: $tertiary;
+        border-left: 1px solid $surface;
+      }
     }
 
-    // .next-page {
-    //   border-radius: 0 30px 30px 0;
-    //   background: transparent;
-    //
-    //   &.active {
-    //     background: $secondary;
-    //   }
-    // }
+    .next-page {
+      background: transparent;
+      padding-left: 8px;
+    }
   }
 
   flowbox flowboxchild {
@@ -77,9 +84,10 @@
     }
 
     button {
-      padding: 0.3rem 0.5rem;
-      border-radius: 20px;
-      min-height: 20px;
+      padding: 0.5rem;
+      border-radius: 9999px;
+      // min-height: 26px;
+      min-width: 27px;
       color: $on_surface;
       background-color: $inverse_surface_transparent;
 
@@ -114,23 +122,28 @@
   }
 
   .qs-button {
-    border-radius: 30px;
-    min-height: 70px;
+    border-radius: 9999px;
+    min-height: 4em;
     background-color: $inverse_surface_transparent;
     color: $on_surface;
     outline-color: $on_surface;
+    padding: 0 5px;
 
     button {
       // padding: 1rem 0;
       background-color: transparent;
       color: $on_surface;
-
       // outline-color: $on_surface;
       &:checked {
         color: $on_primary_container;
         border-radius: 10px;
         background-color: $primary_container;
       }
+    }
+    label {
+      font-size: 0.865em;
+      // margin-top: 0.3rem;
+      margin-left: 0.5rem;
     }
 
     // popover arrow {

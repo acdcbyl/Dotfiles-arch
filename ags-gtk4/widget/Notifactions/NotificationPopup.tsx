@@ -19,7 +19,7 @@ export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
   return (
     <window
       namespace={"notifications-popup"}
-      margin={15}
+      margin={10}
       width_request={300}
       // layer={Astal.Layer.BOTTOM}
       setup={(self) => {
