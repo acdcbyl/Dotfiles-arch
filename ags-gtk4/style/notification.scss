@@ -28,45 +28,6 @@ $window-border-radius: 6px 6px 6px 6px;
     // color: $on_surface;
     padding-bottom: 0;
 
-    // .dnd {
-    //   margin-left: 0.7rem;
-    //   background-color: $inverse_surface_transparent;
-    //   color: $on_surface;
-    //   padding: 0 0.6rem;
-    //
-    //   &.active {
-    //     color: $on_primary_fixed;
-    //     background-color: $primary_fixed;
-    //
-    //     label {
-    //       color: $on_primary_fixed;
-    //     }
-    //
-    //     &:hover {
-    //       color: $on_primary_fixed;
-    //       background-color: $primary_fixed;
-    //
-    //       label {
-    //         color: $on_primary_fixed;
-    //       }
-    //     }
-    //   }
-    //
-    //   &:hover {
-    //     color: $on_primary_fixed;
-    //     background-color: $primary_fixed;
-    //
-    //     label {
-    //       color: $on_primary_fixed;
-    //     }
-    //   }
-    //
-    //   label {
-    //     font-size: 0.95rem;
-    //     color: $on_surface;
-    //   }
-    // }
-
     .clear {
       // padding: 0.1rem;
       // padding-top: 0.2rem;
@@ -77,9 +38,12 @@ $window-border-radius: 6px 6px 6px 6px;
       min-width: 10px;
       min-height: 30px;
       color: $on_surface;
-      background: $inverse_surface_transparent;
+      // background: $inverse_surface_transparent;
       &:hover {
-        background: $surface_bright;
+        color: $primary;
+        label {
+          color: $primary;
+        }
       }
       label {
         font-size: 1.1rem;
@@ -117,9 +81,6 @@ $window-border-radius: 6px 6px 6px 6px;
 .notification-container {
   padding: 8px 16px 14px 20px;
   min-width: 380px;
-  // min-height: -1;
-  // min-height: 100px;
-  // min-height: 1em;
   border-radius: 20px;
   // margin-bottom: 10px;
   background: $surface_transparent;
@@ -182,9 +143,6 @@ $window-border-radius: 6px 6px 6px 6px;
       margin-left: 0.5rem;
       color: $on_surface;
       font-weight: 400;
-
-      // margin-top: 1rem;
-      // font-weight: 400;
     }
 
     .image image {
@@ -222,20 +180,4 @@ $window-border-radius: 6px 6px 6px 6px;
       }
     }
   }
-
-  // .actions {
-  //   margin-top: 0.5rem;
-  //   min-width: 22px;
-  //   min-height: 22px;
-  //   button {
-  //     padding: 0.1rem 0;
-  //     background-color: $inverse_surface_transparent;
-  //     color: $on_surface;
-  //     border-radius: 6px;
-  //     &:hover {
-  //       color: $on_secondary;
-  //       background-color: $secondary;
-  //     }
-  //   }
-  // }
 }

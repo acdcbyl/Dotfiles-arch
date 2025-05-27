@@ -33,23 +33,29 @@
       .progress {
         border-radius: 10px;
         margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
 
         trough {
-          border-radius: 10px;
+          border-radius: 9999px;
+          min-height: 0.25em;
           // min-height: 10px;
 
           block {
             // min-width: 10px; // Ensure minimum width matches the border-radius
+            min-height: 0.25em;
 
             &.empty {
-              border-radius: 10px;
+              border-radius: 9999px;
+              min-height: 0.25em;
               background-color: $inverse_surface_transparent_variant;
             }
 
             &.filled {
               background-color: $primary;
-              border-radius: 10px;
-              min-height: 10px;
+              border-radius: 9999px;
+              min-height: 0.25em;
               // margin: 0.1rem;
               // padding: 0.5rem;
             }
@@ -88,54 +94,6 @@
       min-width: 80px;
       // margin-right: 0.3rem;
       // margin-right: 0.3rem;
-    }
-  }
-}
-
-.mediaPlayer {
-  margin-top: 10px;
-  background-color: transparent;
-  border: $surface_transparent;
-  border-radius: 10px;
-  padding: 4px 12px 4px 12px;
-
-  .controlButton {
-    all: unset;
-    background-color: $primary;
-    color: $on_primary;
-    padding: 4px 4px 4px 4px;
-    border: none;
-    min-height: 25px;
-    min-width: 30px;
-    border-radius: 100px;
-  }
-
-  .controlButton:hover {
-    background-color: $on_primary;
-    color: $primary;
-  }
-
-  .seekContainer {
-    margin: 10px 0 10px 0;
-  }
-
-  .seek {
-    margin: 0 8px 0 8px;
-
-    trough {
-      background: $inverse_surface_transparent;
-      min-height: 8px;
-      border-radius: 20px;
-
-      // slider {
-      //   color: $primary;
-      //   background: $primary;
-      // }
-
-      highlight {
-        background: $primary;
-        border-radius: 20px;
-      }
     }
   }
 }

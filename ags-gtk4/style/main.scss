@@ -1,14 +1,8 @@
 @use "colors.scss" as *;
 @use "./common.scss";
-// @use "./components.scss";
 @use "./Bar.scss";
-// @use "./scrim.scss";
-// @use "./appLauncher.scss";
-// @use "./controlCenter.scss";
-// @use "./player.scss";
 @use "./notification.scss";
 @use "./osd.scss";
-// @use "./popupMenu.scss";
 @use "./powermenu.scss";
 @use "./dashboard.scss";
 @use "./quicksettings.scss";
@@ -33,7 +27,7 @@ scale {
   trough {
     min-height: $width;
     min-width: $width;
-    background-color: $surface;
+    background-color: $inverse_surface_transparent;
 
     highlight,
     progress {

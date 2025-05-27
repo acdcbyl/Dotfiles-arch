@@ -146,27 +146,6 @@
       margin-left: 0.5rem;
     }
 
-    // popover arrow {
-    //   background: transparent;
-    // }
-    // popover contents {
-    //   border-radius: 7px;
-    //   background: $surface;
-    //   // padding: 2px;
-    //   // font-size: 100px;
-    //   // min-width: 100px;
-    //   modelbutton {
-    //     background-color: $surface;
-    //     &:first-child {
-    //       margin-bottom: 0.3rem;
-    //     }
-    //     &:hover {
-    //       background-color: $primary;
-    //       color: $on_primary;
-    //     }
-    //   }
-    // }
-
     &:hover {
       background-color: $inverse_surface_transparent_variant;
     }

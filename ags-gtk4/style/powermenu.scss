@@ -51,17 +51,6 @@
   font-weight: 400;
 }
 
-/* .verification__button {
-	background: $inverse_surface_transparent;
-	border-radius: 100px;
-	padding: 8px 22px;
-	&:hover,
-	&:focus {
-		background: $secondary;
-		color: $on_secondary;
-	}
-} */
-
 .verification-container {
   min-width: 300px;
   padding: 24px;
@@ -153,33 +142,5 @@
     // color: $on_surface;
     // padding: 0.7rem;
     border-radius: 100px;
-
-    // &:focus {
-    //   background: $primary, $inverse_surface_transparent_variant_overlay;
-    // }
-    // &:focus {
-    //   box-shadow: 0 0 0 1px $inverse_surface;
-    // }
-    // &:active {
-    //   background: $primary, $inverse_surface_transparent_overlay;
-    // }
-    // .system-font {
-    //   &:focus {
-    //     color: $on_primary;
-    //   }
-    //   &:active {
-    //     color: $on_primary;
-    //   }
-    // }
-    // &:selected {
-    //   background-color: red;
-    // }
-    //
-    // &:focus {
-    //   outline-color: $fg;
-    // }
-    // &:hover {
-    //   background-color: color.adjust($fg, $alpha: -0.65);
-    // }
   }
 }

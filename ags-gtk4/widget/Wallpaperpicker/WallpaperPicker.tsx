@@ -6,18 +6,6 @@ import { Gio } from "astal";
 import AstalHyprland from "gi://AstalHyprland?version=0.1";
 import options from "../../option";
 import { bash, ensureDirectory, sh } from "../../lib/utils";
-// import { sendBatch } from "../../utils/hyprland";
-
-const hyprland = AstalHyprland.get_default();
-
-export const sendBatch = (batch: string[]) => {
-  const cmd = batch
-    .filter((x) => !!x)
-    .map((x) => `keyword ${x}`)
-    .join("; ");
-
-  hyprland.message(`[[BATCH]]/${cmd}`);
-};
 const { wallpaper } = options;
 const { mode } = options.theme;
 const cachePath = `${GLib.get_user_cache_dir()}/aiser-astal/wallpapers`;
@@ -97,12 +85,6 @@ function wallpaperPicker() {
       marginLeft={10}
       marginRight={10}
       setup={(self) => {
-        sendBatch([
-          `layerrule animation slide ${options.bar.position.get()}, ${self.namespace}`,
-          `layerrule blur, ${self.namespace}`,
-          `layerrule ignorealpha 0.3, ${self.namespace}`,
-        ]);
-
         hook(self, App, "window-toggled", (_, win) => {
           if (win.name == "wallpaperpicker" && !win.visible) {
             self.set_child(null);
@@ -140,11 +122,6 @@ function wallpaperPicker() {
             hexpand
             xalign={0}
           />
-          {/* <image */}
-          {/*   iconName={"preferences-desktop-wallpaper-symbolic"} */}
-          {/*   hexpand */}
-          {/*   halign={Gtk.Align.START} */}
-          {/* /> */}
           <label cssClasses={["directory"]} label={wallpaper.folder()} />
           <button
             tooltipText={"Clear cache"}

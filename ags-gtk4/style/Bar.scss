@@ -6,8 +6,6 @@
   background: $surface_transparent;
   color: $on_surface;
   min-height: 35px;
-  // margin: $bar-margin;
-  // border-radius: $bar-border-radius;
   padding: 0px;
   font-size: 14px;
   font-weight: 500;
@@ -15,11 +13,7 @@
   padding-right: 8px;
 
   separator {
-    // min-width: if($bar-separator, 2px, 0);
     min-width: 5px;
-    // margin: 2px;
-    // color: $on_surface;
-    // background: $on_surface;
   }
 
   .workspace-container {
@@ -59,20 +53,7 @@
   // color: $on_primary_container;
 }
 
-// .bar_item {
-//
-//   background: $inverse_surface_transparent;
-//
-//   .bar__keyboard-layout {
-//     background: $inverse_surface_transparent;
-//     padding: 0;
-//     min-height: 42px;
-//     min-width: 42px;
-//   }
-// }
-
 .workspace-button-bg {
-  // background-color: $inverse_surface_transparent;
   color: $on_surface;
   min-height: 20px;
   border-radius: 30px;
@@ -105,9 +86,6 @@
   &:hover {
     background:
       $inverse_surface_transparent, $inverse_surface_transparent_overlay;
-    // background-color: if($bar-opacity < 1,
-    //     $bar-button-bg-color,
-    //     color.adjust($bar-button-fg-color, $alpha: -0.9));
   }
 
   &.active {
@@ -118,7 +96,6 @@
 .powermenus-bg {
   color: $on_surface;
   min-height: 20px; /* 更改为与其他按钮相同的高度 */
-  /* min-width: 20px; */
   border-radius: 20px;
   padding: 0 5px;
   margin-top: 5px;
@@ -145,7 +122,6 @@
   }
 }
 .netspeed-bg {
-  // background-color: $primary;
   color: $on_surface;
   min-height: 20px;
   // min-width: 20px;
@@ -156,10 +132,8 @@
 }
 
 .panel-button {
-  // background-color: $inverse_surface_transparent;
   color: $on_surface;
   min-height: 20px;
-  // min-width: 20px;
   border-radius: 20px;
   padding: 0 7px;
   margin-top: 5px;
@@ -186,9 +160,6 @@
   &:hover {
     background:
       $inverse_surface_transparent, $inverse_surface_transparent_overlay;
-    // background-color: if($bar-opacity < 1,
-    //     $bar-button-bg-color,
-    //     color.adjust($bar-button-fg-color, $alpha: -0.9));
   }
 
   &.active {
@@ -204,7 +175,6 @@
 }
 
 .tray_style {
-  // background-color: $inverse_surface_transparent;
   color: $on_surface;
   min-height: 20px;
   border-radius: 20px;
@@ -213,7 +183,6 @@
   margin-bottom: 5px;
 }
 .notificount-bg {
-  // border: 1px solid $on_surface;
   min-height: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -224,20 +193,14 @@ menubutton {
   padding: 0 5px;
   min-height: 20px;
   min-width: 25px;
-  // margin: 1px;
   border-radius: 100px;
-  // background: $inverse_surface_transparent;
 
   button {
     padding: unset;
     margin: unset;
-    // border-radius: calc(nth($window-border-radius, 1) / 2);
 
     &:hover {
-      // color: red;
       border-radius: 100px;
-      // background:
-      //   $inverse_surface_transparent, $inverse_surface_transparent_overlay;
     }
   }
 }

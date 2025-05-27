@@ -33,7 +33,6 @@ export default function PowerMenu(_gdkmonitor: Gdk.Monitor) {
     <PopupWindow
       name={WINDOW_NAME}
       exclusivity={Astal.Exclusivity.IGNORE}
-      animation="popin 80%"
     >
       <box>
         <FlowBox

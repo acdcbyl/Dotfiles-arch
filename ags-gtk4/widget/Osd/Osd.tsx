@@ -4,9 +4,9 @@ import type { GLib } from "gi://GLib?version=2.0";
 function OnScreenDisplay({ icon, value }: { icon: string; value: number | string }) {
     return (
         <box cssClasses={["osd", "osd-box"]} spacing={8}>
-            <image iconName={icon} cssClasses={["osd-icon"]} />
             {typeof value == "number" ? (
-                <box vertical={true} spacing={4}>
+                <box spacing={8}>
+                    <image iconName={icon} cssClasses={["osd-icon"]} iconSize={Gtk.IconSize.LARGE} />
                     <levelbar
                         value={Math.max(0, Math.min(value, 1))}
                         cssClasses={["osd-bar"]}
@@ -16,7 +16,7 @@ function OnScreenDisplay({ icon, value }: { icon: string; value: number | string
                             self.remove_offset_value(Gtk.LEVEL_BAR_OFFSET_FULL);
                         }}
                     />
-                    {/* <label label={`${Math.round(value * 100)}%`} /> */}
+                    <label label={`${Math.round(value * 100)}%`} cssClasses={["labelSmallBold"]} />
                 </box>
             ) : (
                 <label label={value} />

@@ -16,19 +16,7 @@
     // box-shadow: inset 0 0 0 1px $primary;
   }
 
-  // separator {
-  //   margin: 0;
-  //   // margin-top: 10px;
-  //   // margin-bottom: 10px;
-  //   background-color: $surface_bright;
-  //   color: $surface_bright;
-  //   margin-left: 20px;
-  //   margin-right: 20px;
-  //   // margin-top: 0.2rem;
-  // }
-
   > overlay {
-    // margin: 10px;
     margin-top: 6px;
 
     entry {
@@ -70,14 +58,7 @@
   }
 
   .entry-overlay {
-    // box-shadow: 0 0 0 0px $on_surface;
-    // border-radius: 20px;
     color: $on_surface;
-    // margin-top: 2px;
-
-    // scrolledwindow viewport picture {
-    //   border-radius: 2px;
-    // }
   }
 
   > scrolledwindow viewport {

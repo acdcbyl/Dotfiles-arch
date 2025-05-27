@@ -13,7 +13,6 @@ export default function VerificationWindow(_gdkmonitor: Gdk.Monitor) {
       name={WINDOW_NAME}
       // layer={Astal.Layer.BOTTOM}
       exclusivity={Astal.Exclusivity.IGNORE}
-      animation="popin 90%"
     >
       <box
         cssClasses={["verification-container"]}

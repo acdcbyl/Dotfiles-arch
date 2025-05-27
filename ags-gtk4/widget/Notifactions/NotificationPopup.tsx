@@ -2,16 +2,6 @@ import { timeout } from "astal";
 import { App, Astal, hook, Gdk } from "astal/gtk4";
 import AstalNotifd from "gi://AstalNotifd";
 import Notification from "./Notification";
-import AstalHyprland from "gi://AstalHyprland?version=0.1";
-const hyprland = AstalHyprland.get_default();
-export const sendBatch = (batch: string[]) => {
-  const cmd = batch
-    .filter((x) => !!x)
-    .map((x) => `keyword ${x}`)
-    .join("; ");
-
-  hyprland.message(`[[BATCH]]/${cmd}`);
-};
 export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
   const { TOP, RIGHT } = Astal.WindowAnchor;
   const notifd = AstalNotifd.get_default();
@@ -23,7 +13,6 @@ export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
       width_request={300}
       // layer={Astal.Layer.BOTTOM}
       setup={(self) => {
-        sendBatch([`layerrule animation slide top, ${self.namespace}`]);
         const notificationQueue: number[] = [];
         let isProcessing = false;
         self.default_height = -1;

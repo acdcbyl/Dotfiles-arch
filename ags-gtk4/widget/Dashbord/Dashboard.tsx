@@ -73,17 +73,10 @@ function DNDButton() {
       <label label={"Do Not Disturb"} />
       <Switch
         heightRequest={10}
-        // tooltipText={"Do Not Disturb"}
-        // onClicked={() => {
-        //   notifd.set_dont_disturb(!notifd.get_dont_disturb());
-        // }}
         active={bind(notifd, "dont_disturb")}
         onStateSet={(self, state) => {
-          // 用开关想要变成的新状态 (state) 来更新我们的数据源 (notifd)。
+          self.set_state(state)
           notifd.set_dont_disturb(state);
-
-          // 返回 true 表示我们已经处理了这个事件，阻止 GTK 的默认处理程序再次改变状态。
-          return true;
         }}
         // label={"DND"}
         halign={Gtk.Align.CENTER}

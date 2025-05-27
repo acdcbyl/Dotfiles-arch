@@ -12,7 +12,6 @@ import Battery from "./items/Battery";
 import { separatorBetween } from "../../lib/utils";
 import options from "../../option";
 import { idle } from "astal";
-import { windowAnimation } from "../../lib/hyprland";
 import { WindowProps } from "astal/gtk4/widget";
 import TrayPanelButton from "./items/Tray";
 import PowermenuButton from "./items/Powermenu";
@@ -78,7 +77,6 @@ function End() {
 
 type BarProps = WindowProps & {
   gdkmonitor: Gdk.Monitor;
-  animation: string;
 };
 function Bar({ gdkmonitor, ...props }: BarProps) {
   const { TOP, LEFT, RIGHT, BOTTOM } = Astal.WindowAnchor;
@@ -111,7 +109,7 @@ function Bar({ gdkmonitor, ...props }: BarProps) {
 }
 
 export default function (gdkmonitor: Gdk.Monitor) {
-  <Bar gdkmonitor={gdkmonitor} animation="slide top" />;
+  <Bar gdkmonitor={gdkmonitor} />;
 
   bar.position.subscribe(() => {
     App.toggle_window("bar");
@@ -119,8 +117,7 @@ export default function (gdkmonitor: Gdk.Monitor) {
     barWindow.set_child(null);
     App.remove_window(App.get_window("bar")!);
     idle(() => {
-      <Bar gdkmonitor={gdkmonitor} animation="slide top" />;
-      windowAnimation();
+      <Bar gdkmonitor={gdkmonitor} />;
     });
   });
 }

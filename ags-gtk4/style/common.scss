@@ -122,7 +122,9 @@ window.popup {
 
 switch {
   // border: 2px solid $outline;
-  min-width: 45px;
+  // min-width: 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 4px;
   border-radius: 15px;
   background-color: $surface_container_highest;
@@ -140,7 +142,7 @@ switch:hover slider {
 }
 
 switch:active {
-  background-color: $primary;
+  background-color: $on_surface_variant;
 }
 
 switch:checked {

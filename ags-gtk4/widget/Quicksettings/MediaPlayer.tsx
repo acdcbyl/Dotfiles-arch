@@ -89,7 +89,7 @@ function MediaPlayer({ player }) {
           </box>
 
           {/* 控制按钮部分 */}
-          <box spacing={8} halign={Gtk.Align.START} margin_start={40} margin_top={4}>
+          <box spacing={8} halign={Gtk.Align.START} margin_start={50} margin_top={4}>
             {bind(player, 'position').as(position => (
               <label
                 cssClasses={["labelSmall"]}

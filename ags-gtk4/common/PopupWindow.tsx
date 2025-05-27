@@ -119,7 +119,6 @@ type PopupWindowProps = WindowProps & {
     child?: unknown;
     name: string;
     visible?: boolean;
-    animation?: string;
     layout?: string;
 };
 
