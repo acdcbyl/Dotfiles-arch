@@ -34,31 +34,23 @@
         border-radius: 10px;
         margin-top: 0.3rem;
         margin-bottom: 0.3rem;
-        margin-left: 0.3rem;
+        // margin-left: 0.3rem;
         margin-right: 0.3rem;
-
-        trough {
-          border-radius: 9999px;
-          min-height: 0.25em;
-          // min-height: 10px;
-
-          block {
-            // min-width: 10px; // Ensure minimum width matches the border-radius
+        scale {
+          trough {
+            border-radius: 9999px;
             min-height: 0.25em;
+            // min-height: 10px;
 
-            &.empty {
-              border-radius: 9999px;
-              min-height: 0.25em;
-              background-color: $inverse_surface_transparent_variant;
-            }
-
-            &.filled {
+            highlight,
+            progress {
               background-color: $primary;
-              border-radius: 9999px;
               min-height: 0.25em;
-              // margin: 0.1rem;
-              // padding: 0.5rem;
             }
+          }
+          slider {
+            background-color: $primary;
+            min-height: 0.25em;
           }
         }
       }

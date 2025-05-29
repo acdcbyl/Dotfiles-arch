@@ -38,6 +38,7 @@ export default function TimePanelButton({ format = "%a,%H:%M" }) {
 		Hyprpicker: string;
 		rmpc: string;
 		foamshot: string;
+		kew: string;
 		"change-color": string;
 		[key: string]: string | undefined;
 	} = {
@@ -45,8 +46,8 @@ export default function TimePanelButton({ format = "%a,%H:%M" }) {
 		Screenshot: "screenshot-recorded-symbolic",
 		Hyprpicker: "color-select-symbolic",
 		foamshot: "screenshot-recorded-symbolic",
-		rmpc: "com.github.neithern.g4music-symbolic",
-		musicfox: "com.github.neithern.g4music-symbolic",
+		rmpc: "folder-music-symbolic",
+		kew: "library-music-symbolic",
 		"change-color": "preferences-desktop-theme-global-symbolic",
 	};
 	return (

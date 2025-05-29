@@ -4,7 +4,7 @@ import WorkspacesPanelButton from "./items/Workspaces";
 import NetworkSpeedPanelButton from "./items/NetWorkSpeed";
 import RecordIndicatorPanelButton from "./items/RecordIndicator";
 import LauncherPanelButton from "./items/AppLauncher";
-import NotifPanelButton from "./items/Notifications";
+// import NotifPanelButton from "./items/Notifications";
 import QSPanelButton from "./items/SystemIndicators";
 import KeyboardLayout from "./items/KeyboardLayout";
 import ActiveApp from "./items/ActiveApp";

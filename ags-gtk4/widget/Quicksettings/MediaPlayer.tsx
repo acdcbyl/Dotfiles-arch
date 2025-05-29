@@ -78,62 +78,64 @@ function MediaPlayer({ player }) {
           <box cssClasses={['progress_container']}
             vexpand>
             {bind(player, 'length').as(length => (
-              <levelbar
+              <slider
                 cssClasses={['progress']}
                 // heightRequest={10}
-                maxValue={length}
-                value={bind(player, 'position')}
+                // maxValue={length}
+                onChangeValue={({ value }) => { player.set_position(value * length) }}
+                value={bind(player, 'position').as(pos => (pos / length))}
                 hexpand={true}
               />
             ))}
           </box>
 
-          {/* 控制按钮部分 */}
-          <box spacing={8} halign={Gtk.Align.START} margin_start={50} margin_top={4}>
+          {/* 控制按钮部分 - 修改这部分 */}
+          <box margin_top={2} hexpand>
+            {/* 左侧：当前时间 */}
             {bind(player, 'position').as(position => (
               <label
-                cssClasses={["labelSmall"]}
+                cssClasses={["labelSmaller"]}
                 valign={Gtk.Align.CENTER}
-                halign={Gtk.Align.CENTER}
+                halign={Gtk.Align.START}
                 label={format_timecode(position)}
-              // margin_end={30}
               />
             ))}
-            <button
-              valign={Gtk.Align.CENTER}
-              halign={Gtk.Align.CENTER}
-              onClicked={() => player.previous()}
-              visible={bind(player, "canGoPrevious")}
-              cssClasses={["next-icon"]}
-            >
-              <image iconName="media-seek-backward-symbolic" pixelSize={25} />
-            </button>
-            <button
-              valign={Gtk.Align.CENTER}
-              halign={Gtk.Align.CENTER}
-              cssClasses={["play-icon"]}
-              onClicked={() => player.play_pause()}
-              visible={bind(player, "canControl")}
-            >
-              <image iconName={playIcon} pixelSize={25} />
-            </button>
-            <button
-              valign={Gtk.Align.CENTER}
-              halign={Gtk.Align.CENTER}
-              onClicked={() => player.next()}
-              visible={bind(player, "canGoNext")}
-              cssClasses={["next-icon"]}
-            >
-              <image iconName="media-seek-forward-symbolic" pixelSize={25} />
-            </button>
+
+            {/* 中间：控制按钮组 */}
+            <box hexpand halign={Gtk.Align.CENTER} spacing={8}>
+              <button
+                valign={Gtk.Align.CENTER}
+                onClicked={() => player.previous()}
+                visible={bind(player, "canGoPrevious")}
+                cssClasses={["next-icon"]}
+              >
+                <image iconName="media-seek-backward-symbolic" pixelSize={22} />
+              </button>
+              <button
+                valign={Gtk.Align.CENTER}
+                cssClasses={["play-icon"]}
+                onClicked={() => player.play_pause()}
+                visible={bind(player, "canControl")}
+              >
+                <image iconName={playIcon} pixelSize={22} />
+              </button>
+              <button
+                valign={Gtk.Align.CENTER}
+                onClicked={() => player.next()}
+                visible={bind(player, "canGoNext")}
+                cssClasses={["next-icon"]}
+              >
+                <image iconName="media-seek-forward-symbolic" pixelSize={22} />
+              </button>
+            </box>
+
+            {/* 右侧：总时长 */}
             {bind(player, 'length').as(length => (
               <label
                 valign={Gtk.Align.CENTER}
-                // halign={Gtk.Align.END}
-                halign={Gtk.Align.CENTER}
-                cssClasses={["labelSmall"]}
+                halign={Gtk.Align.END}
+                cssClasses={["labelSmaller"]}
                 label={format_timecode(length)}
-              // margin_start={30}
               />
             ))}
           </box>
