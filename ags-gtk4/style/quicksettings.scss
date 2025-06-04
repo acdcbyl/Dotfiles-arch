@@ -2,7 +2,7 @@
 @use "colors.scss" as *;
 
 .qs-container {
-  min-width: 200px;
+  // min-width: 200px;
   // min-height: 650px;
   background: $surface_transparent;
   border-radius: 30px;
@@ -87,7 +87,8 @@
       padding: 0.5rem;
       border-radius: 9999px;
       // min-height: 26px;
-      min-width: 27px;
+      min-height: 1rem;
+      min-width: 1.5rem;
       color: $on_surface;
       background-color: $inverse_surface_transparent;
 
@@ -123,7 +124,7 @@
 
   .qs-button {
     border-radius: 9999px;
-    min-height: 4em;
+    min-height: 3.8em;
     background-color: $inverse_surface_transparent;
     color: $on_surface;
     outline-color: $on_surface;
@@ -173,7 +174,7 @@
       background-color: $inverse_surface_transparent;
       border-radius: 20px;
       // border-radius: 30px;
-      min-height: 40px;
+      min-height: 30px;
       color: $on_surface;
 
       .bluetooth__percentage {

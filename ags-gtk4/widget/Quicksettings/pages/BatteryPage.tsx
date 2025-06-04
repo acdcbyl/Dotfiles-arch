@@ -12,7 +12,7 @@ export default function BatteryPage() {
       vertical
       spacing={6}
     >
-      <box hexpand={false} cssClasses={["header"]} spacing={6}>
+      <box hexpand cssClasses={["header"]} spacing={6}>
         <button
           onClicked={() => {
             qsPage.set("main");

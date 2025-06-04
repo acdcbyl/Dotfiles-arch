@@ -4,6 +4,7 @@ import { bind } from "astal";
 import { time } from "../../../lib/utils";
 import PanelButton from "../PanelButton";
 import AstalApps from "gi://AstalApps";
+import AstalMpris from "gi://AstalMpris?version=0.1";
 import { Variable } from "astal";
 import { WINDOW_NAME } from "../../Dashbord/Dashboard";
 
@@ -56,6 +57,7 @@ export default function TimePanelButton({ format = "%a,%H:%M" }) {
 			onClicked={() => App.toggle_window(WINDOW_NAME)}
 		>
 			<box spacing={12}>
+				<image iconName={"folder-music-symbolic"} />
 				<label label={time((t) => t.format(format)!)} />
 				{/* <label */}
 				{/* 	cssClasses={["clock-notificount"]} */}

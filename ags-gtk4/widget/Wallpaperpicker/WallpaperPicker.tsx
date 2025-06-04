@@ -80,10 +80,12 @@ function wallpaperPicker() {
     <PopupWindow
       name={"wallpaperpicker"}
       // layer={Astal.Layer.BOTTOM}
+      anchor={Astal.WindowAnchor.TOP}
       visible
-      marginTop={25}
-      marginLeft={10}
-      marginRight={10}
+      marginTop={15}
+      //     marginLeft={10}
+      //   marginRight={10}
+      widthRequest={1000}
       setup={(self) => {
         hook(self, App, "window-toggled", (_, win) => {
           if (win.name == "wallpaperpicker" && !win.visible) {
@@ -92,7 +94,7 @@ function wallpaperPicker() {
           }
         });
       }}
-      layout={options.bar.position().get()}
+    //layout={options.bar.position().get()}
     >
       <box
         vertical
@@ -122,6 +124,7 @@ function wallpaperPicker() {
             hexpand
             xalign={0}
           />
+          <box hexpand />
           <label cssClasses={["directory"]} label={wallpaper.folder()} />
           <button
             tooltipText={"Clear cache"}
@@ -161,7 +164,7 @@ function wallpaperPicker() {
           />
         </box>
         <Gtk.Separator />
-        <Gtk.ScrolledWindow>
+        <Gtk.ScrolledWindow widthRequest={1000}>
           <box
             spacing={6}
             vexpand

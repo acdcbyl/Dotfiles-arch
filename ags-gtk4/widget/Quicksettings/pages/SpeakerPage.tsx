@@ -2,6 +2,7 @@ import AstalWp from "gi://AstalWp?version=0.1";
 import { qsPage } from "../QSWindow";
 import { Gtk } from "astal/gtk4";
 import { bind } from "astal";
+import Pango from "gi://Pango";
 
 export default function SpeakerPage() {
   const audio = AstalWp.get_default()!.audio;
@@ -48,7 +49,7 @@ export default function SpeakerPage() {
           >
             <box>
               <image iconName={speaker.volumeIcon} />
-              <label label={speaker.description} />
+              <label label={speaker.description} ellipsize={Pango.EllipsizeMode.END} maxWidthChars={15} />
             </box>
           </button>
         )),

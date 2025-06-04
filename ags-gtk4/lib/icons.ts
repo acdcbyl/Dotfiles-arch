@@ -1,77 +1,13 @@
-interface substitutions {
-  icons: {
-    [key: string]: string | undefined;
-  };
-  titles: {
-    [key: string]: string | undefined;
-  };
-}
-
-export const substitutions: substitutions = {
-  icons: {
-    "transmission-gtk": "transmission",
-    "blueberry.py": "bluetooth",
-    Caprine: "facebook-messenger",
-    "de.shorsh.discord-screenaudio": "discord",
-    "org.pwmt.zathura": "x-office-document",
-    "code-url-handler": "visual-studio-code",
-    "dev.zed.Zed": "zed",
-    "": "preferences-desktop-display",
-  },
-  titles: {
-    "io.github.Rirusha.Cassette": "Cassette",
-    "com.github.Aylur.ags": "AGS",
-    "transmission-gtk": "Transmission",
-    "com.obsproject.Studio": "OBS",
-    "com.usebottles.bottles": "Bottles",
-    "com.github.wwmm.easyeffects": "Easy Effects",
-    "org.gnome.TextEditor": "Text Editor",
-    "org.gnome.design.IconLibrary": "Icon Library",
-    "blueberry.py": "Blueberry",
-    "org.wezfurlong.wezterm": "Wezterm",
-    "com.raggesilver.BlackBox": "BlackBox",
-    firefox: "Firefox",
-    "org.gnome.Nautilus": "Files",
-    "libreoffice-writer": "Writer",
-    "chromium-browser": "Chromium",
-    "dev.zed.Zed": "Zed",
-    "org.telegram.desktop": "Telegram",
-    "de.shorsh.discord-screenaudio": "Discord",
-    "org.pwmt.zathura": "Zathura",
-    kitty: "Kitty",
-    "code-url-handler": "VSCode",
-    "": "Desktop",
-  },
-};
-
 export default {
   colorscheme: {
     dark: "night-light-symbolic",
     light: "night-light-symbolic",
   },
-  wallpaper: "preferences-desktop-wallpaper-symbolic",
-  cpu: "cpu-symbolic",
-  ram: "ram-symbolic",
-  user: {
-    default: "user-available-symbolic", // 默认用户图标
-  },
-  // powerprofile: {
-  // 	default: "power-profile-balanced-symbolic",
-  // 	"power-saver": "power-profile-power-saver-symbolic",
-  // 	"balanced": "power-profile-balanced-symbolic",
-  // 	"performance": "power-profile-performance-symbolic",
-  // },
-  record: "applets-screenshooter-symbolic",
-  record_alt: "screencast-recorded-symbolic",
+  record: "media-record-symbolic",
   powerprofile: {
     0: "power-profile-balanced-symbolic",
     1: "power-profile-power-saver-symbolic",
     2: "power-profile-performance-symbolic",
-  },
-  colorselect: "color-picker-symbolic",
-  screenshot: {
-    full: "view-fullscreen-symbolic",
-    area: "tool-crop-symbolic",
   },
   bluetooth: {
     enabled: "bluetooth-active-symbolic",
@@ -90,6 +26,7 @@ export default {
   },
   network: {
     wired: "network-wired-symbolic",
+    wireless: "network-wireless-symbolic",
   },
   ui: {
     add: "list-add",
@@ -102,7 +39,7 @@ export default {
     menu: "open-menu-symbolic",
     refresh: "view-refresh-symbolic",
     search: "system-search-symbolic",
-    settings: "applications-system-symbolic",
+    settings: "emblem-system-symbolic",
     themes: "preferences-desktop-theme-symbolic",
     tick: "object-select-symbolic",
     time: "hourglass-symbolic",
@@ -159,11 +96,11 @@ export default {
     next: "media-skip-forward-symbolic",
   },
   powermenu: {
-    sleep: "system-hibernate-symbolic",
-    reboot: "system-reboot-symbolic",
+    sleep: "weather-clear-night-symbolic",
+    // reboot: "system-reboot-symbolic",
+    reboot: "view-refresh-symbolic",
     logout: "system-log-out-symbolic",
     shutdown: "system-shutdown-symbolic",
-    lockscreen: "system-lock-screen-symbolic",
   },
   brightness: {
     indicator: "display-brightness-symbolic",

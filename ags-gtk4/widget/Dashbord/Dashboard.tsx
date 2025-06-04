@@ -4,6 +4,7 @@ import { GLib } from "astal";
 import AstalNotifd from "gi://AstalNotifd";
 import PopupWindow from "../../common/PopupWindow";
 import Notification from "../Notifactions/Notification";
+import MediaPlayers from "../Quicksettings/MediaPlayer";
 import { bind, Variable } from "astal";
 import options from "../../option";
 import { Switch } from "astal/gtk4/widget";
@@ -43,7 +44,7 @@ const layout = Variable.derive(
 function NotifsScrolledWindow() {
   const notifd = AstalNotifd.get_default();
   return (
-    <Gtk.ScrolledWindow vexpand>
+    <Gtk.ScrolledWindow vexpand cssClasses={["scroll"]}>
       <box vertical hexpand={false} vexpand={false} spacing={8} orientation={Gtk.Orientation.VERTICAL}>
         {bind(notifd, "notifications").as((notifs) =>
           notifs.map((e) => <Notification n={e} showActions={true} />),
@@ -112,10 +113,9 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
 
       // layer={Astal.Layer.BOTTOM}
       //     animation="slide top"
-      layout={layout.get()}
-      // anchor={Astal.WindowAnchor.TOP}
+      anchor={Astal.WindowAnchor.TOP}
       margin={10}
-      onDestroy={() => layout.drop()}
+    //onDestroy={() => layout.drop()}
     >
       <box>
         <box
@@ -123,6 +123,7 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
           vertical
           vexpand={false}
         >
+          {/* <MediaPlayers /> */}
           <Gtk.Separator />
           <NotifsScrolledWindow />
 

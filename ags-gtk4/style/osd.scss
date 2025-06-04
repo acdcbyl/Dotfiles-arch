@@ -26,36 +26,43 @@
   // margin: 1em 2em;
 }
 
+@mixin rounded-full {
+  border-radius: 9999px;
+}
 .osd-bar {
   // min-height: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  min-width: 100px;
-  min-height: 0.25em;
+  // margin-top: 10px;
+  // margin-bottom: 10px;
+  // min-width: 100px;
+  padding-top: 10px;
+  min-height: 10rem;
   // color: $inverse_surface_transparent;
 
-  trough {
-    border-radius: 9999px;
-    min-height: 0.25em;
+  scale {
+    * {
+      @include rounded-full;
+    }
 
-    block {
-      min-height: 0.25em;
-      // min-width: 10px; // Ensure minimum width matches the border-radius
+    $width: 0.25em;
 
-      &.empty {
-        border-radius: 10px;
-        background-color: $surface_transparent;
-        min-height: 0.25em;
-      }
+    trough {
+      min-height: $width;
+      min-width: $width;
+      background-color: $inverse_surface_transparent;
 
-      &.filled {
+      highlight,
+      progress {
         background-color: $primary;
-        border-radius: 10px;
-        min-height: 0.25em;
-        // min-height: 20px;
-        // margin: 0.1rem;
-        // padding: 0.5rem;
+        min-height: $width;
+        min-width: $width;
       }
+    }
+
+    slider {
+      background-color: $on_surface;
+      min-height: $width;
+      min-width: $width;
+      margin: -0.5em;
     }
   }
 }

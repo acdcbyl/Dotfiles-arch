@@ -1,44 +1,99 @@
-import { Astal, Gtk } from "astal/gtk4";
-import type { GLib } from "gi://GLib?version=2.0";
+import Wp from "gi://AstalWp";
+import Window from "../../common/PopupWindow";
+import Brightness from "../../lib/brightness";
+import icons from "../../lib/icons";
+import { bind, type Binding, timeout } from "astal";
+import { Astal, Gtk, hook } from "astal/gtk4";
 
-function OnScreenDisplay({ icon, value }: { icon: string; value: number | string }) {
-    return (
-        <box cssClasses={["osd", "osd-box"]} spacing={8}>
-            {typeof value == "number" ? (
-                <box spacing={8}>
-                    <image iconName={icon} cssClasses={["osd-icon"]} iconSize={Gtk.IconSize.LARGE} />
-                    <levelbar
-                        value={Math.max(0, Math.min(value, 1))}
-                        cssClasses={["osd-bar"]}
-                        setup={(self) => {
-                            self.remove_offset_value(Gtk.LEVEL_BAR_OFFSET_LOW);
-                            self.remove_offset_value(Gtk.LEVEL_BAR_OFFSET_HIGH);
-                            self.remove_offset_value(Gtk.LEVEL_BAR_OFFSET_FULL);
-                        }}
-                    />
-                    <label label={`${Math.round(value * 100)}%`} cssClasses={["labelSmallBold"]} />
-                </box>
-            ) : (
-                <label label={value} />
-            )}
-        </box>
-    ) as Gtk.Window;
+const WINDOW_NAME = "osd";
+const TIMEOUT = 2000;
+// BUG: artifacts remain on hide https://github.com/wmww/gtk4-layer-shell/issues/60
+const TRANSITION = Gtk.RevealerTransitionType.SLIDE_LEFT;
+
+function createSlider(
+  bindable: Brightness | Wp.Endpoint,
+  iconName: string | Binding<string>,
+  hookProperty,
+  cssClasses = [],
+  onDragged = null,
+) {
+  return (
+    <revealer
+      transitionType={TRANSITION}
+      setup={(self) => {
+        let i = 0;
+        hook(self, bind(bindable, hookProperty), () => {
+          self.set_reveal_child(true);
+          self.set_opacity(1);
+
+          i++;
+          timeout(TIMEOUT, () => {
+            i--;
+            if (i === 0) {
+              self.set_reveal_child(false);
+              self.set_opacity(0.1); // 1px artifact workaround
+            }
+          });
+        });
+      }}
+    >
+      <box
+        cssClasses={["osd-box"]}
+        vertical
+        spacing={5}
+      >
+        <slider
+          cssClasses={["osd-bar"]}
+          orientation={Gtk.Orientation.VERTICAL}
+          value={bind(bindable, hookProperty)}
+          drawValue={false}
+          inverted
+        />
+        <image iconName={iconName} cssClasses={["osd-icon"]} />
+      </box>
+    </revealer>
+  );
 }
 
-let timeoutSource: GLib.Source | null = null;
-let osdWindow: Gtk.Window | null = null;
+function BrightnessSlider() {
+  const brightness = Brightness.get_default();
 
-export function setOSD(icon: string, value: number | string) {
-    if (!osdWindow) {
-        osdWindow = new Astal.Window({ cssClasses: ["osd-window"], namespace: "osd", anchor: Astal.WindowAnchor.BOTTOM });
-    }
-    osdWindow.set_child(OnScreenDisplay({ icon, value }));
-    osdWindow.present();
-    if (timeoutSource) {
-        clearTimeout(timeoutSource);
-    }
-    timeoutSource = setTimeout(() => {
-        timeoutSource = null;
-        osdWindow?.hide();
-    }, 3000);
+  return createSlider(
+    brightness,
+    icons.brightness.screen,
+    "screen",
+    [],
+    null, // onDragged can be added here if needed
+  );
+}
+
+function VolumeSlider() {
+  const audio = Wp.get_default()?.audio.defaultSpeaker!;
+
+  return createSlider(
+    audio,
+    bind(audio, "volumeIcon"),
+    "volume",
+    [],
+    null, // onDragged can be added here if needed
+  );
+}
+
+export default function OSD() {
+  return (
+    <Window
+      name={WINDOW_NAME}
+      exclusivity={Astal.Exclusivity.IGNORE}
+      anchor={Astal.WindowAnchor.LEFT}
+      keymode={Astal.Keymode.NONE}
+      visible
+      defaultWidth={-1}
+      margin={10}
+    >
+      <box cssClasses={["osd-window"]}>
+        <BrightnessSlider />
+        <VolumeSlider />
+      </box>
+    </Window>
+  );
 }

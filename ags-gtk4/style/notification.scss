@@ -21,10 +21,12 @@ $window-border-radius: 6px 6px 6px 6px;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
   }
-
+  .scroll {
+    min-height: 300px;
+  }
   .window-header {
     margin-top: 6px;
-    // margin-bottom: 5px;
+    // margin-bottom: 2px;
     // color: $on_surface;
     padding-bottom: 0;
 

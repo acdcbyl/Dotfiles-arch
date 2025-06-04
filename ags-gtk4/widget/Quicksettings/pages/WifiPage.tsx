@@ -1,4 +1,5 @@
 import AstalNetwork from "gi://AstalNetwork";
+import Pango from "gi://Pango";
 import { qsPage } from "../QSWindow";
 import { Gtk } from "astal/gtk4";
 import { bind } from "astal";
@@ -61,7 +62,7 @@ export default function WifiPage() {
                   >
                     <box>
                       <image iconName={accessPoint.iconName} />
-                      <label label={accessPoint.ssid} />
+                      <label label={accessPoint.ssid} ellipsize={Pango.EllipsizeMode.END} maxWidthChars={15} />
                     </box>
                   </button>
                 );
