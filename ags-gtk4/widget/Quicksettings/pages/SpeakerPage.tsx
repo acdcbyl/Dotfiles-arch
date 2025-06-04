@@ -49,7 +49,7 @@ export default function SpeakerPage() {
           >
             <box>
               <image iconName={speaker.volumeIcon} />
-              <label label={speaker.description} ellipsize={Pango.EllipsizeMode.END} maxWidthChars={15} />
+              <label label={speaker.description} ellipsize={Pango.EllipsizeMode.END} maxWidthChars={30} />
             </box>
           </button>
         )),

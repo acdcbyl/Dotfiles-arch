@@ -62,7 +62,7 @@ export default function WifiPage() {
                   >
                     <box>
                       <image iconName={accessPoint.iconName} />
-                      <label label={accessPoint.ssid} ellipsize={Pango.EllipsizeMode.END} maxWidthChars={15} />
+                      <label label={accessPoint.ssid} ellipsize={Pango.EllipsizeMode.END} maxWidthChars={30} />
                     </box>
                   </button>
                 );

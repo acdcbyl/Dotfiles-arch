@@ -9,7 +9,7 @@
 }
 .time-label {
   color: $on_surface;
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 600;
 }
 .uptime-label {
@@ -79,5 +79,46 @@
     .other-month {
       color: $outline;
     }
+  }
+}
+.weather {
+  background-color: $inverse_surface_transparent;
+  border-radius: 20px;
+  padding: 10px;
+  // min-width: 380px;
+  // margin-left: 10px;
+  // margin-right: 10px;
+  margin-top: 20px;
+  .temperature-main {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $on_surface;
+  }
+
+  .temperature-range {
+    font-size: 1.1em;
+    color: $on_surface;
+    opacity: 0.75;
+  }
+
+  .timestamp {
+    font-weight: bold;
+    color: $on_surface;
+  }
+
+  .main-icon {
+    &.day {
+      background-color: $primary;
+      color: $on_primary;
+    }
+
+    &.night {
+      background-color: $secondary;
+      color: $on_secondary;
+    }
+
+    margin-right: 0.5rem;
+    padding: 10px;
+    border-radius: 20px;
   }
 }

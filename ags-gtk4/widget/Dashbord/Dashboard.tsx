@@ -4,6 +4,7 @@ import { GLib } from "astal";
 import AstalNotifd from "gi://AstalNotifd";
 import PopupWindow from "../../common/PopupWindow";
 import Notification from "../Notifactions/Notification";
+import { WeatherIconDebug, WeatherPanel } from "./Weather";
 import MediaPlayers from "../Quicksettings/MediaPlayer";
 import { bind, Variable } from "astal";
 import options from "../../option";
@@ -123,7 +124,6 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
           vertical
           vexpand={false}
         >
-          {/* <MediaPlayers /> */}
           <Gtk.Separator />
           <NotifsScrolledWindow />
 
@@ -160,6 +160,7 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
               />
             </box>
             <Gtk.Calendar halign={Gtk.Align.CENTER} />
+            <WeatherPanel />
           </box>
         </box>
       </box>
