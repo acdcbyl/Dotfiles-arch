@@ -13,7 +13,7 @@ import { Switch } from "astal/gtk4/widget";
 export const WINDOW_NAME = "dashboard";
 const notifd = AstalNotifd.get_default();
 // 格式化函数，将秒数转换为易读格式
-function formatTime(seconds) {
+function formatTime(seconds: any) {
   const days = Math.floor(seconds / 86400);
   seconds %= 86400;
   const hours = Math.floor(seconds / 3600);
@@ -60,7 +60,7 @@ function NotifsScrolledWindow() {
         >
           <image
             iconName="notification-disabled-symbolic"
-            iconSize={Gtk.IconSize.LARGE}
+            pixelSize={50}
           />
           <label label="Your inbox is empty" />
         </box>

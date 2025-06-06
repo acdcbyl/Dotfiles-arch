@@ -9,8 +9,8 @@
 }
 .time-label {
   color: $on_surface;
-  font-size: 7rem;
-  font-weight: 600;
+  font-size: 6.5rem;
+  font-weight: bold;
 }
 .uptime-label {
   color: $on_surface;
@@ -88,7 +88,7 @@
   // min-width: 380px;
   // margin-left: 10px;
   // margin-right: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   .temperature-main {
     font-size: 1.2em;
     font-weight: bold;

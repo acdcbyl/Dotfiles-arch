@@ -49,6 +49,7 @@ export default function TimePanelButton({ format = "%a,%H:%M" }) {
 		foamshot: "screenshot-recorded-symbolic",
 		rmpc: "folder-music-symbolic",
 		kew: "library-music-symbolic",
+		musicfox: "folder-music-symbolic",
 		"change-color": "preferences-desktop-theme-global-symbolic",
 	};
 	return (

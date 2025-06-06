@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "astal-shell",
+      "dependencies": {
+        "astal": "/usr/share/astal/gjs",
+      },
+    },
+  },
+  "packages": {
+    "astal": ["astal@file:../../../../usr/share/astal/gjs", {}],
+  }
+}

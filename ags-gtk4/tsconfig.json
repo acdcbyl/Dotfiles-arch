@@ -1,18 +1,26 @@
 {
     "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
+        "allowJs": true,
         "experimentalDecorators": true,
-        "strict": true,
-        "target": "ES2023",
+        "jsx": "react-jsx",
+        "jsxImportSource": "astal/gtk4",
         "lib": [
             "ES2023",
             "ESNext.Collection"
         ],
         "module": "ES2022",
         "moduleResolution": "Bundler",
-        // "checkJs": true,
-        // "allowJs": true,
-        "jsx": "react-jsx",
-        "jsxImportSource": "astal/gtk4",
+        "noImplicitAny": false,
+        "paths": {
+            "astal": [
+                "/usr/share/astal/gjs"
+            ],
+            "astal/*": [
+                "/usr/share/astal/gjs/*"
+            ]
+        },
+        "strict": true,
+        "target": "ES2022"
     }
 }
