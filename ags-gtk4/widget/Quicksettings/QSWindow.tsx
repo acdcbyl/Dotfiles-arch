@@ -301,6 +301,7 @@ function QSWindow(_gdkmonitor: Gdk.Monitor) {
       name={WINDOW_NAME}
       // layer={Astal.Layer.BOTTOM}
       //animation="slide right"
+      // exclusivity={Astal.Exclusivity.EXCLUSIVE}
       anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
       margin={10}
     //onDestroy={() => layout.drop()}

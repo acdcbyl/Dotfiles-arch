@@ -3,7 +3,7 @@ import { App, Astal, hook, Gdk } from "astal/gtk4";
 import AstalNotifd from "gi://AstalNotifd";
 import Notification from "./Notification";
 export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
-  const { TOP, RIGHT } = Astal.WindowAnchor;
+  const { TOP, RIGHT, BOTTOM } = Astal.WindowAnchor;
   const notifd = AstalNotifd.get_default();
 
   return (
@@ -11,6 +11,7 @@ export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
       namespace={"notifications-popup"}
       margin={10}
       width_request={300}
+      // exclusivity={Astal.Exclusivity.EXCLUSIVE}
       // layer={Astal.Layer.BOTTOM}
       setup={(self) => {
         const notificationQueue: number[] = [];

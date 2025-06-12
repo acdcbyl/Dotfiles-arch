@@ -1,10 +1,10 @@
 @use "sass:color";
 
-$background: #1a110f;
+$background: #121318;
 
-$blue: #b8c4ff;
+$blue: #aec6ff;
 
-$blue_container: #374379;
+$blue_container: #2c4678;
 
 $blue_source: #89b4fa;
 
@@ -14,109 +14,109 @@ $error: #ffb4ab;
 
 $error_container: #93000a;
 
-$green: #b1d18a;
+$green: #91d5ad;
 
-$green_container: #354e16;
+$green_container: #035233;
 
 $green_source: #a6e3a1;
 
 $green_value: #a6e3a1;
 
-$inverse_on_surface: #392e2c;
+$inverse_on_surface: #2f3036;
 
-$inverse_primary: #904b3b;
+$inverse_primary: #4c5c92;
 
-$inverse_surface: #f1dfdb;
+$inverse_surface: #e3e2e9;
 
-$on_background: #f1dfdb;
+$on_background: #e3e2e9;
 
-$on_blue: #1f2c61;
+$on_blue: #122f60;
 
-$on_blue_container: #dde1ff;
+$on_blue_container: #d8e2ff;
 
 $on_error: #690005;
 
 $on_error_container: #ffdad6;
 
-$on_green: #1f3701;
+$on_green: #003822;
 
-$on_green_container: #cdeda3;
+$on_green_container: #acf2c8;
 
-$on_orange: #552106;
+$on_orange: #55200d;
 
-$on_orange_container: #ffdbcd;
+$on_orange_container: #ffdbd0;
 
-$on_primary: #561f12;
+$on_primary: #1b2d61;
 
-$on_primary_container: #ffdad2;
+$on_primary_container: #dbe1ff;
 
-$on_primary_fixed: #3a0a02;
+$on_primary_fixed: #01174b;
 
-$on_primary_fixed_variant: #733426;
+$on_primary_fixed_variant: #334479;
 
-$on_purple: #462152;
+$on_purple: #30285f;
 
-$on_purple_container: #fad7ff;
+$on_purple_container: #e5deff;
 
-$on_red: #561d21;
+$on_red: #511d3d;
 
-$on_red_container: #ffdad9;
+$on_red_container: #ffd8ea;
 
-$on_secondary: #442a23;
+$on_secondary: #2b3042;
 
-$on_secondary_container: #ffdad2;
+$on_secondary_container: #dde1f9;
 
-$on_secondary_fixed: #2c1510;
+$on_secondary_fixed: #161b2c;
 
-$on_secondary_fixed_variant: #5d3f39;
+$on_secondary_fixed_variant: #414659;
 
-$on_surface: #f1dfdb;
+$on_surface: #e3e2e9;
 
-$on_surface_variant: #d8c2bd;
+$on_surface_variant: #c6c6d0;
 
-$on_tertiary: #3c2f04;
+$on_tertiary: #422740;
 
-$on_tertiary_container: #f8e1a6;
+$on_tertiary_container: #ffd6f7;
 
-$on_tertiary_fixed: #241a00;
+$on_tertiary_fixed: #2b122a;
 
-$on_tertiary_fixed_variant: #544519;
+$on_tertiary_fixed_variant: #5b3d58;
 
 $on_yellow: #452b00;
 
 $on_yellow_container: #ffddb3;
 
-$orange: #ffb597;
+$orange: #ffb59d;
 
-$orange_container: #71361b;
+$orange_container: #723520;
 
 $orange_source: #fab387;
 
 $orange_value: #fab387;
 
-$outline: #a08c88;
+$outline: #8f909a;
 
-$outline_variant: #534340;
+$outline_variant: #45464f;
 
-$primary: #ffb4a3;
+$primary: #b5c4ff;
 
-$primary_container: #733426;
+$primary_container: #334479;
 
-$primary_fixed: #ffdad2;
+$primary_fixed: #dbe1ff;
 
-$primary_fixed_dim: #ffb4a3;
+$primary_fixed_dim: #b5c4ff;
 
-$purple: #e6b6f1;
+$purple: #c9bfff;
 
-$purple_container: #5e386a;
+$purple_container: #473f77;
 
 $purple_source: #cba6f7;
 
 $purple_value: #cba6f7;
 
-$red: #ffb3b3;
+$red: #fbb0d8;
 
-$red_container: #733336;
+$red_container: #6c3455;
 
 $red_source: #f38ba8;
 
@@ -124,45 +124,45 @@ $red_value: #f38ba8;
 
 $scrim: #000000;
 
-$secondary: #e7bdb4;
+$secondary: #c1c5dd;
 
-$secondary_container: #5d3f39;
+$secondary_container: #414659;
 
-$secondary_fixed: #ffdad2;
+$secondary_fixed: #dde1f9;
 
-$secondary_fixed_dim: #e7bdb4;
+$secondary_fixed_dim: #c1c5dd;
 
 $shadow: #000000;
 
-$source_color: #fb4f28;
+$source_color: #2a3760;
 
-$surface: #1a110f;
+$surface: #121318;
 
-$surface_bright: #423734;
+$surface_bright: #38393f;
 
-$surface_container: #271d1b;
+$surface_container: #1e1f25;
 
-$surface_container_high: #322825;
+$surface_container_high: #292a2f;
 
-$surface_container_highest: #3d3230;
+$surface_container_highest: #34343a;
 
-$surface_container_low: #231917;
+$surface_container_low: #1a1b21;
 
-$surface_container_lowest: #140c0a;
+$surface_container_lowest: #0d0e13;
 
-$surface_dim: #1a110f;
+$surface_dim: #121318;
 
-$surface_tint: #ffb4a3;
+$surface_tint: #b5c4ff;
 
-$surface_variant: #534340;
+$surface_variant: #45464f;
 
-$tertiary: #dbc58c;
+$tertiary: #e2bbdb;
 
-$tertiary_container: #544519;
+$tertiary_container: #5b3d58;
 
-$tertiary_fixed: #f8e1a6;
+$tertiary_fixed: #ffd6f7;
 
-$tertiary_fixed_dim: #dbc58c;
+$tertiary_fixed_dim: #e2bbdb;
 
 $yellow: #f5bd6f;
 
@@ -175,8 +175,8 @@ $yellow_value: #f9e2af;
 
 
 $theme: 'dark';
-$surface_transparent: color.scale($surface, $alpha: -20%);
-// $surface_transparent: $surface;
+// $surface_transparent: color.scale($surface, $alpha: -20%);
+$surface_transparent: $surface;
 $inverse_surface_transparent: color.scale($inverse_surface, $alpha: -92%);
 $inverse_surface_transparent_variant: color.scale(
   $inverse_surface,

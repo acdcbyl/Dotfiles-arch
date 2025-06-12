@@ -4,6 +4,7 @@ import WorkspacesPanelButton from "./items/Workspaces";
 import NetworkSpeedPanelButton from "./items/NetWorkSpeed";
 import RecordIndicatorPanelButton from "./items/RecordIndicator";
 import LauncherPanelButton from "./items/AppLauncher";
+import { RunningAppsPanelButton } from "./items/RunningApps";
 // import NotifPanelButton from "./items/Notifications";
 import QSPanelButton from "./items/SystemIndicators";
 import KeyboardLayout from "./items/KeyboardLayout";
@@ -33,6 +34,7 @@ const panelButton = {
   battery: () => <Battery />,
   powermenu: () => <PowermenuButton />,
   recordbutton: () => <RecordIndicatorPanelButton />,
+  runningapps: () => <RunningAppsPanelButton />,
   // notifycount: () => <NotifiCount />,
 };
 

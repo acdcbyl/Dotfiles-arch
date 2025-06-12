@@ -38,31 +38,31 @@
   min-height: 10rem;
   // color: $inverse_surface_transparent;
 
-  scale {
-    * {
-      @include rounded-full;
-    }
-
-    $width: 0.25em;
-
-    trough {
-      min-height: $width;
-      min-width: $width;
-      background-color: $inverse_surface_transparent;
-
-      highlight,
-      progress {
-        background-color: $primary;
-        min-height: $width;
-        min-width: $width;
-      }
-    }
-
-    slider {
-      background-color: $on_surface;
-      min-height: $width;
-      min-width: $width;
-      margin: -0.5em;
-    }
-  }
+  // scale {
+  //   * {
+  //     @include rounded-full;
+  //   }
+  //
+  //   $width: 0.25em;
+  //
+  //   trough {
+  //     min-height: $width;
+  //     min-width: $width;
+  //     background-color: $inverse_surface_transparent;
+  //
+  //     highlight,
+  //     progress {
+  //       background-color: $primary;
+  //       min-height: $width;
+  //       min-width: $width;
+  //     }
+  //   }
+  //
+  //   slider {
+  //     background-color: $on_surface;
+  //     min-height: $width;
+  //     min-width: $width;
+  //     margin: -0.5em;
+  //   }
+  // }
 }

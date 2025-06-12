@@ -36,7 +36,7 @@ export default function Notification({
   showActions?: boolean;
 }) {
   const box = Revealer({
-    transitionType: Gtk.RevealerTransitionType.SLIDE_DOWN,
+    transitionType: Gtk.RevealerTransitionType.SLIDE_LEFT,
     transitionDuration: 300,
     setup(self) {
       idle(() => {
@@ -141,7 +141,7 @@ export default function Notification({
               {n.body && (
                 <revealer
                   visible={n.body != " "}
-                  reveal_child={n.body != " "}>
+                  revealChild={n.body != " "}>
                   <label
                     cssClasses={["body"]}
                     ellipsize={Pango.EllipsizeMode.MIDDLE}

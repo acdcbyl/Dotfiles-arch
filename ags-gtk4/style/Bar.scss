@@ -204,3 +204,19 @@ menubutton {
     }
   }
 }
+.runningapps {
+  border-radius: 100px;
+  // font-weight: 500;
+  background-color: transparent;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-bottom: 2px;
+  // padding: 2px;
+}
+.runningapps:hover {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(51, 56, 66, 0.5),
+    rgba(88, 91, 112, 0.5)
+  );
+}
