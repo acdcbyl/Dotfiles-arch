@@ -10,7 +10,7 @@ export default function RecordIndicatorPanelButton() {
       <Gtk.Separator orientation={Gtk.Orientation.VERTICAL} />
       <PanelButton onClicked={() => screenRecord.stop().catch(() => "")}>
         <box>
-          <image iconName={"media-record-symbolic"} />
+          <image iconName={"media-record-symbolic"} cssClasses={["record-icon"]} />
           <label
             cssClasses={["timer"]}
             label={bind(screenRecord, "timer").as((time) => {

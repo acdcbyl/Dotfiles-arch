@@ -22,7 +22,7 @@
     .workspace-button {
       min-width: 8px;
       min-height: 8px;
-      transition: all 0.3s;
+      transition: all 0.2s;
       background-color: $inverse_surface_transparent_variant;
       border-radius: 9999px;
 
@@ -214,9 +214,8 @@ menubutton {
   // padding: 2px;
 }
 .runningapps:hover {
-  background-image: linear-gradient(
-    to bottom,
-    rgb(51, 56, 66, 0.5),
-    rgba(88, 91, 112, 0.5)
-  );
+  background-color: $inverse_surface_transparent;
+}
+.record-icon {
+  color: $red;
 }

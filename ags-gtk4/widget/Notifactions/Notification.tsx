@@ -1,5 +1,5 @@
 import { Gtk } from "astal/gtk4";
-import { GLib, idle, timeout } from "astal";
+import { bind, GLib, idle, timeout, Variable } from "astal";
 import Pango from "gi://Pango";
 import AstalNotifd from "gi://AstalNotifd";
 import { Revealer } from "astal/gtk4/widget";
@@ -28,6 +28,7 @@ const urgency = (n: AstalNotifd.Notification) => {
   }
 };
 
+const ishover = Variable(false)
 export default function Notification({
   n,
   showActions = true,
@@ -47,11 +48,11 @@ export default function Notification({
       <box
         name={n.id.toString()}
         cssClasses={["notification-container", urgency(n)]}
-        widthRequest={350}
+        // widthRequest={350}
         hexpand={false}
         vexpand={false}
       >
-        <box vertical>
+        <box vertical onHoverEnter={() => ishover.set(true)} onHoverLeave={() => ishover.set(false)}>
           <box cssClasses={["header"]}>
             {/* {(n.appIcon || n.desktopEntry) && ( */}
             {/*   <image */}
@@ -80,7 +81,7 @@ export default function Notification({
             </button>
           </box>
           <Gtk.Separator visible orientation={Gtk.Orientation.HORIZONTAL} />
-          <box cssClasses={["content"]} spacing={10}>
+          <box cssClasses={["content"]} spacing={10} >
             {(() => {
               if (n.image && fileExists(n.image)) {
                 return (
@@ -158,15 +159,17 @@ export default function Notification({
               )}
             </box>
           </box>
-          {showActions && n.get_actions().length > 0 && (
-            <box cssClasses={["actions"]} spacing={6}>
-              {n.get_actions().map(({ label, id }) => (
-                <button hexpand onClicked={() => n.invoke(id)}>
-                  <label label={label} halign={Gtk.Align.CENTER} hexpand />
-                </button>
-              ))}
-            </box>
-          )}
+          <revealer revealChild={bind(ishover)} transitionType={Gtk.RevealerTransitionType.SLIDE_DOWN} transitionDuration={300}>
+            {showActions && n.get_actions().length > 0 && (
+              <box cssClasses={["actions"]} spacing={6}>
+                {n.get_actions().map(({ label, id }) => (
+                  <button hexpand onClicked={() => n.invoke(id)}>
+                    <label label={label} halign={Gtk.Align.CENTER} hexpand />
+                  </button>
+                ))}
+              </box>
+            )}
+          </revealer>
         </box>
       </box>
     )

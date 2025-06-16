@@ -315,6 +315,7 @@ function QSWindow(_gdkmonitor: Gdk.Monitor) {
         <stack
           visibleChildName={qsPage()}
           transitionType={Gtk.StackTransitionType.SLIDE_LEFT_RIGHT}
+          transitionDuration={300}
         >
           <MainPage />
           <BatteryPage />

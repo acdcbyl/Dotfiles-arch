@@ -5,6 +5,7 @@ import AstalNotifd from "gi://AstalNotifd";
 import PopupWindow from "../../common/PopupWindow";
 import Notification from "../Notifactions/Notification";
 import { WeatherIconDebug, WeatherPanel } from "./Weather";
+import { Systeminfo } from "./SystemInfo";
 import MediaPlayers from "../Quicksettings/MediaPlayer";
 import { bind, Variable } from "astal";
 import options from "../../option";
@@ -48,7 +49,7 @@ function NotifsScrolledWindow() {
     <Gtk.ScrolledWindow vexpand cssClasses={["scroll"]}>
       <box vertical hexpand={false} vexpand={false} spacing={8} orientation={Gtk.Orientation.VERTICAL}>
         {bind(notifd, "notifications").as((notifs) =>
-          notifs.map((e) => <Notification n={e} showActions={true} />),
+          notifs.map((e) => <Notification n={e} showActions={false} />),
         )}
         <box
           halign={Gtk.Align.CENTER}
@@ -143,9 +144,14 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
         <box spacing={8} cssClasses={["datemenu-container"]}>
           <box hexpand vertical halign={Gtk.Align.CENTER} cssClasses={["dash-main"]}>
             <label
-              label={time((t) => t.format("%H:%M")!)}
+              label={time((t) => t.format("%A")!)}
               halign={Gtk.Align.CENTER}
               cssClasses={["time-label"]}
+            />
+            <label
+              label={time((t) => t.format("%B")!)}
+              halign={Gtk.Align.END}
+              cssClasses={["month-label"]}
             />
             <box halign={Gtk.Align.CENTER}>
               <label
@@ -161,6 +167,7 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
             </box>
             <Gtk.Calendar halign={Gtk.Align.CENTER} />
             <WeatherPanel />
+            <Systeminfo />
           </box>
         </box>
       </box>

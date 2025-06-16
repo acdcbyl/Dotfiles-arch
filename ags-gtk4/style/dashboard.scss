@@ -9,7 +9,13 @@
 }
 .time-label {
   color: $on_surface;
-  font-size: 6.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+}
+.month-label {
+  color: $on_surface;
+  font-size: 1rem;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 .uptime-label {
@@ -120,5 +126,56 @@
     margin-right: 0.5rem;
     padding: 10px;
     border-radius: 20px;
+  }
+}
+.systeminfo {
+  background-color: $inverse_surface_transparent;
+  padding: 15px;
+  border-radius: 20px;
+  image {
+    color: $on_surface;
+    padding: 4px;
+    border-radius: 5px;
+    // background-color: $primary;
+  }
+  levelbar {
+    // 基础容器样式
+    min-height: 8px;
+    min-width: 200px;
+    border-radius: 5px;
+    background: transparent;
+    // border: 1px solid rgba(255, 255, 255, 0.2);
+
+    // 进度条轨道
+    trough {
+      min-height: 8px;
+      border-radius: 5px;
+      background: $inverse_surface_transparent_overlay;
+      // box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    // 进度条填充部分
+    block {
+      min-height: 8px;
+      border-radius: 5px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      background: $inverse_surface_transparent;
+    }
+
+    // 填充状态样式
+    block.filled {
+      background: $primary;
+    }
+
+    // 高使用率警告色
+    block.high {
+      background: $yellow;
+    }
+
+    // 危险状态
+    block.critical {
+      background: $error;
+    }
   }
 }

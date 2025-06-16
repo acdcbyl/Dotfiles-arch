@@ -100,6 +100,7 @@ function NotifIcon() {
 
 export default function TimePanelButton({ format = "%a,%H:%M" }) {
 	const ishover = Variable(false);
+	const isnotif = Variable(false);
 
 	return (
 		<PanelButton
@@ -134,10 +135,22 @@ export default function TimePanelButton({ format = "%a,%H:%M" }) {
 							{bind(notifd, "notifications").as((n) => {
 								if (n.length > 0) {
 									return [
-										<image
-											cssClasses={["circle"]}
-											iconName={"message-notif-symbolic"}
-										/>,
+										<box
+											onHoverEnter={() => isnotif.set(true)}
+											onHoverLeave={() => isnotif.set(false)}>
+											<revealer
+												transitionDuration={300}
+												transitionType={Gtk.RevealerTransitionType.SLIDE_RIGHT}
+												revealChild={bind(isnotif)}>
+												<label
+													cssClasses={["label"]}
+													label={bind(notifd, "notifications").as((n) => `You have ${n.length} ${n.length === 1 ? 'message' : 'messages'}`)} />
+											</revealer>
+											<image
+												cssClasses={["circle"]}
+												iconName={"message-notif-symbolic"}
+											/>
+										</box>
 									];
 								}
 								return <NotifIcon />;
