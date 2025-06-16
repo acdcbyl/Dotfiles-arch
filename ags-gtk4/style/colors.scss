@@ -1,10 +1,10 @@
 @use "sass:color";
 
-$background: #11140f;
+$background: #191113;
 
-$blue: #99ccfa;
+$blue: #b8c4ff;
 
-$blue_container: #094b72;
+$blue_container: #374379;
 
 $blue_source: #89b4fa;
 
@@ -14,109 +14,109 @@ $error: #ffb4ab;
 
 $error_container: #93000a;
 
-$green: #a2d399;
+$green: #b1d18a;
 
-$green_container: #245023;
+$green_container: #354e16;
 
 $green_source: #a6e3a1;
 
 $green_value: #a6e3a1;
 
-$inverse_on_surface: #2e322b;
+$inverse_on_surface: #372e30;
 
-$inverse_primary: #3e6837;
+$inverse_primary: #8b4a61;
 
-$inverse_surface: #e0e4da;
+$inverse_surface: #efdfe1;
 
-$on_background: #e0e4da;
+$on_background: #efdfe1;
 
-$on_blue: #003352;
+$on_blue: #1f2c61;
 
-$on_blue_container: #cde5ff;
+$on_blue_container: #dde1ff;
 
 $on_error: #690005;
 
 $on_error_container: #ffdad6;
 
-$on_green: #0b390f;
+$on_green: #1f3701;
 
-$on_green_container: #bdf0b3;
+$on_green_container: #cdeda3;
 
-$on_orange: #492900;
+$on_orange: #55200d;
 
-$on_orange_container: #ffdcbd;
+$on_orange_container: #ffdbd0;
 
-$on_primary: #0f380d;
+$on_primary: #541d33;
 
-$on_primary_container: #bff0b1;
+$on_primary_container: #ffd9e2;
 
-$on_primary_fixed: #002201;
+$on_primary_fixed: #3a071e;
 
-$on_primary_fixed_variant: #275021;
+$on_primary_fixed_variant: #6f3349;
 
-$on_purple: #30285f;
+$on_purple: #462152;
 
-$on_purple_container: #e5deff;
+$on_purple_container: #fad7ff;
 
-$on_red: #561d20;
+$on_red: #551d31;
 
-$on_red_container: #ffdad9;
+$on_red_container: #ffd9e2;
 
-$on_secondary: #263422;
+$on_secondary: #422931;
 
-$on_secondary_container: #d6e8cd;
+$on_secondary_container: #ffd9e2;
 
-$on_secondary_fixed: #111f0f;
+$on_secondary_fixed: #2b151c;
 
-$on_secondary_fixed_variant: #3c4b37;
+$on_secondary_fixed_variant: #5a3f47;
 
-$on_surface: #e0e4da;
+$on_surface: #efdfe1;
 
-$on_surface_variant: #c2c8bc;
+$on_surface_variant: #d5c2c6;
 
-$on_tertiary: #00363a;
+$on_tertiary: #48290c;
 
-$on_tertiary_container: #bcebef;
+$on_tertiary_container: #ffdcc2;
 
-$on_tertiary_fixed: #002022;
+$on_tertiary_fixed: #2e1500;
 
-$on_tertiary_fixed_variant: #1e4d51;
+$on_tertiary_fixed_variant: #623f20;
 
-$on_yellow: #373100;
+$on_yellow: #452b00;
 
-$on_yellow_container: #f1e48a;
+$on_yellow_container: #ffddb3;
 
-$orange: #fcb974;
+$orange: #ffb59d;
 
-$orange_container: #693c00;
+$orange_container: #723520;
 
 $orange_source: #fab387;
 
 $orange_value: #fab387;
 
-$outline: #8c9387;
+$outline: #9e8c90;
 
-$outline_variant: #42493f;
+$outline_variant: #514347;
 
-$primary: #a4d397;
+$primary: #ffb0c9;
 
-$primary_container: #275021;
+$primary_container: #6f3349;
 
-$primary_fixed: #bff0b1;
+$primary_fixed: #ffd9e2;
 
-$primary_fixed_dim: #a4d397;
+$primary_fixed_dim: #ffb0c9;
 
-$purple: #c9bfff;
+$purple: #e6b6f1;
 
-$purple_container: #473f77;
+$purple_container: #5e386a;
 
 $purple_source: #cba6f7;
 
 $purple_value: #cba6f7;
 
-$red: #ffb3b3;
+$red: #ffb1c7;
 
-$red_container: #733335;
+$red_container: #703347;
 
 $red_source: #f38ba8;
 
@@ -124,49 +124,49 @@ $red_value: #f38ba8;
 
 $scrim: #000000;
 
-$secondary: #baccb2;
+$secondary: #e2bdc7;
 
-$secondary_container: #3c4b37;
+$secondary_container: #5a3f47;
 
-$secondary_fixed: #d6e8cd;
+$secondary_fixed: #ffd9e2;
 
-$secondary_fixed_dim: #baccb2;
+$secondary_fixed_dim: #e2bdc7;
 
 $shadow: #000000;
 
-$source_color: #384434;
+$source_color: #f35a98;
 
-$surface: #11140f;
+$surface: #191113;
 
-$surface_bright: #363a34;
+$surface_bright: #413739;
 
-$surface_container: #1d211b;
+$surface_container: #261d20;
 
-$surface_container_high: #272b25;
+$surface_container_high: #31282a;
 
-$surface_container_highest: #323630;
+$surface_container_highest: #3c3235;
 
-$surface_container_low: #191d17;
+$surface_container_low: #22191c;
 
-$surface_container_lowest: #0b0f0a;
+$surface_container_lowest: #140c0e;
 
-$surface_dim: #11140f;
+$surface_dim: #191113;
 
-$surface_tint: #a4d397;
+$surface_tint: #ffb0c9;
 
-$surface_variant: #42493f;
+$surface_variant: #514347;
 
-$tertiary: #a0cfd3;
+$tertiary: #efbc94;
 
-$tertiary_container: #1e4d51;
+$tertiary_container: #623f20;
 
-$tertiary_fixed: #bcebef;
+$tertiary_fixed: #ffdcc2;
 
-$tertiary_fixed_dim: #a0cfd3;
+$tertiary_fixed_dim: #efbc94;
 
-$yellow: #d5c871;
+$yellow: #f5bd6f;
 
-$yellow_container: #4f4700;
+$yellow_container: #633f00;
 
 $yellow_source: #f9e2af;
 

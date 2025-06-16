@@ -1,8 +1,9 @@
 import { App } from "astal/gtk4";
 import type { WindowProps } from "astal/gtk4/widget";
+import { Gtk } from "astal/gtk4";
 import Astal from "gi://Astal";
+import Graphene from "gi://Graphene";
 import Gdk from "gi://Gdk";
-
 type Props = WindowProps & {
   child?: JSX.Element; // when only one child is passed
   children?: Array<JSX.Element>; // when multiple children are passed

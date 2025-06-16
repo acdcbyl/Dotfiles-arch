@@ -1,4 +1,5 @@
 import { App, Gtk, hook, Gdk, Astal } from "astal/gtk4";
+import { createState } from "ags"
 import { Variable } from "astal";
 import Pango from "gi://Pango";
 import AstalApps from "gi://AstalApps";
@@ -228,17 +229,24 @@ export default function Applauncher(_gdkmonitor: Gdk.Monitor) {
   setupAppsFolderMonitor();
 
   return (
-    <PopupWindow name={WINDOW_NAME} anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT} margin={10} layer={Astal.Layer.TOP}>
+    <PopupWindow name={WINDOW_NAME}
+      setup={(self) => {
+        self.connect('close-request', () => {
+          cleanupMonitor();
+        })
+      }}
+      anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT} margin={10} layer={Astal.Layer.TOP}>
       <box
         cssClasses={["applauncher-container"]}
         vertical
         vexpand={false}
-        setup={(self) => {
-          // Add cleanup for the monitor when the window is destroyed
-          self.connect('destroy', () => {
-            cleanupMonitor(); // 使用统一的清理函数
-          });
-        }}
+      //       setup={(self) => {
+      //       // Add cleanup for the monitor when the window is destroyed
+      //     self.connect('destroy', () => {
+      //     cleanupMonitor();
+      // });
+      //}
+      //}
       >
         <SearchEntry />
         <AppsScrolledWindow />

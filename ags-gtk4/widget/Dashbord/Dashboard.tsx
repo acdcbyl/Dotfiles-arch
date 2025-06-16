@@ -58,12 +58,13 @@ function NotifsScrolledWindow() {
           vertical
           vexpand
           visible={bind(notifd, "notifications").as((n) => n.length === 0)}
+          spacing={6}
         >
           <image
             iconName="notification-disabled-symbolic"
             pixelSize={50}
           />
-          <label label="Your inbox is empty" />
+          <label label="Your inbox is empty" cssClasses={["labelSmallBold"]} />
         </box>
       </box>
     </Gtk.ScrolledWindow>
@@ -112,7 +113,6 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
   return (
     <PopupWindow
       name={WINDOW_NAME}
-
       // layer={Astal.Layer.BOTTOM}
       //     animation="slide top"
       anchor={Astal.WindowAnchor.TOP}

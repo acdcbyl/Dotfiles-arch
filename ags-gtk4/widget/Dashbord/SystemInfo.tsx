@@ -7,17 +7,18 @@ export function Systeminfo() {
     const cpuUsage = Variable(0);
     const gpuUsage = Variable(0);
 
+    // 保存 interval 的 ID 用于清理
+    let intervalId;
+
     // 初始化数据
     function updateUsage() {
         try {
             const cpu = getCpuUsage();
             const gpu = getGpuUsage();
             const ram = getRamUsage();
-
             cpuUsage.set(cpu);
             gpuUsage.set(gpu);
             ramUsage.set(ram);
-
         } catch (error) {
             console.error("Error updating usage:", error);
         }
@@ -26,11 +27,18 @@ export function Systeminfo() {
     // 立即更新一次
     updateUsage();
 
-    // 每2秒更新一次
-    interval(2000, updateUsage);
+    // 每2秒更新一次，保存返回的 interval ID
+    intervalId = interval(2000, updateUsage);
 
     return (
         <box
+            setup={(self) => self.connect('destroy', () => {
+                // 清理计时器
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+            })}
             orientation={Gtk.Orientation.VERTICAL}
             cssClasses={["systeminfo"]}
             spacing={10}

@@ -9,7 +9,7 @@
 }
 .time-label {
   color: $on_surface;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: bold;
 }
 .month-label {
@@ -175,7 +175,7 @@
 
     // 危险状态
     block.critical {
-      background: $error;
+      background: $red;
     }
   }
 }
