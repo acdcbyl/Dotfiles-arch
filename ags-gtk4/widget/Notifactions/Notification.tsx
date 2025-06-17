@@ -33,15 +33,24 @@ const ishover = Variable(false)
 export default function Notification({
   n,
   showActions = true,
+  setup,
+  onHover,
+  onHoverLost,
 }: {
   n: AstalNotifd.Notification;
   showActions?: boolean;
+  setup(self: Gtk.Box): void;
+  onHoverLost(self: Gtk.Box): void
+  onHover(self: Gtk.Box): void
 }) {
   return (
     <Adw.Clamp maximumSize={400}>
       <box
         name={n.id.toString()}
         cssClasses={["notification-container", urgency(n)]}
+        setup={setup}
+        onHoverEnter={onHover}
+        onHoverLeave={onHoverLost}
         // widthRequest={350}
         hexpand={false}
         vexpand={false}

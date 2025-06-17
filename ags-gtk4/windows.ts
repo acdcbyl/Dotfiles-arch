@@ -4,6 +4,7 @@ import Bar from "./widget/Bar/Bar";
 import Dashboard from "./widget/Dashbord/Dashboard";
 // import Dock from "./widgets/dock/Dock.jsx";
 import NotificationPopup from "./widget/Notifactions/NotificationPopup.jsx";
+import NotificationPopups from "./widget/Notifactions/NotificationPopups";
 // import NotificationWindow from "./widget/Notifactions/NotificationWindow.jsx";
 import ScreenCorners from "./widget/ScreenCorners/ScreenCorners";
 import PowerMenu from "./widget/Powermenu/PowerMenu.jsx";
@@ -16,7 +17,7 @@ export default [
   Bar,
   Applauncher,
   // NotificationWindow,
-  NotificationPopup,
+  NotificationPopups,
   Dashboard,
   QSWindow,
   PowerMenu,
