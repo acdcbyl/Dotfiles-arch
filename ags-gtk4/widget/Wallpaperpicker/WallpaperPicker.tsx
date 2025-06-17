@@ -80,9 +80,10 @@ function wallpaperPicker() {
     <PopupWindow
       name={"wallpaperpicker"}
       // layer={Astal.Layer.BOTTOM}
-      anchor={Astal.WindowAnchor.TOP}
+      // anchor={Astal.WindowAnchor.TOP}
+      layout="top"
       visible
-      marginTop={15}
+      margin={10}
       //     marginLeft={10}
       //   marginRight={10}
       widthRequest={1000}

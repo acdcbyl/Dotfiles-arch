@@ -1,11 +1,13 @@
 import { timeout } from "astal";
-import { App, Astal, hook, Gdk } from "astal/gtk4";
+import { App, Astal, Gdk, hook } from "astal/gtk4";
 import AstalNotifd from "gi://AstalNotifd";
 import Notification from "./Notification";
-import { createBinding, For, createState, onCleanup } from "ags"
+import { Variable } from "astal";
+
 export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
-  const { TOP, RIGHT, BOTTOM } = Astal.WindowAnchor;
+  const { TOP, RIGHT } = Astal.WindowAnchor;
   const notifd = AstalNotifd.get_default();
+  const windowVisible = Variable(false);
 
   return (
     <window
@@ -46,9 +48,9 @@ export default function NotificationPopup(gdkmonitor: Gdk.Monitor) {
 
           self.set_child(
             <box vertical vexpand hexpand>
-              {Notification({ n: notifd.get_notification(id!) })}
+              <Notification n={notifd.get_notification(id!)} />
               <box vexpand />
-            </box>,
+            </box>
           );
           self.visible = true;
           self.default_height = -1;

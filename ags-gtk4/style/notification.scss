@@ -183,3 +183,10 @@ $window-border-radius: 6px 6px 6px 6px;
     }
   }
 }
+.slide-in {
+  animation: {
+    name: notification-slide-in;
+    duration: 0.3s;
+    timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+}

@@ -235,7 +235,9 @@ export default function Applauncher(_gdkmonitor: Gdk.Monitor) {
           cleanupMonitor();
         })
       }}
-      anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT} margin={10} layer={Astal.Layer.TOP}>
+      margin={10}
+      onDestroy={() => layout.drop()}
+      layout="top_left">
       <box
         cssClasses={["applauncher-container"]}
         vertical

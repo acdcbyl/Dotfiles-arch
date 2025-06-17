@@ -1,0 +1,760 @@
+[?25lFound additional prefixes for DBusGLib: DBus
+Unknown varargs type in Wp:  {
+    "name": "global",
+    "introspectable": "0",
+    "readable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Failed to find type in WebKit2WebExtension:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2WebExtension:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2WebExtension:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2WebExtension:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2:  {
+    "c:type": "JSValueRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2:  {
+    "c:type": "JSGlobalContextRef"
+} 
+Marking as unknown!
+Failed to find type in WebKit2:  {
+    "c:type": "JSValueRef"
+} 
+Marking as unknown!
+Failed to find type in Vips:  {
+    "c:type": "RegionType"
+} 
+Marking as unknown!
+Failed to find type in Vips:  {
+    "c:type": "VipsWindow*"
+} 
+Marking as unknown!
+Failed to find type in Vips:  {
+    "c:type": "VipsBuffer*"
+} 
+Marking as unknown!
+Unknown varargs type in Soup:  {
+    "name": "socket-properties",
+    "introspectable": "0",
+    "readable": "0",
+    "writable": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Secret:  {
+    "name": "items",
+    "introspectable": "0",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Secret:  {
+    "name": "collections",
+    "introspectable": "0",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Nice:  {
+    "name": "nomination-mode",
+    "version": "0.1.15",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "NICE_NOMINATION_MODE_AGGRESSIVE"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalarray*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalattach*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalcomponent*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalparameter*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalparser*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalproperty*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalrecur_iterator*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icaltimezone*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalarray*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icaltimezone*"
+} 
+Marking as unknown!
+Failed to find type in ICalGLib:  {
+    "c:type": "icalvalue*"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "backend",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Failed to find type in Gtk:  {
+    "c:type": "_GtkMountOperationHandlerProxyPrivate*"
+} 
+Marking as unknown!
+Failed to find type in Gtk:  {
+    "c:type": "_GtkMountOperationHandlerSkeletonPrivate*"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "object",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "object",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "object",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "p0",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "p1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "object",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Gtk:  {
+    "name": "object",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Failed to find type in GstGLX11:  {
+    "c:type": "Display*"
+} 
+Marking as unknown!
+Failed to find type in GstGLX11:  {
+    "c:type": "Display*"
+} 
+Marking as unknown!
+Failed to find type in GstGLX11:  {
+    "c:type": "xcb_connection_t*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstAV1SequenceHeaderOBU*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstH264SPS*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstH265SPS*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstH266SPS*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstMpegVideoSequenceHdr*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstMpegVideoSequenceExt*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstMpegVideoSequenceDisplayExt*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstMpegVideoSequenceScalableExt*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstVp8Parser*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "const GstVp8FrameHdr*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstAV1FrameHeaderOBU"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstAV1TileGroupOBU"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstAV1OBU"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH264RefPicMarking*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH264SliceType"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH264DecRefPicMarking"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH264SliceHdr"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH264NalUnit"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH265SliceType"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH265SEIPicStructType"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH265SliceHdr"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH265NalUnit"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH266SliceType"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH266FrameFieldInfo"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH266SliceHdr"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstH266NalUnit"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstMpegVideoPictureStructure"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstMpegVideoPictureType"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstMpegVideoQuantMatrixExt*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstMpegVideoPictureHdr*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstMpegVideoPictureExt*"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstMpegVideoSliceHdr"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstMpegVideoPacket"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstVp8FrameHdr"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstVp9ParserResult"
+} 
+Marking as unknown!
+Failed to find type in GstCodecs:  {
+    "c:type": "GstVp9ParserResult"
+} 
+Marking as unknown!
+Unknown varargs type in GstBadAudio:  {
+    "name": "output-mode",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none",
+    "default-value": "Steady output"
+} 
+Marking as unknown!
+Unknown varargs type in GstBadAudio:  {
+    "name": "subsong-mode",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none",
+    "default-value": "Decoder specific default behavior"
+} 
+Marking as unknown!
+Unknown varargs type in GnomeBluetooth:  {
+    "name": "device-category-filter",
+    "introspectable": "0",
+    "writable": "1",
+    "construct": "1",
+    "transfer-ownership": "none",
+    "default-value": "BLUETOOTH_CATEGORY_ALL"
+} 
+Marking as unknown!
+Unknown varargs type in GnomeBluetooth:  {
+    "name": "device-category-filter",
+    "introspectable": "0",
+    "writable": "1",
+    "construct": "1",
+    "transfer-ownership": "none",
+    "default-value": "BLUETOOTH_CATEGORY_ALL"
+} 
+Marking as unknown!
+Unknown varargs type in GnomeAutoar:  {
+    "name": "filter",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "AUTOAR_FILTER_NONE"
+} 
+Marking as unknown!
+Unknown varargs type in GnomeAutoar:  {
+    "name": "format",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "AUTOAR_FORMAT_ZIP"
+} 
+Marking as unknown!
+Failed to find type in Gkbd:  {
+    "c:type": "XkbComponentNamesRec*"
+} 
+Marking as unknown!
+Failed to find type in Gkbd:  {
+    "c:type": "XkbDescRec*"
+} 
+Marking as unknown!
+Failed to find type in Gkbd:  {
+    "c:type": "XkbDoodadRec*"
+} 
+Marking as unknown!
+Failed to find type in Gkbd:  {
+    "c:type": "XkbKeyRec*"
+} 
+Marking as unknown!
+Failed to find type in Gimp:  {
+    "c:type": "GExiv2MetadataClass"
+} 
+Marking as unknown!
+Unknown varargs type in GcrUi:  {
+    "name": "mode",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "GCR_COLLECTION_MODEL_TREE"
+} 
+Marking as unknown!
+Unknown varargs type in Gcr:  {
+    "name": "status",
+    "introspectable": "0",
+    "transfer-ownership": "none",
+    "default-value": "GCR_CERTIFICATE_CHAIN_UNKNOWN"
+} 
+Marking as unknown!
+Unknown varargs type in Gcr:  {
+    "name": "format",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "GCR_CERTIFICATE_REQUEST_PKCS10"
+} 
+Marking as unknown!
+Unknown varargs type in Gcr:  {
+    "name": "flags",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "GCR_CERTIFICATE_SECTION_NONE"
+} 
+Marking as unknown!
+Unknown varargs type in Gcr:  {
+    "name": "mode",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "GCR_SYSTEM_PROMPTER_SINGLE"
+} 
+Marking as unknown!
+Unknown varargs type in Gcr:  {
+    "name": "status",
+    "introspectable": "0",
+    "transfer-ownership": "none",
+    "default-value": "GCR_CERTIFICATE_CHAIN_UNKNOWN"
+} 
+Marking as unknown!
+Unknown varargs type in Gcr:  {
+    "name": "format",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "GCR_CERTIFICATE_REQUEST_PKCS10"
+} 
+Marking as unknown!
+Unknown varargs type in Gcr:  {
+    "name": "mode",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "GCR_SYSTEM_PROMPTER_SINGLE"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_FUNCTION_LIST_PTR"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_FUNCTION_LIST_PTR"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_SESSION_HANDLE"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_NOTIFY"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_NOTIFY"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_FUNCTION_LIST_PTR"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_FUNCTION_LIST_PTR"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_SESSION_HANDLE"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_NOTIFY"
+} 
+Marking as unknown!
+Failed to find type in Gck:  {
+    "c:type": "CK_NOTIFY"
+} 
+Marking as unknown!
+Unknown varargs type in GXPS:  {
+    "name": "archive",
+    "introspectable": "0",
+    "readable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in GXPS:  {
+    "name": "archive",
+    "introspectable": "0",
+    "readable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in GXPS:  {
+    "name": "archive",
+    "introspectable": "0",
+    "readable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in GXPS:  {
+    "name": "archive",
+    "introspectable": "0",
+    "readable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Failed to find type in GExiv2:  {
+    "c:type": "ManagedStreamCallbacks*"
+} 
+Marking as unknown!
+Failed to find type in GExiv2:  {
+    "c:type": "ManagedStreamCallbacks*"
+} 
+Marking as unknown!
+Unknown varargs type in Dbusmenu:  {
+    "name": "status",
+    "introspectable": "0",
+    "transfer-ownership": "none",
+    "default-value": "DBUSMENU_STATUS_NORMAL"
+} 
+Marking as unknown!
+Unknown varargs type in Dbusmenu:  {
+    "name": "text-direction",
+    "introspectable": "0",
+    "transfer-ownership": "none",
+    "default-value": "DBUSMENU_TEXT_DIRECTION_NONE"
+} 
+Marking as unknown!
+Failed to find type in Dbusmenu:  {
+    "c:type": "dbusmenu_menuitem_about_to_show_cb"
+} 
+Marking as unknown!
+Unknown varargs type in Dbusmenu:  {
+    "name": "status",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none",
+    "default-value": "DBUSMENU_STATUS_NORMAL"
+} 
+Marking as unknown!
+Unknown varargs type in Dbusmenu:  {
+    "name": "text-direction",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none",
+    "default-value": "DBUSMENU_TEXT_DIRECTION_NONE"
+} 
+Marking as unknown!
+Failed to find type in Dbusmenu:  {
+    "c:type": "dbusmenu_menuitem_buildvariant_slot_t"
+} 
+Marking as unknown!
+Failed to find type in Cogl:  {
+    "c:type": "drmModeModeInfo"
+} 
+Marking as unknown!
+Failed to find type in Cogl:  {
+    "c:type": "short int"
+} 
+Marking as unknown!
+Failed to find type in Cogl:  {
+    "c:type": "short int"
+} 
+Marking as unknown!
+Unknown varargs type in Clutter:  {
+    "name": "back-material",
+    "version": "1.4",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Clutter:  {
+    "name": "cogl-material",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Clutter:  {
+    "name": "cogl-texture",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in CloudProviders:  {
+    "name": "status",
+    "introspectable": "0",
+    "transfer-ownership": "none",
+    "default-value": "CLOUD_PROVIDERS_ACCOUNT_STATUS_INVALID"
+} 
+Marking as unknown!
+Unknown varargs type in CloudProviders:  {
+    "name": "status",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none",
+    "default-value": "CLOUD_PROVIDERS_ACCOUNT_STATUS_INVALID"
+} 
+Marking as unknown!
+Unknown varargs type in AyatanaIdo3:  {
+    "name": "range-style",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "IDO_RANGE_STYLE_SMALL"
+} 
+Marking as unknown!
+Unknown varargs type in AyatanaIdo3:  {
+    "name": "accessory-style",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none",
+    "default-value": "IDO_SCALE_MENU_ITEM_STYLE_NONE"
+} 
+Marking as unknown!
+Unknown varargs type in AyatanaIdo3:  {
+    "name": "range-style",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none",
+    "default-value": "IDO_RANGE_STYLE_DEFAULT"
+} 
+Marking as unknown!
+Unknown varargs type in AyatanaIdo3:  {
+    "name": "direction",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none",
+    "default-value": "IDO_TIMELINE_DIRECTION_FORWARD"
+} 
+Marking as unknown!
+Unknown varargs type in AyatanaAppIndicator3:  {
+    "name": "dbus-menu-server",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Atspi:  {
+    "name": "keyboard-monitor",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in Atspi:  {
+    "name": "session-bus",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in AstalWp:  {
+    "name": "device",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in AstalWp:  {
+    "name": "default-plugin",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in AstalWp:  {
+    "name": "mixer-plugin",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in AstalWp:  {
+    "name": "node",
+    "introspectable": "0",
+    "writable": "1",
+    "construct-only": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Unknown varargs type in AppIndicator3:  {
+    "name": "dbus-menu-server",
+    "introspectable": "0",
+    "writable": "1",
+    "transfer-ownership": "none"
+} 
+Marking as unknown!
+Failed to find type in Eog:  {
+    "c:type": "HdyApplicationWindow"
+} 
+Marking as unknown!
+Failed to find type in Eog:  {
+    "c:type": "HdyApplicationWindowClass"
+} 
+Marking as unknown!
+Adding generics...
+Injecting types...

@@ -1,0 +1,62 @@
+import { App, Astal, Gdk, Gtk } from "astal/gtk4";
+import { WindowProps } from "astal/gtk4/widget";
+
+function Padding({ winName }: { winName: string }) {
+  return (
+    <button
+      cssClasses={["button-padding"]}
+      canFocus={false}
+      onClicked={() => App.toggle_window(winName)}
+      hexpand
+      vexpand
+    />
+  );
+}
+
+type PopupWindowProps = WindowProps & {
+  child?: unknown;
+  children?: unknown;
+  name: string;
+  visible?: boolean;
+};
+
+export default function PopupWindow({
+  child,
+  children,
+  name,
+  visible,
+  ...props
+}: PopupWindowProps) {
+  const { TOP, RIGHT, BOTTOM, LEFT } = Astal.WindowAnchor;
+
+  // Use child or children, prioritize children if both exist
+  const content = children || child;
+
+  return (
+    <window
+      visible={visible ?? false}
+      name={name}
+      namespace={name}
+      layer={Astal.Layer.TOP}
+      keymode={Astal.Keymode.EXCLUSIVE}
+      application={App}
+      anchor={TOP | BOTTOM | RIGHT | LEFT}
+      onKeyPressed={(_, keyval) => {
+        if (keyval === Gdk.KEY_Escape) {
+          App.toggle_window(name);
+        }
+      }}
+      {...props}
+    >
+      <centerbox>
+        <Padding winName={name} />
+        <centerbox orientation={Gtk.Orientation.VERTICAL}>
+          <Padding winName={name} />
+          {content}
+          <Padding winName={name} />
+        </centerbox>
+        <Padding winName={name} />
+      </centerbox>
+    </window>
+  );
+}

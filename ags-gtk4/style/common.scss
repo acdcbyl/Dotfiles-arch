@@ -11,7 +11,10 @@
   margin: 0;
   -gtk-icon-shadow: none;
 }
-
+.button-padding {
+  background: transparent;
+  border: none;
+}
 // GTK日历特定样式
 calendar {
   // color: $on_surface;

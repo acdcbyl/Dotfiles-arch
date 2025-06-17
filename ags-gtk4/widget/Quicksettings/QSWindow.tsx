@@ -302,9 +302,9 @@ function QSWindow(_gdkmonitor: Gdk.Monitor) {
       // layer={Astal.Layer.BOTTOM}
       //animation="slide right"
       // exclusivity={Astal.Exclusivity.EXCLUSIVE}
-      anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
+      layout="top_right"
       margin={10}
-    //onDestroy={() => layout.drop()}
+      onDestroy={() => layout.drop()}
     >
       <box
         cssClasses={["qs-container"]}

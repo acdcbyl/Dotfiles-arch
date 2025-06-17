@@ -1,4 +1,5 @@
 import { App } from "astal/gtk4"
+import app from "ags/gtk4/app";
 import { GLib } from "astal";
 import style from "./style/main.scss";
 import windows from "./windows";

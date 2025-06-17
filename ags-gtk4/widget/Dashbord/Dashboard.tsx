@@ -1,6 +1,7 @@
 import { Astal, App, Gtk, Gdk } from "astal/gtk4";
 import { time, uptime } from "../../lib/utils";
 import { GLib } from "astal";
+import Adw from "gi://Adw?version=1";
 import AstalNotifd from "gi://AstalNotifd";
 import PopupWindow from "../../common/PopupWindow";
 import Notification from "../Notifactions/Notification";
@@ -115,11 +116,12 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
       name={WINDOW_NAME}
       // layer={Astal.Layer.BOTTOM}
       //     animation="slide top"
-      anchor={Astal.WindowAnchor.TOP}
+      // anchor={Astal.WindowAnchor.TOP}
+      layout="top_center"
       margin={10}
-    //onDestroy={() => layout.drop()}
+      onDestroy={() => layout.drop()}
     >
-      <box>
+      <box spacing={0}>
         <box
           cssClasses={["notifications-container"]}
           vertical
@@ -177,8 +179,8 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
 
 export default function (_gdkmonitor: Gdk.Monitor) {
   Dashboard(_gdkmonitor);
-  layout.subscribe(() => {
-    App.remove_window(App.get_window(WINDOW_NAME)!);
-    Dashboard(_gdkmonitor);
-  });
+  // layout.subscribe(() => {
+  //   App.remove_window(App.get_window(WINDOW_NAME)!);
+  //   Dashboard(_gdkmonitor);
+  // });
 }
