@@ -165,7 +165,7 @@ function wallpaperPicker() {
           />
         </box>
         <Gtk.Separator />
-        <Gtk.ScrolledWindow widthRequest={1000}>
+        <Gtk.ScrolledWindow>
           <box
             spacing={6}
             vexpand
@@ -189,6 +189,8 @@ function wallpaperPicker() {
                   box.set_children(
                     wallpaperList.map((w) => (
                       <button
+                        canFocus
+                        cssClasses={["wall-button"]}
                         tooltipText={w}
                         onClicked={() => {
                           sh([
@@ -209,7 +211,7 @@ function wallpaperPicker() {
                         }}
                       >
                         <Gtk.Picture
-                          cssClasses={["image"]}
+                          cssClasses={["picture"]}
                           overflow={Gtk.Overflow.HIDDEN}
                           contentFit={Gtk.ContentFit.COVER}
                           widthRequest={200}

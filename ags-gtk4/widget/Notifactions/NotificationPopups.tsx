@@ -1,11 +1,12 @@
 import { Astal, Gtk } from "astal/gtk4"
+import { App } from "astal/gtk4"
 import Notifd from "gi://AstalNotifd"
 import Notification from "./Notification"
 import { type Subscribable } from "astal/binding"
 import { bind, GLib, Variable } from "astal"
 import Hyprland from "gi://AstalHyprland"
 
-const TIMEOUT_DELAY = 3_000
+const TIMEOUT_DELAY = 5_000
 
 class NotificationMap implements Subscribable {
   private map: Map<number, Gtk.Widget> = new Map()
@@ -86,12 +87,13 @@ export default function NotificationPopups(monitor: Hyprland.Monitor): Astal.Win
 
   return <window
     namespace={"notifications-popup"}
+    application={App}
     visible={bind(notifs).as((values) => {
       return values.length !== 0
     })}
     margin={10}
     monitor={monitor.id}
-    // layer={Astal.Layer.OVERLAY}
+    // layer={Astal.Layer.Top}
     anchor={TOP | RIGHT}
   >
     <box

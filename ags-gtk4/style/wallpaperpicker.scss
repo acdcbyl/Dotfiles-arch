@@ -52,11 +52,40 @@
       margin-top: 6px;
     }
   }
-
-  .image {
+  .wall-button {
     border-radius: 10px;
-    border: 10px;
-    border-color: $primary;
+    border: 2px solid transparent;
+    background-size: contain;
+    &:hover {
+      border: 2px solid $primary;
+    }
+    &:focus {
+      border: 2px solid $primary;
+    }
+    &:active {
+      border: 2px solid $primary;
+    }
+    &:last-child {
+      &:focus {
+        border: 2px solid $primary;
+      }
+    }
+  }
+  picture {
+    border-radius: 8px;
+    // border: 2px solid transparent;
     background-size: contain;
   }
+  // picture:hover {
+  //   border: 2px solid $primary;
+  // }
+  // picture:selected {
+  //   border: 2px solid $primary;
+  // }
+  // picture.selected {
+  //   border: 2px solid $primary;
+  // }
+  // picture:active {
+  //   border: 2px solid $primary;
+  // }
 }

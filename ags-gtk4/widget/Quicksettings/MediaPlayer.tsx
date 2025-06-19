@@ -83,7 +83,7 @@ function MediaPlayer({ player }) {
                 // heightRequest={10}
                 // maxValue={length}
                 onChangeValue={({ value }) => { try { player.set_position(value * length); } catch (error) { console.warn('Failed to set posistion', error); } }}
-                value={bind(player, 'position').as(pos => (pos / length))}
+                value={bind(player, "position").as((p) => (player.length > 0 ? p / player.length : p * 0.01))}
                 hexpand={true}
               />
             ))}

@@ -50,7 +50,11 @@ function NotifsScrolledWindow() {
     <Gtk.ScrolledWindow vexpand cssClasses={["scroll"]}>
       <box vertical hexpand={false} vexpand={false} spacing={8} orientation={Gtk.Orientation.VERTICAL}>
         {bind(notifd, "notifications").as((notifs) =>
-          notifs.map((e) => <Notification n={e} showActions={false} />),
+          notifs.map((e) =>
+            <revealer revealChild={true} transitionDuration={300} transitionType={Gtk.RevealerTransitionType.CROSSFADE}>
+              <Notification n={e} showActions={false} />
+            </revealer>
+          ),
         )}
         <box
           halign={Gtk.Align.CENTER}
@@ -146,15 +150,15 @@ function Dashboard(_gdkmonitor: Gdk.Monitor) {
         <box spacing={8} cssClasses={["datemenu-container"]}>
           <box hexpand vertical halign={Gtk.Align.CENTER} cssClasses={["dash-main"]}>
             <label
-              label={time((t) => t.format("%A")!)}
+              label={time((t) => t.format("%H:%M")!)}
               halign={Gtk.Align.CENTER}
               cssClasses={["time-label"]}
             />
-            <label
-              label={time((t) => t.format("%B")!)}
-              halign={Gtk.Align.END}
-              cssClasses={["month-label"]}
-            />
+            {/* <label */}
+            {/*   label={time((t) => t.format("%B")!)} */}
+            {/*   halign={Gtk.Align.START} */}
+            {/*   cssClasses={["month-label"]} */}
+            {/* /> */}
             <box halign={Gtk.Align.CENTER}>
               <label
                 label={"uptime: "}
