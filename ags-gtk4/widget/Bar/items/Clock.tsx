@@ -79,21 +79,11 @@ mpris.connect("player-closed", () => {
 handlePlayers();
 
 function NotifIcon() {
-	const getVisible = () =>
-		notifd.dont_disturb ? true : notifd.notifications.length <= 0;
-	const visibility = Variable(getVisible())
-		.observe(notifd, "notify::dont-disturb", () => {
-			return getVisible();
-		})
-		.observe(notifd, "notify::notifications", () => getVisible());
 	return (
 		<image
-			onDestroy={() => visibility.drop()}
-			visible={visibility()}
+			visible={bind(notifd, "dont_disturb")}
 			cssClasses={["icon"]}
-			iconName={bind(notifd, "dont_disturb").as(
-				(dnd) => `notifications-${dnd ? "disabled-" : ""}symbolic`,
-			)}
+			iconName="notifications-disabled-symbolic"
 		/>
 	);
 }
