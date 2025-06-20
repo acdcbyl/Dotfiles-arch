@@ -78,13 +78,16 @@ mpris.connect("player-closed", () => {
 // 初始化
 handlePlayers();
 
+// 修复后的 NotifIcon 组件
 function NotifIcon() {
 	return (
-		<image
+		<box
 			visible={bind(notifd, "dont_disturb")}
-			cssClasses={["icon"]}
-			iconName="notifications-disabled-symbolic"
-		/>
+		>
+			<image
+				iconName="notifications-disabled-symbolic"
+			/>
+		</box>
 	);
 }
 
@@ -97,7 +100,7 @@ export default function TimePanelButton({ format = "%a,%H:%M" }) {
 			window={WINDOW_NAME}
 			onClicked={() => App.toggle_window(WINDOW_NAME)}
 		>
-			<box spacing={12}>
+			<box spacing={6}>
 				<box
 					visible={bind(isPlaying)} // 使用 bind
 					onHoverEnter={() => ishover.set(true)}
@@ -119,37 +122,35 @@ export default function TimePanelButton({ format = "%a,%H:%M" }) {
 					</revealer>
 				</box>
 				<label label={time((t) => t.format(format)!)} />
-				{bind(notifd, "dontDisturb").as((dnd) =>
-					!dnd ? (
-						<box spacing={6}>
-							{bind(notifd, "notifications").as((n) => {
-								if (n.length > 0) {
-									return [
-										<box
-											onHoverEnter={() => isnotif.set(true)}
-											onHoverLeave={() => isnotif.set(false)}>
-											<revealer
-												transitionDuration={300}
-												transitionType={Gtk.RevealerTransitionType.SLIDE_RIGHT}
-												revealChild={bind(isnotif)}>
-												<label
-													cssClasses={["label"]}
-													label={bind(notifd, "notifications").as((n) => `You have ${n.length} ${n.length === 1 ? 'message' : 'messages'}`)} />
-											</revealer>
-											<image
-												cssClasses={["circle"]}
-												iconName={"message-notif-symbolic"}
-											/>
-										</box>
-									];
-								}
-								return <NotifIcon />;
-							})}
-						</box>
-					) : (
-						<NotifIcon />
-					),
-				)}
+
+				{/* 简化通知显示逻辑 */}
+				{bind(notifd, "notifications").as((notifications) => {
+					// 如果有通知消息，显示通知
+					if (notifications.length > 0) {
+						return (
+							<box
+								onHoverEnter={() => isnotif.set(true)}
+								onHoverLeave={() => isnotif.set(false)}
+							>
+								<revealer
+									transitionDuration={300}
+									transitionType={Gtk.RevealerTransitionType.SLIDE_RIGHT}
+									revealChild={bind(isnotif)}
+								>
+									<label
+										cssClasses={["label"]}
+										label={`You have ${notifications.length} ${notifications.length === 1 ? 'message' : 'messages'}`}
+									/>
+								</revealer>
+								<image
+									cssClasses={["circle"]}
+									iconName={"message-notif-symbolic"}
+								/>
+							</box>
+						);
+					}
+					return <NotifIcon />;
+				})}
 			</box>
 		</PanelButton>
 	);
