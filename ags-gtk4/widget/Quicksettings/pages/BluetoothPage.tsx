@@ -29,24 +29,20 @@ export default function BluetoothPage() {
           hexpand
           xalign={0}
         />
-        {/* <image */}
-        {/*   iconName={"bluetooth-symbolic"} */}
-        {/*   hexpand */}
-        {/*   halign={Gtk.Align.END} */}
-        {/* /> */}
-        {/* <switch */}
-        {/*   active={bind(bluetooth, "isPowered")} */}
-        {/*   onActivate={({ active }) => (bluetooth.isPowered = active)} */}
-        {/* /> */}
       </box>
       <Gtk.Separator />
-
       <Gtk.ScrolledWindow vexpand>
         <box vertical spacing={6} cssClasses={["content"]}>
           {bind(bluetooth, "devices").as((devices) =>
             devices.map((device) => (
               <button
-                cssClasses={["button"]}
+                cssClasses={bind(device, "connected").as((connected) => {
+                  const classes = ["button"];
+                  if (connected) {
+                    classes.push("active");
+                  }
+                  return classes;
+                })}
                 onClicked={() => {
                   if (!bluetooth.isPowered) {
                     bluetooth.toggle();
@@ -71,15 +67,7 @@ export default function BluetoothPage() {
                       }
                       return "";
                     })}
-                  //                   visible={power.as((arr) => {
-                  //                   const upowerData = arr.find(item => item.model === device.name) || false;
-                  //                 if (upowerData && upowerData?.batteryPercentage) {
-                  //                 return true;
-                  //             }
-                  //           return false;
-                  //       })}
                   />
-                  {/* Spinner for connecting state */}
                   <box
                     cssClasses={["spinner"]}
                     visible={bind(device, "connecting")}

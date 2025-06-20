@@ -1,4 +1,4 @@
-import Gtk from "gi://Gtk?version=4.0";
+import { Gtk } from "astal/gtk4";
 import { getRamUsage, getCpuUsage, getGpuUsage } from "../../lib/systeminfo";
 import { bind, Variable, interval } from "astal";
 
