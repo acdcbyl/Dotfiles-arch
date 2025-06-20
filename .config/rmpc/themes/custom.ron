@@ -10,30 +10,35 @@
     symbols: (song: "🎵", dir: "📁", marker: "\u{e0b0}"),
     progress_bar: (
         symbols: ["█", "\u{e0b0}", "█"],
-        track_style: (fg:"#1a2120",bg: None),
-        elapsed_style: (fg: "#81d5ca", bg: None),
-        thumb_style: (fg: "#81d5ca", bg: None),
+        track_style: (fg:"#201f25",bg: None),
+        elapsed_style: (fg: "#c6bfff", bg: None),
+        thumb_style: (fg: "#c6bfff", bg: None),
+    ),
+    cava:(
+        bar_symbol: "█",
+        bg_color:None,
+        bar_color: Single("#c6bfff"),
     ),
     scrollbar: (
         symbols: ["", "│", " ", " "],
-        track_style: (fg: "#81d5ca"),
+        track_style: (fg: "#c6bfff"),
         ends_style: (),
-        thumb_style: (fg: "#81d5ca"),
+        thumb_style: (fg: "#c6bfff"),
     ),
     browser_column_widths: [20, 38, 42],
-    text_color: "#81d5ca",
-    background_color: "#0e1514",
+    text_color: "#c8c3dc",
+    background_color: "#131318",
     header_background_color: None,
-    modal_background_color: "#003732",
+    modal_background_color: "#2e295f",
     tab_bar: (
         enabled: true,
-        active_style: (fg: "#0e1514", bg: "#81d5ca", modifiers: "Bold"),
+        active_style: (fg: "#131318", bg: "#c6bfff", modifiers: "Bold"),
         inactive_style: (),
     ),
-    borders_style: (fg: "#81d5ca"),
-    highlighted_item_style: (fg: "#aec9e6", modifiers: "Bold"),
-    current_item_style: (fg: "#81d5ca", bg: "#003732", modifiers: "Bold"),
-    highlight_border_style: (fg: "#81d5ca"),
+    borders_style: (fg: "#c6bfff"),
+    highlighted_item_style: (fg: "#c6bfff", modifiers: "Bold"),
+    current_item_style: (fg: "#c6bfff", bg: "#454077", modifiers: "Bold"),
+    highlight_border_style: (fg: "#c6bfff"),
     song_table_format: [
 
         (
@@ -122,19 +127,19 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "#81d5ca", modifiers: "Bold")),
-                    (kind: Property(Status(State)), style: (fg: "#81d5ca", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "#81d5ca", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "#c6bfff", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "#c6bfff", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#c6bfff", modifiers: "Bold"))
                 ],
                 center: [
-                    (kind: Property(Song(Title)), style: (fg: "#81d5ca", modifiers: "Bold"),
-                        default: (kind: Text("No Song"), style: (fg: "#81d5ca", modifiers: "Bold"))
+                    (kind: Property(Song(Title)), style: (fg: "#c6bfff", modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (fg: "#c6bfff", modifiers: "Bold"))
                     ),
                 ],
                 right: [
-                    (kind: Text("Vol: "), style: (fg: "#81d5ca", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "#81d5ca")),
-                    (kind: Text("% "), style: (fg: "#81d5ca", modifiers: "Bold"))
+                    (kind: Text("Vol: "), style: (fg: "#c6bfff", modifiers: "Bold")),
+                    (kind: Property(Status(Volume)), style: (fg: "#c6bfff")),
+                    (kind: Text("% "), style: (fg: "#c6bfff", modifiers: "Bold"))
                 ]
             ),
             (
@@ -156,9 +161,9 @@
 
                 center: [
 
-                    (kind: Property(Song(Artist)), style: (fg: "#81d5ca", modifiers: "Bold"),
+                    (kind: Property(Song(Artist)), style: (fg: "#c6bfff", modifiers: "Bold"),
 
-                        default: (kind: Text("No song"), style: (fg: "#81d5ca", modifiers: "Bold"))
+                        default: (kind: Text("No song"), style: (fg: "#c6bfff", modifiers: "Bold"))
 
                     ),
 
@@ -178,14 +183,14 @@
 
                         kind: Property(Widget(States(
 
-                            active_style: (fg: "#dde4e2", modifiers: "Bold"),
+                            active_style: (fg: "#e5e1e9", modifiers: "Bold"),
 
 
-                            separator_style: (fg: "#dde4e2")))
+                            separator_style: (fg: "#e5e1e9")))
 
                         ),
 
-                        style: (fg: "#b1ccc7")
+                        style: (fg: "#c8c3dc")
 
                     ),
 
