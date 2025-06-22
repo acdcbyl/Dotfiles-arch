@@ -213,7 +213,8 @@ function ArrowButton<T extends GObject.Object>({
 }
 
 function WifiArrowButton() {
-  const wifi = AstalNetwork.get_default().wifi;
+  const wifi = AstalNetwork.get_default()?.wifi;
+  if (!wifi) return null;
   const wifiSsid = Variable.derive(
     [bind(wifi, "state"), bind(wifi, "ssid")],
     (state, ssid) => {
@@ -240,6 +241,7 @@ function WifiArrowButton() {
 
 function WifiBluetooth() {
   const bluetooth = AstalBluetooth.get_default();
+  if (!bluetooth) return null;
   const btAdapter = bluetooth.adapter;
   const deviceConnected = Variable.derive(
     [bind(bluetooth, "devices"), bind(bluetooth, "isConnected")],
@@ -250,7 +252,7 @@ function WifiBluetooth() {
       return "No device";
     },
   );
-  const wifi = AstalNetwork.get_default().wifi;
+  const wifi = AstalNetwork.get_default()?.wifi;
 
   return (
     <box
