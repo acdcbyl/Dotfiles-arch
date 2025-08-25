@@ -6,6 +6,7 @@
   padding: 20px;
   border-radius: 0 30px 30px 0;
   border-left: 1px solid $inverse_surface_transparent;
+  box-shadow: 8px 8px 2px 1px $surface_bright;
 }
 .time-label {
   color: $on_surface;
@@ -38,6 +39,7 @@
   calendar {
     // margin: 10px;
     background-color: $inverse_surface_transparent;
+    box-shadow: -8px 8px 2px 1px $surface_bright;
     // color: $on_surface;
     min-width: 280px;
     min-height: 280px;
@@ -91,10 +93,11 @@
   background-color: $inverse_surface_transparent;
   border-radius: 20px;
   padding: 10px;
+  box-shadow: -8px 8px 2px 1px $surface_bright;
   // min-width: 380px;
   // margin-left: 10px;
   // margin-right: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
   .temperature-main {
     font-size: 1.2em;
     font-weight: bold;
@@ -132,6 +135,8 @@
   background-color: $inverse_surface_transparent;
   padding: 15px;
   border-radius: 20px;
+  margin-top: 5px;
+  box-shadow: -8px 8px 2px 1px $surface_bright;
   image {
     color: $on_surface;
     padding: 4px;

@@ -84,6 +84,7 @@ function wallpaperPicker() {
       layout="top"
       visible
       margin={10}
+
       //     marginLeft={10}
       //   marginRight={10}
       widthRequest={1000}

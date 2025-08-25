@@ -44,10 +44,10 @@ export default function Notification({
   onHover(self: Gtk.Box): void
 }) {
   return (
-    <Adw.Clamp maximumSize={400}>
+    <Adw.Clamp maximumSize={400} cssClasses={["notification-container"]} >
       <box
         name={n.id.toString()}
-        cssClasses={["notification-container", urgency(n)]}
+        // cssClasses={["notification-container", urgency(n)]}
         setup={setup}
         onHoverEnter={onHover}
         onHoverLeave={onHoverLost}

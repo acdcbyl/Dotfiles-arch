@@ -23,6 +23,8 @@ export default function BrightnessBox() {
         value={bind(brightness, "screen")}
         hexpand
       />
+      <box
+        widthRequest={10}></box>
     </box>
   );
 }

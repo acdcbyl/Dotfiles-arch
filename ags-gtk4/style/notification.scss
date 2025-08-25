@@ -4,7 +4,10 @@
 @use "colors.scss" as *;
 
 $window-border-radius: 6px 6px 6px 6px;
-
+// .notification-popup {
+//   // padding: 8px;
+//   box-shadow: -8px 8px 2px 1px $surface_bright;
+// }
 .notifications-container {
   border-radius: 30px 0 0 30px;
   min-width: 400px;
@@ -13,6 +16,7 @@ $window-border-radius: 6px 6px 6px 6px;
   color: $on_surface;
   padding: 12px;
   background-color: $surface_transparent;
+  box-shadow: 8px 8px 2px 1px $surface_bright;
 
   separator {
     margin: 2px;
@@ -74,9 +78,11 @@ $window-border-radius: 6px 6px 6px 6px;
   .notification-container {
     min-width: 1px;
     border-radius: 20px;
-    margin: 0px;
+    margin: 10px;
+    // padding: 10px;
     background: $inverse_surface_transparent;
     box-shadow: none;
+    box-shadow: -8px 8px 2px 1px $surface_bright;
   }
 }
 
@@ -84,8 +90,10 @@ $window-border-radius: 6px 6px 6px 6px;
   padding: 8px 16px 14px 20px;
   min-width: 380px;
   border-radius: 20px;
+  margin: 10px;
   // margin-bottom: 10px;
   background: $surface_transparent;
+  box-shadow: -8px 8px 2px 1px $surface_bright;
 
   &.critical {
     box-shadow: 0 0 0 0.1rem $red;

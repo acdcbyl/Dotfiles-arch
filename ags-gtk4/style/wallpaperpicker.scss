@@ -8,6 +8,7 @@
   padding: 10px;
   background-color: $surface_transparent;
   color: $on_surface;
+  box-shadow: 0px 8px 2px 1px $surface_bright;
 
   > box {
     margin: 10px;

@@ -7,6 +7,8 @@
   background-color: $inverse_surface_transparent;
   border-radius: 20px;
   min-height: 50px;
+  box-shadow: 8px 8px 2px 1px $surface_bright;
+  // margin: 10px;
   .media-player {
     // min-width: 180px;
     color: $on_surface;

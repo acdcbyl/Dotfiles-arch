@@ -9,14 +9,14 @@ const workspaces = Variable(hyprland.get_workspaces())
 const clients = Variable(hyprland.get_clients())
 const focusedClient = Variable(hyprland.get_focused_client())
 
-function getIcon(appName) {
+function getIcon(appName: any) {
   const apps = new Apps.Apps({
     nameMultiplier: 2,
     entryMultiplier: 0,
     executableMultiplier: 2,
   })
   let appsIcon = apps.fuzzy_query(appName);
-  let icon = null;
+  let icon: any;
   for (let app of appsIcon) {
     icon = app.get_icon_name();
     return icon;

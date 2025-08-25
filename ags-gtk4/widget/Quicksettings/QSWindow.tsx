@@ -50,8 +50,8 @@ function QSButtons() {
       maxChildrenPerLine={2}
       activateOnSingleClick={false}
       homogeneous
-      rowSpacing={6}
-      columnSpacing={6}
+      rowSpacing={12}
+      columnSpacing={12}
     >
       {/* <DarkModeQS /> */}
       {/* <ColorPickerQS /> */}
@@ -68,8 +68,8 @@ function QSButtons_child() {
       maxChildrenPerLine={2}
       activateOnSingleClick={false}
       homogeneous
-      rowSpacing={6}
-      columnSpacing={6}
+      rowSpacing={12}
+      columnSpacing={12}
     >
       <DarkModeQS />
       {/* <ColorPickerQS /> */}
@@ -282,7 +282,7 @@ function WifiBluetooth() {
 
 function MainPage() {
   return (
-    <box cssClasses={["qs-page"]} name={"main"} vertical spacing={6}>
+    <box cssClasses={["qs-page"]} name={"main"} vertical spacing={12}>
       <Header />
       <Gtk.Separator />
       <VolumeBox />

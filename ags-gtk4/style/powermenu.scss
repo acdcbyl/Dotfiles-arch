@@ -5,6 +5,7 @@
   padding: 24px;
   border-radius: 30px;
   background: $surface_transparent;
+  box-shadow: 8px 8px 2px 1px $surface_bright;
 }
 
 .powermenu__button {
@@ -37,6 +38,7 @@
   padding: 24px;
   border-radius: 30px;
   background: $surface_transparent;
+  box-shadow: 8px 8px 2px 1px $surface_bright;
 }
 
 .verification__title {
@@ -57,6 +59,7 @@
   border-radius: 30px;
   background: $surface_transparent;
   color: $on_surface;
+  box-shadow: 8px 8px 2px 1px $surface_bright;
 
   .title {
     font-size: 20px;
@@ -104,6 +107,7 @@
   border-radius: 30px;
   background: $surface_transparent;
   color: $on_surface;
+  box-shadow: 8px 8px 2px 1px $surface_bright;
 
   flowboxchild {
     outline: unset;
