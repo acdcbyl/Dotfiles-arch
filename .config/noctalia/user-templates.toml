@@ -1,0 +1,143 @@
+[config]
+
+[config.custom_colors]
+red = { color = "#f38ba8", blend = true }
+green = { color = "#a6e3a1", blend = true }
+yellow = { color = "#f9e2af", blend = true }
+blue = { color = "#89b4fa", blend = true }
+orange = { color = "#fab387", blend = true }
+purple = { color = "#cba6f7", blend = true }
+
+[templates.niri-me]
+input_path = '~/.config/matugen/templates/niri.kdl'
+output_path = '~/.config/niri/config.kdl'
+
+[templates.gitui]
+input_path = '~/.config/matugen/templates/gitui.ron'
+output_path = '~/.config/gitui/theme.ron'
+
+[templates.kitty-me]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/matugen.conf'
+post_hook = 'kitten themes --reload-in=all matugen'
+
+# [templates.ghostty-me]
+# input_path = '~/.config/matugen/templates/Matugen'
+# output_path = '~/.config/ghostty/themes/Matugen'
+# post_hook = 'pkill -SIGUSR2 ghostty'
+
+# [templates.pywalfox-me]
+# input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+# output_path = '~/.cache/wal/colors.json'
+# post_hook = 'pywalfox update'
+[templates.cider]
+input_path = '~/.config/matugen/templates/cider.scss'
+output_path = '~/.config/sh.cider.genten/themes/13/main.scss'
+
+[templates.helix]
+input_path = '~/.config/matugen/templates/helixfromcat.toml'
+output_path = '~/.config/helix/themes/matugen.toml'
+post_hook = 'pkill -USR1 helix'
+
+# [templates.gtk3-me]
+# input_path = '~/.config/matugen/templates/gtk-colors.css'
+# output_path = '~/.config/gtk-3.0/colors.css'
+#
+# [templates.gtk4-me]
+# input_path = '~/.config/matugen/templates/gtk-colors.css'
+# output_path = '~/.config/gtk-4.0/colors.css'
+# post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+# [templates.qt5ct-me]
+# input_path = '~/.config/matugen/templates/qtct-colors-new.conf'
+# output_path = '~/.config/qt5ct/colors/matugen.conf'
+#
+# [templates.qt6ct-me]
+# input_path = '~/.config/matugen/templates/qtct-colors-new.conf'
+# output_path = '~/.config/qt6ct/colors/matugen.conf'
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.vesktop-me]
+input_path = "~/.config/matugen/templates/midnight-discord.css"
+output_path = "~/.config/vesktop/themes/HyprNoon.css"
+
+[templates.rmpc]
+input_path = '~/.config/matugen/templates/rmpc.ron'
+output_path = '~/.config/rmpc/themes/custom.ron'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/config'
+output_path = '~/.config/cava/config'
+post_hook = 'pkill -USR2 cava'
+
+[templates.television]
+input_path = '~/.config/matugen/templates/television.toml'
+output_path = '~/.config/television/themes/matugen.toml'
+
+[templates.mpv]
+input_path = '~/.config/matugen/templates/mpv.conf'
+output_path = '~/.config/mpv/mpv.conf'
+
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed-new.json'
+output_path = '~/.config/zed/themes/material-you.json'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.clipse]
+input_path = '~/.config/matugen/templates/custom_theme.json'
+output_path = '~/.config/clipse/custom_theme.json'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.musicfox]
+input_path = '~/.config/matugen/templates/musicfox'
+output_path = '~/.config/matugen/scripts/musicfox'
+post_hook = 'sh ~/.config/matugen/scripts/musicfox'
+
+[templates.spicetify]
+input_path = '~/.config/matugen/templates/spotify.ini'
+output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
+post_hook = 'spicetify apply --no-restart'
+
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux.conf'
+output_path = '~/.tmux.conf'
+post_hook = 'tmux source-file ~/.tmux.conf'
+
+[templates.fish]
+input_path = '~/.config/matugen/templates/matugen.theme'
+output_path = '~/.config/fish/themes/Matugen.theme'
+post_hook = 'yes | fish_config theme save Matugen'
+
+[templates.neovim]
+input_path = '~/.config/matugen/templates/catppuccin.lua'
+output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
+
+[templates.tldr]
+input_path = '~/.config/matugen/templates/config.toml'
+output_path = '~/.config/tlrc/config.toml'
+
+[templates.fzf]
+input_path = '~/.config/matugen/templates/fzf.fish'
+output_path = '~/.config/matugen/scripts/fzf.fish'
+post_hook = 'fish ~/.config/matugen/scripts/fzf.fish'
+
+[templates.waypaper_icon]
+input_path = '~/.config/matugen/templates/waypapericon.svg'
+output_path = '~/.config/waypaper/scripts/icon.svg'
+
+[templates.lazygit]
+input_path = "~/.config/matugen/templates/lazygit.yml"
+output_path = "~/.config/lazygit/config.yml"
+
+[templates.Telegram]
+input_path = "~/.config/matugen/templates/telegram-colors.tdesktop-theme"
+output_path = "~/.config/telegram-desktop/themes/material-you.tdesktop-theme"
