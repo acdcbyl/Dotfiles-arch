@@ -157,16 +157,16 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        // active-color "#eac16c"
+        // active-color "#91cef5"
 
         // Color of the ring on inactive monitors.
         // inactive-color "#505050"
 
-        active-color "#eac16c"
-        inactive-color "#17130b"
+        active-color "#91cef5"
+        inactive-color "#0f1417"
 
-        active-gradient from="#eac16c" to="#ffdea1" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#17130b" to="#17130b" angle=45 relative-to="workspace-view"
+        active-gradient from="#91cef5" to="#c6e7ff" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#0f1417" to="#0f1417" angle=45 relative-to="workspace-view"
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
         // The angle is the same as in linear-gradient, and is optional,
@@ -190,17 +190,17 @@ layout {
         // off
 
         width 3
-        active-color "#eac16c"
-        inactive-color "#17130b"
+        active-color "#91cef5"
+        inactive-color "#0f1417"
 
-        active-gradient from="#eac16c" to="#ffdea1" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#17130b" to="#17130b" angle=45 relative-to="workspace-view"
+        active-gradient from="#91cef5" to="#c6e7ff" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#0f1417" to="#0f1417" angle=45 relative-to="workspace-view"
     }
 
     insert-hint {
         // off
-        color "#eac16c"
-        gradient from="#eac16c" to="#eac16c" angle=45 relative-to="workspace-view"
+        color "#91cef5"
+        gradient from="#91cef5" to="#91cef5" angle=45 relative-to="workspace-view"
     }
     // You can enable drop shadows for windows.
     shadow {
@@ -258,8 +258,8 @@ layout {
         place-within-column
         gaps-between-tabs 5
         corner-radius 5
-        active-color "#eac16c"       // Catppuccin Mocha 的 Blue
-        inactive-color "#402d00"     // Surface1
+        active-color "#91cef5"       // Catppuccin Mocha 的 Blue
+        inactive-color "#00344b"     // Surface1
         // active-gradient from="#F38BA8" to="#7aC7EC" angle=45
 
         hide-when-single-tab
@@ -287,7 +287,7 @@ spawn-at-startup "easyeffects" "--gapplication-service"
 spawn-at-startup "udiske &"
 // spawn-at-startup "niriusd"
 // spawn-at-startup "xwayland-satellite" ":12"
-spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 // spawn-at-startup "swww-daemon"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -314,6 +314,49 @@ animations {
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     slowdown 1.5
+    window-open {
+    duration-ms 200
+    curve "linear"
+    custom-shader r"
+      vec4 expanding_circle(vec3 coords_geo, vec3 size_geo) {
+        vec3 coords_tex = niri_geo_to_tex * coords_geo;
+        vec4 color = texture2D(niri_tex, coords_tex.st);
+        vec2 coords = (coords_geo.xy - vec2(0.5, 0.5)) * size_geo.xy * 2.0;
+        coords = coords / length(size_geo.xy);
+        float p = niri_clamped_progress;
+        if (p * p <= dot(coords, coords)) color = vec4(0.0);
+        return color;
+      }
+      vec4 open_color(vec3 coords_geo, vec3 size_geo) {
+        return expanding_circle(coords_geo, size_geo);
+      }
+    "
+  }
+ 
+  window-close {
+    duration-ms 200
+    curve "linear"
+    custom-shader r"
+      vec4 fall_and_rotate(vec3 coords_geo, vec3 size_geo) {
+        float progress = niri_clamped_progress * niri_clamped_progress;
+        vec2 coords = (coords_geo.xy - vec2(0.5, 1.0)) * size_geo.xy;
+        coords.y -= progress * 1440.0;
+        float random = (niri_random_seed - 0.5) / 2.0;
+        random = sign(random) - random;
+        float max_angle = 0.5 * random;
+        float angle = progress * max_angle;
+        mat2 rotate = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+        coords = rotate * coords;
+        coords_geo = vec3(coords / size_geo.xy + vec2(0.5, 1.0), 1.0);
+        vec3 coords_tex = niri_geo_to_tex * coords_geo;
+        vec4 color = texture2D(niri_tex, coords_tex.st);
+        return color;
+      }
+      vec4 close_color(vec3 coords_geo, vec3 size_geo) {
+        return fall_and_rotate(coords_geo, size_geo);
+      }
+    "
+  }
 }
 
 hotkey-overlay {
@@ -351,7 +394,7 @@ window-rule {
   // clipse
   match app-id=r#"clipse"#
   match app-id=r#"waypaper"#
-  match app-id="mpv"
+  // match app-id="mpv"
   // match app-id="cava"
   match title="Open Files"
   match app-id="QQ" title="图片查看器"
@@ -395,13 +438,13 @@ window-rule {
 // }
 
 layer-rule{
-    match namespace="^quickshell-overview$"
+    match namespace="^noctalia-overview*"
     place-within-backdrop true
 }
 
 cursor {
-    xcursor-theme "MikuComplete"
-    xcursor-size 45
+    xcursor-theme "GoogleDot-Black"
+    xcursor-size 35
     hide-when-typing
     hide-after-inactive-ms 4000
 }
@@ -478,7 +521,7 @@ binds {
    //  Mod+D hotkey-overlay-title="Application Launcher" {
    //    spawn "dms" "ipc" "call" "spotlight" "toggle";
    // }
-    Super+Alt+L { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "toggle"; }
+    Super+Alt+L { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
    //  Super+Alt+L hotkey-overlay-title="Lock Screen" {
    //    spawn "dms" "ipc" "call" "lock" "lock";
    // }
