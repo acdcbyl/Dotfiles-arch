@@ -24,8 +24,8 @@ unset_main = { fg = "{{colors.on_tertiary.default.hex}}", bg = "{{colors.tertiar
 unset_alt = { fg = "{{colors.tertiary_container.default.hex}}", bg = "{{colors.on_surface.default.hex}}" }
 
 [status]
-separator_open = ""
-separator_close = ""
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
 perm_type = { fg = "{{colors.primary.default.hex}}" }
 perm_read = { fg = "{{colors.yellow.default.hex}}" }
@@ -40,6 +40,13 @@ rest = { bg = "{{colors.surface_container.default.hex}}" }
 desc = { fg = "{{colors.secondary.default.hex}}" }
 separator = "  "
 separator_style = { fg = "{{colors.tertiary.default.hex}}" }
+
+[tabs]
+active = { bg = "{{colors.primary.default.hex}}", fg = "{{ colors.on_primary.default.hex}}", bold = true }
+inactive = { bg = "{{colors.surface.default.hex}}", fg = "{{ colors.primary.default.hex}}", bold = true }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
 
 [notify]
 title_info = { fg = "{{colors.green.default.hex}}" }

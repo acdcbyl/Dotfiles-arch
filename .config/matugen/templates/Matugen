@@ -1,21 +1,22 @@
-palette = 0=#4c4c4c
-palette = 1=#ac8a8c
-palette = 2=#8aac8b
-palette = 3=#aca98a
+palette = 0={{colors.shadow.default.hex}}
+palette = 1={{colors.red_source.default.hex}}
+palette = 2={{colors.green_source.default.hex}}
+palette = 3={{colors.yellow_source.default.hex}}
 palette = 4={{colors.primary.default.hex}}
-palette = 5=#ac8aac
-palette = 6=#8aacab
+palette = 5={{colors.purple_source.default.hex}}
+palette = 6={{colors.blue_source.default.hex}}
 palette = 7=#f0f0f0
-palette = 8=#262626
-palette = 9=#c49ea0
-palette = 10=#9ec49f
-palette = 11=#f9e2af
-palette = 12=#a39ec4
-palette = 13=#c49ec4
-palette = 14=#9ec3c4
-palette = 15=#e7e7e7
+palette = 8={{colors.outline.default.hex}}
+palette = 9={{colors.red_value.default.hex}}
+palette = 10={{colors.green_value.default.hex}}
+palette = 11={{colors.yellow_value.default.hex}}
+palette = 12={{colors.blue_value.default.hex}}
+palette = 13={{colors.purple_value.default.hex}}
+palette = 14={{colors.blue_value.default.hex}}
+palette = 15={{colors.primary.default.hex}}
 foreground={{colors.on_surface.default.hex}}
 background={{colors.surface.default.hex}}
 cursor-color = {{colors.on_surface.default.hex}}
+cursor-text = {{colors.on_surface.default.hex}}
 selection-background = {{colors.on_secondary.default.hex}}
 selection-foreground = {{colors.secondary_fixed_dim.default.hex}}

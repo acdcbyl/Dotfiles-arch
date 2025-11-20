@@ -1,0 +1,419 @@
+/* ------------------------------------- */
+/*          Basic Configuration          */
+/* ------------------------------------- */
+:root {
+    --sidebar-dark: {{colors.surface_container.default.hex}};
+    --background-dark: {{colors.background.default.hex}};
+    --overlay-dark: {{colors.surface.default.hex}};
+    --sidebar-btn-dark: {{colors.surface_container.default.hex}};
+    --text-subtle-dark: {{colors.on_surface_variant.default.hex}};
+    --text-dark: {{colors.on_surface.default.hex}};
+    --border-dark: {{colors.surface.default.hex}};
+    --border-hc-dark: {{colors.surface.default.hex}};
+
+    --sidebar-light: #faf4ed;
+    --background-light: #fffaf3;
+    --overlay-light: #f2e9e1;
+    --sidebar-btn-light: #f4ede8;
+    --text-subtle-light: #9893a5;
+    --text-light: #575279;
+    --border-light: rgba(87, 82, 121, 0.15);
+    --border-hc-light: rgba(87, 82, 121, 0.5);
+    
+    --my-accent-color: {{colors.primary.default.hex}};
+    --my-accent-color-light: {{colors.primary.default.hex}};
+    --my-accent-color-dark: {{colors.primary.default.hex}};
+    /* See https://rosepinetheme.com/palette/ingredients/ */
+}
+body {
+  font-family: 'Inter Variable', 'Cantarell', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  --keyColor: var(--my-accent-color);
+  --musicKeyColor: var(--my-accent-color);
+  --accent-color: var(--my-accent-color);
+}
+
+body.body--dark {
+  --sidebar-color: var(--sidebar-dark);
+  --background-color: var(--background-dark);
+  --overlay-color: var(--overlay-dark);
+  --sidebar-btn-color: var(--sidebar-btn-dark);
+  --text-subtle-color: var(--text-subtle-dark);
+  --text-color: var(--text-dark);
+  --border-color: var(--border-dark);
+  --q-primary: var(--my-accent-color-dark, --my-accent-color);
+}
+
+body.body--light {
+  --sidebar-color: var(--sidebar-light);
+  --background-color: var(--background-light);
+  --overlay-color: var(--overlay-light);
+  --sidebar-btn-color: var(--sidebar-btn-light);
+  --text-subtle-color: var(--text-subtle-light);
+  --text-color: var(--text-light);
+  --border-color: var(--border-light);
+  --q-primary: var(--my-accent-color-light, --my-accent-color);
+}
+
+body {
+  --systemGray :var(--text-subtle-color);
+  --progressColor: var(--text-subtle-color);
+  --systemPrimary: var(--text-color);
+  --systemSecondary: var(--text-subtle-color);
+  --systemTertiary: var(--text-color);
+}
+
+/* ------------------------------------- */
+
+ .qb-item-content:not(.text-white.button .qb-item-content) {
+  color: var(--text-color);
+}
+
+[sfc-name="RichAlbumGridDetails"] {
+  border-radius: 12px;
+  /* margin: 0px 0px 0px 15px; */
+  border: 1px solid var(--border-color);
+  --keyColor: var(--textColor);
+  .ri-list-item:focus {
+    color: var(--bgColor);
+    .playing-indicator {
+      --eq-bars-bg-color: var(--bgColor);
+    }
+    .q-icon {
+      color: var(--bgColor);
+    }
+  }
+}
+.shelf-item-expanded {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.bg-primary.text-white {
+  background-color: var(--keyColor);
+  .q-icon {
+    color: var(--background-light);
+  }
+}
+
+:not(.lockupControls, [sfc-name="RichAlbumGridDetails"]) .q-icon {
+  color: var(--text-color);
+}
+
+[sfc-name="RichAlbumGridDetails"] .q-icon {
+  color: var(--textColor) !important;
+  .material-icons {
+    font-weight: 900;
+  }
+}
+
+[sfc-name="RichAlbumGridDetails"] .artwork-container {
+  border-radius: 12px;
+  -webkit-mask-image: unset;
+  [sfc-name="MediaItemArtwork"] {
+    border-radius: 12px;
+    border: 1px solid transparent;
+  }
+}
+
+.q-list--dark, .q-item--dark {
+  color: var(--text-color);
+}
+
+.q-menu {
+  background-color: var(--overlay-color);
+}
+
+[sfc-name="QToolbar"] {
+  color: var(--text-color);
+}
+
+[sfc-name="BaseTransition"] .ctxmenu-icon {
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--sidebar-color);
+  --textDefault: var(--text-color);
+  color: var(--text-color);
+}
+
+.new-shell-page-container {
+  box-shadow: unset;
+  border-left: 1px solid var(--background-color);
+  background-color: var(--background-color);
+}
+
+[sfc-name="Sidebar"] {
+  .nucleo-icon,
+  .q-icon,
+  .nav-icon {
+    color: var(--text-color);
+  }
+}
+
+.sidebar_nav-btn:hover {
+  color: var(--text-color);
+  background-color: var(--sidebar-btn-color)!important;
+}
+
+.sidebar_nav-btn.active {
+  color: var(--text-color);
+  background-color: var(--sidebar-btn-color)!important;
+}
+
+
+.cloud-buttons {
+  .add-to-library-btn,
+  .nucleo-icon,
+  .q-icon,
+  .nav-icon,
+  .feather {
+    color: var(--text-color);
+  }
+}
+
+._svg-icon:not(.lockupControls ._svg-icon, [sfc-name="RichAlbumGridDetails"] ._svg-icon) {
+  background: var(--text-color);
+}
+
+.lockupControls .play:hover,
+.lockupControls .menu:hover {
+  ._svg-icon {
+    background: var(--background-light);
+  }
+}
+
+.q-tab__label {
+  color: var(--text-color);
+}
+
+.overlay-progress-track {
+  background-color: var(--border-color);
+}
+
+.overlay-progress-bar {
+  background-color: var(--text-color);
+}
+
+
+body.body--light .new-shell-page-container {
+  border-left: 1px solid var(--border-color);
+}
+
+/*
+body.body--light .volume-container.active [sfc-name="VueFeather"] {
+  color: var(--background-dark);
+}
+*/
+
+.q-drawer.q-drawer--left.fixed.q-drawer--on-top.q-drawer--mobile.q-drawer--top-padding { /* Wierd fix for settings sidebar */
+  width: 100px;
+  .settings-sidebar {
+    background-color: var(--overlay-color);
+  }
+}
+
+.frow.header-frow {
+  background-color: var(--sidebar-color);
+}
+
+
+/* ------------------------------------- */
+/*         Bigger/Rounder Buttons        */
+/* ------------------------------------- */
+
+.primary-actions {
+  height: 44px;
+  border-radius: 60px;
+}
+
+.primary-actions {
+  color: var(--background-light);
+  .nucleo-icon {
+    color: var(--background-light);
+  }
+}
+
+.detail-actions {
+  border: 0px 20px;
+}
+
+
+/* ------------------------------------- */
+/*           Simplified Sidebar          */
+/* ------------------------------------- */
+
+.sidebar_nav-btn {
+  height: 42px;
+}
+
+.am-expansion-item {
+  pointer-events: none; /* Disables clicking */
+  background-color: inherit; /* Ensures background color remains the same */
+  border: none; /* Removes any borders, if necessary */
+  cursor: default; /* Changes cursor to default, removing the pointer hand */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 5px 0;
+  height: 0px;
+}
+
+.am-expansion-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  opacity: 1;
+}
+
+.am-expansion-item:first-of-type {
+  display: none;
+}
+
+.sidebar-label,
+.expand-button {
+  opacity: 0.0;
+}
+
+.left-drawer-resize-handle {
+  display: none;
+}
+
+.ns-sidebar.ns-sidebar--left {
+  /* width: clamp(202px, 25%, 279px); */ /* Gnome Settings */
+  width: clamp(180px, 20%, 240px); /* Gnome Files */
+}
+
+.left-drawer-overlay {
+  width: 240px;
+  background: var(--sidebar-color); /* In addition to contributings towards theming, this also fixes light mode. */
+}
+
+
+/* ------------------------------------- */
+/*             Media Controls            */
+/* ------------------------------------- */
+
+[sfc-name="AMPlayAction"],
+[sfc-name="AMPauseAction"] {
+  --center: var(--keyColor);
+  border: 0px;
+  background-size: cover;
+  height: 56px;
+  width: 56px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+  .play-icon {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    ._svg-icon {
+      background: var(--background-light);
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    --dist: 4px;
+    top: var(--dist);
+    left: var(--dist);
+    right: var(--dist);
+    bottom: var(--dist);
+    background-color: var(--center);
+    background-size: 38px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+}
+
+[sfc-name="AMPlaybackActions"] {
+  margin-top: 0px;
+  align-items: center;
+  ._svg-icon {
+    --size: 26px;
+    background: var(--textDefault);
+  }
+}
+[sfc-name="AMPlaybackActions"] {
+  .action-active [sfc-name="QIcon"] {
+    color: var(--q-primary);
+  }
+  .action-indicator {
+    color: var(--q-primary);
+  }
+}
+
+[sfc-name="MojavePlayer"] {
+  display: grid;
+  height: 113px;
+  align-items: center;
+}
+
+body.body--light .lcdPlayer.docked {
+  box-shadow: 0 0 0 1px color(srgb 0 0 0 / 0.0525), 0 2px 8px 2px rgba(0, 0, 0, 0.07), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02);
+}
+
+body.body--dark .lcdPlayer.docked {
+  box-shadow: 0 0 0 1px color(srgb 0 0 0 / 0.1875), 0 2px 8px 2px rgba(0, 0, 0, 0.25), 0 3px 20px 10px rgba(0, 0, 0, 0.05), 0 6px 32px 16px rgba(0, 0, 0, 0.02);
+}
+
+[sfc-name="LCDPlayer"] {
+  height: 120px;
+}
+
+/* Fixes highlighting of active themes */
+.q-item.q-item-type.row.no-wrap.q-item--clickable.q-link.cursor-pointer.q-focusable.q-hoverable.bg-primary.text-white {
+  background-color: var(--background-color);
+  color: var(--q-primary);
+}
+
+/* Light text in colored menu button */
+.q-menu .q-item.q-hoverable:hover {
+  color: var(--background-light);
+  .q-icon,
+  .nucleo-icon,
+  .nav-icon,
+  .feather {
+    color: var(--background-light);
+  }
+  [sfc-name="QItemLabel"] {
+    color: var(--background-light);
+  }
+}
+
+.q-tooltip.q-tooltip--style.q-position-engine.no-pointer-events:has(.popover-artwork) {
+  padding: 0px 0px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.chrome-button.window-nodrag.active::before {
+  opacity: 0.15 !important;
+}
+
+.chrome-button {
+  &:hover:before {
+    opacity: 0.15;
+  }
+}
+
+.chrome-button::before {
+  opacity: 0;
+}
+
+.search-box.cSearch {
+  border: unset;
+  box-shadow: unset;
+  background: var(--sidebar-btn-color);
+  font-size: 14px;
+}
+

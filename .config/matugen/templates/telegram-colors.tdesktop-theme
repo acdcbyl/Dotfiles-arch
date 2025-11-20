@@ -18,6 +18,22 @@ windowFgActive: #{{colors.on_primary.default.hex_stripped}}; // Active items tex
 windowActiveTextFg: #{{colors.primary.default.hex_stripped}}; // Active items text
 windowShadowFg: #{{colors.shadow.default.hex_stripped}}; // Window shadow
 windowShadowFgFallback: #{{colors.shadow.default.hex_stripped}}; // Fallback for shadow
+historyOutIconFg: #{{colors.primary.default.hex_stripped}};
+historyIconFgInverted: #{{colors.on_surface.default.hex_stripped}};
+
+msgServiceBg: {{colors.primary_container.default.hex}};
+msgServiceFg: {{colors.on_surface.default.hex}};
+msgOutBg: {{colors.primary_container.default.hex}};
+msgOutBgSelected : {{colors.tertiary_container.default.hex}};
+msgOutServiceFg: {{colors.on_surface.default.hex}};
+msgOutDateFg: {{colors.on_surface.default.hex}};
+historySentIconFg: {{colors.on_surface.default.hex}};
+msgOutDateFgSelected: {{colors.on_surface.default.hex}};
+msgDateImgFg: {{colors.on_surface.default.hex}};
+dialogsSentIconFg: {{colors.primary.default.hex}};
+dialogsSentIconFgOver: {{colors.primary.default.hex}};
+dialogsOnlineBadgeFg: {{colors.primary.default.hex}};
+
 
 shadowFg: #{{colors.shadow.default.hex_stripped}}; // General shadow
 slideFadeOutBg: #{{colors.background.default.hex_stripped}};
@@ -33,7 +49,7 @@ activeButtonFg: #{{colors.on_primary.default.hex_stripped}}; // Active button te
 activeButtonFgOver: #{{colors.on_primary_container.default.hex_stripped}}; // Active button hover text
 activeButtonSecondaryFg: #{{colors.on_primary.default.hex_stripped}}; // Active button secondary text
 activeButtonSecondaryFgOver: #{{colors.on_primary_container.default.hex_stripped}}; // Active button secondary hover text
-activeLineFg: #{{colors.on_primary.default.hex_stripped}};
+activeLineFg: #{{colors.on_surface.default.hex_stripped}};
 dialogsBgActive: #{{colors.primary.default.hex_stripped}};
 
 lightButtonBg: #{{colors.surface.default.hex_stripped}}; // Light button background

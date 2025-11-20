@@ -4,4 +4,4 @@
 color_value="{{colors.primary.default.hex}}"
 
 # 使用sed替换配置文件中的primaryColor值
-sed -i "s/^primaryColor=.*$/primaryColor=\"$color_value\"/" ~/.config/go-musicfox/go-musicfox.ini
+sed -i "s/^primaryColor = .*$/primaryColor = \\"$color_value\\"/" ~/.config/go-musicfox/config.toml

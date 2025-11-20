@@ -172,7 +172,7 @@
 ; ascii_max_range = 1000
 
 # Ascii delimiters. In ascii format each bar and frame is separated by a delimiters.
-# Use decimal value in ascii table (i.e. 59 = ';' and 10 = '\n' (line feed)).
+# Use decimal value in ascii table (i.e. 59 = ';' and 10 = 'n' (line feed)).
 ; bar_delimiter = 59
 ; frame_delimiter = 10
 

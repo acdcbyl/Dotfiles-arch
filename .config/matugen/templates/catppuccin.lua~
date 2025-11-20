@@ -17,9 +17,6 @@ return {
           enabled = true,
           indent_scope_color = "lavender", -- catppuccin color (eg. `lavender`) Default: text
         },
-        avante = {
-          windows_sidebar_header_rounded = false, -- 禁用 rounded
-        },
       },
       transparent_background = false,
       background = {

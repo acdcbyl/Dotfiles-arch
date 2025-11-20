@@ -5,8 +5,8 @@ ${{name}}: {{value.default.hex}};
 
 
 $theme: 'dark';
-$surface_transparent: color.scale($surface, $alpha: -20%);
-// $surface_transparent: $surface;
+// $surface_transparent: color.scale($surface, $alpha: -20%);
+$surface_transparent: $surface;
 $inverse_surface_transparent: color.scale($inverse_surface, $alpha: -92%);
 $inverse_surface_transparent_variant: color.scale(
   $inverse_surface,

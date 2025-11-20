@@ -7,12 +7,17 @@
     default_album_art_path: None,
     draw_borders: true,
     show_song_table_header: true,
-    symbols: (song: "🎵", dir: "📁", marker: "\u{e0b0}"),
+    symbols: (song: "🎵", dir: "📁", marker: "📌"),
     progress_bar: (
-        symbols: ["█", "\u{e0b0}", "█"],
+        symbols: ["█", "\\u{e0b0}", "█"],
         track_style: (fg:"{{colors.surface_container.default.hex}}",bg: None),
         elapsed_style: (fg: "{{colors.primary.default.hex}}", bg: None),
         thumb_style: (fg: "{{colors.primary.default.hex}}", bg: None),
+    ),
+    cava:(
+        bar_symbol: "█",
+        bg_color:None,
+        bar_color: Single("{{colors.primary.default.hex}}"),
     ),
     scrollbar: (
         symbols: ["", "│", " ", " "],
