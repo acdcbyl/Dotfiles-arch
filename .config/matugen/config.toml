@@ -114,10 +114,14 @@ input_path = '~/.config/matugen/templates/matugen.theme'
 output_path = '~/.config/fish/themes/Matugen.theme'
 post_hook = 'yes | fish_config theme save Matugen'
 
-[templates.neovim]
-input_path = '~/.config/matugen/templates/catppuccin.lua'
-output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
+# [templates.neovim]
+# input_path = '~/.config/matugen/templates/catppuccin.lua'
+# output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
 
+[templates.neovim]
+input_path = '~/.config/matugen/templates/template.lua'
+output_path = '~/.config/nvim/generated.lua'
+post_hook = 'pkill -SIGUSR1 nvim'
 [templates.tldr]
 input_path = '~/.config/matugen/templates/config.toml'
 output_path = '~/.config/tlrc/config.toml'

@@ -281,7 +281,7 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 // spawn-at-startup "dms" "run"
 // spawn-at-startup "nm-applet &"
 // spawn-at-startup "blueman-applet"
-spawn-at-startup "fcitx5"
+spawn-at-startup "fcitx5 --replace -d"
 // spawn-at-startup "clipse" "-listen"
 spawn-at-startup "easyeffects" "--gapplication-service"
 spawn-at-startup "udiske &"
@@ -452,10 +452,10 @@ cursor {
 environment {
 ELECTRON_OZONE_PLATFORM_HINT "auto"
 OPENAI_API_KEY "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"
-CURRENT_COMPOSITOR "niri"
-XDG_CURRENT_DESKTOP "Niri"
-XDG_SESSION_TYPE "wayland"
-XDG_SESSION_DESKTOP "Niri"
+// CURRENT_COMPOSITOR "niri"
+// XDG_CURRENT_DESKTOP "Niri"
+// XDG_SESSION_TYPE "wayland"
+// XDG_SESSION_DESKTOP "Niri"
 // MANPAGER "sh -c 'col -bx | bat -l man -p'"
 //输入法
 XMODIFIERS "@im=fcitx"
@@ -464,7 +464,7 @@ XMODIFIERS "@im=fcitx"
 INPUT_METHOD "fcitx"
 SDL_IM_MODULE "fcitx"
 // # GTK渲染
-GSK_RENDERER "vulkan"
+// GSK_RENDERER "vulkan"
 // #  GSK_RENDERER,cairo
  // MANROFFOPT "-c"
 
@@ -476,7 +476,7 @@ ELECTRON_OZONE_PLATFORM_HINT "auto"
 // __GL_THREADED_OPTIMIZATIONS "0"
 // # QT设置
  QT_QPA_PLATFORM "wayland;xcb"
- QT_QPA_PLATFORMTHEME "qt5ct"
+ QT_QPA_PLATFORMTHEME "qt6ct"
  QT_AUTO_SCREEN_SCALE_FACTOR "1"
  QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
 
@@ -494,7 +494,7 @@ ELECTRON_OZONE_PLATFORM_HINT "auto"
 
 
 // # MOZ_DRM_DEVICE,/dev/dri/renderD128
- GTK_THEME "adw-gtk3"
+ // GTK_THEME "adw-gtk3"
  LIBVA_DRIVER_NAME "nvidia"
  GBM_BACKEND "nvidia-drm"
  __GLX_VENDOR_LIBRARY_NAME "nvidia"
@@ -526,6 +526,7 @@ binds {
    //    spawn "dms" "ipc" "call" "lock" "lock";
    // }
 
+    Mod+N { spawn-sh "pkill qs && qs -c noctalia-shell"; }
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }

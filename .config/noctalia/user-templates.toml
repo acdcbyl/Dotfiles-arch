@@ -32,12 +32,12 @@ post_hook = 'kitten themes --reload-in=all matugen'
 # post_hook = 'pywalfox update'
 [templates.cider]
 input_path = '~/.config/matugen/templates/cider.scss'
-output_path = '~/.config/sh.cider.genten/themes/13/main.scss'
+output_path = '~/.config/sh.cider.genten/themes/20/main.scss'
 
 [templates.helix]
 input_path = '~/.config/matugen/templates/helixfromcat.toml'
 output_path = '~/.config/helix/themes/matugen.toml'
-post_hook = 'pkill -USR1 helix'
+post_hook = 'pkill -USR1 helix;true'
 
 # [templates.gtk3-me]
 # input_path = '~/.config/matugen/templates/gtk-colors.css'
@@ -68,10 +68,10 @@ output_path = "~/.config/vesktop/themes/HyprNoon.css"
 input_path = '~/.config/matugen/templates/rmpc.ron'
 output_path = '~/.config/rmpc/themes/custom.ron'
 
-[templates.cava]
-input_path = '~/.config/matugen/templates/config'
-output_path = '~/.config/cava/config'
-post_hook = 'pkill -USR2 cava'
+# [templates.cava]
+# input_path = '~/.config/matugen/templates/config'
+# output_path = '~/.config/cava/config'
+# post_hook = 'pkill -USR1 cava'
 
 [templates.television]
 input_path = '~/.config/matugen/templates/television.toml'
@@ -102,25 +102,34 @@ input_path = '~/.config/matugen/templates/musicfox'
 output_path = '~/.config/matugen/scripts/musicfox'
 post_hook = 'sh ~/.config/matugen/scripts/musicfox'
 
-[templates.spicetify]
-input_path = '~/.config/matugen/templates/spotify.ini'
-output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
-post_hook = 'spicetify apply --no-restart'
+# [templates.spicetify]
+# input_path = '~/.config/matugen/templates/spotify.ini'
+# output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
+# post_hook = 'spicetify apply --no-restart'
 
 [templates.tmux]
 input_path = '~/.config/matugen/templates/tmux.conf'
 output_path = '~/.tmux.conf'
-post_hook = 'tmux source-file ~/.tmux.conf'
+post_hook = 'pgrep -x tmux > /dev/null && tmux source-file ~/.tmux.conf; true'
 
 [templates.fish]
 input_path = '~/.config/matugen/templates/matugen.theme'
 output_path = '~/.config/fish/themes/Matugen.theme'
 post_hook = 'yes | fish_config theme save Matugen'
 
-[templates.neovim]
-input_path = '~/.config/matugen/templates/catppuccin.lua'
-output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
+#[templates.neovim]
+#input_path = '~/.config/matugen/templates/catppuccin.lua'
+#output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
 
+# [templates.neovim]
+# input_path = '~/.config/matugen/templates/catppuccin.lua'
+# output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
+# post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.nvim]
+input_path = '~/.config/matugen/templates/nvim.vim'
+output_path = '~/.cache/wal/colors-wal.vim'
+# post_hook = 'pkill -SIGUSR1 nvim'
 [templates.tldr]
 input_path = '~/.config/matugen/templates/config.toml'
 output_path = '~/.config/tlrc/config.toml'
