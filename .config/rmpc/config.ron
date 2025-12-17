@@ -3,8 +3,9 @@
 #![enable(unwrap_variant_newtypes)]
 (
     address: "127.0.0.1:6600",
+    //address: "/tmp/mpd_socket",
     theme: Some("custom"),
-    cache_dir: None,
+    cache_dir: Some("/home/aiser/.config/rmpc/cache"),
     lyrics_dir: "/home/aiser/Music/",
     on_song_change:  ["~/.config/rmpc/notify"],
 volume_step: 5,
@@ -254,11 +255,17 @@ volume_step: 5,
                                 (
                                     size: "14%",
                                     borders: "ALL",
+                                    border_title: [(kind: Text(" Lyrics "))],
+                                    border_title_position: Top,
+                                    border_title_alignment: Left,
                                     pane: Pane(Lyrics),
                                 ),
                                 (
                                     size: "86%",
                                     borders: "ALL",
+                                    border_title: [(kind: Text(" AlbumArt "))],
+                                    border_title_position: Top,
+                                    border_title_alignment: Left,
                                     pane: Pane(AlbumArt),
                                 )
                             ],
@@ -273,11 +280,17 @@ volume_step: 5,
                             (
                                     size:"80%",
                                     borders: "ALL",
+                                    border_title: [(kind: Text(" Queue "))],
+                                    border_title_position: Top,
+                                    border_title_alignment: Left,
                                     pane:Pane(Queue),
                                 ),
                                 (
                                     size:"20%",
                                     borders:"ALL",
+                                    border_title: [(kind: Text(" Visualization "))],
+                                    border_title_position: Top,
+                                    border_title_alignment: Left,
                                     pane:Pane(Cava),
                                 )
                             ],
