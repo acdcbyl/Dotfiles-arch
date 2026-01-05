@@ -12,6 +12,16 @@ function fish_user_key_bindings
     # 在正常模式下，使用 p 从系统剪贴板粘贴
     bind -M default p fish_clipboard_paste
 end
+# 检测是否在 Emacs shell 中运行
+if test "$TERM" = dumb
+    function fish_prompt
+        echo "\$ "
+    end
+    function fish_right_prompt
+    end
+    function fish_greeting
+    end
+end
 # Emulates vim's cursor shape behavior
 #$fish_vi_force_cursor
 # Set the normal and visual mode cursors to a block
@@ -28,4 +38,6 @@ set fish_cursor_external line
 # visual mode, but due to fish_cursor_default, is redundant here
 set fish_cursor_visual block
 zoxide init fish | source
-starship init fish | source
+# Set up fzf key bindings
+fzf --fish | source
+# starship init fish | source
