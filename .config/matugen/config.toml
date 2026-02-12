@@ -8,9 +8,9 @@ blue = { color = "#89b4fa", blend = true }
 orange = { color = "#fab387", blend = true }
 purple = { color = "#cba6f7", blend = true }
 
-[templates.niri-me]
-input_path = '~/.config/matugen/templates/niri.kdl'
-output_path = '~/.config/niri/config.kdl'
+# [templates.niri-me]
+# input_path = '~/.config/matugen/templates/niri.kdl'
+# output_path = '~/.config/niri/config.kdl'
 
 [templates.gitui]
 input_path = '~/.config/matugen/templates/gitui.ron'
@@ -118,10 +118,10 @@ post_hook = 'yes | fish_config theme save Matugen'
 # input_path = '~/.config/matugen/templates/catppuccin.lua'
 # output_path = '~/.config/nvim/lua/plugins/catppuccin.lua'
 
-[templates.neovim]
-input_path = '~/.config/matugen/templates/template.lua'
-output_path = '~/.config/nvim/generated.lua'
-post_hook = 'pkill -SIGUSR1 nvim'
+[templates.nvim]
+input_path = '~/.config/matugen/templates/nvim.vim'
+output_path = '~/.cache/wal/colors-wal.vim'
+
 [templates.tldr]
 input_path = '~/.config/matugen/templates/config.toml'
 output_path = '~/.config/tlrc/config.toml'

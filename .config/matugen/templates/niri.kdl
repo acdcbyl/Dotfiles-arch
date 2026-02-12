@@ -494,7 +494,7 @@ ELECTRON_OZONE_PLATFORM_HINT "auto"
 
 
 // # MOZ_DRM_DEVICE,/dev/dri/renderD128
- // GTK_THEME "adw-gtk3"
+ GTK_THEME "adw-gtk3"
  LIBVA_DRIVER_NAME "nvidia"
  GBM_BACKEND "nvidia-drm"
  __GLX_VENDOR_LIBRARY_NAME "nvidia"

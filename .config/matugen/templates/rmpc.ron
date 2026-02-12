@@ -17,7 +17,7 @@
     cava:(
         bar_symbol: "█",
         bg_color:None,
-        bar_color: Single("{{colors.primary.default.hex}}"),
+        bar_color: Single("{{"red" | to_color}}"),
     ),
     scrollbar: (
         symbols: ["", "│", " ", " "],

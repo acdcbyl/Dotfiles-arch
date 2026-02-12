@@ -1,0 +1,82 @@
+[mpd]
+address = "localhost:6600"
+volume_increment = 5
+volume_increment_fine = 1
+
+[colors]
+border = "{{colors.primary.default.hex}}"
+song_title = "{{colors.primary.default.hex}}"
+album = "{{colors.secondary.default.hex}}"
+artist = "{{colors.secondary.default.hex}}"
+border_title = "{{colors.on_surface.default.hex}}"
+progress_filled = "{{colors.primary.default.hex}}"
+progress_empty = "{{colors.primary_container.default.hex}}"
+paused = "{{colors.tertiary.default.hex}}"
+playing = "{{colors.primary.default.hex}}"
+stopped = "{{colors.error.default.hex}}"
+time_separator = "{{colors.primary.default.hex}}"
+time_duration = "{{colors.primary.default.hex}}"
+time_elapsed = "{{colors.primary.default.hex}}"
+queue_selected_highlight = "{{colors.primary.default.hex}}"
+queue_selected_text = "{{colors.on_primary.default.hex}}"
+queue_album = "{{colors.secondary.default.hex}}"
+queue_song_title = "{{colors.primary.default.hex}}"
+queue_artist = "{{colors.tertiary.default.hex}}"
+queue_position = "{{colors.primary.default.hex}}"
+queue_duration = "{{colors.primary.default.hex}}"
+top_accent = "{{colors.primary.default.hex}}"
+volume = "{{colors.primary.default.hex}}"
+volume_empty = "{{colors.on_surface.default.hex}}"
+mode = "{{colors.tertiary.default.hex}}"
+track_duration = "{{colors.primary.default.hex}}"
+
+[binds]
+next = [">", "shift-j", "shift-down"]
+previous = ["<", "shift-k", "shift-up"]
+toggle_play_pause = ["space", "p"]
+volume_up = ["="]
+volume_up_fine = ["+"]
+volume_down = ["-"]
+volume_down_fine = ["_"]
+toggle_mute = ["m"]
+cycle_mode_right = ["ctrl-l", "ctrl-right"]
+cycle_mode_left = ["ctrl-h", "ctrl-left"]
+clear_queue = ["d d"]
+repeat = ["r"]
+random = ["z"]
+single = ["s"]
+consume = ["c"]
+quit = ["esc", "q", "ctrl-c", "shift-z shift-z"]
+refresh = ["u"]
+switch_to_queue_menu = ["1"]
+switch_to_artists = ["2"]
+switch_to_albums = ["3"]
+seek_forward = ["shift-l", "shift-right"]
+seek_backward = ["shift-h", "shift-left"]
+scroll_up = ["k", "up"]
+scroll_down = ["j", "down"]
+play_selected = ["enter", "l", "right"]
+remove_from_queue = ["x", "backspace", "d d"]
+move_up_in_queue = ["ctrl-k", "ctrl-up"]
+move_down_in_queue = ["ctrl-j", "ctrl-down"]
+switch_panel_left = ["h", "left"]
+switch_panel_right = ["l", "right"]
+toggle_album_expansion = ["l", "right"]
+add_to_queue = ["a", "enter"]
+scroll_up_big = ["ctrl-u"]
+scroll_down_big = ["ctrl-d"]
+go_to_top = ["g g"]
+go_to_bottom = ["shift-g"]
+toggle_bit_perfect = ["b"]
+
+[pipewire]
+bit_perfect_enabled = true
+
+[logging]
+enabled = true
+level = "info"
+log_to_console = false
+append_to_file = true
+rotate_logs = true
+rotation_size_mb = 10
+keep_log_files = 5
