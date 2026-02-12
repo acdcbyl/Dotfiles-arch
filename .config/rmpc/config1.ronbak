@@ -2,16 +2,19 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
+    theme: "catppuccin.ron",
     address: "127.0.0.1:6600",
-    //address: "/tmp/mpd_socket",
-    theme: Some("md3.ron"),
-    cache_dir: Some("/home/aiser/.config/rmpc/cache"),
-    lyrics_dir: "/home/aiser/Music/",
-    on_song_change: ["sh", "-c", "~/.config/rmpc/playcount; ~/.config/rmpc/notify"],
+    password: None,
+    cache_dir: "/tmp/rmpc",
+    # on_song_change: [ 
+    #     "~/.config/scripts/increment-song-play",
+    #     "~/.config/scripts/get-lyrics",
+    # ],
     volume_step: 5,
     max_fps: 60,
     scrolloff: 0,
     wrap_navigation: false,
+    lyrics_dir: "~/.lyrics",
     enable_lyrics_index: true,
     enable_lyrics_hot_reload: true,
     enable_mouse: true,
@@ -91,7 +94,6 @@
             "D":         Delete,
             "B":         ShowInfo,
             "<C-z>":     ContextMenu(),
-            "<C-r>":     Rate(kind: Modal(values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], custom: true, like: true), current: true),
             "<C-s>":     Save(kind: Modal(all: false, duplicates_strategy: Ask)),
         },
         queue: {
@@ -152,10 +154,11 @@
                             (size: "100%", borders: "NONE", pane: Pane(Queue)),
                         ])
                     ),
-                (size: "30%", borders: "NONE", pane: Split(direction: Vertical, panes: [
-                            (size: "70%", borders: "NONE", pane: Pane(AlbumArt)),
-                            (size: "30%", borders: "ALL", pane: Pane(Cava)),
-                ])),
+                    (size: "30%", borders: "NONE", pane: Split(direction: Vertical, panes: [
+                        (size: "0.45r", borders: "NONE", pane: Pane(AlbumArt)),
+                        (size: "100%", borders: "ALL", pane: Pane(Cava)),
+                    ])
+                ),
             ])
         ),
         (
