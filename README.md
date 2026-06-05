@@ -1,3 +1,5 @@
+> [!IMPORTANT]
+> I’ve updated my dotfiles and switched repositories; feel free to take a look on [Codeberg](https://codeberg.org/Aiser/dotfiles/src/branch/master).
 # Dotfiles-arch
 
 ## Previews
